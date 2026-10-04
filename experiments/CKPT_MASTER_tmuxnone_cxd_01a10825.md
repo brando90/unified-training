@@ -4,7 +4,7 @@
 
 **Status:** RUNNING — first measured training admitted; no benchmark result yet.
 Created: 10-04-2026 13:21 PDT
-Last updated: 10-04-2026 13:23 PDT
+Last updated: 10-04-2026 13:26 PDT
 
 ## 1. Identity and recovery
 
@@ -105,8 +105,15 @@ and freeze [0bb4ea8c586927c6fc9c5201f00fcffadc044df4](https://github.com/brando9
 were pushed directly to main by the source worker. They did not pass through a
 pull request. This documentation-only coordinator pull request repairs the missing
 durable pull-request record prospectively; it neither rewrites those commits nor
-claims they were pull-request merges. Its verified landing receipt will be appended
-below after merge. Full experiment status remains RUNNING.
+claims they were pull-request merges. Coordinator record pull request #1 is merged;
+full experiment status remains RUNNING.
+
+LANDED f721b93259bb1a4cd25fe9a67fdc466096342db2 https://github.com/brando90/unified-training/pull/1 10-04-2026 13:24:37 PDT
+
+The head-matched merge was verified as MERGED. The single required completion
+email for pull request #1 was delivered at 10-04-2026 13:26 PDT; its delivery
+receipt stays in private coordinator receipts. This follow-up only publishes the
+landing record and does not represent another experiment phase or completion.
 
 Rebase safety record: owned backup branch
 `codex/backup-coordinator-record-before-main-07465c92`; previous merge base
