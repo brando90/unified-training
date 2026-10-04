@@ -106,7 +106,9 @@ match the published summary. The cell's exit code alone was not used as completi
 
 These intervals condition on one trained model, not three-seed uncertainty or a
 method comparison. All 1,319 math generations hit the fixed 128-token limit;
-the measured exact-match diagnostic is not evidence of robust reasoning.
+all extracted answers are the number 8 and none contains the answer delimiter.
+The 30 exact matches therefore reflect answer collapse, not demonstrated problem
+solving. See the scratch [first-cell diagnostic](../01_scratch_joint_objectives/first_cell_diagnostic.md).
 The independent supervisor automatically published the first aggregate/plot
 snapshot and advanced to the next seed without a model call or rerun.
 

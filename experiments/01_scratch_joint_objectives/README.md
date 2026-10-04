@@ -43,3 +43,7 @@ Shared source and literature: `experiments/00_program/`. Training requires PyTor
 | Frozen inputs and smoke | Complete | Shared frozen_program.json and calibration.json; all measured updates follow admission |
 | Full 24-cell matrix | Running | See results.md for verified completed, failed and pending cells |
 | Full test evaluation and report | Incremental | First complete cell published; full matrix and initial diagnostics remain pending |
+
+The [first-cell math diagnostic](first_cell_diagnostic.md) documents collapsed
+answers in sequential seed 0. Its nonzero exact-match score must not be interpreted
+as successful reasoning. Language-modeling loss remains the frozen scratch primary.
