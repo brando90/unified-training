@@ -33,3 +33,13 @@ collapse diagnostic, with no change to the frozen experiment or comparative clai
 The second complete cell's full artifacts and item identities were verified;
 its aggregate results landed in
 [commit 2f771a3](https://github.com/brando90/unified-training/commit/2f771a3f4857ae7a326505b4364ff02e9c88cde5).
+
+## Third sequential seed follow-up
+
+Seed 2 yields extracted answer `1` for 1,310 items and `5` for nine. All 1,319
+responses again reach the generation limit and none contains the answer delimiter.
+Its 15/1,319 exact matches are 1.14% [0.69%, 1.87%], a 95% Wilson item interval;
+p-val=n/a. All three sequential seeds therefore have visibly concentrated answers;
+the later methods have no complete evaluations at this snapshot, so there is no method-ranking
+claim. The third full evaluation passed item-identity and artifact-hash checks and
+landed in [commit c7526b9](https://github.com/brando90/unified-training/commit/c7526b926563da4fc40ab4e6cf813a83e635ee26).

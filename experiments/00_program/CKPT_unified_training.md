@@ -3,7 +3,7 @@
 Updated 10-04-2026. Unified-training pilot: random Pythia-70m and immutable
 Pythia-160m step10000, eight methods × three seeds each; required reviews repaired,
 63 tests pass, reviewed setup and first full-cell results landed, independent
-full-set training running, 2/48 cells completed as of 20:57 UTC.
+full-set training running, 3/48 cells completed as of 21:09 UTC.
 
 Exclusive source/publication owner: this task on `codex/unified-training-experiments`.
 Original base `f9d1f6b92fcebf7098d25abd89186593f13b36ec`; the 19 supplied source
@@ -74,8 +74,8 @@ scientific work. Full 48-cell + four initial-evaluation + preflight + finalizati
 reservation: 172,296.51 seconds = 47.86 hours, below the original 48-hour ceiling.
 This is a forecast with fixed failure limits, not a guaranteed service rate.
 
-Current measured state: 2/48 completed, 0 failed; scratch sequential seed 2 is
-training after seeds 0 and 1 completed. Driver identity is the actual deterministic
+Current measured state: 3/48 completed, 0 failed; scratch parallel-joint seed 0 is
+training after all three sequential seeds completed. Driver identity is the actual deterministic
 supervisor, separate from the model coordinator. Board collector binding is
 verified; preparation correctly used a null driver. Liveness and
 semantic last-progress timestamps are separate.
@@ -117,7 +117,12 @@ summary and checkpoint verification and automatic main publication. Its WikiText
 negative log likelihood is 8.3701 [8.3468, 8.3929], a 95% corpus-block bootstrap
 interval conditional on this model; p-val=n/a. Its math answers concentrate on
 3 (1,222 items), 2 (96) and 40 (one), with all 1,319 generations truncated.
-Full three-seed and cross-method conclusions remain pending.
+The third sequential seed subsequently passed the same full verification. The
+first baseline's three-seed language-loss mean is 8.5329 [7.8374, 9.2284], a 95%
+Student t interval with two degrees of freedom; p-val=n/a. The normal-seed
+assumption is weak with only three seeds. Cross-method conclusions and changes
+from the untouched initial models remain pending. The third seed's extracted math
+answers also concentrate on two numbers: 1 for 1,310 items and 5 for nine.
 
 The supervisor continues all 48 cells, always runs the four initial diagnostics,
 verifies full artifacts/denominators, and publishes deterministic incremental/final
@@ -132,6 +137,24 @@ The early matrix is admitted and queued, despite the known all-pending generated
 results-template sentence saying its gates are pending; its README explicitly
 corrects that presentation defect. No frozen code or scientific setting was changed.
 
+## Durable continuation at the recovery bound
+
+The original cumulative six-hour bound and this recovery's two-hour cap are
+unchanged. The named independent supervisor owns all remaining deterministic
+training, evaluation, analysis and incremental publication; no new model-provider
+attempt or reviewer session was launched in this recovery. Its current child is
+registered and healthy. Private progress, watchdog, board verification and native
+process-identity receipts remain beside the checkout; coordinator status is
+`training_running`, never `complete`.
+
+Remaining: 21 scratch cells (including the active parallel-joint seed 0), all 24
+early-checkpoint cells, four untouched-initial-model evaluations, complete method
+comparisons and final verified publication. Preserve the fixed manifests, all
+healthy children and the original queue clock. Failed or missing cells stay in
+the denominator. The heartbeat automation named above continues until verified
+full completion or explicit cancellation. A completed sequential baseline is not
+completion of either experiment.
+
 LANDED 4adbb013e0f7cb233520751240e3785a1ecb8298 https://github.com/brando90/unified-training/commit/4adbb013e0f7cb233520751240e3785a1ecb8298 2026-10-04T20:17:19.422635+00:00
 
 Reviewed setup is verified on main. Immutable freeze and measured admission followed;
@@ -142,3 +165,5 @@ LANDED 0bb4ea8c586927c6fc9c5201f00fcffadc044df4 https://github.com/brando90/unif
 LANDED 3b845821f26baafd27ec45c6599b8fd5d68db522 https://github.com/brando90/unified-training/commit/3b845821f26baafd27ec45c6599b8fd5d68db522 2026-10-04T20:37:27.745424+00:00
 
 LANDED 2f771a3f4857ae7a326505b4364ff02e9c88cde5 https://github.com/brando90/unified-training/commit/2f771a3f4857ae7a326505b4364ff02e9c88cde5 2026-10-04T20:56:24.584195+00:00
+
+LANDED c7526b926563da4fc40ab4e6cf813a83e635ee26 https://github.com/brando90/unified-training/commit/c7526b926563da4fc40ab4e6cf813a83e635ee26 2026-10-04T21:09:12.797573+00:00
