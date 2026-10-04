@@ -98,7 +98,7 @@ This project challenges the necessity of curriculum-based, sequential training b
 
 Related goals for work with the [Marin](https://marin.community/) open-source effort:
 
-1. Improve on DoReMi and build information-theoretic pretraining recipes, e.g., automatically optimizing data weights, regularized toward what humans care about.
+1. Improve on DoReMi and build information-theoretic pretraining recipes, e.g., automatically optimizing data weights, regularized toward what humans care about. Note that original DoReMi does not work (as shown in recent work like the Dodge paper), because it maximizes worst-case noise. Our direct inspiration for this was the Compel paper and using validation on benchmarks (or approximations to it) to generalize better. While we cite Mayee Chen's [AIOLI](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dhgytncAAAAJ&sortby=pubdate&citation_for_view=dhgytncAAAAJ:YOwf2qJgpHMC) paper for dynamic data-mixture optimization, AIOLI itself was not our primary inspiration.
 2. Build a foundation model (ideally 8B+) for formal mathematics that is also general purpose.
 3. Try pretraining algorithms that include SFT and RL from scratch and rely less on ad hoc post-training tricks to "fix" base models.
 
@@ -106,5 +106,5 @@ Related goals for work with the [Marin](https://marin.community/) open-source ef
 
 - Tomasz Korbak, Kejian Shi, Angelica Chen, Rasika Bhalerao, Christopher L. Buckley, Jason Phang, Samuel R. Bowman, Ethan Perez. *Pretraining Language Models with Human Preferences.*
 - *Trust-Region Adaptive Policy Optimization.*
-- AIOLI: dynamic data-mixture optimization (used for the evolving objective mixture).
+- Mayee Chen, et al. [AIOLI: A framework for always-on language model instruction tuning](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dhgytncAAAAJ&sortby=pubdate&citation_for_view=dhgytncAAAAJ:YOwf2qJgpHMC) (used for the evolving objective mixture).
 - DeepSeek-R1 (sequential-training baseline).
