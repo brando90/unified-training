@@ -4,7 +4,7 @@
 
 **Status:** RUNNING — first measured training admitted; no benchmark result yet.
 Created: 10-04-2026 13:21 PDT
-Last updated: 10-04-2026 13:21 PDT
+Last updated: 10-04-2026 13:23 PDT
 
 ## 1. Identity and recovery
 
@@ -107,6 +107,13 @@ pull request. This documentation-only coordinator pull request repairs the missi
 durable pull-request record prospectively; it neither rewrites those commits nor
 claims they were pull-request merges. Its verified landing receipt will be appended
 below after merge. Full experiment status remains RUNNING.
+
+Rebase safety record: owned backup branch
+`codex/backup-coordinator-record-before-main-07465c92`; previous merge base
+`0bb4ea8c586927c6fc9c5201f00fcffadc044df4`; fetched main
+`07465c9206bb07b66c32170e8b00025e5def9653` (worker's first-training record).
+The backup captures this checkpoint before rebasing; compare both patch series
+and the coordinator-owned file before merging.
 
 ## 8. Next commands
 
