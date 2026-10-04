@@ -2,7 +2,7 @@
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/02_early_checkpoint_joint_objectives/README.md>
 
-**TLDR:** Test eight objective schedules with three seeds from immutable early Pythia-160m checkpoint (step10000). Required reviews are complete and reconciled; full-matrix resource admission is being finalized; this folder is the canonical home for its configuration and results.
+**TLDR:** Test eight objective schedules with three seeds from immutable early Pythia-160m checkpoint (step10000). Required reviews are complete and reconciled; the matrix is frozen and admitted to the durable queue after the scratch matrix. This folder is the canonical home for its configuration and results.
 
 ## Question and decision
 
@@ -31,7 +31,7 @@ Does cost-aware objective selection improve the declared primary endpoint compar
     checkpoints/         # ignored full model/optimizer state
 ```
 
-Shared source and literature: `experiments/00_program/`. Training requires PyTorch, Transformers, Datasets, public pinned data/model downloads, and cluster storage. No model-provider keys. The shared harness is an explicit colocation exception because both experiments use the same implementation. Runtime storage pointers and data licenses will be written before admission.
+Shared source and literature: `experiments/00_program/`. Training requires PyTorch, Transformers, Datasets, public pinned data/model downloads, and cluster storage. No model-provider keys. The shared harness is an explicit colocation exception because both experiments use the same implementation. Data licenses and immutable revisions are recorded in the program data manifest; private storage receipts remain outside Git.
 
 ## Status
 
@@ -40,6 +40,15 @@ Shared source and literature: `experiments/00_program/`. Training requires PyTor
 | Plan | Revised after review | Shared PLAN.md |
 | Requested Opus 5.5 maximum-effort reviews | Complete; original FAIL findings reconciled | Shared review reports and reconciliation |
 | Implementation and tests | Implemented; 63 deterministic tests pass | Shared harness and test suite |
-| Frozen inputs and smoke | Pending | No measured training |
-| Full 24-cell matrix | Pending | 0/24 started |
-| Full test evaluation and report | Pending | No results yet |
+| Frozen inputs and smoke | Complete | Shared frozen_program.json and calibration.json |
+| Full 24-cell matrix | Admitted and queued | All 24 cells follow the scratch matrix in the same fixed queue |
+| Full test evaluation and report | Pending | See results.md for current cell counts; no early-checkpoint results at the first scratch publication |
+
+The generated results template incorrectly labels an entirely pending matrix as
+"Not admitted; review and resource gates remain pending." That sentence is a
+known reporting defect, not the admission state: both matrices passed the same
+[acceptance](../00_program/acceptance.json) and
+[freeze](../00_program/frozen_program.json) before the first measured update.
+The queued cells remain pending until executed. The frozen implementation is
+preserved during healthy measured work; this explicit correction documents the
+template defect without changing the experiment.

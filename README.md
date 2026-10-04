@@ -2,7 +2,7 @@
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/README.md>
 
-**TLDR:** A research project testing joint objective schedules against staged and modern adapted baselines. The requested Claude Code Opus 5.5 maximum-effort reviews are complete, with findings repaired and deterministically reconciled; resource admission is being finalized; no empirical superiority claim is established.
+**TLDR:** A research project testing joint objective schedules against staged and modern adapted baselines. The requested Claude Code Opus 5.5 maximum-effort reviews are complete, with findings repaired and deterministically reconciled. Reviewed setup and the frozen 48-cell program are published; independent execution and incremental results publication are running. No empirical superiority claim is established.
 
 Test whether mixing pretraining, supervised fine-tuning, preference learning, and reasoning reinforcement learning throughout training improves reasoning while retaining general language capability. The proposed joint method uses validation progress and compute cost to adapt the mixture. Its advantages over staged training remain unproven.
 
