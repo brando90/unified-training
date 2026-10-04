@@ -1,6 +1,6 @@
 # Full-program status
 
-Verified cells: 7/48; failed: 0; interrupted: 0; pending: 41; unstarted at global bound: 0.
+Verified cells: 8/48; failed: 0; interrupted: 0; pending: 40; unstarted at global bound: 0.
 
 Full-program execution is incomplete. Required plan and implementation findings are reconciled; see acceptance.json.
 Results and uncertainty are in each experiment folder; no universal-superiority claim.
