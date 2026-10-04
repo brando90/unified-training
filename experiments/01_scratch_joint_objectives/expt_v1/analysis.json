@@ -1,5 +1,5 @@
 {
-  "complete": 18,
+  "complete": 19,
   "expected": 24,
   "seed_summary": {
     "sequential": {
@@ -1175,83 +1175,104 @@
     "chord_objective": {
       "arc": {
         "status": "incomplete",
-        "n": 0,
+        "n": 1,
         "expected": 3,
-        "values": []
+        "values": [
+          0.2668350168350168
+        ]
       },
       "gsm": {
         "status": "incomplete",
-        "n": 0,
+        "n": 1,
         "expected": 3,
-        "values": []
+        "values": [
+          0.0
+        ]
       },
       "wiki_nll": {
         "status": "incomplete",
-        "n": 0,
+        "n": 1,
         "expected": 3,
-        "values": []
+        "values": [
+          6.428699226022757
+        ]
       },
       "preference_raw_accuracy": {
         "status": "incomplete",
-        "n": 0,
+        "n": 1,
         "expected": 3,
-        "values": []
+        "values": [
+          0.48046875
+        ]
       },
       "preference_implicit_accuracy": {
         "status": "incomplete",
-        "n": 0,
+        "n": 1,
         "expected": 3,
-        "values": []
+        "values": [
+          0.55859375
+        ]
       },
       "missing_arc_sensitivity": {
-        "observed_seeds": 0,
+        "observed_seeds": 1,
         "expected_seeds": 3,
-        "complete_case_mean": null,
+        "complete_case_mean": 0.2668350168350168,
         "all_seed_possible_mean": [
-          0.0,
-          1.0
+          0.08894500561167228,
+          0.7556116722783389
         ],
         "interpretation": "identification bounds, not a confidence interval; missing accuracy in [0,1]"
       },
       "missing_gsm_sensitivity": {
-        "observed_seeds": 0,
+        "observed_seeds": 1,
         "expected_seeds": 3,
-        "complete_case_mean": null,
+        "complete_case_mean": 0.0,
         "all_seed_possible_mean": [
           0.0,
-          1.0
+          0.6666666666666666
         ],
         "interpretation": "identification bounds, not a confidence interval; missing accuracy in [0,1]"
       },
-      "training_seconds": 0,
-      "evaluation_seconds": 0,
+      "training_seconds": 380.06060293968767,
+      "evaluation_seconds": 88.09521273896098,
       "arc_two_stage": {
         "status": "incomplete",
-        "available_seeds": 0,
+        "available_seeds": 1,
         "expected_seeds": 3
       },
       "gsm_two_stage": {
         "status": "incomplete",
-        "available_seeds": 0,
+        "available_seeds": 1,
         "expected_seeds": 3
       },
       "preference_two_stage": {
         "status": "incomplete",
-        "available_seeds": 0,
+        "available_seeds": 1,
         "expected_seeds": 3
       },
       "preference_implicit_two_stage": {
         "status": "incomplete",
-        "available_seeds": 0,
+        "available_seeds": 1,
         "expected_seeds": 3
       },
       "wiki_two_stage": {
         "status": "incomplete",
-        "available_seeds": 0,
+        "available_seeds": 1,
         "expected_seeds": 3
       },
-      "controller_iterations": [],
-      "realized_work_by_seed": []
+      "controller_iterations": [
+        0
+      ],
+      "realized_work_by_seed": [
+        {
+          "validation": 67480,
+          "validation_generation": 8800,
+          "forward": 5588432,
+          "reference": 768224,
+          "backward": 11176864,
+          "generation": 2309120
+        }
+      ]
     },
     "rpt_inspired": {
       "arc": {
@@ -3364,15 +3385,33 @@
     {
       "method_minus_baseline": "validation_progress minus chord_objective",
       "benchmark": "arc",
+      "seed": 0,
+      "conditional_item_difference": {
+        "estimate": -0.025252525252525252,
+        "interval95": [
+          -0.044623316498316495,
+          -0.006734006734006734
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus chord_objective",
+      "benchmark": "arc",
       "paired_seed_difference": {
         "status": "incomplete",
-        "n": 0,
+        "n": 1,
         "expected": 3,
-        "values": []
+        "values": [
+          -0.025252525252525252
+        ]
       },
       "two_stage_difference": {
         "status": "incomplete",
-        "available_seeds": 0,
+        "available_seeds": 1,
         "expected_seeds": 3
       },
       "primary_contrast": false
@@ -3380,15 +3419,33 @@
     {
       "method_minus_baseline": "validation_progress minus chord_objective",
       "benchmark": "gsm",
+      "seed": 0,
+      "conditional_item_difference": {
+        "estimate": 0.002274450341167551,
+        "interval95": [
+          0.0,
+          0.00530705079605762
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 1319,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus chord_objective",
+      "benchmark": "gsm",
       "paired_seed_difference": {
         "status": "incomplete",
-        "n": 0,
+        "n": 1,
         "expected": 3,
-        "values": []
+        "values": [
+          0.002274450341167551
+        ]
       },
       "two_stage_difference": {
         "status": "incomplete",
-        "available_seeds": 0,
+        "available_seeds": 1,
         "expected_seeds": 3
       },
       "primary_contrast": false
@@ -3396,15 +3453,33 @@
     {
       "method_minus_baseline": "validation_progress minus chord_objective",
       "benchmark": "preference",
+      "seed": 0,
+      "conditional_item_difference": {
+        "estimate": 0.0234375,
+        "interval95": [
+          -0.04296875,
+          0.08984375
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 256,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus chord_objective",
+      "benchmark": "preference",
       "paired_seed_difference": {
         "status": "incomplete",
-        "n": 0,
+        "n": 1,
         "expected": 3,
-        "values": []
+        "values": [
+          0.0234375
+        ]
       },
       "two_stage_difference": {
         "status": "incomplete",
-        "available_seeds": 0,
+        "available_seeds": 1,
         "expected_seeds": 3
       },
       "primary_contrast": false
@@ -3412,15 +3487,33 @@
     {
       "method_minus_baseline": "validation_progress minus chord_objective",
       "benchmark": "preference_implicit",
+      "seed": 0,
+      "conditional_item_difference": {
+        "estimate": 0.00390625,
+        "interval95": [
+          -0.0703125,
+          0.08203125
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 256,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus chord_objective",
+      "benchmark": "preference_implicit",
       "paired_seed_difference": {
         "status": "incomplete",
-        "n": 0,
+        "n": 1,
         "expected": 3,
-        "values": []
+        "values": [
+          0.00390625
+        ]
       },
       "two_stage_difference": {
         "status": "incomplete",
-        "available_seeds": 0,
+        "available_seeds": 1,
         "expected_seeds": 3
       },
       "primary_contrast": false
@@ -3428,15 +3521,33 @@
     {
       "method_minus_baseline": "validation_progress minus chord_objective",
       "benchmark": "wiki",
+      "seed": 0,
+      "conditional_item_difference": {
+        "estimate": 0.3669240757760143,
+        "interval95": [
+          0.35960862588809955,
+          0.3742936170312706
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus chord_objective",
+      "benchmark": "wiki",
       "paired_seed_difference": {
         "status": "incomplete",
-        "n": 0,
+        "n": 1,
         "expected": 3,
-        "values": []
+        "values": [
+          0.3669240757760143
+        ]
       },
       "two_stage_difference": {
         "status": "incomplete",
-        "available_seeds": 0,
+        "available_seeds": 1,
         "expected_seeds": 3
       },
       "primary_contrast": false
