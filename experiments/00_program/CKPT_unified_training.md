@@ -86,3 +86,7 @@ children at the coordinator boundary. The supervisor continues the entire fixed
 queue, always runs initial diagnostics, verifies all artifacts/denominators and
 publishes deterministic incremental/final reports. Completion requires full
 experiments, review reconciliation, analysis and verified main publication.
+
+LANDED 4adbb013e0f7cb233520751240e3785a1ecb8298 https://github.com/brando90/unified-training/commit/4adbb013e0f7cb233520751240e3785a1ecb8298 2026-10-04T20:17:19.422635+00:00
+
+Reviewed setup is verified on main. Immutable freeze and actual measured admission follow; full experiment completion remains pending.

@@ -1,6 +1,6 @@
 {
   "experiment": "01_scratch_joint_objectives",
-  "status": "prospective",
+  "status": "frozen",
   "config": {
     "learning_rate": 0.0001,
     "validation_rows": 8,
