@@ -531,7 +531,49 @@
     "id": "smooth_joint-seed-2",
     "method": "smooth_joint",
     "seed": 2,
-    "status": "pending"
+    "status": "complete",
+    "training_mfet": 19.916248,
+    "arc": {
+      "estimate": 0.25252525252525254,
+      "interval95": [
+        0.23546495077610094,
+        0.270384484848592
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 2376
+    },
+    "gsm": {
+      "estimate": 0.0,
+      "interval95": [
+        0.0,
+        0.002903944985303654
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 1319
+    },
+    "wiki_nll": 6.217626570000497,
+    "preference_raw": {
+      "estimate": 0.5234375,
+      "interval95": [
+        0.46236240094817116,
+        0.5838196057818662
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    },
+    "preference_implicit": {
+      "estimate": 0.55078125,
+      "interval95": [
+        0.4895457648520954,
+        0.6105152497296519
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    }
   },
   {
     "id": "aioli_objective-seed-0",
