@@ -819,7 +819,49 @@
     "id": "validation_progress-seed-2",
     "method": "validation_progress",
     "seed": 2,
-    "status": "pending"
+    "status": "complete",
+    "training_mfet": 19.95188,
+    "arc": {
+      "estimate": 0.24957912457912457,
+      "interval95": [
+        0.23259140690493146,
+        0.26737528390576976
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 2376
+    },
+    "gsm": {
+      "estimate": 0.0,
+      "interval95": [
+        0.0,
+        0.002903944985303654
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 1319
+    },
+    "wiki_nll": 6.7214737652810586,
+    "preference_raw": {
+      "estimate": 0.51171875,
+      "interval95": [
+        0.45076751333371007,
+        0.5723234900313086
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    },
+    "preference_implicit": {
+      "estimate": 0.51953125,
+      "interval95": [
+        0.4584937753463775,
+        0.5799912302619868
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    }
   },
   {
     "id": "chord_objective-seed-0",
