@@ -22,3 +22,14 @@ Its terminal summary SHA-256 (Secure Hash Algorithm, 256-bit) is
 `5d1a9744d3b907d7a044626b106203c14461b6d867c5953a646c25814ec2f939`.
 Full item-level responses remain in ignored runtime storage. Aggregate results
 first landed in [commit 3b84582](https://github.com/brando90/unified-training/commit/3b845821f26baafd27ec45c6599b8fd5d68db522).
+
+## Second sequential seed follow-up
+
+Seed 1 also has strongly concentrated extracted answers: `3` for 1,222 items,
+`2` for 96, and `40` for one. All 1,319 responses reach the generation limit and
+none contains the answer delimiter. Its 31/1,319 exact matches are 2.35%
+[1.66%, 3.32%], a 95% Wilson item interval; p-val=n/a. This is another descriptive
+collapse diagnostic, with no change to the frozen experiment or comparative claim.
+The second complete cell's full artifacts and item identities were verified;
+its aggregate results landed in
+[commit 2f771a3](https://github.com/brando90/unified-training/commit/2f771a3f4857ae7a326505b4364ff02e9c88cde5).

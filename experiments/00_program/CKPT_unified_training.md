@@ -3,7 +3,7 @@
 Updated 10-04-2026. Unified-training pilot: random Pythia-70m and immutable
 Pythia-160m step10000, eight methods × three seeds each; required reviews repaired,
 63 tests pass, reviewed setup and first full-cell results landed, independent
-full-set training running, 1/48 cells completed as of 20:38 UTC.
+full-set training running, 2/48 cells completed as of 20:57 UTC.
 
 Exclusive source/publication owner: this task on `codex/unified-training-experiments`.
 Original base `f9d1f6b92fcebf7098d25abd89186593f13b36ec`; the 19 supplied source
@@ -74,8 +74,8 @@ scientific work. Full 48-cell + four initial-evaluation + preflight + finalizati
 reservation: 172,296.51 seconds = 47.86 hours, below the original 48-hour ceiling.
 This is a forecast with fixed failure limits, not a guaranteed service rate.
 
-Current measured state: 1/48 completed, 0 failed; scratch sequential seed 1 is
-training after seed 0 completed. Driver identity is the actual deterministic
+Current measured state: 2/48 completed, 0 failed; scratch sequential seed 2 is
+training after seeds 0 and 1 completed. Driver identity is the actual deterministic
 supervisor, separate from the model coordinator. Board collector binding is
 verified; preparation correctly used a null driver. Liveness and
 semantic last-progress timestamps are separate.
@@ -112,6 +112,13 @@ solving. See the scratch [first-cell diagnostic](../01_scratch_joint_objectives/
 The independent supervisor automatically published the first aggregate/plot
 snapshot and advanced to the next seed without a model call or rerun.
 
+The second full cell, scratch sequential seed 1, also passed independent item,
+summary and checkpoint verification and automatic main publication. Its WikiText
+negative log likelihood is 8.3701 [8.3468, 8.3929], a 95% corpus-block bootstrap
+interval conditional on this model; p-val=n/a. Its math answers concentrate on
+3 (1,222 items), 2 (96) and 40 (one), with all 1,319 generations truncated.
+Full three-seed and cross-method conclusions remain pending.
+
 The supervisor continues all 48 cells, always runs the four initial diagnostics,
 verifies full artifacts/denominators, and publishes deterministic incremental/final
 reports. Source/data/manifest remain frozen. Preserve healthy children at every
@@ -133,3 +140,5 @@ full experiment completion remains pending.
 LANDED 0bb4ea8c586927c6fc9c5201f00fcffadc044df4 https://github.com/brando90/unified-training/commit/0bb4ea8c586927c6fc9c5201f00fcffadc044df4 2026-10-04T20:19:33.625044+00:00
 
 LANDED 3b845821f26baafd27ec45c6599b8fd5d68db522 https://github.com/brando90/unified-training/commit/3b845821f26baafd27ec45c6599b8fd5d68db522 2026-10-04T20:37:27.745424+00:00
+
+LANDED 2f771a3f4857ae7a326505b4364ff02e9c88cde5 https://github.com/brando90/unified-training/commit/2f771a3f4857ae7a326505b4364ff02e9c88cde5 2026-10-04T20:56:24.584195+00:00
