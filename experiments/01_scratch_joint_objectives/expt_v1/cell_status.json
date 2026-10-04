@@ -483,7 +483,49 @@
     "id": "smooth_joint-seed-1",
     "method": "smooth_joint",
     "seed": 1,
-    "status": "pending"
+    "status": "complete",
+    "training_mfet": 19.950744,
+    "arc": {
+      "estimate": 0.25547138047138046,
+      "interval95": [
+        0.2383395552082683,
+        0.2733926252304164
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 2376
+    },
+    "gsm": {
+      "estimate": 0.006823351023502654,
+      "interval95": [
+        0.0035939093802821237,
+        0.0129171083800515
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 1319
+    },
+    "wiki_nll": 6.200583599271331,
+    "preference_raw": {
+      "estimate": 0.5078125,
+      "interval95": [
+        0.44690987163300716,
+        0.5684841306103388
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    },
+    "preference_implicit": {
+      "estimate": 0.5,
+      "interval95": [
+        0.43920555858906296,
+        0.560794441410937
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    }
   },
   {
     "id": "smooth_joint-seed-2",
