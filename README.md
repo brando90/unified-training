@@ -3,6 +3,7 @@
 **Joint R1 Training for Large-Scale Reasoning (J-R1) Beats R1**: train pretraining, supervised fine-tuning, preference learning, and reasoning reinforcement learning (RL) *jointly* with a dynamically evolving data/objective mixture, instead of in sequential post-training stages.
 
 - Project proposal (Google Doc): <https://docs.google.com/document/d/1j_qSj77AdW0qhZHgQwYfpgLqeumpksd0E67-uj6VL9E/edit?tab=t.0>
+- Related Project: [zip-mix](https://github.com/brando90/zip-mix)
 - Affiliation: Stanford Data Science Institute, Marlowe Initiative
 - Collaborators: Brando Miranda (STAIR, Stanford Trustworthy AI Research), Sanmi Koyejo (STAIR), AI alignment and optimization researchers
 
