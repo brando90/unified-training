@@ -91,6 +91,12 @@ We compare three training strategies:
 - With joint training there is no single most-recent focus: the model learns reasoning, instruction following, and alignment together, preserving all abilities rather than biasing toward one.
 - This encourages balanced generalization rather than overfitting to one training phase.
 
+**Global landscape optimization over sequential local updates.**
+
+- Korbak et al. (2023) show in *Pretraining Language Models with Human Preferences* that incorporating human preferences from the very start of training is substantially more effective than standard pretraining followed by finetuning.
+- They note: *"Pretraining with human feedback results in much better preference satisfaction than standard LM pretraining followed by finetuning with feedback, i.e., learning and then unlearning undesirable behavior. Our results suggest that we should move beyond imitation learning when pretraining LMs and incorporate human preferences from the start of training."*
+- We conjecture this is fundamentally an optimization landscape problem: changing the training landscape abruptly in post-training shifts the model into suboptimal local basins and hurts the network's internal representations. To achieve optimal performance, the whole giant landscape must be optimized "globally" by exposing the model to the true mixture of objectives from initialization.
+
 ## Conclusion
 
 This project challenges the necessity of curriculum-based, sequential training by proposing a joint training paradigm that uses dynamic mixture optimization to balance multiple training objectives from the start. By jointly training all objectives, we let optimization dynamics guide the model rather than forcing it into local minima dictated by artificial curriculum constraints. If successful, this could reduce overall training cost, improve reasoning, and make foundation models more sample-efficient, generalizable, and adaptable to new tasks without rigid retraining.
