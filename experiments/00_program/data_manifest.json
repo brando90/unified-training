@@ -1,0 +1,244 @@
+{
+  "created": "2026-10-04T18:53:13.152617+00:00",
+  "sources": {
+    "wiki": {
+      "id": "Salesforce/wikitext",
+      "config": "wikitext-103-raw-v1",
+      "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+      "license": [
+        "cc-by-sa-3.0",
+        "gfdl"
+      ],
+      "url": "https://huggingface.co/datasets/Salesforce/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3",
+      "card_sha256": "d5aabf145d341366745ac703b5844c442c143943b6c77929481395c822b1c28c",
+      "raw_rows": {
+        "test": 4358,
+        "train": 1801350,
+        "validation": 3760
+      }
+    },
+    "gsm": {
+      "id": "openai/gsm8k",
+      "config": "main",
+      "revision": "740312add88f781978c0658806c59bc2815b9866",
+      "license": [
+        "mit"
+      ],
+      "url": "https://huggingface.co/datasets/openai/gsm8k/tree/740312add88f781978c0658806c59bc2815b9866",
+      "card_sha256": "a17e882503578c9e324560630e31017617714ee025c87cf4fea6fd916895f3c1",
+      "raw_rows": {
+        "train": 7473,
+        "test": 1319
+      }
+    },
+    "prefs": {
+      "id": "HuggingFaceH4/ultrafeedback_binarized",
+      "config": null,
+      "revision": "3949bf5f8c17c394422ccfab0c31ea9c20bdeb85",
+      "license": "mit",
+      "url": "https://huggingface.co/datasets/HuggingFaceH4/ultrafeedback_binarized/tree/3949bf5f8c17c394422ccfab0c31ea9c20bdeb85",
+      "card_sha256": "c774e58776969093f0dad0a3ddf031e943f36aeabd34471d29b21fac36469d25",
+      "raw_rows": {
+        "train_prefs": 61135,
+        "train_sft": 61135,
+        "test_prefs": 2000,
+        "test_sft": 1000,
+        "train_gen": 61135,
+        "test_gen": 1000
+      }
+    },
+    "arc": {
+      "id": "allenai/ai2_arc",
+      "config": "ARC-Easy",
+      "revision": "210d026faf9955653af8916fad021475a3f00453",
+      "license": [
+        "cc-by-sa-4.0"
+      ],
+      "url": "https://huggingface.co/datasets/allenai/ai2_arc/tree/210d026faf9955653af8916fad021475a3f00453",
+      "card_sha256": "4a293e352253d771604725c978adcea71ee6504e89ed40e1cb0024ecafa9b37e",
+      "raw_rows": {
+        "train": 2251,
+        "test": 2376,
+        "validation": 570
+      }
+    }
+  },
+  "models": {
+    "scratch": {
+      "id": "EleutherAI/pythia-70m",
+      "requested_revision": "main",
+      "revision": "a39f36b100fe8a5377810d56c3f4789b9c53ac42",
+      "license": "apache-2.0",
+      "files": {
+        "tokenizer.json": "c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624",
+        "config.json": "002050231a9b1ec3ac77aa6b9b3bbdc4d923f4068a7dd33b8da72a9bd6ad9a43",
+        "model.safetensors": "ebfa4e2f18696ebd83716a0d39fe2c025f2ff8483f72a83ca59c475692fc9d15",
+        "tokenizer_config.json": "70e38394e494931c6f773ba41e19460dd4436526b852207367f04341b4066d3f",
+        "special_tokens_map.json": "6f50ab5a5a509a1c309d6171f339b196a900dc9c99ad0408ff23bb615fdae7ad"
+      }
+    },
+    "early": {
+      "id": "EleutherAI/pythia-160m",
+      "requested_revision": "step10000",
+      "revision": "bb9bd9573b772c899bda5206af551645138ceed8",
+      "license": "apache-2.0",
+      "files": {
+        "tokenizer.json": "c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624",
+        "config.json": "76eb275107220e450d31258f792a2efcbee109d8b62ae0088260057dec06362f",
+        "model.safetensors": "20abd9c1b9f72a510be8a9dce8ad21d94506ba19545f996894c7cf4bf6ee597f",
+        "tokenizer_config.json": "600feab17b84296ecc5255c745bba867303b5117207ff4420515932b2f8ead80",
+        "special_tokens_map.json": "6f50ab5a5a509a1c309d6171f339b196a900dc9c99ad0408ff23bb615fdae7ad"
+      }
+    }
+  },
+  "filters": {
+    "gsm": {},
+    "prefs": {
+      "full_pair_overlength": 27573,
+      "empty_or_identical": 519,
+      "duplicate": 38,
+      "official_test_overlap": 3,
+      "cap_train": 26411,
+      "cap_validation": 3120,
+      "cap_test": 863
+    },
+    "gsm_train_cross_source": 0,
+    "prefs_train_cross_source": 0,
+    "wiki_train": {
+      "empty": 22599,
+      "heldout_overlap": 3155,
+      "duplicate": 1405,
+      "prospective_token_pool_cap": 4194304
+    },
+    "wiki_validation": {
+      "empty": 1299,
+      "heldout_overlap": 153
+    },
+    "wiki_test": {
+      "empty": 1467
+    }
+  },
+  "splits": {
+    "gsm_test": {
+      "rows": 1319,
+      "sha256": "640b099be2d7730ae9abe6a361521ed68e7acdfd76947e64a31dcce155a10be6",
+      "file": "data/prepared/gsm_test.jsonl"
+    },
+    "arc_test": {
+      "rows": 2376,
+      "sha256": "aa670be6ed9a9ed569564d83f93ae1ba9da1dfa2ece6909d55a70381a2a3ce39",
+      "file": "data/prepared/arc_test.jsonl"
+    },
+    "arc_validation": {
+      "rows": 570,
+      "sha256": "c9475a599327923170cba1c58500b87e13ec226553417c22d60553eedfdbaebf",
+      "file": "data/prepared/arc_validation.jsonl"
+    },
+    "gsm_train": {
+      "file": "data/prepared/gsm_train_substring_audited.jsonl",
+      "rows": 6748,
+      "sha256": "099e8ec72ac32a5dd1338d676abd19e2efb87218b384c42fab7f654c88071caf"
+    },
+    "gsm_validation": {
+      "rows": 715,
+      "sha256": "b5887f2c58278606a7063f9099752c3a96d81bb5c1b7300a3c0e68ff73aeefb7",
+      "file": "data/prepared/gsm_validation.jsonl"
+    },
+    "prefs_train": {
+      "file": "data/prepared/prefs_train_substring_audited.jsonl",
+      "rows": 4092,
+      "sha256": "67b33481b7024709ca1a16f81025cbfc359e3b7bca22874cc962282b3f18eeac"
+    },
+    "prefs_validation": {
+      "rows": 256,
+      "sha256": "feb210c447afc4c706a599e3c1119301390734be90d5120cde45411d599b3cdc",
+      "file": "data/prepared/prefs_validation.jsonl"
+    },
+    "prefs_test": {
+      "rows": 256,
+      "sha256": "d2743c65d5989b497a94e56f29a0033bbcfdf20eaef4d8143186956954ebc5d1",
+      "file": "data/prepared/prefs_test.jsonl"
+    },
+    "wiki_train": {
+      "file": "data/prepared/wiki_train_audited.jsonl",
+      "rows": 8192,
+      "sha256": "3d54b67e744b8733aeaf33882800c8aa7704b97aba72fe4f93d78b4935b61356"
+    },
+    "wiki_validation": {
+      "rows": 491,
+      "sha256": "e51c2b497d6eaecbff01a8f010f02aa26b7141a1a27062410df2f32cfd448577",
+      "file": "data/prepared/wiki_validation.jsonl"
+    },
+    "wiki_test": {
+      "rows": 564,
+      "sha256": "29758f83f5cb98a08308f04f20bd097abbd77913f01392aeb5e3cc02ee74426c",
+      "file": "data/prepared/wiki_test.jsonl"
+    },
+    "gsm_controller": {
+      "file": "data/prepared/gsm_controller.jsonl",
+      "rows": 357,
+      "sha256": "b7ec8dd170e7c7c583f0ad32164722b8d626291d521f4726c59aab234880fed0"
+    },
+    "gsm_development": {
+      "file": "data/prepared/gsm_development.jsonl",
+      "rows": 357,
+      "sha256": "ccc53136a70f6d0ccf427c1d9d9189bf4ab291aad2368c519bbfbe19ac59d0cc"
+    },
+    "prefs_controller": {
+      "file": "data/prepared/prefs_controller.jsonl",
+      "rows": 120,
+      "sha256": "5d56b15416cd86660fa54465317ba23c100bd43deb8c83aaa56713f056e73525"
+    },
+    "prefs_development": {
+      "file": "data/prepared/prefs_development.jsonl",
+      "rows": 136,
+      "sha256": "313e7b7f4499d730cb2bb19966746cae494ec0b6952389e4471c3b61b322dc54"
+    },
+    "wiki_controller": {
+      "file": "data/prepared/wiki_controller.jsonl",
+      "rows": 240,
+      "sha256": "aa47af31a9d7f127fae754162e27f05ed8f722ac1df4ef4cb625acffbd040208"
+    },
+    "wiki_development": {
+      "file": "data/prepared/wiki_development.jsonl",
+      "rows": 251,
+      "sha256": "fc602226dd78e6e682f659e5c1035aece8628fdd81fa65e3b6b987a4e906fefd"
+    },
+    "arc_development": {
+      "file": "data/prepared/arc_development.jsonl",
+      "rows": 570,
+      "sha256": "c9475a599327923170cba1c58500b87e13ec226553417c22d60553eedfdbaebf"
+    }
+  },
+  "overlap_policy": "Normalized prompt/line hashes; official test excluded before hash validation split; exact text only, semantic contamination unknown. SFT and RL deliberately reuse GSM training pool.",
+  "max_length": 512,
+  "prospective_audit": {
+    "source_manifest_sha256": "ded6575a42f4a58bd494be56faa546d86e051173b3190740e8cb2cae788e2d79",
+    "ngram_words": 13,
+    "removed_rows": {
+      "gsm_train": 9,
+      "gsm_validation": 1,
+      "prefs_train": 3,
+      "prefs_validation": 0,
+      "wiki_train": 0
+    },
+    "test_labels_use": "content-only contamination exclusion, never scoring/selection",
+    "controller_and_development": "disjoint deterministic ID-hash parity",
+    "prepared_originals_preserved": true
+  },
+  "substring_audit": {
+    "minimum_normalized_question_characters": 40,
+    "removed_rows": {
+      "gsm_train": 1,
+      "prefs_train": 1,
+      "wiki_train": 0
+    },
+    "excluded_ids_digest": {
+      "gsm_train": "39cb800f07a36882b00ef5f7c0b3d75c5fa38e6b135fd46c990942550739206c",
+      "prefs_train": "4501678e71fc928e199cce5a2fa6319402041a1a12c4bc62d394c4b1cef48fcd",
+      "wiki_train": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "gsm_train_checked_against_preference_test_prompts": true,
+    "test_scores_used": false
+  }
+}

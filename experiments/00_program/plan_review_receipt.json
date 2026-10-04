@@ -1,0 +1,25 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": "max",
+  "completed": true,
+  "verdict": "FAIL",
+  "critical": 4,
+  "major": 9,
+  "report_sha256": "b7ca3859998826d47c1db015f164d04cf635ae174afca9f5267bc2dcf57679d9",
+  "reviewer_exit_code": 0,
+  "result_events": [
+    {
+      "stream": "review.jsonl",
+      "subtype": "error_max_turns",
+      "is_error": true,
+      "result_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stream": "review-continuation.jsonl",
+      "subtype": "success",
+      "is_error": false,
+      "result_sha256": "2cf56ca6faf5070daef3a2af9207576d05d0fda485b2c229fd468733212812c1"
+    }
+  ],
+  "note": "The same-session continuation is final. Earlier max-turn termination is retained, not the final verdict."
+}

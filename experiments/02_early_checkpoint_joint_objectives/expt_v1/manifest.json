@@ -1,0 +1,214 @@
+{
+  "experiment": "02_early_checkpoint_joint_objectives",
+  "status": "prospective",
+  "config": {
+    "learning_rate": 0.0001,
+    "validation_rows": 8,
+    "batch_size": 16,
+    "rl_prompts": 16,
+    "group_size": 4,
+    "max_new_tokens": 128,
+    "eval_batch_size": 32,
+    "budget_tokens": 19900000,
+    "rl_prefix_fraction": 0.0,
+    "controller_window": 64,
+    "checkpoint_every": 256,
+    "train_timeout_seconds": 3903,
+    "evaluation_timeout_seconds": 818,
+    "cell_timeout_seconds": 4781
+  },
+  "cells": [
+    {
+      "id": "sequential-seed-0",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "sequential",
+      "seed": 0,
+      "train_timeout_seconds": 2822,
+      "cell_timeout_seconds": 3700
+    },
+    {
+      "id": "sequential-seed-1",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "sequential",
+      "seed": 1,
+      "train_timeout_seconds": 2822,
+      "cell_timeout_seconds": 3700
+    },
+    {
+      "id": "sequential-seed-2",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "sequential",
+      "seed": 2,
+      "train_timeout_seconds": 2822,
+      "cell_timeout_seconds": 3700
+    },
+    {
+      "id": "parallel_joint-seed-0",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "parallel_joint",
+      "seed": 0,
+      "train_timeout_seconds": 2464,
+      "cell_timeout_seconds": 3342
+    },
+    {
+      "id": "parallel_joint-seed-1",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "parallel_joint",
+      "seed": 1,
+      "train_timeout_seconds": 2464,
+      "cell_timeout_seconds": 3342
+    },
+    {
+      "id": "parallel_joint-seed-2",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "parallel_joint",
+      "seed": 2,
+      "train_timeout_seconds": 2464,
+      "cell_timeout_seconds": 3342
+    },
+    {
+      "id": "fixed_joint-seed-0",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "fixed_joint",
+      "seed": 0,
+      "train_timeout_seconds": 2681,
+      "cell_timeout_seconds": 3559
+    },
+    {
+      "id": "fixed_joint-seed-1",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "fixed_joint",
+      "seed": 1,
+      "train_timeout_seconds": 2681,
+      "cell_timeout_seconds": 3559
+    },
+    {
+      "id": "fixed_joint-seed-2",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "fixed_joint",
+      "seed": 2,
+      "train_timeout_seconds": 2681,
+      "cell_timeout_seconds": 3559
+    },
+    {
+      "id": "smooth_joint-seed-0",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "smooth_joint",
+      "seed": 0,
+      "train_timeout_seconds": 3219,
+      "cell_timeout_seconds": 4097
+    },
+    {
+      "id": "smooth_joint-seed-1",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "smooth_joint",
+      "seed": 1,
+      "train_timeout_seconds": 3219,
+      "cell_timeout_seconds": 4097
+    },
+    {
+      "id": "smooth_joint-seed-2",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "smooth_joint",
+      "seed": 2,
+      "train_timeout_seconds": 3219,
+      "cell_timeout_seconds": 4097
+    },
+    {
+      "id": "aioli_objective-seed-0",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "aioli_objective",
+      "seed": 0,
+      "train_timeout_seconds": 3903,
+      "cell_timeout_seconds": 4781
+    },
+    {
+      "id": "aioli_objective-seed-1",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "aioli_objective",
+      "seed": 1,
+      "train_timeout_seconds": 3903,
+      "cell_timeout_seconds": 4781
+    },
+    {
+      "id": "aioli_objective-seed-2",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "aioli_objective",
+      "seed": 2,
+      "train_timeout_seconds": 3903,
+      "cell_timeout_seconds": 4781
+    },
+    {
+      "id": "validation_progress-seed-0",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "validation_progress",
+      "seed": 0,
+      "train_timeout_seconds": 3903,
+      "cell_timeout_seconds": 4781
+    },
+    {
+      "id": "validation_progress-seed-1",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "validation_progress",
+      "seed": 1,
+      "train_timeout_seconds": 3903,
+      "cell_timeout_seconds": 4781
+    },
+    {
+      "id": "validation_progress-seed-2",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "validation_progress",
+      "seed": 2,
+      "train_timeout_seconds": 3903,
+      "cell_timeout_seconds": 4781
+    },
+    {
+      "id": "chord_objective-seed-0",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "chord_objective",
+      "seed": 0,
+      "train_timeout_seconds": 2274,
+      "cell_timeout_seconds": 3152
+    },
+    {
+      "id": "chord_objective-seed-1",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "chord_objective",
+      "seed": 1,
+      "train_timeout_seconds": 2274,
+      "cell_timeout_seconds": 3152
+    },
+    {
+      "id": "chord_objective-seed-2",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "chord_objective",
+      "seed": 2,
+      "train_timeout_seconds": 2274,
+      "cell_timeout_seconds": 3152
+    },
+    {
+      "id": "rpt_inspired-seed-0",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "rpt_inspired",
+      "seed": 0,
+      "train_timeout_seconds": 2650,
+      "cell_timeout_seconds": 3528
+    },
+    {
+      "id": "rpt_inspired-seed-1",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "rpt_inspired",
+      "seed": 1,
+      "train_timeout_seconds": 2650,
+      "cell_timeout_seconds": 3528
+    },
+    {
+      "id": "rpt_inspired-seed-2",
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "method": "rpt_inspired",
+      "seed": 2,
+      "train_timeout_seconds": 2650,
+      "cell_timeout_seconds": 3528
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "experiment": "01_scratch_joint_objectives",
+  "status": "prospective",
+  "config": {
+    "learning_rate": 0.0001,
+    "validation_rows": 8,
+    "batch_size": 16,
+    "rl_prompts": 16,
+    "group_size": 4,
+    "max_new_tokens": 128,
+    "eval_batch_size": 32,
+    "budget_tokens": 19900000,
+    "rl_prefix_fraction": 0.0,
+    "controller_window": 64,
+    "checkpoint_every": 256,
+    "train_timeout_seconds": 2851,
+    "evaluation_timeout_seconds": 818,
+    "cell_timeout_seconds": 3729
+  },
+  "cells": [
+    {
+      "id": "sequential-seed-0",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "sequential",
+      "seed": 0,
+      "train_timeout_seconds": 1871,
+      "cell_timeout_seconds": 2749
+    },
+    {
+      "id": "sequential-seed-1",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "sequential",
+      "seed": 1,
+      "train_timeout_seconds": 1871,
+      "cell_timeout_seconds": 2749
+    },
+    {
+      "id": "sequential-seed-2",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "sequential",
+      "seed": 2,
+      "train_timeout_seconds": 1871,
+      "cell_timeout_seconds": 2749
+    },
+    {
+      "id": "parallel_joint-seed-0",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "parallel_joint",
+      "seed": 0,
+      "train_timeout_seconds": 1783,
+      "cell_timeout_seconds": 2661
+    },
+    {
+      "id": "parallel_joint-seed-1",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "parallel_joint",
+      "seed": 1,
+      "train_timeout_seconds": 1783,
+      "cell_timeout_seconds": 2661
+    },
+    {
+      "id": "parallel_joint-seed-2",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "parallel_joint",
+      "seed": 2,
+      "train_timeout_seconds": 1783,
+      "cell_timeout_seconds": 2661
+    },
+    {
+      "id": "fixed_joint-seed-0",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "fixed_joint",
+      "seed": 0,
+      "train_timeout_seconds": 1802,
+      "cell_timeout_seconds": 2680
+    },
+    {
+      "id": "fixed_joint-seed-1",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "fixed_joint",
+      "seed": 1,
+      "train_timeout_seconds": 1802,
+      "cell_timeout_seconds": 2680
+    },
+    {
+      "id": "fixed_joint-seed-2",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "fixed_joint",
+      "seed": 2,
+      "train_timeout_seconds": 1802,
+      "cell_timeout_seconds": 2680
+    },
+    {
+      "id": "smooth_joint-seed-0",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "smooth_joint",
+      "seed": 0,
+      "train_timeout_seconds": 2336,
+      "cell_timeout_seconds": 3214
+    },
+    {
+      "id": "smooth_joint-seed-1",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "smooth_joint",
+      "seed": 1,
+      "train_timeout_seconds": 2336,
+      "cell_timeout_seconds": 3214
+    },
+    {
+      "id": "smooth_joint-seed-2",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "smooth_joint",
+      "seed": 2,
+      "train_timeout_seconds": 2336,
+      "cell_timeout_seconds": 3214
+    },
+    {
+      "id": "aioli_objective-seed-0",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "aioli_objective",
+      "seed": 0,
+      "train_timeout_seconds": 2851,
+      "cell_timeout_seconds": 3729
+    },
+    {
+      "id": "aioli_objective-seed-1",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "aioli_objective",
+      "seed": 1,
+      "train_timeout_seconds": 2851,
+      "cell_timeout_seconds": 3729
+    },
+    {
+      "id": "aioli_objective-seed-2",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "aioli_objective",
+      "seed": 2,
+      "train_timeout_seconds": 2851,
+      "cell_timeout_seconds": 3729
+    },
+    {
+      "id": "validation_progress-seed-0",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "validation_progress",
+      "seed": 0,
+      "train_timeout_seconds": 2851,
+      "cell_timeout_seconds": 3729
+    },
+    {
+      "id": "validation_progress-seed-1",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "validation_progress",
+      "seed": 1,
+      "train_timeout_seconds": 2851,
+      "cell_timeout_seconds": 3729
+    },
+    {
+      "id": "validation_progress-seed-2",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "validation_progress",
+      "seed": 2,
+      "train_timeout_seconds": 2851,
+      "cell_timeout_seconds": 3729
+    },
+    {
+      "id": "chord_objective-seed-0",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "chord_objective",
+      "seed": 0,
+      "train_timeout_seconds": 1474,
+      "cell_timeout_seconds": 2352
+    },
+    {
+      "id": "chord_objective-seed-1",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "chord_objective",
+      "seed": 1,
+      "train_timeout_seconds": 1474,
+      "cell_timeout_seconds": 2352
+    },
+    {
+      "id": "chord_objective-seed-2",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "chord_objective",
+      "seed": 2,
+      "train_timeout_seconds": 1474,
+      "cell_timeout_seconds": 2352
+    },
+    {
+      "id": "rpt_inspired-seed-0",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "rpt_inspired",
+      "seed": 0,
+      "train_timeout_seconds": 1693,
+      "cell_timeout_seconds": 2571
+    },
+    {
+      "id": "rpt_inspired-seed-1",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "rpt_inspired",
+      "seed": 1,
+      "train_timeout_seconds": 1693,
+      "cell_timeout_seconds": 2571
+    },
+    {
+      "id": "rpt_inspired-seed-2",
+      "experiment": "01_scratch_joint_objectives",
+      "method": "rpt_inspired",
+      "seed": 2,
+      "train_timeout_seconds": 1693,
+      "cell_timeout_seconds": 2571
+    }
+  ]
+}

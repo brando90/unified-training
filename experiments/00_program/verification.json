@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-10-04T20:14:34.366968+00:00",
+  "tests": {
+    "command": "CUDA_VISIBLE_DEVICES='' python3 -m unittest discover -s experiments/00_program -p 'test_*.py'",
+    "count": 63,
+    "passed": 63,
+    "failed": 0,
+    "exit_code": 0,
+    "log_sha256": "a01df1fb0cc287a769e7b46750e77e9e61f731686e03ebc0d8996735386e5e3a"
+  },
+  "compile": "python3 -m py_compile experiments/00_program/*.py; exit 0",
+  "aioli_counterexample_max_error_bound": 1e-12,
+  "recovery_drill": "dead child retained as interrupted; next pending cell and initial diagnostics completed in artificial process fixture",
+  "real_sampling_scoring_cpu_tolerance": 1e-05,
+  "contamination_audits": "13-word and normalized-question substring; no model/test-score selection",
+  "resource_bound_seconds": 172296.50974934828,
+  "model_reviews": "Original plan FAIL (4 critical/9 major) and implementation FAIL preserved; repairs deterministically reconciled"
+}

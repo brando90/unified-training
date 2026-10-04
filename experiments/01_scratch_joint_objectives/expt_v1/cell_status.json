@@ -1,0 +1,146 @@
+[
+  {
+    "id": "sequential-seed-0",
+    "method": "sequential",
+    "seed": 0,
+    "status": "pending"
+  },
+  {
+    "id": "sequential-seed-1",
+    "method": "sequential",
+    "seed": 1,
+    "status": "pending"
+  },
+  {
+    "id": "sequential-seed-2",
+    "method": "sequential",
+    "seed": 2,
+    "status": "pending"
+  },
+  {
+    "id": "parallel_joint-seed-0",
+    "method": "parallel_joint",
+    "seed": 0,
+    "status": "pending"
+  },
+  {
+    "id": "parallel_joint-seed-1",
+    "method": "parallel_joint",
+    "seed": 1,
+    "status": "pending"
+  },
+  {
+    "id": "parallel_joint-seed-2",
+    "method": "parallel_joint",
+    "seed": 2,
+    "status": "pending"
+  },
+  {
+    "id": "fixed_joint-seed-0",
+    "method": "fixed_joint",
+    "seed": 0,
+    "status": "pending"
+  },
+  {
+    "id": "fixed_joint-seed-1",
+    "method": "fixed_joint",
+    "seed": 1,
+    "status": "pending"
+  },
+  {
+    "id": "fixed_joint-seed-2",
+    "method": "fixed_joint",
+    "seed": 2,
+    "status": "pending"
+  },
+  {
+    "id": "smooth_joint-seed-0",
+    "method": "smooth_joint",
+    "seed": 0,
+    "status": "pending"
+  },
+  {
+    "id": "smooth_joint-seed-1",
+    "method": "smooth_joint",
+    "seed": 1,
+    "status": "pending"
+  },
+  {
+    "id": "smooth_joint-seed-2",
+    "method": "smooth_joint",
+    "seed": 2,
+    "status": "pending"
+  },
+  {
+    "id": "aioli_objective-seed-0",
+    "method": "aioli_objective",
+    "seed": 0,
+    "status": "pending"
+  },
+  {
+    "id": "aioli_objective-seed-1",
+    "method": "aioli_objective",
+    "seed": 1,
+    "status": "pending"
+  },
+  {
+    "id": "aioli_objective-seed-2",
+    "method": "aioli_objective",
+    "seed": 2,
+    "status": "pending"
+  },
+  {
+    "id": "validation_progress-seed-0",
+    "method": "validation_progress",
+    "seed": 0,
+    "status": "pending"
+  },
+  {
+    "id": "validation_progress-seed-1",
+    "method": "validation_progress",
+    "seed": 1,
+    "status": "pending"
+  },
+  {
+    "id": "validation_progress-seed-2",
+    "method": "validation_progress",
+    "seed": 2,
+    "status": "pending"
+  },
+  {
+    "id": "chord_objective-seed-0",
+    "method": "chord_objective",
+    "seed": 0,
+    "status": "pending"
+  },
+  {
+    "id": "chord_objective-seed-1",
+    "method": "chord_objective",
+    "seed": 1,
+    "status": "pending"
+  },
+  {
+    "id": "chord_objective-seed-2",
+    "method": "chord_objective",
+    "seed": 2,
+    "status": "pending"
+  },
+  {
+    "id": "rpt_inspired-seed-0",
+    "method": "rpt_inspired",
+    "seed": 0,
+    "status": "pending"
+  },
+  {
+    "id": "rpt_inspired-seed-1",
+    "method": "rpt_inspired",
+    "seed": 1,
+    "status": "pending"
+  },
+  {
+    "id": "rpt_inspired-seed-2",
+    "method": "rpt_inspired",
+    "seed": 2,
+    "status": "pending"
+  }
+]

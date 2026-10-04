@@ -1,0 +1,668 @@
+{
+  "timestamp": "2026-10-04T19:31:27.557862+00:00",
+  "development_only": true,
+  "experiments": [
+    {
+      "experiment": "01_scratch_joint_objectives",
+      "initial_arc_development": {
+        "accuracy": {
+          "successes": 29,
+          "n": 128,
+          "estimate": 0.2265625,
+          "interval95": [
+            0.16263248458646726,
+            0.30642678837560766
+          ],
+          "method": "Wilson score; development items/groups",
+          "p_value": null
+        },
+        "chance_floor": 0.249609375,
+        "charged_tokens": 17601
+      },
+      "measurements": [
+        {
+          "sft_steps": 0,
+          "sft_charged_tokens": 15256,
+          "signals": [
+            {
+              "prefix_fraction": 0.0,
+              "correctness": {
+                "successes": 0,
+                "n": 128,
+                "estimate": 0.0,
+                "interval95": [
+                  0.0,
+                  0.029136956273508416
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "mixed_groups": {
+                "successes": 0,
+                "n": 32,
+                "estimate": 0.0,
+                "interval95": [
+                  0.0,
+                  0.1071791982550706
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "all_zero_groups": 32,
+              "parser_failures": 1,
+              "truncated": 128,
+              "charged_tokens": 30208,
+              "work": {
+                "development_generation": 30208
+              }
+            },
+            {
+              "prefix_fraction": 0.5,
+              "correctness": {
+                "successes": 0,
+                "n": 128,
+                "estimate": 0.0,
+                "interval95": [
+                  0.0,
+                  0.029136956273508416
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "mixed_groups": {
+                "successes": 0,
+                "n": 32,
+                "estimate": 0.0,
+                "interval95": [
+                  0.0,
+                  0.1071791982550706
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "all_zero_groups": 32,
+              "parser_failures": 1,
+              "truncated": 128,
+              "charged_tokens": 38624,
+              "work": {
+                "development_generation": 38624
+              }
+            },
+            {
+              "prefix_fraction": 0.9,
+              "correctness": {
+                "successes": 0,
+                "n": 128,
+                "estimate": 0.0,
+                "interval95": [
+                  0.0,
+                  0.029136956273508416
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "mixed_groups": {
+                "successes": 0,
+                "n": 32,
+                "estimate": 0.0,
+                "interval95": [
+                  0.0,
+                  0.1071791982550706
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "all_zero_groups": 32,
+              "parser_failures": 2,
+              "truncated": 128,
+              "charged_tokens": 45760,
+              "work": {
+                "development_generation": 45760
+              }
+            }
+          ]
+        },
+        {
+          "sft_steps": 64,
+          "sft_charged_tokens": 875944,
+          "signals": [
+            {
+              "prefix_fraction": 0.0,
+              "correctness": {
+                "successes": 3,
+                "n": 128,
+                "estimate": 0.0234375,
+                "interval95": [
+                  0.008002416396755481,
+                  0.06664374505143222
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "mixed_groups": {
+                "successes": 3,
+                "n": 32,
+                "estimate": 0.09375,
+                "interval95": [
+                  0.032401551298366194,
+                  0.24218154728387864
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "all_zero_groups": 29,
+              "parser_failures": 2,
+              "truncated": 74,
+              "charged_tokens": 30208,
+              "work": {
+                "development_generation": 30208
+              }
+            },
+            {
+              "prefix_fraction": 0.5,
+              "correctness": {
+                "successes": 3,
+                "n": 128,
+                "estimate": 0.0234375,
+                "interval95": [
+                  0.008002416396755481,
+                  0.06664374505143222
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "mixed_groups": {
+                "successes": 3,
+                "n": 32,
+                "estimate": 0.09375,
+                "interval95": [
+                  0.032401551298366194,
+                  0.24218154728387864
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "all_zero_groups": 29,
+              "parser_failures": 5,
+              "truncated": 72,
+              "charged_tokens": 38624,
+              "work": {
+                "development_generation": 38624
+              }
+            },
+            {
+              "prefix_fraction": 0.9,
+              "correctness": {
+                "successes": 3,
+                "n": 128,
+                "estimate": 0.0234375,
+                "interval95": [
+                  0.008002416396755481,
+                  0.06664374505143222
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "mixed_groups": {
+                "successes": 3,
+                "n": 32,
+                "estimate": 0.09375,
+                "interval95": [
+                  0.032401551298366194,
+                  0.24218154728387864
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "all_zero_groups": 29,
+              "parser_failures": 7,
+              "truncated": 70,
+              "charged_tokens": 45760,
+              "work": {
+                "development_generation": 45760
+              }
+            }
+          ]
+        },
+        {
+          "sft_steps": 128,
+          "sft_charged_tokens": 1710088,
+          "signals": [
+            {
+              "prefix_fraction": 0.0,
+              "correctness": {
+                "successes": 1,
+                "n": 128,
+                "estimate": 0.0078125,
+                "interval95": [
+                  0.0013804318928742412,
+                  0.04292625943886061
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "mixed_groups": {
+                "successes": 1,
+                "n": 32,
+                "estimate": 0.03125,
+                "interval95": [
+                  0.005537860164003122,
+                  0.15744263820012558
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "all_zero_groups": 31,
+              "parser_failures": 3,
+              "truncated": 34,
+              "charged_tokens": 30208,
+              "work": {
+                "development_generation": 30208
+              }
+            },
+            {
+              "prefix_fraction": 0.5,
+              "correctness": {
+                "successes": 1,
+                "n": 128,
+                "estimate": 0.0078125,
+                "interval95": [
+                  0.0013804318928742412,
+                  0.04292625943886061
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "mixed_groups": {
+                "successes": 1,
+                "n": 32,
+                "estimate": 0.03125,
+                "interval95": [
+                  0.005537860164003122,
+                  0.15744263820012558
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "all_zero_groups": 31,
+              "parser_failures": 5,
+              "truncated": 26,
+              "charged_tokens": 38624,
+              "work": {
+                "development_generation": 38624
+              }
+            },
+            {
+              "prefix_fraction": 0.9,
+              "correctness": {
+                "successes": 1,
+                "n": 128,
+                "estimate": 0.0078125,
+                "interval95": [
+                  0.0013804318928742412,
+                  0.04292625943886061
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "mixed_groups": {
+                "successes": 1,
+                "n": 32,
+                "estimate": 0.03125,
+                "interval95": [
+                  0.005537860164003122,
+                  0.15744263820012558
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "all_zero_groups": 31,
+              "parser_failures": 5,
+              "truncated": 17,
+              "charged_tokens": 45760,
+              "work": {
+                "development_generation": 45760
+              }
+            }
+          ]
+        }
+      ],
+      "signal_observed": true,
+      "minimum_viable_prefix": 0.0
+    },
+    {
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "initial_arc_development": {
+        "accuracy": {
+          "successes": 47,
+          "n": 128,
+          "estimate": 0.3671875,
+          "interval95": [
+            0.2886845465087532,
+            0.4534299575013975
+          ],
+          "method": "Wilson score; development items/groups",
+          "p_value": null
+        },
+        "chance_floor": 0.249609375,
+        "charged_tokens": 17601
+      },
+      "measurements": [
+        {
+          "sft_steps": 0,
+          "sft_charged_tokens": 15256,
+          "signals": [
+            {
+              "prefix_fraction": 0.0,
+              "correctness": {
+                "successes": 1,
+                "n": 128,
+                "estimate": 0.0078125,
+                "interval95": [
+                  0.0013804318928742412,
+                  0.04292625943886061
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "mixed_groups": {
+                "successes": 1,
+                "n": 32,
+                "estimate": 0.03125,
+                "interval95": [
+                  0.005537860164003122,
+                  0.15744263820012558
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "all_zero_groups": 31,
+              "parser_failures": 11,
+              "truncated": 115,
+              "charged_tokens": 30208,
+              "work": {
+                "development_generation": 30208
+              }
+            },
+            {
+              "prefix_fraction": 0.5,
+              "correctness": {
+                "successes": 3,
+                "n": 128,
+                "estimate": 0.0234375,
+                "interval95": [
+                  0.008002416396755481,
+                  0.06664374505143222
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "mixed_groups": {
+                "successes": 3,
+                "n": 32,
+                "estimate": 0.09375,
+                "interval95": [
+                  0.032401551298366194,
+                  0.24218154728387864
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "all_zero_groups": 29,
+              "parser_failures": 3,
+              "truncated": 113,
+              "charged_tokens": 38624,
+              "work": {
+                "development_generation": 38624
+              }
+            },
+            {
+              "prefix_fraction": 0.9,
+              "correctness": {
+                "successes": 4,
+                "n": 128,
+                "estimate": 0.03125,
+                "interval95": [
+                  0.01221826524505338,
+                  0.07759763126136077
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "mixed_groups": {
+                "successes": 4,
+                "n": 32,
+                "estimate": 0.125,
+                "interval95": [
+                  0.04970134387480073,
+                  0.2806830548165022
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "all_zero_groups": 28,
+              "parser_failures": 4,
+              "truncated": 118,
+              "charged_tokens": 45760,
+              "work": {
+                "development_generation": 45760
+              }
+            }
+          ]
+        },
+        {
+          "sft_steps": 64,
+          "sft_charged_tokens": 875944,
+          "signals": [
+            {
+              "prefix_fraction": 0.0,
+              "correctness": {
+                "successes": 1,
+                "n": 128,
+                "estimate": 0.0078125,
+                "interval95": [
+                  0.0013804318928742412,
+                  0.04292625943886061
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "mixed_groups": {
+                "successes": 1,
+                "n": 32,
+                "estimate": 0.03125,
+                "interval95": [
+                  0.005537860164003122,
+                  0.15744263820012558
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "all_zero_groups": 31,
+              "parser_failures": 5,
+              "truncated": 69,
+              "charged_tokens": 30208,
+              "work": {
+                "development_generation": 30208
+              }
+            },
+            {
+              "prefix_fraction": 0.5,
+              "correctness": {
+                "successes": 1,
+                "n": 128,
+                "estimate": 0.0078125,
+                "interval95": [
+                  0.0013804318928742412,
+                  0.04292625943886061
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "mixed_groups": {
+                "successes": 1,
+                "n": 32,
+                "estimate": 0.03125,
+                "interval95": [
+                  0.005537860164003122,
+                  0.15744263820012558
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "all_zero_groups": 31,
+              "parser_failures": 0,
+              "truncated": 43,
+              "charged_tokens": 38624,
+              "work": {
+                "development_generation": 38624
+              }
+            },
+            {
+              "prefix_fraction": 0.9,
+              "correctness": {
+                "successes": 19,
+                "n": 128,
+                "estimate": 0.1484375,
+                "interval95": [
+                  0.09713463115350009,
+                  0.22022729122631057
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "mixed_groups": {
+                "successes": 10,
+                "n": 32,
+                "estimate": 0.3125,
+                "interval95": [
+                  0.17952541633609734,
+                  0.4856667830095541
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "all_zero_groups": 21,
+              "parser_failures": 0,
+              "truncated": 25,
+              "charged_tokens": 45760,
+              "work": {
+                "development_generation": 45760
+              }
+            }
+          ]
+        },
+        {
+          "sft_steps": 128,
+          "sft_charged_tokens": 1710088,
+          "signals": [
+            {
+              "prefix_fraction": 0.0,
+              "correctness": {
+                "successes": 0,
+                "n": 128,
+                "estimate": 0.0,
+                "interval95": [
+                  0.0,
+                  0.029136956273508416
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "mixed_groups": {
+                "successes": 0,
+                "n": 32,
+                "estimate": 0.0,
+                "interval95": [
+                  0.0,
+                  0.1071791982550706
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "all_zero_groups": 32,
+              "parser_failures": 2,
+              "truncated": 75,
+              "charged_tokens": 30208,
+              "work": {
+                "development_generation": 30208
+              }
+            },
+            {
+              "prefix_fraction": 0.5,
+              "correctness": {
+                "successes": 1,
+                "n": 128,
+                "estimate": 0.0078125,
+                "interval95": [
+                  0.0013804318928742412,
+                  0.04292625943886061
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "mixed_groups": {
+                "successes": 1,
+                "n": 32,
+                "estimate": 0.03125,
+                "interval95": [
+                  0.005537860164003122,
+                  0.15744263820012558
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "all_zero_groups": 31,
+              "parser_failures": 0,
+              "truncated": 28,
+              "charged_tokens": 38624,
+              "work": {
+                "development_generation": 38624
+              }
+            },
+            {
+              "prefix_fraction": 0.9,
+              "correctness": {
+                "successes": 25,
+                "n": 128,
+                "estimate": 0.1953125,
+                "interval95": [
+                  0.1359396128283779,
+                  0.2724407199007913
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "mixed_groups": {
+                "successes": 13,
+                "n": 32,
+                "estimate": 0.40625,
+                "interval95": [
+                  0.2551963484266544,
+                  0.5773997512461713
+                ],
+                "method": "Wilson score; development items/groups",
+                "p_value": null
+              },
+              "all_zero_groups": 19,
+              "parser_failures": 1,
+              "truncated": 12,
+              "charged_tokens": 45760,
+              "work": {
+                "development_generation": 45760
+              }
+            }
+          ]
+        }
+      ],
+      "signal_observed": true,
+      "minimum_viable_prefix": 0.0
+    }
+  ],
+  "all_experiments_signal_observed": true,
+  "selected_rl_prefix_fraction": 0.0,
+  "device_seconds": 322.7051780167967,
+  "admission_threshold_source": "agent-specified engineering feasibility only: at least one mixed-success group among 32 groups of four on development after <=128 SFT steps",
+  "test_evaluation_performed": false,
+  "extra_measured_cells": 0
+}

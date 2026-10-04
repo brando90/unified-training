@@ -1,0 +1,593 @@
+{
+  "final_resource_calibration": true,
+  "timestamp": "2026-10-04T20:04:25.625681+00:00",
+  "smoke": true,
+  "rows": [
+    {
+      "experiment": "01_scratch_joint_objectives",
+      "objectives": [
+        {
+          "objective": "pt",
+          "seconds": [
+            0.375057321973145,
+            0.6539107086136937,
+            1.4748804522678256,
+            0.6687499918043613,
+            0.5569984586909413,
+            0.33986490312963724
+          ],
+          "charged_tokens": [
+            24576,
+            24576,
+            24576,
+            24576,
+            24576,
+            24576
+          ],
+          "maximum_seconds_per_token": 6.001303923615827e-05,
+          "sampling_scoring_logp_gap_mean": []
+        },
+        {
+          "objective": "sft",
+          "seconds": [
+            0.3216893346980214,
+            0.7335455371066928,
+            0.21502120979130268,
+            0.6487456187605858,
+            0.18043555598706007,
+            1.2138504004105926
+          ],
+          "charged_tokens": [
+            15216,
+            13344,
+            20352,
+            12768,
+            12960,
+            13680
+          ],
+          "maximum_seconds_per_token": 8.873175441597899e-05,
+          "sampling_scoring_logp_gap_mean": []
+        },
+        {
+          "objective": "dpo",
+          "seconds": [
+            0.42958281747996807,
+            0.3991002254188061,
+            0.9964483315125108,
+            0.6518806628882885,
+            1.1110569257289171,
+            0.5720995543524623
+          ],
+          "charged_tokens": [
+            64640,
+            61312,
+            63872,
+            65152,
+            64384,
+            61184
+          ],
+          "maximum_seconds_per_token": 1.7256724119795557e-05,
+          "sampling_scoring_logp_gap_mean": []
+        },
+        {
+          "objective": "rl",
+          "seconds": [
+            3.1691060131415725,
+            2.81456386949867,
+            2.5320344734936953,
+            3.279981706291437,
+            2.141002888791263,
+            2.5640369951725006
+          ],
+          "charged_tokens": [
+            65728,
+            28864,
+            28224,
+            26688,
+            30016,
+            26432
+          ],
+          "maximum_seconds_per_token": 0.0001229009931913758,
+          "sampling_scoring_logp_gap_mean": [
+            0.001279802992939949,
+            0.0012838157708756626,
+            0.0012599071487784386,
+            0.00124420749489218,
+            0.0012451110524125397,
+            0.0012575277942232788
+          ]
+        },
+        {
+          "objective": "rpt",
+          "seconds": [
+            2.357719642110169,
+            2.7116568805649877,
+            2.163589959964156,
+            1.99569589830935,
+            3.1522253481671214,
+            1.5070380819961429
+          ],
+          "charged_tokens": [
+            36544,
+            36416,
+            36416,
+            36416,
+            36416,
+            36544
+          ],
+          "maximum_seconds_per_token": 8.656154844483528e-05,
+          "sampling_scoring_logp_gap_mean": [
+            0.0011984051992836215,
+            0.0012238939525559545,
+            0.0012097371509298682,
+            0.0012104904744774103,
+            0.001240345649421215,
+            0.0012189973494969308
+          ]
+        },
+        {
+          "objective": "hybrid",
+          "seconds": [
+            2.2953374227508903,
+            2.6470369240269065,
+            2.2428697515279055,
+            2.2979587707668543,
+            2.107158025726676,
+            2.269361241720617
+          ],
+          "charged_tokens": [
+            77968,
+            75184,
+            67456,
+            75056,
+            67872,
+            78880
+          ],
+          "maximum_seconds_per_token": 3.520745004292012e-05,
+          "sampling_scoring_logp_gap_mean": [
+            0.001237870892509818,
+            0.0012708553695119917,
+            0.001265048427740112,
+            0.0012488602078519762,
+            0.0012231252039782703,
+            0.0012452463270165026
+          ]
+        },
+        {
+          "objective": "parallel",
+          "seconds": [
+            2.553405238315463,
+            1.4902910124510527,
+            2.4317787690088153,
+            2.1651306562125683,
+            2.2764409333467484,
+            2.1332685919478536
+          ],
+          "charged_tokens": [
+            43024,
+            41264,
+            39856,
+            45216,
+            45744,
+            40432
+          ],
+          "maximum_seconds_per_token": 6.1014120057427117e-05,
+          "sampling_scoring_logp_gap_mean": []
+        }
+      ],
+      "checkpoint_seconds": 20.309255979023874,
+      "validation_seconds": 1.4939605062827468,
+      "minimum_update_tokens": 12768,
+      "envelope_seconds_per_token": 0.00017260840620394598,
+      "peak_memory_bytes": 26270220800
+    },
+    {
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "objectives": [
+        {
+          "objective": "pt",
+          "seconds": [
+            0.40054942946881056,
+            1.3222326273098588,
+            0.6799087664112449,
+            1.357728156261146,
+            1.1080473056063056,
+            1.515807218849659
+          ],
+          "charged_tokens": [
+            24576,
+            24576,
+            24576,
+            24576,
+            24576,
+            24576
+          ],
+          "maximum_seconds_per_token": 6.167835363157792e-05,
+          "sampling_scoring_logp_gap_mean": []
+        },
+        {
+          "objective": "sft",
+          "seconds": [
+            1.4872390516102314,
+            0.6480697728693485,
+            1.0301965726539493,
+            1.5179092539474368,
+            0.2421040330082178,
+            0.5691654430702329
+          ],
+          "charged_tokens": [
+            15216,
+            13344,
+            20352,
+            12768,
+            12960,
+            13680
+          ],
+          "maximum_seconds_per_token": 0.00011888387013999349,
+          "sampling_scoring_logp_gap_mean": []
+        },
+        {
+          "objective": "dpo",
+          "seconds": [
+            0.5714941807091236,
+            1.1836432507261634,
+            0.4959964156150818,
+            0.6883956892415881,
+            0.7045917427167296,
+            1.329201896674931
+          ],
+          "charged_tokens": [
+            64640,
+            61312,
+            63872,
+            65152,
+            64384,
+            61184
+          ],
+          "maximum_seconds_per_token": 2.1724664890738282e-05,
+          "sampling_scoring_logp_gap_mean": []
+        },
+        {
+          "objective": "rl",
+          "seconds": [
+            3.2024651058018208,
+            4.300553011707962,
+            4.657248795032501,
+            4.38334889896214,
+            3.3335737884044647,
+            3.128550488501787
+          ],
+          "charged_tokens": [
+            65728,
+            28864,
+            56512,
+            26688,
+            30016,
+            26432
+          ],
+          "maximum_seconds_per_token": 0.00016424418836039195,
+          "sampling_scoring_logp_gap_mean": [
+            0.013031541076105496,
+            0.012082589246215848,
+            0.011234671816541844,
+            0.0054622118178773655,
+            0.004712896392888352,
+            0.005452843611820413
+          ]
+        },
+        {
+          "objective": "rpt",
+          "seconds": [
+            3.319712101481855,
+            4.290179124101996,
+            3.350391222164035,
+            4.385385155677795,
+            3.04647318739444,
+            2.8679849598556757
+          ],
+          "charged_tokens": [
+            36544,
+            36416,
+            36416,
+            36416,
+            36416,
+            36544
+          ],
+          "maximum_seconds_per_token": 0.00012042468024159149,
+          "sampling_scoring_logp_gap_mean": [
+            0.01025152666576632,
+            0.011508725969574522,
+            0.012095228123976773,
+            0.010916060771100659,
+            0.009815602277653974,
+            0.010173274594625917
+          ]
+        },
+        {
+          "objective": "hybrid",
+          "seconds": [
+            3.301098484545946,
+            3.622544027864933,
+            4.509444643743336,
+            3.07756263948977,
+            3.5172271942719817,
+            3.0901855239644647
+          ],
+          "charged_tokens": [
+            77968,
+            75184,
+            67456,
+            75056,
+            67872,
+            78880
+          ],
+          "maximum_seconds_per_token": 6.685016371773209e-05,
+          "sampling_scoring_logp_gap_mean": [
+            0.005342169831100118,
+            0.00041189499584071143,
+            0.006658338295262744,
+            0.005838446817387788,
+            0.006862085868582928,
+            0.007433849205206296
+          ]
+        },
+        {
+          "objective": "parallel",
+          "seconds": [
+            2.5767849488183856,
+            3.156088763847947,
+            5.189418117515743,
+            3.8128559356555343,
+            2.9130313619971275,
+            2.575181232765317
+          ],
+          "charged_tokens": [
+            43024,
+            71216,
+            39856,
+            79264,
+            75952,
+            40432
+          ],
+          "maximum_seconds_per_token": 0.00013020418801474665,
+          "sampling_scoring_logp_gap_mean": []
+        }
+      ],
+      "checkpoint_seconds": 40.34384527709335,
+      "validation_seconds": 3.4819125048816204,
+      "minimum_update_tokens": 12768,
+      "envelope_seconds_per_token": 0.0003269749075786957,
+      "peak_memory_bytes": 30701583360
+    }
+  ],
+  "evaluations": [
+    {
+      "experiment": "01_scratch_joint_objectives",
+      "component_seconds": {
+        "wiki": 7.859329123981297,
+        "preferences": 5.534230741672218,
+        "arc": 42.02524882089347,
+        "gsm": 29.753674891777337
+      },
+      "development_counts": {
+        "wiki": 251,
+        "preferences": 136,
+        "arc": 570,
+        "gsm": 357
+      },
+      "work": {
+        "eval_forward": 339928,
+        "reference": 136416,
+        "eval_generation": 88532
+      }
+    },
+    {
+      "experiment": "02_early_checkpoint_joint_objectives",
+      "component_seconds": {
+        "wiki": 9.871412504464388,
+        "preferences": 11.624131665565073,
+        "arc": 63.942332356236875,
+        "gsm": 45.07930196635425
+      },
+      "development_counts": {
+        "wiki": 251,
+        "preferences": 136,
+        "arc": 570,
+        "gsm": 357
+      },
+      "work": {
+        "eval_forward": 339928,
+        "reference": 136416,
+        "eval_generation": 88532
+      }
+    }
+  ],
+  "source_hashes": {
+    "experiments/00_program/common.py": "8da50d3ca34d93d4ac37d0a331d8d302e16b46d40ad9e2b5b3e293add5fd11cb",
+    "experiments/00_program/training.py": "8119170f3ad2e8f6c7dba2ad45f7edd6d452d6845f82010f5cf7b4a2dd509ca4",
+    "experiments/00_program/objectives.py": "2c28c7367e06eb0bbfa2acd178c074419166fdcf668049445dc7273594de5358",
+    "experiments/00_program/evaluation.py": "8776e70d735ee0e014aa49e7be3cf5339147fa6593aa1ad954d6f1b2280d0e72",
+    "experiments/00_program/calibrate.py": "4a2e74075e0096c9fb0e9b2f0d0214644cabc88098cda2f3be5d180cea36b1f8",
+    "experiments/00_program/final_calibrate.py": "b2d1686b087d2a7afc979235ddb24393d1d00160309407219c4a8f42474fd46b",
+    "experiments/00_program/data_manifest.json": "690236b812ceda2a0eebf4e348c3ebae9521ba0d2e690468f0d8d9317fb9214f",
+    "experiments/00_program/resolve_resources.py": "2fc18f75f33833fe5ee57b3d58857c410a1aa5bb306c5a1603c490725f8f6770",
+    "experiments/00_program/project_schedules.py": "1720ae58bbee972ebed0db7998270c554f26ac8fc51007e93811ba50c14ac215",
+    "experiments/00_program/resolve_condition_caps.py": "f2c83c0010a268579a969e7abd98d7102fc5f771748e5bb90adc0be351069e07"
+  },
+  "source_commit": "f9d1f6b92fcebf7098d25abd89186593f13b36ec",
+  "source_worktree_dirty": true,
+  "environment": {
+    "torch": "2.10.0+cu128",
+    "transformers": "4.57.6",
+    "cuda": "12.8",
+    "parameter_dtype": "torch.float32",
+    "forward_autocast": "torch.bfloat16",
+    "deterministic_gpu_algorithms": false
+  },
+  "smoke_device_seconds": 3109.5097493482754,
+  "resolved_budget_tokens": 19900000,
+  "eval_timeout_seconds": 818,
+  "train_timeouts": {
+    "01_scratch_joint_objectives/sequential": 1871,
+    "01_scratch_joint_objectives/parallel_joint": 1783,
+    "01_scratch_joint_objectives/fixed_joint": 1802,
+    "01_scratch_joint_objectives/smooth_joint": 2336,
+    "01_scratch_joint_objectives/aioli_objective": 2851,
+    "01_scratch_joint_objectives/validation_progress": 2851,
+    "01_scratch_joint_objectives/chord_objective": 1474,
+    "01_scratch_joint_objectives/rpt_inspired": 1693,
+    "02_early_checkpoint_joint_objectives/sequential": 2822,
+    "02_early_checkpoint_joint_objectives/parallel_joint": 2464,
+    "02_early_checkpoint_joint_objectives/fixed_joint": 2681,
+    "02_early_checkpoint_joint_objectives/smooth_joint": 3219,
+    "02_early_checkpoint_joint_objectives/aioli_objective": 3903,
+    "02_early_checkpoint_joint_objectives/validation_progress": 3903,
+    "02_early_checkpoint_joint_objectives/chord_objective": 2274,
+    "02_early_checkpoint_joint_objectives/rpt_inspired": 2650
+  },
+  "finalization_reservation_seconds": 1800,
+  "total_forecast_bound_seconds": 172296.50974934828,
+  "fits_48_hours": true,
+  "scientific_minimum_met": true,
+  "minimum_budget_tokens_for_three_controller_sweeps": 15336192,
+  "rl_prefix_fraction": 0.0,
+  "config": {
+    "learning_rate": 0.0001,
+    "validation_rows": 8,
+    "batch_size": 16,
+    "rl_prompts": 16,
+    "group_size": 4,
+    "max_new_tokens": 128,
+    "eval_batch_size": 32,
+    "budget_tokens": 19900000,
+    "rl_prefix_fraction": 0.0,
+    "controller_window": 64,
+    "checkpoint_every": 256
+  },
+  "limitations": "Slowest weighted mean objective/validation rate plus measured checkpoint overhead, with 2x margin; every timing sample and earlier forecast retained. Batched evaluation remeasured on full development. This is a prospective forecast, not a guaranteed hardware service rate. Final resource bound integrates declared schedules and exact adaptive probe frequencies, with an extra full-sweep reservation. All forecasts are prospective, based on measured means, not guaranteed hardware service.",
+  "resource_selection": {
+    "date": "2026-10-04T20:09:42.297181+00:00",
+    "reason": "Checkpoint writes consumed 20+ seconds and tiny choice batches wasted device throughput. Select a 256-update checkpoint cadence; retain the same objectives/data/three-sweep minimum. Use slowest measured per-action aggregate rate with a 2x margin; retain all individual times and maxima. No model-performance or test-based choice.",
+    "original_measurements_sha256": "ef2aec83a409f04c91df955065a2edfda5cad44fc1adde00a88ae7cd50962758",
+    "original_measurement_source_hashes": {
+      "experiments/00_program/common.py": "8da50d3ca34d93d4ac37d0a331d8d302e16b46d40ad9e2b5b3e293add5fd11cb",
+      "experiments/00_program/training.py": "8119170f3ad2e8f6c7dba2ad45f7edd6d452d6845f82010f5cf7b4a2dd509ca4",
+      "experiments/00_program/objectives.py": "2c28c7367e06eb0bbfa2acd178c074419166fdcf668049445dc7273594de5358",
+      "experiments/00_program/evaluation.py": "f087c9163910e23520ac6336e4d0796420894e900d72ec088cf4112d3bb3ab33",
+      "experiments/00_program/calibrate.py": "4a2e74075e0096c9fb0e9b2f0d0214644cabc88098cda2f3be5d180cea36b1f8",
+      "experiments/00_program/final_calibrate.py": "b2d1686b087d2a7afc979235ddb24393d1d00160309407219c4a8f42474fd46b",
+      "experiments/00_program/data_manifest.json": "690236b812ceda2a0eebf4e348c3ebae9521ba0d2e690468f0d8d9317fb9214f"
+    },
+    "rates": [
+      {
+        "experiment": "01_scratch_joint_objectives",
+        "weighted_mean_action_rates": {
+          "pt": 2.7597804338104954e-05,
+          "sft": 3.751457944694582e-05,
+          "dpo": 1.0932161635398149e-05,
+          "rl": 8.011927996032638e-05,
+          "rpt": 6.34870803974909e-05,
+          "hybrid": 3.132735284555678e-05,
+          "parallel": 5.107035878029906e-05,
+          "validation_upper_rate": 0.00011069654018099783
+        },
+        "checkpoint_frequency": 256,
+        "seconds_per_token_envelope_before_2x_margin": 0.0001169099668075691
+      },
+      {
+        "experiment": "02_early_checkpoint_joint_objectives",
+        "weighted_mean_action_rates": {
+          "pt": 4.329612565041114e-05,
+          "sft": 6.221336194700426e-05,
+          "dpo": 1.3068983286252359e-05,
+          "rl": 9.821439586923956e-05,
+          "rpt": 9.718825771044743e-05,
+          "hybrid": 4.773349633349705e-05,
+          "parallel": 5.782332323242158e-05,
+          "validation_upper_rate": 0.00025799588803212956
+        },
+        "checkpoint_frequency": 256,
+        "seconds_per_token_envelope_before_2x_margin": 0.000270338709587083
+      }
+    ],
+    "batched_development_evaluations": [
+      {
+        "experiment": "01_scratch_joint_objectives",
+        "component_seconds": {
+          "wiki": 8.727457160130143,
+          "preferences": 6.968917106278241,
+          "arc": 27.566430575214326,
+          "gsm": 35.94739093631506
+        },
+        "development_counts": {
+          "wiki": 251,
+          "preferences": 136,
+          "arc": 570,
+          "gsm": 357
+        },
+        "work": {
+          "eval_forward": 388331,
+          "reference": 136416,
+          "eval_generation": 88532
+        }
+      },
+      {
+        "experiment": "02_early_checkpoint_joint_objectives",
+        "component_seconds": {
+          "wiki": 11.4696642216295,
+          "preferences": 9.118922750465572,
+          "arc": 46.66353685222566,
+          "gsm": 44.46645199600607
+        },
+        "development_counts": {
+          "wiki": 251,
+          "preferences": 136,
+          "arc": 570,
+          "gsm": 357
+        },
+        "work": {
+          "eval_forward": 388331,
+          "reference": 136416,
+          "eval_generation": 88532
+        }
+      }
+    ]
+  },
+  "schedule_projection": {
+    "timestamp": "2026-10-04T20:10:51.593551+00:00",
+    "source_packet_sha256": "e6f0c14eaf8775fb6c99e1d26d3419d6e49cf24e175fbbae5c627585c4450701",
+    "rates_seconds_per_token": {
+      "01_scratch_joint_objectives": {
+        "sequential": 3.911791400976521e-05,
+        "fixed_joint": 3.7373506201819024e-05,
+        "smooth_joint": 5.079293035345874e-05,
+        "chord_objective": 2.912809669384979e-05,
+        "parallel_joint": 3.690361972828939e-05,
+        "rpt_inspired": 3.4640076470405875e-05,
+        "aioli_objective": 6.374164003330722e-05,
+        "validation_progress": 6.374164003330722e-05
+      },
+      "02_early_checkpoint_joint_objectives": {
+        "sequential": 5.881665727577422e-05,
+        "fixed_joint": 5.527043937660847e-05,
+        "smooth_joint": 6.878268345331012e-05,
+        "chord_objective": 4.5056669536210304e-05,
+        "parallel_joint": 4.981014575175074e-05,
+        "rpt_inspired": 5.448380792794021e-05,
+        "aioli_objective": 8.597620008747161e-05,
+        "validation_progress": 8.597620008747161e-05
+      }
+    },
+    "partial_cycle_reservations_seconds": {
+      "01_scratch_joint_objectives": 224.9309388367692,
+      "02_early_checkpoint_joint_objectives": 391.6470067460323
+    },
+    "reason": "Respect actual forced 48-probe/64-production cycles. A pure-validation or pure-RL adaptive trajectory is impossible. Use exact floor-simplex rate extrema, 2x timing margin, and extra partial-sweep/checkpoint reservation; unchanged 48-hour and three-sweep requirements."
+  },
+  "condition_timeouts": true,
+  "condition_timeout_selection": {
+    "timestamp": "2026-10-04T20:12:14.332259+00:00",
+    "prior_packet_sha256": "96eaf6be86101c54272823852b82b60f48d740eff02cdbb746764e6de59df1d3",
+    "reason": "Same charged work cap for every cell; condition-specific predeclared infrastructure timeouts from the same 2x rate margin. Summing actual caps avoids pretending all 48 conditions have the slowest adaptive schedule. No test scores, missing cells or post-freeze changes used."
+  }
+}

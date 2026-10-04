@@ -218,3 +218,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Unified-training: large/private experiment artifacts stay in documented cluster storage.
+**/runtime/
+**/private/
+**/data/raw/
+**/data/prepared/
+**/checkpoints/
+**/hf_cache/
+*.safetensors
+*.pt
+*.pth
+*.bin

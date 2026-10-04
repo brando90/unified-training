@@ -1,0 +1,18 @@
+{
+  "requested_model": "claude-opus-5-5",
+  "effort": "max",
+  "effort_evidence": "verified native launch arguments",
+  "actual_init": [
+    {
+      "model": "claude-opus-5-5",
+      "permissionMode": "bypassPermissions"
+    }
+  ],
+  "result_subtype": "success",
+  "is_error": false,
+  "exit_code": 0,
+  "report_sha256": "b36fd53eb0f2f68ab4190fd63104cc54f8eefbf06fac0a3bc1665c71d27779f9",
+  "input_hashes_sha256": "ac70ead83c0e684a0ac224ec18f6daaaee67a02060440194ca8a4cd66b3ce552",
+  "verdict": "FAIL",
+  "disposition": "repairs and deterministic reconciliation in progress; no new reviewer round"
+}
