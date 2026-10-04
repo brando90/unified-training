@@ -771,7 +771,49 @@
     "id": "validation_progress-seed-1",
     "method": "validation_progress",
     "seed": 1,
-    "status": "pending"
+    "status": "complete",
+    "training_mfet": 19.91944,
+    "arc": {
+      "estimate": 0.24663299663299662,
+      "interval95": [
+        0.22971893605266908,
+        0.26436500994404033
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 2376
+    },
+    "gsm": {
+      "estimate": 0.008339651250947688,
+      "interval95": [
+        0.004663054486414855,
+        0.014871757223925433
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 1319
+    },
+    "wiki_nll": 6.681709242581598,
+    "preference_raw": {
+      "estimate": 0.5,
+      "interval95": [
+        0.43920555858906296,
+        0.560794441410937
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    },
+    "preference_implicit": {
+      "estimate": 0.46875,
+      "interval95": [
+        0.4085346505933857,
+        0.5298893404332313
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    }
   },
   {
     "id": "validation_progress-seed-2",
