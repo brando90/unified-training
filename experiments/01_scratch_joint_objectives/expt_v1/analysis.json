@@ -1,5 +1,5 @@
 {
-  "complete": 19,
+  "complete": 20,
   "expected": 24,
   "seed_summary": {
     "sequential": {
@@ -1175,92 +1175,98 @@
     "chord_objective": {
       "arc": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          0.2668350168350168
+          0.2668350168350168,
+          0.2588383838383838
         ]
       },
       "gsm": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
+          0.0,
           0.0
         ]
       },
       "wiki_nll": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          6.428699226022757
+          6.428699226022757,
+          6.372422508299212
         ]
       },
       "preference_raw_accuracy": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          0.48046875
+          0.48046875,
+          0.4765625
         ]
       },
       "preference_implicit_accuracy": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          0.55859375
+          0.55859375,
+          0.5234375
         ]
       },
       "missing_arc_sensitivity": {
-        "observed_seeds": 1,
+        "observed_seeds": 2,
         "expected_seeds": 3,
-        "complete_case_mean": 0.2668350168350168,
+        "complete_case_mean": 0.2628367003367003,
         "all_seed_possible_mean": [
-          0.08894500561167228,
-          0.7556116722783389
+          0.17522446689113355,
+          0.5085578002244668
         ],
         "interpretation": "identification bounds, not a confidence interval; missing accuracy in [0,1]"
       },
       "missing_gsm_sensitivity": {
-        "observed_seeds": 1,
+        "observed_seeds": 2,
         "expected_seeds": 3,
         "complete_case_mean": 0.0,
         "all_seed_possible_mean": [
           0.0,
-          0.6666666666666666
+          0.3333333333333333
         ],
         "interpretation": "identification bounds, not a confidence interval; missing accuracy in [0,1]"
       },
-      "training_seconds": 380.06060293968767,
-      "evaluation_seconds": 88.09521273896098,
+      "training_seconds": 755.0771160125732,
+      "evaluation_seconds": 174.12177775800228,
       "arc_two_stage": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "gsm_two_stage": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "preference_two_stage": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "preference_implicit_two_stage": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "wiki_two_stage": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "controller_iterations": [
+        0,
         0
       ],
       "realized_work_by_seed": [
@@ -1271,6 +1277,14 @@
           "reference": 768224,
           "backward": 11176864,
           "generation": 2309120
+        },
+        {
+          "validation": 67480,
+          "validation_generation": 8712,
+          "forward": 5632400,
+          "backward": 11264800,
+          "generation": 2336960,
+          "reference": 628512
         }
       ]
     },
@@ -3401,17 +3415,34 @@
     {
       "method_minus_baseline": "validation_progress minus chord_objective",
       "benchmark": "arc",
+      "seed": 1,
+      "conditional_item_difference": {
+        "estimate": -0.012205387205387205,
+        "interval95": [
+          -0.03031355218855219,
+          0.005892255892255892
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus chord_objective",
+      "benchmark": "arc",
       "paired_seed_difference": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          -0.025252525252525252
+          -0.025252525252525252,
+          -0.012205387205387205
         ]
       },
       "two_stage_difference": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "primary_contrast": false
@@ -3435,17 +3466,34 @@
     {
       "method_minus_baseline": "validation_progress minus chord_objective",
       "benchmark": "gsm",
+      "seed": 1,
+      "conditional_item_difference": {
+        "estimate": 0.008339651250947688,
+        "interval95": [
+          0.0037907505686125853,
+          0.013646702047005308
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 1319,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus chord_objective",
+      "benchmark": "gsm",
       "paired_seed_difference": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          0.002274450341167551
+          0.002274450341167551,
+          0.008339651250947688
         ]
       },
       "two_stage_difference": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "primary_contrast": false
@@ -3469,17 +3517,34 @@
     {
       "method_minus_baseline": "validation_progress minus chord_objective",
       "benchmark": "preference",
+      "seed": 1,
+      "conditional_item_difference": {
+        "estimate": 0.0234375,
+        "interval95": [
+          -0.05078125,
+          0.09375
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 256,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus chord_objective",
+      "benchmark": "preference",
       "paired_seed_difference": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
+          0.0234375,
           0.0234375
         ]
       },
       "two_stage_difference": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "primary_contrast": false
@@ -3503,17 +3568,34 @@
     {
       "method_minus_baseline": "validation_progress minus chord_objective",
       "benchmark": "preference_implicit",
+      "seed": 1,
+      "conditional_item_difference": {
+        "estimate": -0.0546875,
+        "interval95": [
+          -0.13671875,
+          0.02734375
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 256,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus chord_objective",
+      "benchmark": "preference_implicit",
       "paired_seed_difference": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          0.00390625
+          0.00390625,
+          -0.0546875
         ]
       },
       "two_stage_difference": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "primary_contrast": false
@@ -3537,17 +3619,34 @@
     {
       "method_minus_baseline": "validation_progress minus chord_objective",
       "benchmark": "wiki",
+      "seed": 1,
+      "conditional_item_difference": {
+        "estimate": 0.30929664525489703,
+        "interval95": [
+          0.30371861705166875,
+          0.31460454524011566
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus chord_objective",
+      "benchmark": "wiki",
       "paired_seed_difference": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          0.3669240757760143
+          0.3669240757760143,
+          0.30929664525489703
         ]
       },
       "two_stage_difference": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "primary_contrast": false

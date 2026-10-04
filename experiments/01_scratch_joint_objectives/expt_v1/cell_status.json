@@ -915,7 +915,49 @@
     "id": "chord_objective-seed-1",
     "method": "chord_objective",
     "seed": 1,
-    "status": "pending"
+    "status": "complete",
+    "training_mfet": 19.938864,
+    "arc": {
+      "estimate": 0.2588383838383838,
+      "interval95": [
+        0.2416261005891599,
+        0.2768292167798011
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 2376
+    },
+    "gsm": {
+      "estimate": 0.0,
+      "interval95": [
+        0.0,
+        0.002903944985303654
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 1319
+    },
+    "wiki_nll": 6.372422508299212,
+    "preference_raw": {
+      "estimate": 0.4765625,
+      "interval95": [
+        0.41618039421813385,
+        0.5376375990518288
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    },
+    "preference_implicit": {
+      "estimate": 0.5234375,
+      "interval95": [
+        0.46236240094817116,
+        0.5838196057818662
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    }
   },
   {
     "id": "chord_objective-seed-2",

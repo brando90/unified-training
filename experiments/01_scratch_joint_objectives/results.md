@@ -23,7 +23,7 @@
 | validation_progress | 1 | complete | 19.919 | 0.2466 [0.2297, 0.2644] | 0.0083 [0.0047, 0.0149] | 6.6817 [6.6552, 6.7096] | 0.5000 [0.4392, 0.5608] / 0.4688 [0.4085, 0.5299] |
 | validation_progress | 2 | complete | 19.952 | 0.2496 [0.2326, 0.2674] | 0.0000 [0.0000, 0.0029] | 6.7215 [6.6951, 6.7497] | 0.5117 [0.4508, 0.5723] / 0.5195 [0.4585, 0.5800] |
 | chord_objective | 0 | complete | 19.919 | 0.2668 [0.2494, 0.2850] | 0.0000 [0.0000, 0.0029] | 6.4287 [6.4017, 6.4579] | 0.4805 [0.4200, 0.5415] / 0.5586 [0.4973, 0.6181] |
-| chord_objective | 1 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
+| chord_objective | 1 | complete | 19.939 | 0.2588 [0.2416, 0.2768] | 0.0000 [0.0000, 0.0029] | 6.3724 [6.3460, 6.4014] | 0.4766 [0.4162, 0.5376] / 0.5234 [0.4624, 0.5838] |
 | chord_objective | 2 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
 | rpt_inspired | 0 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
 | rpt_inspired | 1 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
@@ -33,7 +33,7 @@ NLL = negative log likelihood; preference raw ordering is the preference endpoin
 
 Intervals: 95% Wilson binary-item score, conditional on each trained model; p-val=n/a (no hypothesis test). Three seeds do not establish universal superiority. Aioli, CHORD (Controllable Harmonization of On- and Off-Policy Reinforcement Learning via Dynamic Weighting), and RPT (Reinforcement Pre-Training) are declared adaptations; exact CHERRY-RL identity remains unresolved.
 
-Complete: 19/24. See `expt_v1/PROTOCOL.md` and the program review reconciliation.
+Complete: 20/24. See `expt_v1/PROTOCOL.md` and the program review reconciliation.
 
 Seed uncertainty, two-stage seed/item intervals, initial-checkpoint changes and all paired comparisons: `expt_v1/analysis.json`. Missing trained seeds remain missing with separate accuracy sensitivity bounds. p-val=n/a throughout; no formal superiority verdict.
 
