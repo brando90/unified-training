@@ -1,5 +1,5 @@
 {
-  "complete": 13,
+  "complete": 14,
   "expected": 24,
   "seed_summary": {
     "sequential": {
@@ -785,92 +785,98 @@
     "aioli_objective": {
       "arc": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          0.2521043771043771
+          0.2521043771043771,
+          0.25084175084175087
         ]
       },
       "gsm": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
+          0.004548900682335102,
           0.004548900682335102
         ]
       },
       "wiki_nll": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          6.787466824569767
+          6.787466824569767,
+          6.648878683709056
         ]
       },
       "preference_raw_accuracy": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          0.50390625
+          0.50390625,
+          0.51953125
         ]
       },
       "preference_implicit_accuracy": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          0.5703125
+          0.5703125,
+          0.52734375
         ]
       },
       "missing_arc_sensitivity": {
-        "observed_seeds": 1,
+        "observed_seeds": 2,
         "expected_seeds": 3,
-        "complete_case_mean": 0.2521043771043771,
+        "complete_case_mean": 0.251473063973064,
         "all_seed_possible_mean": [
-          0.08403479236812571,
-          0.7507014590347924
+          0.167648709315376,
+          0.5009820426487094
         ],
         "interpretation": "identification bounds, not a confidence interval; missing accuracy in [0,1]"
       },
       "missing_gsm_sensitivity": {
-        "observed_seeds": 1,
+        "observed_seeds": 2,
         "expected_seeds": 3,
         "complete_case_mean": 0.004548900682335102,
         "all_seed_possible_mean": [
-          0.001516300227445034,
-          0.6681829668941117
+          0.003032600454890068,
+          0.33636593378822344
         ],
         "interpretation": "identification bounds, not a confidence interval; missing accuracy in [0,1]"
       },
-      "training_seconds": 346.4587123533711,
-      "evaluation_seconds": 69.24954314623028,
+      "training_seconds": 709.1215755995363,
+      "evaluation_seconds": 141.4651288865134,
       "arc_two_stage": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "gsm_two_stage": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "preference_two_stage": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "preference_implicit_two_stage": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "wiki_two_stage": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "controller_iterations": [
+        5,
         5
       ],
       "realized_work_by_seed": [
@@ -881,6 +887,14 @@
           "backward": 9460480,
           "reference": 2053344,
           "generation": 1969408
+        },
+        {
+          "validation": 607320,
+          "validation_generation": 79136,
+          "generation": 2029888,
+          "forward": 5829808,
+          "backward": 9408992,
+          "reference": 1978880
         }
       ]
     },
