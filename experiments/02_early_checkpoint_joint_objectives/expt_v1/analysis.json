@@ -1,5 +1,5 @@
 {
-  "complete": 17,
+  "complete": 18,
   "expected": 24,
   "seed_summary": {
     "sequential": {
@@ -979,98 +979,169 @@
     },
     "validation_progress": {
       "arc": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.35984848484848486,
-          0.3324915824915825
-        ]
+          0.3324915824915825,
+          0.3354377104377104
+        ],
+        "mean": 0.34259259259259256,
+        "sample_sd": 0.015016466982248552,
+        "interval95": [
+          0.3052896206633324,
+          0.37989556452185275
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "gsm": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.018953752843062926,
-          0.018953752843062926
-        ]
+          0.018953752843062926,
+          0.021986353297952996
+        ],
+        "mean": 0.019964619661359616,
+        "sample_sd": 0.0017508726889753634,
+        "interval95": [
+          0.015615210786038638,
+          0.024314028536680594
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "wiki_nll": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           3.391916080012284,
-          3.3887200218547364
-        ]
+          3.3887200218547364,
+          3.3600241467310656
+        ],
+        "mean": 3.3802200828660287,
+        "sample_sd": 0.017563045698632027,
+        "interval95": [
+          3.3365910587112215,
+          3.423849107020836
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "preference_raw_accuracy": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.59765625,
-          0.59765625
-        ]
+          0.59765625,
+          0.578125
+        ],
+        "mean": 0.5911458333333334,
+        "sample_sd": 0.01127637244510988,
+        "interval95": [
+          0.5631337712896402,
+          0.6191578953770266
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "preference_implicit_accuracy": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.609375,
-          0.51953125
-        ]
+          0.51953125,
+          0.53125
+        ],
+        "mean": 0.5533854166666666,
+        "sample_sd": 0.04884114409768503,
+        "interval95": [
+          0.43205728872401233,
+          0.6747135446093209
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "missing_arc_sensitivity": {
-        "observed_seeds": 2,
+        "observed_seeds": 3,
         "expected_seeds": 3,
-        "complete_case_mean": 0.3461700336700337,
+        "complete_case_mean": 0.34259259259259256,
         "all_seed_possible_mean": [
-          0.23078002244668913,
-          0.5641133557800225
+          0.34259259259259256,
+          0.34259259259259256
         ],
         "interpretation": "identification bounds, not a confidence interval; missing accuracy in [0,1]"
       },
       "missing_gsm_sensitivity": {
-        "observed_seeds": 2,
+        "observed_seeds": 3,
         "expected_seeds": 3,
-        "complete_case_mean": 0.018953752843062926,
+        "complete_case_mean": 0.019964619661359616,
         "all_seed_possible_mean": [
-          0.012635835228708618,
-          0.345969168562042
+          0.019964619661359616,
+          0.019964619661359578
         ],
         "interpretation": "identification bounds, not a confidence interval; missing accuracy in [0,1]"
       },
-      "training_seconds": 1252.659549659118,
-      "evaluation_seconds": 245.6827440308407,
+      "training_seconds": 1824.25087106321,
+      "evaluation_seconds": 374.17175719700754,
       "arc_two_stage": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.3425925925925926,
+        "interval95": [
+          0.3207000561167228,
+          0.3658810325476992
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 2376
       },
       "gsm_two_stage": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.019964619661359616,
+        "interval95": [
+          0.014152135456153651,
+          0.02553070507960573
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 1319
       },
       "preference_two_stage": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.5911458333333334,
+        "interval95": [
+          0.53515625,
+          0.6458333333333334
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 256
       },
       "preference_implicit_two_stage": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.5533854166666666,
+        "interval95": [
+          0.4908528645833333,
+          0.62109375
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 256
       },
       "wiki_two_stage": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 3.3802143364048844,
+        "interval95": [
+          3.3473107082764444,
+          3.4104053782767108
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 564
       },
       "controller_iterations": [
+        5,
         5,
         5
       ],
@@ -1090,6 +1161,14 @@
           "forward": 5740192,
           "backward": 9664576,
           "reference": 1804096
+        },
+        {
+          "validation": 607320,
+          "validation_generation": 78056,
+          "forward": 5598688,
+          "backward": 9830080,
+          "reference": 2080128,
+          "generation": 1721984
         }
       ]
     },
@@ -1292,19 +1371,49 @@
     {
       "method_minus_baseline": "validation_progress minus sequential",
       "benchmark": "arc",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": 0.04419191919191919,
+        "interval95": [
+          0.02356902356902357,
+          0.06440446127946121
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus sequential",
+      "benchmark": "arc",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.06228956228956229,
-          0.06860269360269361
-        ]
+          0.06860269360269361,
+          0.04419191919191919
+        ],
+        "mean": 0.05836139169472503,
+        "sample_sd": 0.01267061048253153,
+        "interval95": [
+          0.026885850362985693,
+          0.08983693302646437
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.058361391694725026,
+        "interval95": [
+          0.03787878787878788,
+          0.0784266273849607
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 2376
       },
       "primary_contrast": true
     },
@@ -1343,19 +1452,49 @@
     {
       "method_minus_baseline": "validation_progress minus sequential",
       "benchmark": "gsm",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": -0.001516300227445034,
+        "interval95": [
+          -0.01288855193328279,
+          0.009855951478392721
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 1319,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus sequential",
+      "benchmark": "gsm",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.0037907505686125853,
-          -0.0075815011372251705
-        ]
+          -0.0075815011372251705,
+          -0.001516300227445034
+        ],
+        "mean": -0.0017690169320192066,
+        "sample_sd": 0.0056903362391699285,
+        "interval95": [
+          -0.01590459577681238,
+          0.012366561912773966
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": -0.0017690169320192064,
+        "interval95": [
+          -0.012383118524134444,
+          0.0075815011372251705
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 1319
       },
       "primary_contrast": false
     },
@@ -1394,19 +1533,49 @@
     {
       "method_minus_baseline": "validation_progress minus sequential",
       "benchmark": "preference",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": 0.0703125,
+        "interval95": [
+          0.0038085937500000056,
+          0.13671875
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 256,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus sequential",
+      "benchmark": "preference",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.06640625,
-          0.01953125
-        ]
+          0.01953125,
+          0.0703125
+        ],
+        "mean": 0.052083333333333336,
+        "sample_sd": 0.028258508351836856,
+        "interval95": [
+          -0.018114692943916245,
+          0.12228135961058292
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.052083333333333336,
+        "interval95": [
+          -0.0078125,
+          0.11461588541666648
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 256
       },
       "primary_contrast": false
     },
@@ -1445,19 +1614,49 @@
     {
       "method_minus_baseline": "validation_progress minus sequential",
       "benchmark": "preference_implicit",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": 0.08984375,
+        "interval95": [
+          0.0078125,
+          0.171875
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 256,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus sequential",
+      "benchmark": "preference_implicit",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.21875,
-          0.01953125
-        ]
+          0.01953125,
+          0.08984375
+        ],
+        "mean": 0.109375,
+        "sample_sd": 0.1010352902841997,
+        "interval95": [
+          -0.14161057482206119,
+          0.3603605748220612
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.109375,
+        "interval95": [
+          0.0013020833333333333,
+          0.2318033854166665
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 256
       },
       "primary_contrast": false
     },
@@ -1496,19 +1695,49 @@
     {
       "method_minus_baseline": "validation_progress minus sequential",
       "benchmark": "wiki",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": -4.0647883853051185,
+        "interval95": [
+          -4.13056089634174,
+          -4.001878651918636
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus sequential",
+      "benchmark": "wiki",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           -6.250008100634114,
-          -4.157150971256047
-        ]
+          -4.157150971256047,
+          -4.0647883853051185
+        ],
+        "mean": -4.823982485731759,
+        "sample_sd": 1.2358375712807543,
+        "interval95": [
+          -7.893973202263673,
+          -1.7539917691998448
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": -4.82398248573176,
+        "interval95": [
+          -6.238082911227847,
+          -4.06459295994151
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 564
       },
       "primary_contrast": false
     },
@@ -1547,19 +1776,49 @@
     {
       "method_minus_baseline": "validation_progress minus parallel_joint",
       "benchmark": "arc",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": -0.01430976430976431,
+        "interval95": [
+          -0.030723905723905723,
+          0.0008522727272726698
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus parallel_joint",
+      "benchmark": "arc",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.011784511784511785,
-          -0.012626262626262626
-        ]
+          -0.012626262626262626,
+          -0.01430976430976431
+        ],
+        "mean": -0.005050505050505051,
+        "sample_sd": 0.014603831290317736,
+        "interval95": [
+          -0.041328433096187146,
+          0.031227422995177046
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": -0.005050505050505051,
+        "interval95": [
+          -0.02245019640852974,
+          0.013611812570145885
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 2376
       },
       "primary_contrast": false
     },
@@ -1598,19 +1857,49 @@
     {
       "method_minus_baseline": "validation_progress minus parallel_joint",
       "benchmark": "gsm",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": 0.004548900682335102,
+        "interval95": [
+          -0.00530705079605762,
+          0.015163002274450341
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 1319,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus parallel_joint",
+      "benchmark": "gsm",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.000758150113722517,
-          0.0075815011372251705
-        ]
+          0.0075815011372251705,
+          0.004548900682335102
+        ],
+        "mean": 0.00429618397776093,
+        "sample_sd": 0.0034186882129059095,
+        "interval95": [
+          -0.004196308336954365,
+          0.012788676292476224
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.00429618397776093,
+        "interval95": [
+          -0.0037907505686125853,
+          0.011877685114986101
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 1319
       },
       "primary_contrast": false
     },
@@ -1649,19 +1938,49 @@
     {
       "method_minus_baseline": "validation_progress minus parallel_joint",
       "benchmark": "preference",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": -0.0078125,
+        "interval95": [
+          -0.0625,
+          0.04306640624999947
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 256,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus parallel_joint",
+      "benchmark": "preference",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           -0.05078125,
-          -0.00390625
-        ]
+          -0.00390625,
+          -0.0078125
+        ],
+        "mean": -0.020833333333333332,
+        "sample_sd": 0.02600909421281013,
+        "interval95": [
+          -0.08544350511827208,
+          0.04377683845160542
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": -0.020833333333333332,
+        "interval95": [
+          -0.06513671875,
+          0.024739583333333332
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 256
       },
       "primary_contrast": false
     },
@@ -1700,19 +2019,49 @@
     {
       "method_minus_baseline": "validation_progress minus parallel_joint",
       "benchmark": "preference_implicit",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": 0.0625,
+        "interval95": [
+          -0.007910156249999994,
+          0.1328125
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 256,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus parallel_joint",
+      "benchmark": "preference_implicit",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.0078125,
-          -0.03125
-        ]
+          -0.03125,
+          0.0625
+        ],
+        "mean": 0.013020833333333334,
+        "sample_sd": 0.04709151385423209,
+        "interval95": [
+          -0.10396097213977716,
+          0.13000263880644383
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.013020833333333334,
+        "interval95": [
+          -0.061230468749999996,
+          0.0859375
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 256
       },
       "primary_contrast": false
     },
@@ -1751,19 +2100,49 @@
     {
       "method_minus_baseline": "validation_progress minus parallel_joint",
       "benchmark": "wiki",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": 0.11764218734785895,
+        "interval95": [
+          0.11328991553981661,
+          0.12203989034039793
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus parallel_joint",
+      "benchmark": "wiki",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.1423080505389375,
-          0.14453929117561234
-        ]
+          0.14453929117561234,
+          0.11764218734785895
+        ],
+        "mean": 0.13482984302080292,
+        "sample_sd": 0.014926695526587588,
+        "interval95": [
+          0.09774987574999724,
+          0.1719098102916086
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.13482984302080295,
+        "interval95": [
+          0.11807630686417067,
+          0.14662350585519995
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 564
       },
       "primary_contrast": false
     },
@@ -1802,19 +2181,49 @@
     {
       "method_minus_baseline": "validation_progress minus fixed_joint",
       "benchmark": "arc",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": -0.026094276094276093,
+        "interval95": [
+          -0.04208754208754209,
+          -0.011353114478114535
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus fixed_joint",
+      "benchmark": "arc",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.013468013468013467,
-          -0.007154882154882155
-        ]
+          -0.007154882154882155,
+          -0.026094276094276093
+        ],
+        "mean": -0.006593714927048261,
+        "sample_sd": 0.019787113744702822,
+        "interval95": [
+          -0.055747630388806396,
+          0.04256020053470988
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": -0.006593714927048261,
+        "interval95": [
+          -0.029605078563411897,
+          0.015575897867564515
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 2376
       },
       "primary_contrast": false
     },
@@ -1853,19 +2262,49 @@
     {
       "method_minus_baseline": "validation_progress minus fixed_joint",
       "benchmark": "gsm",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": 0.0,
+        "interval95": [
+          -0.01061410159211524,
+          0.01061410159211524
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 1319,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus fixed_joint",
+      "benchmark": "gsm",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.00530705079605762,
-          0.009097801364670205
-        ]
+          0.009097801364670205,
+          0.0
+        ],
+        "mean": 0.004801617386909275,
+        "sample_sd": 0.004569911882745799,
+        "interval95": [
+          -0.006550673060822449,
+          0.016153907834640997
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.004801617386909275,
+        "interval95": [
+          -0.003797068486226939,
+          0.012383118524134444
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 1319
       },
       "primary_contrast": false
     },
@@ -1904,19 +2343,49 @@
     {
       "method_minus_baseline": "validation_progress minus fixed_joint",
       "benchmark": "preference",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": -0.01953125,
+        "interval95": [
+          -0.07421875,
+          0.03125
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 256,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus fixed_joint",
+      "benchmark": "preference",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           -0.0078125,
-          0.0078125
-        ]
+          0.0078125,
+          -0.01953125
+        ],
+        "mean": -0.006510416666666667,
+        "sample_sd": 0.013718299157360336,
+        "interval95": [
+          -0.040588560945819856,
+          0.027567727612486524
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": -0.006510416666666667,
+        "interval95": [
+          -0.048177083333333336,
+          0.03515625
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 256
       },
       "primary_contrast": false
     },
@@ -1955,19 +2424,49 @@
     {
       "method_minus_baseline": "validation_progress minus fixed_joint",
       "benchmark": "preference_implicit",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": -0.015625,
+        "interval95": [
+          -0.09375,
+          0.06259765624999947
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 256,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus fixed_joint",
+      "benchmark": "preference_implicit",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.10546875,
-          0.0078125
-        ]
+          0.0078125,
+          -0.015625
+        ],
+        "mean": 0.032552083333333336,
+        "sample_sd": 0.06422584612051314,
+        "interval95": [
+          -0.12699376308970714,
+          0.19209792975637383
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.032552083333333336,
+        "interval95": [
+          -0.05859375,
+          0.11722005208333315
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 256
       },
       "primary_contrast": false
     },
@@ -2006,19 +2505,49 @@
     {
       "method_minus_baseline": "validation_progress minus fixed_joint",
       "benchmark": "wiki",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": 0.11344565200152626,
+        "interval95": [
+          0.10788945283196671,
+          0.11893721602714548
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus fixed_joint",
+      "benchmark": "wiki",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.14966833409025368,
-          0.13872214405170635
-        ]
+          0.13872214405170635,
+          0.11344565200152626
+        ],
+        "mean": 0.13394537671449544,
+        "sample_sd": 0.018577777156340243,
+        "interval95": [
+          0.08779561987820125,
+          0.18009513355078963
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.1339453767144954,
+        "interval95": [
+          0.11419065898915202,
+          0.1501547964252664
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 564
       },
       "primary_contrast": false
     },
@@ -2057,19 +2586,49 @@
     {
       "method_minus_baseline": "validation_progress minus smooth_joint",
       "benchmark": "arc",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": -0.01936026936026936,
+        "interval95": [
+          -0.0361952861952862,
+          -0.002946127946127946
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus smooth_joint",
+      "benchmark": "arc",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.007575757575757576,
-          -0.007575757575757576
-        ]
+          -0.007575757575757576,
+          -0.01936026936026936
+        ],
+        "mean": -0.006453423120089786,
+        "sample_sd": 0.013503040870388288,
+        "interval95": [
+          -0.03999683617078882,
+          0.02708998993060925
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": -0.006453423120089787,
+        "interval95": [
+          -0.024554573512906845,
+          0.012065095398428732
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 2376
       },
       "primary_contrast": false
     },
@@ -2108,19 +2667,49 @@
     {
       "method_minus_baseline": "validation_progress minus smooth_joint",
       "benchmark": "gsm",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": 0.001516300227445034,
+        "interval95": [
+          -0.009097801364670205,
+          0.012130401819560273
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 1319,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus smooth_joint",
+      "benchmark": "gsm",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.001516300227445034,
-          -0.006065200909780136
-        ]
+          -0.006065200909780136,
+          0.001516300227445034
+        ],
+        "mean": -0.0010108668182966893,
+        "sample_sd": 0.004377181722438406,
+        "interval95": [
+          -0.011884389006599128,
+          0.009862655370005748
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": -0.0010108668182966893,
+        "interval95": [
+          -0.009855951478392721,
+          0.007834217841799343
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 1319
       },
       "primary_contrast": false
     },
@@ -2159,19 +2748,49 @@
     {
       "method_minus_baseline": "validation_progress minus smooth_joint",
       "benchmark": "preference",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": 0.0078125,
+        "interval95": [
+          -0.0390625,
+          0.0546875
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 256,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus smooth_joint",
+      "benchmark": "preference",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           -0.01171875,
-          -0.04296875
-        ]
+          -0.04296875,
+          0.0078125
+        ],
+        "mean": -0.015625,
+        "sample_sd": 0.02561499423555469,
+        "interval95": [
+          -0.07925617316920174,
+          0.048006173169201735
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": -0.015625,
+        "interval95": [
+          -0.06253255208333333,
+          0.029947916666666668
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 256
       },
       "primary_contrast": false
     },
@@ -2210,19 +2829,49 @@
     {
       "method_minus_baseline": "validation_progress minus smooth_joint",
       "benchmark": "preference_implicit",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": 0.0,
+        "interval95": [
+          -0.07421875,
+          0.0703125
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 256,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus smooth_joint",
+      "benchmark": "preference_implicit",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.078125,
-          -0.03515625
-        ]
+          -0.03515625,
+          0.0
+        ],
+        "mean": 0.014322916666666666,
+        "sample_sd": 0.057982927287011245,
+        "interval95": [
+          -0.12971465965009216,
+          0.15836049298342547
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.014322916666666666,
+        "interval95": [
+          -0.0625,
+          0.09117838541666648
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 256
       },
       "primary_contrast": false
     },
@@ -2261,19 +2910,49 @@
     {
       "method_minus_baseline": "validation_progress minus smooth_joint",
       "benchmark": "wiki",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": 0.045614242249422926,
+        "interval95": [
+          0.04101747067119148,
+          0.050314089456277446
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus smooth_joint",
+      "benchmark": "wiki",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.07574796263753363,
-          0.07654184281594666
-        ]
+          0.07654184281594666,
+          0.045614242249422926
+        ],
+        "mean": 0.06596801590096774,
+        "sample_sd": 0.01763135382856799,
+        "interval95": [
+          0.022169304944561256,
+          0.10976672685737421
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.06596801590096774,
+        "interval95": [
+          0.04603520016634713,
+          0.07903796772407692
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 564
       },
       "primary_contrast": false
     },
@@ -2312,19 +2991,49 @@
     {
       "method_minus_baseline": "validation_progress minus aioli_objective",
       "benchmark": "arc",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": -0.007996632996632997,
+        "interval95": [
+          -0.022727272727272728,
+          0.006313131313131313
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus aioli_objective",
+      "benchmark": "arc",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.006313131313131313,
-          0.003367003367003367
-        ]
+          0.003367003367003367,
+          -0.007996632996632997
+        ],
+        "mean": 0.0005611672278338942,
+        "sample_sd": 0.007556247480075887,
+        "interval95": [
+          -0.01820959209744694,
+          0.01933192655311473
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.0005611672278338945,
+        "interval95": [
+          -0.012626262626262626,
+          0.014169472502805836
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 2376
       },
       "primary_contrast": true
     },
@@ -2363,19 +3072,49 @@
     {
       "method_minus_baseline": "validation_progress minus aioli_objective",
       "benchmark": "gsm",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": 0.002274450341167551,
+        "interval95": [
+          -0.009097801364670205,
+          0.01288855193328279
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 1319,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus aioli_objective",
+      "benchmark": "gsm",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           -0.004548900682335102,
-          0.001516300227445034
-        ]
+          0.001516300227445034,
+          0.002274450341167551
+        ],
+        "mean": -0.00025271670457417233,
+        "sample_sd": 0.003739865703044918,
+        "interval95": [
+          -0.009543058134739102,
+          0.009037624725590759
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": -0.00025271670457417233,
+        "interval95": [
+          -0.008598685873136214,
+          0.008093252463987835
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 1319
       },
       "primary_contrast": false
     },
@@ -2414,19 +3153,49 @@
     {
       "method_minus_baseline": "validation_progress minus aioli_objective",
       "benchmark": "preference",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": -0.01171875,
+        "interval95": [
+          -0.046875,
+          0.02734375
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 256,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus aioli_objective",
+      "benchmark": "preference",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.015625,
-          -0.02734375
-        ]
+          -0.02734375,
+          -0.01171875
+        ],
+        "mean": -0.0078125,
+        "sample_sd": 0.02174907954230477,
+        "interval95": [
+          -0.06184020868892875,
+          0.04621520868892875
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": -0.0078125,
+        "interval95": [
+          -0.04296875,
+          0.027376302083333155
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 256
       },
       "primary_contrast": false
     },
@@ -2465,19 +3234,49 @@
     {
       "method_minus_baseline": "validation_progress minus aioli_objective",
       "benchmark": "preference_implicit",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": -0.00390625,
+        "interval95": [
+          -0.0703125,
+          0.0625
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 256,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus aioli_objective",
+      "benchmark": "preference_implicit",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.04296875,
-          0.078125
-        ]
+          0.078125,
+          -0.00390625
+        ],
+        "mean": 0.0390625,
+        "sample_sd": 0.04115489747208101,
+        "interval95": [
+          -0.06317193283745956,
+          0.14129693283745956
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.0390625,
+        "interval95": [
+          -0.0234375,
+          0.10029296874999982
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 256
       },
       "primary_contrast": false
     },
@@ -2516,19 +3315,49 @@
     {
       "method_minus_baseline": "validation_progress minus aioli_objective",
       "benchmark": "wiki",
+      "seed": 2,
+      "conditional_item_difference": {
+        "estimate": 0.0022685474171607366,
+        "interval95": [
+          -0.00010304664326966711,
+          0.004743573327847446
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus aioli_objective",
+      "benchmark": "wiki",
       "paired_seed_difference": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.024968152003917117,
-          0.051046193639575695
-        ]
+          0.051046193639575695,
+          0.0022685474171607366
+        ],
+        "mean": 0.026094297686884513,
+        "sample_sd": 0.024408315095971245,
+        "interval95": [
+          -0.034539318325582824,
+          0.08672791369935186
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "two_stage_difference": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.02609429768688452,
+        "interval95": [
+          0.002613428790177946,
+          0.0499033159705761
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 564
       },
       "primary_contrast": false
     },
