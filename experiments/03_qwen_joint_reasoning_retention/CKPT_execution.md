@@ -2,7 +2,7 @@
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/03_qwen_joint_reasoning_retention/CKPT_execution.md>
 Created: 10-05-2026 10:25 PDT
-Last updated: 10-05-2026 18:12 UTC
+Last updated: 10-05-2026 18:23 UTC
 Status: READINESS PASSED; ADMISSION FREEZE IN PROGRESS
 
 LANDED 53539dc52889f58aaa5e19616d70dfec38ad2697 https://github.com/brando90/unified-training/pull/5 10-05-2026 17:55 UTC
@@ -16,6 +16,7 @@ LANDED 94282326b8b34a66de1a4ecd7e4943a294a14739 https://github.com/brando90/unif
 - Readiness passed: 105/128 mixed-success groups (threshold 20), 268 positive and 756 negative rewards, 34/1,024 truncations (3.32%; threshold 10%).
 - PT, SFT, DPO and unassisted on-policy RL development updates all had nonzero gradients with the shared optimizer. The DPO smoke's synthetic negative is technical-only, never released preference training evidence.
 - Device mapping: the completed preparation used physical GPU 0 through `CUDA_VISIBLE_DEVICES=0`; a later fresh probe found all devices idle and establishes the dispatch-provisional physical GPU 1 (`CUDA_VISIBLE_DEVICES=1`, PyTorch logical `cuda:0`) for subsequent campaign work.
-- Next: resolve released preference provenance, verify schedule/controller/recovery behavior, freeze resource accounting and then start the durable supervisor only for admitted cells on physical GPU 1.
+- Rechecked GPU 1 with `CUDA_VISIBLE_DEVICES=1`: a repeat four-objective development smoke completed in 26.08 wall seconds, with all four nonzero optimizer steps. The released UltraFeedback binarized preference schema is locally resolved (`prompt`, `chosen`, `rejected`, scores); preference split selection is still not frozen.
+- Next: freeze released-data splits, schedule/controller/recovery behavior and resource accounting; then start the durable supervisor only for admitted cells on physical GPU 1.
 - Resource limit is a shared new 96 device-hour campaign ceiling, never per experiment or per worker.
 - Actual host/process/run identity and private storage are in the dispatch receipt; update this checkpoint after acknowledgement and every meaningful phase.
