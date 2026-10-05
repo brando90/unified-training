@@ -5,7 +5,7 @@
 | Method | Seed | Status | Training work (million forward-equivalent tokens) | ARC-Easy accuracy | GSM8K exact match | WikiText NLL | Preference raw / implicit accuracy |
 |---|---:|---|---:|---:|---:|---:|---|
 | sequential | 0 | complete | 19.939 | 0.2976 [0.2795, 0.3163] | 0.0152 [0.0098, 0.0233] | 9.6419 [9.5743, 9.7074] | 0.5312 [0.4701, 0.5915] / 0.3906 [0.3329, 0.4516] |
-| sequential | 1 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
+| sequential | 1 | complete | 19.928 | 0.2639 [0.2466, 0.2820] | 0.0265 [0.0191, 0.0367] | 7.5458 [7.4961, 7.5963] | 0.5781 [0.5169, 0.6370] / 0.5000 [0.4392, 0.5608] |
 | sequential | 2 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
 | parallel_joint | 0 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
 | parallel_joint | 1 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
@@ -33,7 +33,7 @@ NLL = negative log likelihood; preference raw ordering is the preference endpoin
 
 Intervals: 95% Wilson binary-item score, conditional on each trained model; p-val=n/a (no hypothesis test). Three seeds do not establish universal superiority. Aioli, CHORD (Controllable Harmonization of On- and Off-Policy Reinforcement Learning via Dynamic Weighting), and RPT (Reinforcement Pre-Training) are declared adaptations; exact CHERRY-RL identity remains unresolved.
 
-Complete: 1/24. See `expt_v1/PROTOCOL.md` and the program review reconciliation.
+Complete: 2/24. See `expt_v1/PROTOCOL.md` and the program review reconciliation.
 
 Seed uncertainty, two-stage seed/item intervals, initial-checkpoint changes and all paired comparisons: `expt_v1/analysis.json`. Missing trained seeds remain missing with separate accuracy sensitivity bounds. p-val=n/a throughout; no formal superiority verdict.
 
