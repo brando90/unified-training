@@ -1,137 +1,62 @@
-# Unified-training master checkpoint: 48-cell pilot running
+# Unified-training master checkpoint: pilots complete
 
-**Doc link:** https://github.com/brando90/unified-training/blob/main/experiments/CKPT_MASTER_tmuxnone_cxd_01a10825.md
-
-**Status:** RUNNING — first measured training admitted; no benchmark result yet.
+**Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/CKPT_MASTER_tmuxnone_cxd_01a10825.md>
+**Status:** COMPLETE SCIENCE — final coordinator publication and safe local synchronization recorded below.
 Created: 10-04-2026 13:21 PDT
-Last updated: 10-04-2026 13:26 PDT
+Last updated: 10-04-2026 23:15 PDT
 
-## 1. Identity and recovery
+## Result and evidence
 
-Coordinator: local Codex desktop, no tmux session; root conversation
-`01a10825-fa64-7aa3-b0e0-2f54d5cf6f04`. Working directory:
-`/Users/brandomiranda/unified-training`; authenticated Codex profile, execution
-model `gpt-6-astra`, reasoning `ultra`, full access, routine approvals disabled.
-Resume with `codex resume 01a10825-fa64-7aa3-b0e0-2f54d5cf6f04` under the verified
-full-access profile. Private host, process, account and recovery details remain
-in private coordinator receipts. The source worker retains exclusive ownership
-of program code and scientific settings; this record is coordinator-owned.
+Both canonical experiments are finished: [experiments/01_scratch_joint_objectives](01_scratch_joint_objectives/README.md) and [experiments/02_early_checkpoint_joint_objectives](02_early_checkpoint_joint_objectives/README.md). All 48 training cells and four untouched initial evaluations completed; no failed, interrupted or missing cells. The [final report](00_program/FINAL_REPORT.md) contains all method means, paired contrasts, initial comparisons, uncertainty and limitations.
 
-## 2. Hazards and scientific boundaries
+The proposed controller improves on sequential training in this pilot but does not establish superiority over mandatory Aioli. Early-checkpoint training lowers observed normalized science-question accuracy from the untouched model in all 24 cells. The exact CHERRY-RL reference remains unresolved. No outcome-driven reruns or scientific changes were made.
 
-The question is whether joint pretraining, supervised fine-tuning (SFT), direct
-preference optimization (DPO), and reinforcement learning (RL) improve on staged
-training and Aioli under the frozen budget. No superiority is established.
-Scratch primary: WikiText token negative log likelihood (NLL). Early-checkpoint
-primary: normalized accuracy on the AI2 Reasoning Challenge (ARC)-Easy benchmark.
-Unassisted mathematical rewards/accuracy are sparse secondary diagnostics.
-The exact “CHERRY-RL” identity remains unresolved; named objective adaptations
-are not full published-paper reproductions. See [plan](00_program/PLAN.md),
-[related work](00_program/related_work.md), and [implementation](00_program/IMPLEMENTATION.md).
+Both requested Claude Code `claude-opus-5-5` / `max` reviews retain original FAIL verdicts. [Reconciliation](00_program/REVIEW_RECONCILIATION.md) and [acceptance](00_program/acceptance.json) document implementer FIXED disposition and narrowed scope. There is no independent post-fix reviewer PASS. The 63-test receipt and final read-only audit provide deterministic evidence; no extra review round was launched.
 
-Both requested Claude Code `claude-opus-5-5` / `max` reviews completed with original
-FAIL verdicts. The implementer's FIXED disposition, 63 passing deterministic tests,
-and coordinator acceptance are recorded in [reconciliation](00_program/REVIEW_RECONCILIATION.md),
-[acceptance](00_program/acceptance.json), [verification](00_program/verification.json),
-[plan review](00_program/PLAN_REVIEW.md), and [implementation review](00_program/IMPLEMENTATION_REVIEW.md).
-There is no invented post-fix reviewer PASS. Do not change frozen settings or
-reinterpret development diagnostics as held-out results.
+## Execution and compute
 
-Local main was safely synchronized to freeze `0bb4ea8c586927c6fc9c5201f00fcffadc044df4`;
-the original 19-file local packet remains preserved in a named stash and archive.
-Do not restore that packet over landed source. Coordinator verification compared
-37 frozen hashes and 35 landed-source hashes: zero mismatches. Private recovery
-receipts retain the precise preservation details.
+The independent supervisor finished normally at 10-04-2026 23:07:51 PDT. Native Codex `gpt-6-astra` / `ultra` had already exited within its original cumulative contract; no automatic continuation was started. Zero of 77 registered execution process identities remained alive at final inspection; the final driver is finished and watchdog is complete. Private host/account/process receipts stay outside Git.
 
-## 3. Owned workers and execution
+Inclusive conservative accounting is 38,468.953629 seconds, or 10.68582 device-hours, against one 48-hour ceiling. This includes retained failed preflight attempts and the entire queue lifetime, including evaluation and publication overhead. It is not hardware utilization telemetry. Every cell retained the frozen 19,900,000 forward-equivalent token target.
 
-The source worker owns `codex/unified-training-experiments`, follows the
-[execution runbook](00_program/execute.md), and maintains the authoritative
-[source checkpoint](00_program/CKPT_unified_training.md) and experiment ledgers.
-Its independently supervised queue continues when the coordinator disconnects.
-At 10-04-2026 13:19:47 PDT, scratch sequential seed 0 had 72 optimizer
-opportunities and 1,784,728 / 19,900,000 charged forward-equivalent token units;
-first measured update: 13:18:53 PDT. Supervisor and detached training child were
-independently verified alive; watchdog reported `training_alive`. Snapshot:
-1 run active, 0/48 complete; later canonical receipts supersede this observation.
+The [audit](00_program/final_verification.json) verified all 52 evaluation filesets, 48 checkpoint/summary receipts, exact item counts/identities, recomputed metrics, prepared inputs and cached model hashes. All 37 frozen and 35 landed source hashes match; zero errors.
 
-[Experiment 01](01_scratch_joint_objectives/README.md) starts Pythia-70m randomly;
-[experiment 02](02_early_checkpoint_joint_objectives/README.md) starts Pythia-160m
-at immutable pretraining step 10000. Each has eight methods × three seeds:
-48 training cells plus four initial evaluations. Every cell receives 19,900,000
-forward-equivalent charged token units; the three-adaptive-sweep minimum remains
-15,336,192. [Freeze](00_program/frozen_program.json) forecasts 172,296.5097 seconds
-against 172,800 seconds, including 3,109.5097 preflight seconds, 52 evaluations
-budgeted at 818 + 60 seconds each, and 1,800 finalization seconds. Method-specific
-infrastructure caps retain the same 2× margin. This is a forecast, not a measured
-completion time or guaranteed service rate. Preserve full-denominator accounting.
+## Publication ownership and synchronization
 
-## 4. Watches and recovery ownership
+The remote source/runtime worker has naturally finished. The root coordinator owns the final documentation publication in an isolated checkout and is the sole writer of the designated local main during its guarded synchronization window. Original scientific source, frozen configurations and reports are unchanged.
 
-Heartbeat `unified-training-finish-reviewed-snap-pilots-and-sync-main` is ACTIVE,
-every 30 minutes in this root chat. It reports meaningful completion, failures,
-required action or changed results; it stops only at verified full completion or
-explicit cancellation. The local app must be available for that heartbeat; the
-remote deterministic queue is independent. The coordinator owns recovery and
-publication checks; source-worker continuation/budget limits remain in its runbook.
+Final generated results were pushed directly by the source worker at `94881e8c8d174793f537b06e942d66e060c401e6`. This final documentation pull request records those results and independent verification, without pretending earlier direct commits were pull-request merges. The original local 19-file draft remains in its verified archive and named stash.
 
-Watch [scratch results](01_scratch_joint_objectives/results.md),
-[early-checkpoint results](02_early_checkpoint_joint_objectives/results.md), both
-[cell ledgers](01_scratch_joint_objectives/expt_v1/cell_status.json)
-([early](02_early_checkpoint_joint_objectives/expt_v1/cell_status.json)), and the
-source checkpoint. Resume the read-only publication watch from an owned checkout:
-`gh pr list --repo brando90/unified-training --head codex/unified-training-experiments --state all --json number,state,url`,
-then inspect the exact returned pull request and fetched canonical checkpoint.
-The native automation tool manages heartbeat recovery; do not create a duplicate.
+Local synchronization must verify clean main, no unpublished commits, exclusive ownership, and no untracked/ignored path collisions before merging the inspected pinned commit with `--ff-only --no-autostash --no-overwrite-ignore`. Never run the original draft-specific synchronization helper again; never reset, clean, switch the user's branch, or restore/drop that stash.
 
-## 5. Decisions waiting on Brando
+## Coordinator schedule and resume
 
-None currently gate this frozen pilot. The unresolved “CHERRY-RL” paper identity
-remains a literature question for later work and does not justify altering this run.
+The existing 30-minute heartbeat is due to be paused after the final report's main landing and safe local synchronization are verified. Its actual state and exact local/main commits are recorded privately after those actions. Do not infer completion from an idle model turn or restart this completed queue. A future scientific follow-up requires a new explicit experiment definition and budget.
 
-## 6. Ranked dispatch list
+User-designated canonical paths are retained because the frozen program and manifests depend on them. They are complete, not active training. No experiment data, checkpoint, failed calibration attempt or original review is deleted as cleanup.
 
-1. Continue the entire admitted frozen queue and preserve failed/interrupted cells;
-   source worker remains responsible under the existing execution runbook.
-2. On meaningful terminal evidence, reconcile all 48 cells and 52 required evaluations,
-   verify artifacts and denominators, and publish the bounded analysis.
-3. After confirmed publication, refresh this record and safely synchronize the
-   coordinator-owned local checkout. No additional reviewer/model dispatch is planned.
+## Historical landed records
 
-## 7. What landed
-
-Source setup [4adbb013e0f7cb233520751240e3785a1ecb8298](https://github.com/brando90/unified-training/commit/4adbb013e0f7cb233520751240e3785a1ecb8298)
-and freeze [0bb4ea8c586927c6fc9c5201f00fcffadc044df4](https://github.com/brando90/unified-training/commit/0bb4ea8c586927c6fc9c5201f00fcffadc044df4)
-were pushed directly to main by the source worker. They did not pass through a
-pull request. This documentation-only coordinator pull request repairs the missing
-durable pull-request record prospectively; it neither rewrites those commits nor
-claims they were pull-request merges. Coordinator record pull request #1 is merged;
-full experiment status remains RUNNING.
+Source setup: `4adbb013e0f7cb233520751240e3785a1ecb8298`.
+Immutable freeze: `0bb4ea8c586927c6fc9c5201f00fcffadc044df4`.
+Program digest: `3d5cf4a383c0269cd4cd033f656f77d08a47bf391dea569690c9554710bd7c80`.
 
 LANDED f721b93259bb1a4cd25fe9a67fdc466096342db2 https://github.com/brando90/unified-training/pull/1 10-04-2026 13:24:37 PDT
 
-The head-matched merge was verified as MERGED. The single required completion
-email for pull request #1 was delivered at 10-04-2026 13:26 PDT; its delivery
-receipt stays in private coordinator receipts. This follow-up only publishes the
-landing record and does not represent another experiment phase or completion.
+Coordinator record-only follow-up #2 merged at `0a7d50ad06e9fd57b711c34bd18663859b0f33d8`. Both pull requests are attached to the task. One phase email was delivered on 10-04-2026 at 13:26 PDT; no duplicate was sent for the record-only follow-up. Final phase landing and email receipt follow after verification.
 
-Rebase safety record: owned backup branch
-`codex/backup-coordinator-record-before-main-07465c92`; previous merge base
-`0bb4ea8c586927c6fc9c5201f00fcffadc044df4`; fetched main
-`07465c9206bb07b66c32170e8b00025e5def9653` (worker's first-training record).
-The backup captures this checkpoint before rebasing; compare both patch series
-and the coordinator-owned file before merging.
+## Remaining actions for this completion phase
 
-## 8. Next commands
+1. Verify and land the final documentation/audit pull request; attach it to this task.
+2. Record its confirmed merge, send one authorized completion receipt, and safely synchronize local main.
+3. Verify all completion evidence, pause this heartbeat, and report the measured negative result without claiming superiority.
 
-Read the authoritative source checkpoint and live ledgers before inferring progress.
-At a landed phase, verify the exact pull-request merge commit and publication
-receipt, then let the root coordinator perform the clean main fast-forward.
-Never infer experimental completion from an idle agent or an exited coordinator.
-
-**TLDR-end:** [unified-training: master checkpoint] The 48-cell pilot is running;
-source and freeze are on main, two original FAIL reviews were reconciled, and no
-held-out superiority result exists yet.
-
-**Snapshot:** 10-04-2026 13:19:47 PDT — 1 active run, 0/48 complete;
-72 optimizer opportunities, 1,784,728 / 19,900,000 charged units in the first cell.
+**TLDR-end:** [unified-training: completed pilots] experiments/01_scratch_joint_objectives and experiments/02_early_checkpoint_joint_objectives have complete verified science. Final coordinator publication and local synchronization close the task; neither a new experiment nor another review is authorized automatically.
+**Snapshot:**
+```text
+Training cells: 48/48; failed/interrupted/missing: 0/0/0
+Untouched initial evaluations: 4/4
+Deterministic tests: 63/63; final artifact audit errors: 0
+Accounted device-hours: 10.68582 / 48
+Generated-results main: 94881e8c8d174793f537b06e942d66e060c401e6
+```

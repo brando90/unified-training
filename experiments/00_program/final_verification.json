@@ -1,0 +1,1271 @@
+{
+  "observed_at": "2026-10-05T06:06:21.818103+00:00",
+  "frozen_program_sha256": "3d5cf4a383c0269cd4cd033f656f77d08a47bf391dea569690c9554710bd7c80",
+  "prepared_splits_verified": 18,
+  "model_file_hashes_verified": 10,
+  "frozen_files_verified": 37,
+  "landed_source_files_verified": 35,
+  "review_evidence_hashes_verified": 5,
+  "tests_receipt": {
+    "command": "CUDA_VISIBLE_DEVICES='' python3 -m unittest discover -s experiments/00_program -p 'test_*.py'",
+    "count": 63,
+    "passed": 63,
+    "failed": 0,
+    "exit_code": 0,
+    "log_sha256": "a01df1fb0cc287a769e7b46750e77e9e61f731686e03ebc0d8996735386e5e3a"
+  },
+  "evaluations": [
+    {
+      "id": "01_scratch_joint_objectives/sequential-seed-0",
+      "summary_sha256": "5d1a9744d3b907d7a044626b106203c14461b6d867c5953a646c25814ec2f939",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 8.372493255009243,
+        "arc": 0.25042087542087543,
+        "gsm": 0.022744503411675512,
+        "preference_raw": 0.5234375,
+        "preference_implicit": 0.4921875
+      },
+      "item_files_sha256": {
+        "wiki": "39646ff7fe243f28154023b5b80deeaef29e36a625abc909306e5bdbeba16fd2",
+        "preferences": "76f1ee4f3ffe506b70521b3e490f000b2ffd982f8700984527ebaedf4100d892",
+        "arc": "c97a25c5bd38cbad8a5e86d03bb6e5864ac4fb440b666ed713c921a6fa92b7a4",
+        "gsm": "82d50f52a2b708dcd3e0e889a43e420d448c8a5303fd10bc9804a0773468f6cd"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/sequential-seed-1",
+      "summary_sha256": "6366c18ed61bfb46e3e9394980ea4c99fa6ee53cf319334d41fe915f2daf7de6",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 8.370064360883667,
+        "arc": 0.2415824915824916,
+        "gsm": 0.02350265352539803,
+        "preference_raw": 0.53125,
+        "preference_implicit": 0.46875
+      },
+      "item_files_sha256": {
+        "wiki": "3cb0919c4d280f7d9a972f28308278cfdf6d0ff38fb7fba9332700edc33b7888",
+        "preferences": "1b57764f4f405dcf0ca1a6865e2f95940f0cb59ed0c1a3a412b7252a24ddf826",
+        "arc": "523464e73f6f963040ccb216d89dbd8d8624029db3f2b0146068f27a0942da12",
+        "gsm": "8018d8f20ae24b4914301087cbb76d17af5a24fefb612bb5797abb7a506c03f5"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/sequential-seed-2",
+      "summary_sha256": "b2e88908ed05ddd67186940022aa5f4b927511c9fd909a6687d4e789636a8092",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 8.85622001461926,
+        "arc": 0.257996632996633,
+        "gsm": 0.011372251705837756,
+        "preference_raw": 0.51171875,
+        "preference_implicit": 0.50390625
+      },
+      "item_files_sha256": {
+        "wiki": "bdba80b38584c147500a47362bd49818803f84728d0deaa4849566919f697671",
+        "preferences": "8cec8f69c656b4f4ebc57cc22c7df15caa7cabfe9692cd11011e8e9ed53855a6",
+        "arc": "c813a9e178371f29d6db6a0e3021554468e0e37746d461ea3f9a04ecd4fefc06",
+        "gsm": "ae1fde03193f1382a72a4310a4e61821eb2d2ee9fbb80a232f3966c2824b7f43"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/parallel_joint-seed-0",
+      "summary_sha256": "ad484db4cb2051985ec341222253ab643f440b808bd53521b635440ad02dd309",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.252135274351983,
+        "arc": 0.24537037037037038,
+        "gsm": 0.0037907505686125853,
+        "preference_raw": 0.484375,
+        "preference_implicit": 0.5
+      },
+      "item_files_sha256": {
+        "wiki": "a9b917f48dbf555536ba0d52bd159ec7806bbf0532166a62d5373ecfa6bb4e25",
+        "preferences": "dd097ef884f7158dc1f6bf9927bbabd77bdf13a7f78b2870d7a2d58cad0303b9",
+        "arc": "f1f0a681129c4368dc448817e270a8fd244bc964c2ec952d5098e57265a5786a",
+        "gsm": "15cfbece11778716474f0a560545b8a4988a687173e0d536818f1b1460427716"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/parallel_joint-seed-1",
+      "summary_sha256": "6d5b7b3da30ca46137daff028f9a827df1bf691884342e99edf146f9d6a49103",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.22553103004824,
+        "arc": 0.25336700336700335,
+        "gsm": 0.02122820318423048,
+        "preference_raw": 0.50390625,
+        "preference_implicit": 0.5390625
+      },
+      "item_files_sha256": {
+        "wiki": "31befd781098eac2991d861981e51e3fec59fa1e6735c8e3e8dda035f5661199",
+        "preferences": "15830ade6e4bd7dfc45c3cfd5a18ad4c24f23645cbca80496879a33037e578cb",
+        "arc": "462124795467c0a785fbf347b0d7498e0fc7fd03163d864f775c04a01701b84d",
+        "gsm": "45f9635d93dc62ef599f53e97b467cdb6246d056ef709a05b6860afbfde242e4"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/parallel_joint-seed-2",
+      "summary_sha256": "888b8367af180be91f17e1d59d8712a94be5427fc4dce49b8a8ec6db20eb0184",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.2257697771071445,
+        "arc": 0.25042087542087543,
+        "gsm": 0.003032600454890068,
+        "preference_raw": 0.5,
+        "preference_implicit": 0.4609375
+      },
+      "item_files_sha256": {
+        "wiki": "e5b7277aee4771ad1858ba5b39aff960ffe342f1816f75f91230a29a288ba4fa",
+        "preferences": "2da52419ed31ada939f048de13b5d24c321364eebb7e39c708b8e96738a1dec7",
+        "arc": "ff21faed7c5810f4e20b14a9010800f4311b7128ff6e1caae16af024770e876a",
+        "gsm": "10c06de65f2d2b357e86bd793c562e1890102d7380cdb1cfa2c940bdafbb9205"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/fixed_joint-seed-0",
+      "summary_sha256": "518fa9ac8720a995c02cd8c1e7aa10ad6fa0f885e1dbb1d08d44b3f1daf55312",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.007205662812643,
+        "arc": 0.24494949494949494,
+        "gsm": 0.003032600454890068,
+        "preference_raw": 0.50390625,
+        "preference_implicit": 0.4921875
+      },
+      "item_files_sha256": {
+        "wiki": "78ca69099fdc1cce3d33ddf6c52cb42c53c67cf67254f1b5668abad9c677e327",
+        "preferences": "452dc66fc81289b8b03fa3003c3d66294da7ed24b0eae2e1ba039cde6352a270",
+        "arc": "c0919aeff7eb3cb1d66003b63cd0587e663e67bfa944efa95d9975c4d7958e43",
+        "gsm": "c8e46d0591a9d06eea03ca99a4973a5d48cbd719d6f049b525ace0794dd999b2"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/fixed_joint-seed-1",
+      "summary_sha256": "41308688522616b9a6baa7092491bae95158c2f212f36ee12b0756ddb162dd1f",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.0337406608784825,
+        "arc": 0.2563131313131313,
+        "gsm": 0.008339651250947688,
+        "preference_raw": 0.5,
+        "preference_implicit": 0.546875
+      },
+      "item_files_sha256": {
+        "wiki": "daacbb6c98de3acecd83c27f39761c044c6917fb8f47313bb8c743f466bea77a",
+        "preferences": "f5db4c28bb41885d5a74ee67de595f04b0b0df4405d8cd9d86c739ef9d0867ed",
+        "arc": "69dbdc81c79a67c8f5b7db087dd409c39affa585609caa38dbb316da67b0daa4",
+        "gsm": "63e3d0f95802a949bf375b1b898488ebbacf63e71f45d8002b9b3ec25da48438"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/fixed_joint-seed-2",
+      "summary_sha256": "7f56aacd1f9c583ca3891a012cb5d79b54646b03e6d310a5a9a70f11bae5451f",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.0434756418489375,
+        "arc": 0.24494949494949494,
+        "gsm": 0.002274450341167551,
+        "preference_raw": 0.51171875,
+        "preference_implicit": 0.53125
+      },
+      "item_files_sha256": {
+        "wiki": "67a30b02a83ae50d3a18ca2f21c23f2417c3df29bc9d998e7a849ae1c03f1bc1",
+        "preferences": "7cf8394099ef245354f143482267b91c8a9fafe1ed9854cfc8e8035085f43762",
+        "arc": "7d75e0336c34cdb10960e4c26bd0600c42e46dcf0d1f01468f3240164eb55bd1",
+        "gsm": "aab0357a83936d51c046b71e890260cae6cb7e1892229e61e34d4f81f9ba7bdc"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/smooth_joint-seed-0",
+      "summary_sha256": "9c455f8e7c7cdc03229ee3896c7c719283f67c536467cba4a8865204478fb322",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.205926589034379,
+        "arc": 0.25126262626262624,
+        "gsm": 0.003032600454890068,
+        "preference_raw": 0.48046875,
+        "preference_implicit": 0.4921875
+      },
+      "item_files_sha256": {
+        "wiki": "12f12df443dc534bc8d144d547a49ff236bebeebc8cf398f66d0b3f10323c7d5",
+        "preferences": "95f4a89f6cf980afa24c05d4a934b4b4e3fa9e331141e1cda62e7f9a1cd77c69",
+        "arc": "aa82211a74b91820003acd9f84b87ca352b3ef2407ad59e3861dcabec3d54c48",
+        "gsm": "a18e41dec365b280f49e4100636cf1b85f372f198fa95d6fe0c2f753d84a0879"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/smooth_joint-seed-1",
+      "summary_sha256": "5b9ea375f1234d4b1473942f88ccdea95c5b5b63c2924818299a4bda463f6ab3",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.200583599271331,
+        "arc": 0.25547138047138046,
+        "gsm": 0.006823351023502654,
+        "preference_raw": 0.5078125,
+        "preference_implicit": 0.5
+      },
+      "item_files_sha256": {
+        "wiki": "07bd80d1f15921f16d9c75d7476918c39fafde8ef33bbc2234f98f9570523cfc",
+        "preferences": "a103ddf335f4626bc7e1c9253aef978a4303397cbec7d2dae088d406d8d355af",
+        "arc": "f0ee79ac4a323e21024c5a57ced5e3480c8484290ecf8a95791938def89deb19",
+        "gsm": "80644b7664c21101623ac4de419cdd1ed27ea8da9db2b29dea2254e82f02edc6"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/smooth_joint-seed-2",
+      "summary_sha256": "e6a4ff89503d824d70721ec78b702e3c6469d117f7f0d25478257c31003362fb",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.217626570000497,
+        "arc": 0.25252525252525254,
+        "gsm": 0,
+        "preference_raw": 0.5234375,
+        "preference_implicit": 0.55078125
+      },
+      "item_files_sha256": {
+        "wiki": "233b23eb829054a38a9dca66caabe7d8cdebd521f5bbcf963b4f1cde12d00307",
+        "preferences": "77f25552d397dd7770821fa81f2ab04010c0c25bbe0c6cac5dfac725b99c8c96",
+        "arc": "ac176065c95d1b1cbfd1a23e3bacbf5c3d267618e9cd47aabe62ed12bec373eb",
+        "gsm": "782fff760d9959dcbc7a2946e58d2a50b5e71cf2171be092442ba3c305747f99"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/aioli_objective-seed-0",
+      "summary_sha256": "8926db703921e2f349da1696fa17725ae9d987ea2e525cba1b48d37c8e232bdd",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.787466824569767,
+        "arc": 0.2521043771043771,
+        "gsm": 0.004548900682335102,
+        "preference_raw": 0.50390625,
+        "preference_implicit": 0.5703125
+      },
+      "item_files_sha256": {
+        "wiki": "ca9fb9b4cce3117f334e7685742682a84ee795db1eb668705216ddf1b12bd3be",
+        "preferences": "1213065aa27223f5615c63e71b4bf1ebbeeaa330a14656a3313a52d698fed7d0",
+        "arc": "e3ba49a6282c8ba8d7f61f4244c0cf89adb8b00bb8c4eb63ab8ae6d1cdd9c4eb",
+        "gsm": "5206d7fc42e0006d00d884b6c61adcb8f1ada86a5215fd1be7a48ca550586cf9"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/aioli_objective-seed-1",
+      "summary_sha256": "4414397c06cf0d4c3900248698fc9076f90b3b2cbe4a5b8fda70abe43f89189f",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.648878683709056,
+        "arc": 0.25084175084175087,
+        "gsm": 0.004548900682335102,
+        "preference_raw": 0.51953125,
+        "preference_implicit": 0.52734375
+      },
+      "item_files_sha256": {
+        "wiki": "28d469abd838b98824fc3242d29a29360aebc372af8956bd2ada07837cebfa63",
+        "preferences": "296f78971e1d3666bde9d31ce7c4fd1cf95f115a6e99fc87a82be5eefdf7c440",
+        "arc": "673f6147a38201865c1a12db41b0eccf7d78e5ef4c2cc744e55b36bbd96493b1",
+        "gsm": "815b62519b9ce47ade76e89e92ea54e5f70965a9eefcda110e90ebef7bc41da2"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/aioli_objective-seed-2",
+      "summary_sha256": "f7c987318c16c1f72af7cffb57640f59829881494a66efb7b6d4e0f53c96ebe5",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.702750650420353,
+        "arc": 0.24116161616161616,
+        "gsm": 0.003032600454890068,
+        "preference_raw": 0.5234375,
+        "preference_implicit": 0.54296875
+      },
+      "item_files_sha256": {
+        "wiki": "c89994ca8585fd75e79237e8cd5571700ac683604629d761a4d7d25136928b00",
+        "preferences": "abcfc9592b3900a936aa9068ceb5c8a88824871a8fe3f8cb0736e0f83d795ec2",
+        "arc": "1e7f894f0cd43d87359ffb8985624103d832cc24b96a8b1787defacd9381a634",
+        "gsm": "f3431cf72c5d405f2f58c7c6906471ceec0dcd880b029f725ba7c912479ae548"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/validation_progress-seed-0",
+      "summary_sha256": "aba3bccf2591174638a679d43396cda88d31c19e67835a2c6dea025bc8fe2eff",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.79562343340882,
+        "arc": 0.2415824915824916,
+        "gsm": 0.002274450341167551,
+        "preference_raw": 0.50390625,
+        "preference_implicit": 0.5625
+      },
+      "item_files_sha256": {
+        "wiki": "7a1ae6cfbc680338b3054a4e23139d2fe2e4c9c1d226acf253e664321f5a5959",
+        "preferences": "4cb8889d7ba369cd339b0141291d08d8803428fb4b66ce7517b4920fefe84aa7",
+        "arc": "d329c657d944ef981708fb07128fe14f15adeeef930665b7829027113705f8b3",
+        "gsm": "8ce0f3f2d024e4d2c609649c1526de58214539a259921ba47df144ff3e2ba804"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/validation_progress-seed-1",
+      "summary_sha256": "2949de221c68d52351dc7bae7e2b9bce94c5137236e458cb7150b106b93f0c00",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.681709242581598,
+        "arc": 0.24663299663299662,
+        "gsm": 0.008339651250947688,
+        "preference_raw": 0.5,
+        "preference_implicit": 0.46875
+      },
+      "item_files_sha256": {
+        "wiki": "68f61d939614fce51724301975853783aa2c719ce1bcee76870be9e576aef590",
+        "preferences": "6cb2b143fccce0bb14f05818ceddd859c9bd64fc5548d82c6451bbd6e1462adc",
+        "arc": "e5cdbfbe68217e394935e7b5624162d3e7f6c86e5e4cfff9cfd32414e9e04e83",
+        "gsm": "2091f480219d24ce3a31228e2644b423237bc4cad54aebb75afe38c541285d2c"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/validation_progress-seed-2",
+      "summary_sha256": "2c2ce16078644d3d348b0b11d24073b67e595025c4584d25398b870dd4ba68db",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.7214737652810586,
+        "arc": 0.24957912457912457,
+        "gsm": 0,
+        "preference_raw": 0.51171875,
+        "preference_implicit": 0.51953125
+      },
+      "item_files_sha256": {
+        "wiki": "836769f76aaabf896ba6a0756746629b4282c9064cf2143584fe02891576ba1b",
+        "preferences": "01e0cba4ad0eb4783f8e2a45ecd5d5081f70a2e608beceaaf073bbbc36854609",
+        "arc": "096d05304d8ea600b78c28126690bf02391a1444c5aeb6495d4717be9ea6ad74",
+        "gsm": "19e106034052325a8af4da017bfde40546d0cb715a55da48a518da50aae6de3d"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/chord_objective-seed-0",
+      "summary_sha256": "967628076224846f6eae91519d9266fd3be3650cc71e5e2898c5ab856388dfd4",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.428699226022757,
+        "arc": 0.2668350168350168,
+        "gsm": 0,
+        "preference_raw": 0.48046875,
+        "preference_implicit": 0.55859375
+      },
+      "item_files_sha256": {
+        "wiki": "d9f677ebda99feeb364566055ea1bd61d289deb34d59f77b5d90ff87b629e5aa",
+        "preferences": "9c23db5f57f59e781dbd6c085a0670f55ca2dd1cf18a540ebeee3cef4897563e",
+        "arc": "36be4cf648c7f2d29b197d6deb828f0f6c59b32aa45f54d9cabf6e8613715c6e",
+        "gsm": "6028540cfaa4f5e95af0dc360402388a38036492f4891025f55a4e1485256ec4"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/chord_objective-seed-1",
+      "summary_sha256": "b77b5dcc85e6cee1d02aa687be39097d9293f368a31e5b6571b067f9a3f63a94",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.372422508299212,
+        "arc": 0.2588383838383838,
+        "gsm": 0,
+        "preference_raw": 0.4765625,
+        "preference_implicit": 0.5234375
+      },
+      "item_files_sha256": {
+        "wiki": "60d5178f825dd14bcf7afd2a9a2e734c5113499372ac78e4568352692b2fb103",
+        "preferences": "a699de7ed48f5b5e69f58996dd7efcda222cfa6818cde31580c031566e5a1d8e",
+        "arc": "97d852798051e342bad8e30fcce0360433499101f18205272bda2163fcc51e18",
+        "gsm": "34477598b8edabffb01b7d772e0ef62efe786c1c636ea7dd6f4b38ac4db8fae1"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/chord_objective-seed-2",
+      "summary_sha256": "513b150835a2c4a3206269d7176b3f026b15c2dfe67fe9039e40f97705355d79",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.397196175762027,
+        "arc": 0.2588383838383838,
+        "gsm": 0,
+        "preference_raw": 0.48046875,
+        "preference_implicit": 0.5625
+      },
+      "item_files_sha256": {
+        "wiki": "f86875d337ade5c775c8201674ce92e614f2518da2a3115a5335100a3199678d",
+        "preferences": "cf32bacc37d0e54e66d55cdce40ea872c08b78269bed077e9d46472e4137a803",
+        "arc": "502e582bf09bfb9fc3ec84f9cc8dc44bdeb11171a331a43f26b40911220faca9",
+        "gsm": "38bd004c212f071e82775bae44b9fe7d606eeadc970f5306dff03524c427fb67"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/rpt_inspired-seed-0",
+      "summary_sha256": "df1ad6abdaf45798b0ec8749806008344e9d3c50614090dfdcc29a0cdbcee728",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 5.975102522829273,
+        "arc": 0.24663299663299662,
+        "gsm": 0.006065200909780136,
+        "preference_raw": 0.484375,
+        "preference_implicit": 0.453125
+      },
+      "item_files_sha256": {
+        "wiki": "1ee9740e2f55a1a5baee0870839c3e20f8b3c629e8f7c3897a0f072fb41d3bb4",
+        "preferences": "94404760cb6ed86da77ffb279a1d44408a05d3094a7fed95aa580fbd33d072c9",
+        "arc": "742adb73c742391e7479284c87f6232b3fb5ce01937e01e73ac41aa09a4b559a",
+        "gsm": "aeb00b8946eb6063bbbaf08fbec23cde61067fc273ee7caf2e9cd7c308aea5fd"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/rpt_inspired-seed-1",
+      "summary_sha256": "3a0ef6e58c99b79a4382fe73074a30e758075a2699f8c1efe4100b2915a0c74c",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.011913475867081,
+        "arc": 0.2542087542087542,
+        "gsm": 0.013646702047005308,
+        "preference_raw": 0.515625,
+        "preference_implicit": 0.48828125
+      },
+      "item_files_sha256": {
+        "wiki": "f776f8f701a4a5d84189bbf11a6651710bbd936712e5ebefb1704bdd44c70160",
+        "preferences": "b614819ae4c850f20febfb428405133ade93d9afcb757d3ca1f979de8f153dd9",
+        "arc": "799a8d14d1f7c5aa8cb41dabcf19bf1a0a67a71068287ce7c7b6ba69f3286317",
+        "gsm": "5f89f1627bf6b100f3ca58f50a94cfb23bcacb9814ce74e4eb0afcf9fa08a08b"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/rpt_inspired-seed-2",
+      "summary_sha256": "6df9c63ff7cb3a55e1a6669f0bf264b8a4cc9b1e78260557464bc1359cbadc20",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 6.021611510147265,
+        "arc": 0.24579124579124578,
+        "gsm": 0,
+        "preference_raw": 0.50390625,
+        "preference_implicit": 0.5546875
+      },
+      "item_files_sha256": {
+        "wiki": "e814e9862a563020f951b4b3af4878e2113fdf5681cd31a98360f2e5a23492c4",
+        "preferences": "d6056bf59ec774b663a654cf01d8bc167272d367cc8d9e2ba5a9897dcf3f90d2",
+        "arc": "f1ec5af8d741097a53d15ec25d433801d81fd82ccae25e7660498bc6e5095831",
+        "gsm": "925174cae33f9732912a4f5f0c2d7ee0baf134ecc6fdffd55503c5d42cd0086a"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/initial-seed-0",
+      "summary_sha256": "38c44198552e0a15ffd2a956c7f6151ced351705056ea546053580dad27c6645",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 10.92222253001717,
+        "arc": 0.2647306397306397,
+        "gsm": 0.002274450341167551,
+        "preference_raw": 0.45703125,
+        "preference_implicit": 0
+      },
+      "item_files_sha256": {
+        "wiki": "92ba31cf4ed665777fbca298b10375a0ec5d0aa796b7c5906bcef5e6e54ff815",
+        "preferences": "b9ca0972698518e0056eeeaae3d0fa57f50fd109923866d49e8846ab6b8efecc",
+        "arc": "1917eb3c579527534e8e32849f9767ba8110d3179198114e29cfa2471469ee1d",
+        "gsm": "cbf6f7b357b41c63e091bffbb923036626d917ad01da0b1de720bf60dabf86ff"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/initial-seed-1",
+      "summary_sha256": "a36bd55e538a8cf721f76358160685d0a2aef2c7c2fe749c4bfc39f4bb37d378",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 10.930294593902802,
+        "arc": 0.2542087542087542,
+        "gsm": 0.0037907505686125853,
+        "preference_raw": 0.55078125,
+        "preference_implicit": 0
+      },
+      "item_files_sha256": {
+        "wiki": "ea0a70ca186a5e8ca4ca62acc10eddc8894b064e08b6aa4f12cdef463fafdab7",
+        "preferences": "85d4ec540994de2b0c20b8e7b1ca069f7d7dff6481eea072fe67c7f566bdd643",
+        "arc": "d471304440887c7144889ead11d9782d819e3d47c341c4b96cc36982d511fa83",
+        "gsm": "3e051c078951b7a730af1ce7f599914303c3a3581a4726281a123da7eac17de2"
+      }
+    },
+    {
+      "id": "01_scratch_joint_objectives/initial-seed-2",
+      "summary_sha256": "61e402dbb603f92751d54f596cf02266af606703b132288df6a9d5e01920ad06",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 10.928321905999704,
+        "arc": 0.2297979797979798,
+        "gsm": 0.001516300227445034,
+        "preference_raw": 0.5,
+        "preference_implicit": 0
+      },
+      "item_files_sha256": {
+        "wiki": "32433e267e39279b5d664698cba74656f494b5e7029d52290441ed36551d30c3",
+        "preferences": "c008fe8440c7a0bb57faf71d6226299e2ca18f80ff5127fc3e14324e0d01bf8d",
+        "arc": "88a4fbbed6c5e764f1dc622151de39b679e741a771e06ac603f6d707419fdd1c",
+        "gsm": "c37f2718d810306ac14f96337b2d63bc65f63972da3aceecfaa7f6e7eb18deee"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/sequential-seed-0",
+      "summary_sha256": "0f0b36bbd73525b7d595cfd799a33209d58d909039f27329ea87c9cc992234eb",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 9.641917592769472,
+        "arc": 0.2975589225589226,
+        "gsm": 0.015163002274450341,
+        "preference_raw": 0.53125,
+        "preference_implicit": 0.390625
+      },
+      "item_files_sha256": {
+        "wiki": "0b848b74968c95f57fec20b81fbc6d5d79ade72425669f456b7d9c8077118870",
+        "preferences": "741f0f5a8c7a14011296b84ded9f38225556ceb109220e448f458df258ced86c",
+        "arc": "e669f889cfa152de9cf9b6f46c80d5fd0c73bab9a52957e1b6c1b2fbf0fb88b2",
+        "gsm": "9535790e98c7363131a1ef425211d88396e45531e8f1ccac13fef18c41345964"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/sequential-seed-1",
+      "summary_sha256": "8ffa95cf43d8a027b878bba2a4e6bbc737e18998c98ff450be630ece5924bff0",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 7.545840182580498,
+        "arc": 0.2638888888888889,
+        "gsm": 0.026535253980288095,
+        "preference_raw": 0.578125,
+        "preference_implicit": 0.5
+      },
+      "item_files_sha256": {
+        "wiki": "ae3fc16ec8146b8a13c504b9f5f1b46f039e486c6ac658882f6c157986b50c9b",
+        "preferences": "a57b4dc625a510a8b4f527b4987ac7b99760bd15c8756c755a20777e7d358085",
+        "arc": "4f157c89ccbe05a84bbce9a598a462f0f60dafb265bd0c4a0f052c5df239ff73",
+        "gsm": "8176a4586db8d2e53dae61f391a5e8e2704585c607dd78ecfb64094a416a6449"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/sequential-seed-2",
+      "summary_sha256": "ac807ee5f73943822efd94a95dfcb9e33213a40ae912706407b99f758a64f2a5",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 7.424854586035211,
+        "arc": 0.29124579124579125,
+        "gsm": 0.02350265352539803,
+        "preference_raw": 0.5078125,
+        "preference_implicit": 0.44140625
+      },
+      "item_files_sha256": {
+        "wiki": "395114a99a88a94f2831c2de4c4b177aa328a1c1e19bd77e942b36fcb64bc5ba",
+        "preferences": "d11b4cef5deaba68452208150f2fd3e0f7fcbfb09c4f0b8f328c926563f61a30",
+        "arc": "47be479b2c41fa6733f19a18df64a225ff3b71cc8cdaac7366b08e2e8e413bc5",
+        "gsm": "bb4c61aadf5d0ce19e0df906c52419a0a1be995752de07fe439b54abe9f47775"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/parallel_joint-seed-0",
+      "summary_sha256": "804de90c4f2884b6bbb0dd29e383ed446eccfacb76ea96eed854a60b0e8586df",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.249604367608493,
+        "arc": 0.3480639730639731,
+        "gsm": 0.01819560272934041,
+        "preference_raw": 0.6484375,
+        "preference_implicit": 0.6015625
+      },
+      "item_files_sha256": {
+        "wiki": "33da6de311506aeba7c646d30ee35ff55d5942419e6fc1eae4a343eaa7798574",
+        "preferences": "988107532e53b2d51ffb0ad5968cdb31b127b697e4fe881d784c8033eb4d264f",
+        "arc": "2b676369c32888193eea8d03e62ff324d80cff6f5306a03d82b74355476417c3",
+        "gsm": "00efd336fafdb2fb1bdb32574ff51c51dbec0239ba2b76c6c8c819d842d53503"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/parallel_joint-seed-1",
+      "summary_sha256": "1463ab562421c40fdc4bce73bf5a94e5525f59cfbc148f682a20049e4dcd4517",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.244178996969341,
+        "arc": 0.3451178451178451,
+        "gsm": 0.011372251705837756,
+        "preference_raw": 0.6015625,
+        "preference_implicit": 0.55078125
+      },
+      "item_files_sha256": {
+        "wiki": "d5335d8f91a0905e76fdf84e505846b32682df4f27282a8e363cb2f248cfccfd",
+        "preferences": "ebb292f6090a162ae81367a5fbd80ab6913e92b50d39a3aeed9bc92d7846a5ce",
+        "arc": "f933be8db006a35df45e4a53ca9b6610a59b6dd0374583af224f28c75cb942a9",
+        "gsm": "1758db7af4464cf404b696331af3e503d1c1bf78a1250b76038580577745e5b0"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/parallel_joint-seed-2",
+      "summary_sha256": "b4a193a57d3762a55ea39ae931f50238436d8a41484bea6c691a128e7243f337",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.242376048598718,
+        "arc": 0.34974747474747475,
+        "gsm": 0.017437452615617893,
+        "preference_raw": 0.5859375,
+        "preference_implicit": 0.46875
+      },
+      "item_files_sha256": {
+        "wiki": "9594b8701c226b8b86af8a3ee5ce1522a3b5f3672f66dccb969f37c0e0345fb7",
+        "preferences": "2748488cf489834cbc967b684f91d37b268c6428430795e254d071275fdaa15d",
+        "arc": "0dff9af0617a36841f58588b2ed2c7e497bed0615f53d1fdb37c0d02a5cf3fe1",
+        "gsm": "6fd31124207d61510146c7bfd197e51efac6c5844b6c3cd618a0fcea11fd20a9"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/fixed_joint-seed-0",
+      "summary_sha256": "138b16376f7333c2cc42ae4a08280846f691e103b45ba8f75b51887844a00527",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.2422475347708954,
+        "arc": 0.3463804713804714,
+        "gsm": 0.013646702047005308,
+        "preference_raw": 0.60546875,
+        "preference_implicit": 0.50390625
+      },
+      "item_files_sha256": {
+        "wiki": "8070fe051265ab05013f9f5c7e24fc7a02bc4368cfad7f856bfc423c188c69c8",
+        "preferences": "811762be4e128ac48ff95d7ed1c936be44ac0a91b5d4abbba3172e43ef400bcb",
+        "arc": "f9e865a7e3248701877c772b98d17507e07c20d98ebce009fd9d347420b00e75",
+        "gsm": "a0165de526d9569cbe04bb79696a89f4dc531c30995db09df86b4c16c389faf5"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/fixed_joint-seed-1",
+      "summary_sha256": "b37815a0e9f461b8cd13b77dc3ab153dd4ed2bf0004c783f560130acbb6831c6",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.2500072981744172,
+        "arc": 0.33964646464646464,
+        "gsm": 0.009855951478392721,
+        "preference_raw": 0.58984375,
+        "preference_implicit": 0.51171875
+      },
+      "item_files_sha256": {
+        "wiki": "fd49236c6562ae56d3cfe543f73cc61b6930ba0704de5f0747b8e22abc693ecf",
+        "preferences": "1233c4416ed4a4d2432c950593ec14ce34e66a95cdc537824cf8294804c7155e",
+        "arc": "e7526ffa0e08c6fb18386bccdcb63c3fbf4313a307c8731f397817c5eb11dd12",
+        "gsm": "b16834e2a42c06df376b276399f99527ce2b970c6bcc5a050c4083cec90d2da0"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/fixed_joint-seed-2",
+      "summary_sha256": "85ece6240864024272641bcf2ff4dcc72cc5c50aaf39e0717af4ccfd2ef87641",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.2465660505016998,
+        "arc": 0.36153198653198654,
+        "gsm": 0.021986353297952996,
+        "preference_raw": 0.59765625,
+        "preference_implicit": 0.546875
+      },
+      "item_files_sha256": {
+        "wiki": "46b2f89e51c6e815faae73b7eae5e476919a73ae25db1db973c5470864aebea9",
+        "preferences": "ef0c8bebbc8cad068cbcd51fa4728549d21db927355371ae6ce15b0f90c3aa93",
+        "arc": "23dbc1324dfb85005d7b8b12e8bdfa373df965ab10230f148a1f34b8c7550ebb",
+        "gsm": "5c2c767f1da69e72e6cad11a90499e5d0c68817b67d4224dc1734187f5710ed5"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/smooth_joint-seed-0",
+      "summary_sha256": "356f96fcc2bb3e331e3f2517a0b5f72b2e110356ff9fa44dc6dd4ca73b6655e7",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.3161637720946766,
+        "arc": 0.3522727272727273,
+        "gsm": 0.017437452615617893,
+        "preference_raw": 0.609375,
+        "preference_implicit": 0.53125
+      },
+      "item_files_sha256": {
+        "wiki": "e794929c2fd1b8f214ec342cec5e2bf3df2c14560a5378ad4662d2dd467270f1",
+        "preferences": "1a4a819372408f30b086d3b157bc89a6d34aef4687545e078abda11225d3762c",
+        "arc": "6aedb62179d00c2dfe98d770aebbe51a12411561f2635db959ebd52880269ced",
+        "gsm": "635d15e51e234421fc891fe80d697fef2030dfc4e2bb12b5894162c708ca2243"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/smooth_joint-seed-1",
+      "summary_sha256": "cf169e36c99366a488ab6ff530ed2965dbd4b26b5fe76c0fd364f2d29e698bee",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.31217913068674,
+        "arc": 0.3400673400673401,
+        "gsm": 0.025018953752843062,
+        "preference_raw": 0.640625,
+        "preference_implicit": 0.5546875
+      },
+      "item_files_sha256": {
+        "wiki": "cb6d4ba6245384b52ce9cefcf5d0112ebd9f427b3eb647aee4a4b6da85936585",
+        "preferences": "79ea0aa6d866a061ff57f08e4799a3fac9946a91344542c41d77efa598d40f48",
+        "arc": "0334e880ceea25e05561fcc814286742d5e2d48cd8fa362f2b9faaae3000119c",
+        "gsm": "2707238eb3a73a43d98e022d4c37cac3791dbb4f0782bd2c1d0ff6c89ac4d203"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/smooth_joint-seed-2",
+      "summary_sha256": "c02e919e6975202745f6769b4db800132d21fb0fe528ae0e1103c0ae502d4970",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.3144060001353832,
+        "arc": 0.3547979797979798,
+        "gsm": 0.02047005307050796,
+        "preference_raw": 0.5703125,
+        "preference_implicit": 0.53125
+      },
+      "item_files_sha256": {
+        "wiki": "1a87d00eda81dd50142d19e178b7d5ee7758d1ad733930c3fb300db80cd36f09",
+        "preferences": "2f6708f226cf1456d425115a196f524a04bf1160f8251e909899b609c596f26c",
+        "arc": "8c8dadf05b541883a3324c5bf88076abbcf864c02740e4ca5e09ff4fad2e8fc9",
+        "gsm": "1139b24140f6fc21993821891227c9be81b9da9da4eb729366a742cd932461f4"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/aioli_objective-seed-0",
+      "summary_sha256": "cfdaa481e04c8ebe9084ba290eb80ddb0eace20c6bcdba24b3736c01ad17f19f",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.366944927203159,
+        "arc": 0.35353535353535354,
+        "gsm": 0.02350265352539803,
+        "preference_raw": 0.58203125,
+        "preference_implicit": 0.56640625
+      },
+      "item_files_sha256": {
+        "wiki": "63046998a6d31799ffac61d1742ec1810f2761f4db2eedd35daa08b03b3e8a0b",
+        "preferences": "ae06022acf5ad94e20c7a4602c6c686865ed50323c75f2197bdc0987628ec015",
+        "arc": "1fa8bf68b21ec542ffe933f77d5b2850a8d0952517498f1ab336e20ffe72c203",
+        "gsm": "861de8f974d398e5396b5b4df86cf5cb597b8ff5f06e87b54191bd5bc0fad4b1"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/aioli_objective-seed-1",
+      "summary_sha256": "5efcbadb0dc78291701939d5461193dcd26d504421ac482c32a0bcaab78f35c1",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.3376746303006133,
+        "arc": 0.3291245791245791,
+        "gsm": 0.017437452615617893,
+        "preference_raw": 0.625,
+        "preference_implicit": 0.44140625
+      },
+      "item_files_sha256": {
+        "wiki": "7ea622af0f2b78f0546af1527b228f5a6db3d9020bee9bb00bcb6c50ce2bab8e",
+        "preferences": "b29627e40ff3421180916f03b6f0fef2b8eba8fe0cc9e80bfeac494f2d501b92",
+        "arc": "40ea4002f9a68f5ceaf10b215d7d23034a439f07d39211d0e1c8ace9afd5fc37",
+        "gsm": "fa994f95ab4789df6daa6b37bb4d069ce69044931c50571c8694acb57cb00e83"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/aioli_objective-seed-2",
+      "summary_sha256": "96a8871cdd51c3822fe4f4c2335a0fd08e9dc2eb07560807ef9c1d952e621801",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.3577549810828335,
+        "arc": 0.3434343434343434,
+        "gsm": 0.019711902956785442,
+        "preference_raw": 0.58984375,
+        "preference_implicit": 0.53515625
+      },
+      "item_files_sha256": {
+        "wiki": "71db96820428e02cc141032bb54f53b60dd9b655ea41080466f9609f6e310114",
+        "preferences": "0ce303847ee9e0b307cddb43ec29ca64a678badb79dc77f33b17211bf86c3686",
+        "arc": "942c0f873acf511bb9d4dadb03c6555f2d74d17f7855f429404fcb2da54bd286",
+        "gsm": "35434b399124de5b3359a5d19b2d7013b9a303ac604cc3599957e0ca17070c8e"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/validation_progress-seed-0",
+      "summary_sha256": "f02730c080252257df05326a5fdd703e25fea72809eac4a29a2ed4dc98dfc7d2",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.391916080012284,
+        "arc": 0.35984848484848486,
+        "gsm": 0.018953752843062926,
+        "preference_raw": 0.59765625,
+        "preference_implicit": 0.609375
+      },
+      "item_files_sha256": {
+        "wiki": "7a93ee65f5c0f6808d1eba58f6f415b5b817e13a88f97387c7895e9d531188e5",
+        "preferences": "7be84b0d3acc77fc0c899d6f9e0420f1316598ee9af84c91893ac7f412869008",
+        "arc": "78f1fa8be50d732b26089e4cbdc6c9960282921ae51f88eeb5d890ee33bd983c",
+        "gsm": "61a4e0451220415ea1e55574531375e38e466b985814dbd4acd4e5dc2911a9d5"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/validation_progress-seed-1",
+      "summary_sha256": "14bd6720eded7ab2d4102c560074ccb3a1eb3a0f3bc6acb6f5777cf023051158",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.3887200218547364,
+        "arc": 0.3324915824915825,
+        "gsm": 0.018953752843062926,
+        "preference_raw": 0.59765625,
+        "preference_implicit": 0.51953125
+      },
+      "item_files_sha256": {
+        "wiki": "b8435a7a7bd5cb54acfddd10c6ea2b81eb372d7d10602e4ee7c32cbb25cbdb81",
+        "preferences": "e223b916cdecdb0d7557e4efc7c8901c41278d4ce2ec6111455812a1b1199133",
+        "arc": "8b8380f86175b16e709b173c6f17bb44ab0c2dd1926a50542da6fa1e41be9d33",
+        "gsm": "70452c63723e6430655f882181d4d2865b4dca20edce125084802bae42fd157c"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/validation_progress-seed-2",
+      "summary_sha256": "5b696b716d1bdff193d2b729cfc0fc5af57a494f511ccba5001777a88ecc6425",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.3600241467310656,
+        "arc": 0.3354377104377104,
+        "gsm": 0.021986353297952996,
+        "preference_raw": 0.578125,
+        "preference_implicit": 0.53125
+      },
+      "item_files_sha256": {
+        "wiki": "190f952961b64a75bc753918c89871a41f638861a1d8f45217a502e66486290c",
+        "preferences": "7bf8f9ecf8471536f50f5a250e52801c907fd8ec8775a1057e007fbd9d6665d0",
+        "arc": "8c3b0e8863ec3e22d018f52f6568288c850a13bab8346a0bd81f970be50eb835",
+        "gsm": "f1592f0e02009831e6e323381e8acbc6a824de202c8a9cc925a4331bceb56400"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/chord_objective-seed-0",
+      "summary_sha256": "744719d6214363e91088eaae1144bc5dfd29173060928cc635a97d048bc8e4f3",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.277064211026237,
+        "arc": 0.32786195286195285,
+        "gsm": 0.02122820318423048,
+        "preference_raw": 0.61328125,
+        "preference_implicit": 0.59375
+      },
+      "item_files_sha256": {
+        "wiki": "700a457769be21966f38842359888a6c1bfbfe9b8105b057b456fdbe30dc6fd8",
+        "preferences": "b9ecfb4bd31d4f5a3b80b82a44375c62fd36f9e8c3f3c6f9120b015eef4d81da",
+        "arc": "9853eb82bfdefd94076bfe2c08c4523a7a1a28355da71e87367332f6a4ba8ca3",
+        "gsm": "a0da202e706ce59f8de7990aea62d7ad8376debc946b71bd3fce3cd5a2414d13"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/chord_objective-seed-1",
+      "summary_sha256": "84ce242e3e4a94fa780cd3d96d7a16fa5c573e12c9601e7fdd3155c406672edf",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.2572907163252913,
+        "arc": 0.3362794612794613,
+        "gsm": 0.001516300227445034,
+        "preference_raw": 0.6015625,
+        "preference_implicit": 0.5234375
+      },
+      "item_files_sha256": {
+        "wiki": "27cd31d477bf1d8ea2dba9119bd9d568b7e4025a1ac18988c717fce28aa1e2a1",
+        "preferences": "4014c65b0d4d8d9ff2e6fa352a90d4a7dd07f183e1bbfe019b664aba7fb40680",
+        "arc": "165c64b7bb0bd78b628a0324d7c46a015690a361c81a6873d248fe2d8835760c",
+        "gsm": "edce5609df7e2ecb099a87c3c08a349118952755f73ac7909336b03cdc827ed4"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/chord_objective-seed-2",
+      "summary_sha256": "8784c39a8d72c131a3903dc25e84cc69767e6d021f800d9e6ef4dc41c68d1f4c",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.2684781858735863,
+        "arc": 0.3265993265993266,
+        "gsm": 0.02047005307050796,
+        "preference_raw": 0.59765625,
+        "preference_implicit": 0.61328125
+      },
+      "item_files_sha256": {
+        "wiki": "aacfe3ff22ce29500768648ecdb041cf6d450d25c273a61dd1f9137c9c6b81c1",
+        "preferences": "9f7a6e8916ef88f95771f25c035a453eeac5f761215f4a608fd35a7704804f21",
+        "arc": "d4c22dc0fd141e52bed311ca9aa93f835ac86fb9db58539c85bca07fc3ac6825",
+        "gsm": "7669c2ea042fea17d5e624c2ec545d678256fc43a2c47cd8e8e9e960bb8a6c9a"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/rpt_inspired-seed-0",
+      "summary_sha256": "b9253fedaa7610c65d48603d43f9504a6786e8b316b9f7894f07d5446715d7c1",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.236035895768405,
+        "arc": 0.35774410774410775,
+        "gsm": 0.016679302501895376,
+        "preference_raw": 0.6171875,
+        "preference_implicit": 0.41015625
+      },
+      "item_files_sha256": {
+        "wiki": "7f2deae3af6886c80e79d9e1312db4b9195e77ba1717aa27ac0a6c8f7e62d0f4",
+        "preferences": "880229a895b4d80ea088702e640f0f22c816ce7cef7616cb49839a8dc955ab84",
+        "arc": "9ef4fe760c051dda02afa303874600302047e2b48b4fa5ba87da7cd91143ee6a",
+        "gsm": "345a1130466160a3807403be99904adecaf2d84ead830dd4e9785c53ea57b755"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/rpt_inspired-seed-1",
+      "summary_sha256": "66010f98c2e1afee9033f245001aa4519453f903b3a88c959c015777f37c5592",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.2386817985346528,
+        "arc": 0.3253367003367003,
+        "gsm": 0.019711902956785442,
+        "preference_raw": 0.59375,
+        "preference_implicit": 0.515625
+      },
+      "item_files_sha256": {
+        "wiki": "db00e6954a70948032e3e32efeeb70ff12c2fc403e2efadf1dd17943e288c5ff",
+        "preferences": "4d30b3c01707f45e64d22d780e5d3b8a328491ca851d45aa18e159a3c62cadcb",
+        "arc": "884ea0258bd03cc8cc670b0df087bdf83937cc0576be104df8b975bd03e11da8",
+        "gsm": "7fe676e4fd65c9f11f17e6cab77a887168598a04ba6d67f3a5093edd96d7f911"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/rpt_inspired-seed-2",
+      "summary_sha256": "3e36763a02446c168433cb27981280fcabf2f0dafbab02484d467ae52c6cc396",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 3.233620562021991,
+        "arc": 0.351010101010101,
+        "gsm": 0.01819560272934041,
+        "preference_raw": 0.58984375,
+        "preference_implicit": 0.4453125
+      },
+      "item_files_sha256": {
+        "wiki": "a49e66ae7594460c83c3909ac6578a43f1bebc4ce9855bd9ddb58dadb56add3b",
+        "preferences": "9b2298fc5e775002a9e8d11f559b5a646e6aff885a3e881be7912433c988f361",
+        "arc": "a9d66b06d81f72b86405ad9a7d90faf774dba85a043c58a4b5484d9eb182f07e",
+        "gsm": "69a0555261b9ac06d50d9919f362311135a027c4db3fa65fc80996171223acb4"
+      }
+    },
+    {
+      "id": "02_early_checkpoint_joint_objectives/initial-seed-0",
+      "summary_sha256": "6380eed6bfe51651e058b3bb2772ee0f6726796521d87e7bbb3f45417268e10b",
+      "item_counts": {
+        "wiki": 564,
+        "preferences": 256,
+        "arc": 2376,
+        "gsm": 1319
+      },
+      "metrics_recomputed": {
+        "wiki_nll": 4.0556609425177275,
+        "arc": 0.37247474747474746,
+        "gsm": 0.018953752843062926,
+        "preference_raw": 0.56640625,
+        "preference_implicit": 0
+      },
+      "item_files_sha256": {
+        "wiki": "d4b170c2665551b84de079f83f12cb15f20384ef950f1aeff2ff755ad018a23b",
+        "preferences": "e3b20e8d9f97bd269f73b6f5da246880f5227b30f52a65850019399dfb008fcb",
+        "arc": "6b2de31abc132ede22f9857095f4780fc4cf8369fbbfb2241fa5d423f8a648f8",
+        "gsm": "a56d2be7ee776c2d4326fc8405c626973b8c708e0719bf4d49e7cdcd7d58cac1"
+      }
+    }
+  ],
+  "errors": [],
+  "evaluation_count": 52,
+  "training_cells_verified": 48,
+  "initial_evaluations_verified": 4,
+  "complete": true,
+  "audit_source_commit": "19e0457c19200b2cef557a9aaca4efe155ab55dd",
+  "final_results_commit": "94881e8c8d174793f537b06e942d66e060c401e6",
+  "audit_scope": "Read-only artifact verification; no training, model evaluation, or independent model review rerun.",
+  "original_review_verdicts": {
+    "plan": "FAIL",
+    "implementation": "FAIL"
+  },
+  "review_resolution": "Implementer FIXED with deterministic evidence and narrowed scope; no independent post-fix PASS.",
+  "final_analysis_hashes": {
+    "experiments/01_scratch_joint_objectives/expt_v1/analysis.json": "1bd4a72b041401478e4c32a58095f9c87309509faf4cd3e713208e51123b7781",
+    "experiments/02_early_checkpoint_joint_objectives/expt_v1/analysis.json": "13667542159d8632ef5c1521cc30c10105b211a6f1c0106aac6ea7e916ba9e16"
+  },
+  "execution_completion": {
+    "verified_at_utc": "2026-10-05T06:11:46.728280+00:00",
+    "preflight_seconds": 3109.5097493482754,
+    "original_ceiling_seconds": 172800,
+    "original_admission_seconds": 172296.50974934828,
+    "conservative_actual_total_seconds": 38468.95362935588,
+    "conservative_actual_total_hours": 10.685820452598854,
+    "registered_process_count": 77,
+    "live_registered_process_count": 0,
+    "completion_checks": {
+      "cell_receipts_complete": 48,
+      "cell_exit_zero": 48,
+      "cell_training_within_declared_timeout": 48,
+      "cell_whole_within_declared_timeout": 48,
+      "initial_evaluation_complete": 4,
+      "failed_cells": 0,
+      "interrupted_cells": 0,
+      "pending_cells": 0,
+      "not_started_global_bound": 0
+    },
+    "accounting_limitations": [
+      "The reported 10.6858204526 hours is the documented preflight ledger plus full supervisor wall-clock duration; it conservatively includes queue idle time, CPU work, checkpoints, reporting and publication. It is not hardware kernel-active GPU telemetry.",
+      "CPU data download/tokenization/partition/audit preparation has no separate GPU-time charge and no dedicated elapsed-time subtotal. Inspected preparation scripts contain no CUDA execution; model/device preparation inside calibration and cells is covered by their enclosing timers.",
+      "Two failed early smoke attempts are charged using preserved log modification times minus preceding device-preflight timestamps, rather than hardware timers.",
+      "The finalization-only 238.7506516-second figure uses the initial-diagnostics file modification timestamp and final supervisor timestamp; it is an approximate wall-clock subsection already included in the supervisor total.",
+      "Generic progress.status remained in_progress despite coordinator_status=complete and phase=complete; final supervisor/watchdog/driver and publication receipts establish completion."
+    ],
+    "actual_time_components_seconds": {
+      "training_including_initialization_and_validation": 22919.89368089568,
+      "terminal_evaluations": 5440.850651985966,
+      "other_in_cell_checkpoint_hash_and_finalization": 864.1799248075113,
+      "all_cells_inclusive": 29224.924257689156,
+      "four_initial_evaluations": 372.4143735310063,
+      "other_queue_preparation_wait_reporting_publication": 5762.10524878744,
+      "final_publication_from_initial_diagnostics_mtime_approximate": 238.75065159797668
+    },
+    "supervisor_wall_seconds": 35359.4438800076,
+    "finished_at": "2026-10-05T06:07:51.608246+00:00"
+  }
+}

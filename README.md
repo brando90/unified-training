@@ -2,13 +2,14 @@
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/README.md>
 
-**TLDR:** A research project testing joint objective schedules against staged and modern adapted baselines. The requested Claude Code Opus 5.5 maximum-effort reviews are complete, with findings repaired and deterministically reconciled. Reviewed setup and the frozen 48-cell program are published; independent execution and incremental results publication are running. No empirical superiority claim is established.
+The 48-cell joint-training pilot and all four untouched initial evaluations are complete. The proposed controller improves on sequential training in these settings but does not establish superiority over Aioli; every trained early-checkpoint cell has lower observed science-question accuracy than the untouched model. See the [final report](experiments/00_program/FINAL_REPORT.md) for full results and uncertainty.
 
-Test whether mixing pretraining, supervised fine-tuning, preference learning, and reasoning reinforcement learning throughout training improves reasoning while retaining general language capability. The proposed joint method uses validation progress and compute cost to adapt the mixture. Its advantages over staged training remain unproven.
+Test whether mixing pretraining, supervised fine-tuning, preference learning, and reasoning reinforcement learning throughout training improves reasoning while retaining general language capability. The proposed joint method uses validation progress and compute cost to adapt the mixture. These pilots estimate that comparison under small-model, untuned conditions; they do not establish a general advantage.
 
 The project has two separate questions: what works from random initialization, and what works when continuing an early pretrained checkpoint. The latter is more affordable and may provide stronger accuracy signals, but cannot establish the former.
 
-- [Current research and execution plan](experiments/00_program/PLAN.md)
+- [Final report and verification](experiments/00_program/FINAL_REPORT.md)
+- [Frozen research and execution plan](experiments/00_program/PLAN.md)
 - [Related work, refreshed in 2026](experiments/00_program/related_work.md)
 - [Experiment index and live status](experiments/README.md)
 - [Resumable project checkpoint](experiments/00_program/CKPT_unified_training.md)
