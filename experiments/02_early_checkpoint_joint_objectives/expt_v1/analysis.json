@@ -1,5 +1,5 @@
 {
-  "complete": 5,
+  "complete": 6,
   "expected": 24,
   "seed_summary": {
     "sequential": {
@@ -199,98 +199,169 @@
     },
     "parallel_joint": {
       "arc": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.3480639730639731,
-          0.3451178451178451
-        ]
+          0.3451178451178451,
+          0.34974747474747475
+        ],
+        "mean": 0.3476430976430976,
+        "sample_sd": 0.0023433351695412667,
+        "interval95": [
+          0.34182193037695036,
+          0.3534642649092448
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "gsm": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.01819560272934041,
-          0.011372251705837756
-        ]
+          0.011372251705837756,
+          0.017437452615617893
+        ],
+        "mean": 0.015668435683598686,
+        "sample_sd": 0.003739865703044918,
+        "interval95": [
+          0.006378094253433756,
+          0.024958777113763618
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "wiki_nll": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           3.249604367608493,
-          3.244178996969341
-        ]
+          3.244178996969341,
+          3.242376048598718
+        ],
+        "mean": 3.2453864710588505,
+        "sample_sd": 0.0037623987274605516,
+        "interval95": [
+          3.2360401544929727,
+          3.2547327876247283
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "preference_raw_accuracy": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.6484375,
-          0.6015625
-        ]
+          0.6015625,
+          0.5859375
+        ],
+        "mean": 0.6119791666666666,
+        "sample_sd": 0.03252603124165832,
+        "interval95": [
+          0.5311800258426551,
+          0.6927783074906781
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "preference_implicit_accuracy": {
-        "status": "incomplete",
-        "n": 2,
-        "expected": 3,
+        "status": "complete",
+        "n": 3,
         "values": [
           0.6015625,
-          0.55078125
-        ]
+          0.55078125,
+          0.46875
+        ],
+        "mean": 0.5403645833333334,
+        "sample_sd": 0.06701619391905089,
+        "interval95": [
+          0.373887128714785,
+          0.7068420379518817
+        ],
+        "test": "none; Student t interval with 2 degrees of freedom; normal-seed assumption, weak with three seeds",
+        "p_value": null
       },
       "missing_arc_sensitivity": {
-        "observed_seeds": 2,
+        "observed_seeds": 3,
         "expected_seeds": 3,
-        "complete_case_mean": 0.34659090909090906,
+        "complete_case_mean": 0.3476430976430976,
         "all_seed_possible_mean": [
-          0.23106060606060605,
-          0.5643939393939394
+          0.3476430976430976,
+          0.3476430976430975
         ],
         "interpretation": "identification bounds, not a confidence interval; missing accuracy in [0,1]"
       },
       "missing_gsm_sensitivity": {
-        "observed_seeds": 2,
+        "observed_seeds": 3,
         "expected_seeds": 3,
-        "complete_case_mean": 0.014783927217589083,
+        "complete_case_mean": 0.015668435683598686,
         "all_seed_possible_mean": [
-          0.009855951478392721,
-          0.3431892848117261
+          0.015668435683598686,
+          0.01566843568359862
         ],
         "interpretation": "identification bounds, not a confidence interval; missing accuracy in [0,1]"
       },
-      "training_seconds": 1136.368271031417,
-      "evaluation_seconds": 225.8318997900933,
+      "training_seconds": 1750.4900466250256,
+      "evaluation_seconds": 351.8175900550559,
       "arc_two_stage": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.34764309764309764,
+        "interval95": [
+          0.3301066217732884,
+          0.3653233726150393
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 2376
       },
       "gsm_two_stage": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.015668435683598686,
+        "interval95": [
+          0.00960323477381855,
+          0.022744503411675512
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 1319
       },
       "preference_two_stage": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.6119791666666666,
+        "interval95": [
+          0.5494791666666666,
+          0.671875
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 256
       },
       "preference_implicit_two_stage": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 0.5403645833333334,
+        "interval95": [
+          0.45830078125,
+          0.6159179687499998
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 256
       },
       "wiki_two_stage": {
-        "status": "incomplete",
-        "available_seeds": 2,
-        "expected_seeds": 3
+        "estimate": 3.2453844933840807,
+        "interval95": [
+          3.213408662461918,
+          3.273371103188498
+        ],
+        "p_value": null,
+        "test": "none; two-stage paired seed/item bootstrap; only three seeds, descriptive",
+        "n_seeds": 3,
+        "n_items": 564
       },
       "controller_iterations": [
+        0,
         0,
         0
       ],
@@ -310,6 +381,14 @@
           "backward": 10283328,
           "generation": 2597824,
           "reference": 685824
+        },
+        {
+          "validation": 67480,
+          "validation_generation": 8800,
+          "forward": 6360928,
+          "backward": 10111168,
+          "generation": 2711296,
+          "reference": 698560
         }
       ]
     },
