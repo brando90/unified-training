@@ -20,7 +20,7 @@
 | aioli_objective | 1 | complete | 19.939 | 0.3291 [0.3105, 0.3483] | 0.0174 [0.0116, 0.0260] | 3.3377 [3.3090, 3.3658] | 0.6250 [0.5643, 0.6820] / 0.4414 [0.3819, 0.5027] |
 | aioli_objective | 2 | complete | 19.921 | 0.3434 [0.3246, 0.3628] | 0.0197 [0.0135, 0.0287] | 3.3578 [3.3301, 3.3857] | 0.5898 [0.5287, 0.6483] / 0.5352 [0.4740, 0.5953] |
 | validation_progress | 0 | complete | 19.958 | 0.3598 [0.3408, 0.3794] | 0.0190 [0.0129, 0.0278] | 3.3919 [3.3645, 3.4192] | 0.5977 [0.5366, 0.6559] / 0.6094 [0.5484, 0.6671] |
-| validation_progress | 1 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
+| validation_progress | 1 | complete | 19.938 | 0.3325 [0.3138, 0.3517] | 0.0190 [0.0129, 0.0278] | 3.3887 [3.3604, 3.4169] | 0.5977 [0.5366, 0.6559] / 0.5195 [0.4585, 0.5800] |
 | validation_progress | 2 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
 | chord_objective | 0 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
 | chord_objective | 1 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
@@ -33,7 +33,7 @@ NLL = negative log likelihood; preference raw ordering is the preference endpoin
 
 Intervals: 95% Wilson binary-item score, conditional on each trained model; p-val=n/a (no hypothesis test). Three seeds do not establish universal superiority. Aioli, CHORD (Controllable Harmonization of On- and Off-Policy Reinforcement Learning via Dynamic Weighting), and RPT (Reinforcement Pre-Training) are declared adaptations; exact CHERRY-RL identity remains unresolved.
 
-Complete: 16/24. See `expt_v1/PROTOCOL.md` and the program review reconciliation.
+Complete: 17/24. See `expt_v1/PROTOCOL.md` and the program review reconciliation.
 
 Seed uncertainty, two-stage seed/item intervals, initial-checkpoint changes and all paired comparisons: `expt_v1/analysis.json`. Missing trained seeds remain missing with separate accuracy sensitivity bounds. p-val=n/a throughout; no formal superiority verdict.
 
