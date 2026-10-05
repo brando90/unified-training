@@ -1,7 +1,7 @@
 # Unified-training implementation checkpoint
 
 **Status:** COMPLETE — 48/48 frozen cells and 4/4 untouched initial evaluations.
-**Last updated:** 10-04-2026 23:13 PDT
+**Last updated:** 10-04-2026 23:20 PDT
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/00_program/CKPT_unified_training.md>
 
 The bounded joint-training pilot is finished. Read [FINAL_REPORT.md](FINAL_REPORT.md) for results, uncertainty and limits, [final_verification.json](final_verification.json) for the independent artifact audit, and each experiment's results.md for every cell.
@@ -27,6 +27,8 @@ Final read-only audit: all 52 evaluation filesets, 48 checkpoint/summary receipt
 Source setup `4adbb013e0f7cb233520751240e3785a1ecb8298`, freeze `0bb4ea8c586927c6fc9c5201f00fcffadc044df4`, and final generated results `94881e8c8d174793f537b06e942d66e060c401e6` landed directly on main via the source worker. The frozen-program digest remains `3d5cf4a383c0269cd4cd033f656f77d08a47bf391dea569690c9554710bd7c80`.
 
 The source/runtime worker has finished. The coordinator owns only the final documentation/audit publication in an isolated checkout; scientific files and original reviews remain unchanged. Its [master checkpoint](../CKPT_MASTER_tmuxnone_cxd_01a10825.md) records the final pull-request landing. Local main synchronization and heartbeat shutdown are completion actions verified privately after landing, not inferred from a completed model turn.
+
+Final coordinator report/audit pull request [#3](https://github.com/brando90/unified-training/pull/3) merged at `57782fa48c172b1de8210a330d010418273d2778` on 10-04-2026 at 23:18 PDT. The resulting main tree matched the verified branch, and local main safely fast-forwarded to that landing. One completion email was delivered at 23:19 PDT. This record-only follow-up changes no scientific artifact; its final local synchronization and heartbeat shutdown are verified privately.
 
 ## Resume contract
 

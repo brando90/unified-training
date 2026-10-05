@@ -1,9 +1,9 @@
 # Unified-training master checkpoint: pilots complete
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/CKPT_MASTER_tmuxnone_cxd_01a10825.md>
-**Status:** COMPLETE SCIENCE — final coordinator publication and safe local synchronization recorded below.
+**Status:** DONE — both pilots, final report, required review reconciliation and local synchronization verified.
 Created: 10-04-2026 13:21 PDT
-Last updated: 10-04-2026 23:15 PDT
+Last updated: 10-04-2026 23:20 PDT
 
 ## Result and evidence
 
@@ -31,7 +31,7 @@ Local synchronization must verify clean main, no unpublished commits, exclusive 
 
 ## Coordinator schedule and resume
 
-The existing 30-minute heartbeat is due to be paused after the final report's main landing and safe local synchronization are verified. Its actual state and exact local/main commits are recorded privately after those actions. Do not infer completion from an idle model turn or restart this completed queue. A future scientific follow-up requires a new explicit experiment definition and budget.
+The final report is merged and local main was safely synchronized to its verified landing. The completion gate for pausing the existing 30-minute heartbeat is satisfied; shutdown and the record-only follow-up synchronization are recorded in the private coordinator receipt. Do not infer completion from an idle model turn or restart this completed queue. A future scientific follow-up requires a new explicit experiment definition and budget.
 
 User-designated canonical paths are retained because the frozen program and manifests depend on them. They are complete, not active training. No experiment data, checkpoint, failed calibration attempt or original review is deleted as cleanup.
 
@@ -43,15 +43,19 @@ Program digest: `3d5cf4a383c0269cd4cd033f656f77d08a47bf391dea569690c9554710bd7c8
 
 LANDED f721b93259bb1a4cd25fe9a67fdc466096342db2 https://github.com/brando90/unified-training/pull/1 10-04-2026 13:24:37 PDT
 
-Coordinator record-only follow-up #2 merged at `0a7d50ad06e9fd57b711c34bd18663859b0f33d8`. Both pull requests are attached to the task. One phase email was delivered on 10-04-2026 at 13:26 PDT; no duplicate was sent for the record-only follow-up. Final phase landing and email receipt follow after verification.
+Coordinator record-only follow-up #2 merged at `0a7d50ad06e9fd57b711c34bd18663859b0f33d8`. Both pull requests are attached to the task. One phase email was delivered on 10-04-2026 at 13:26 PDT; no duplicate was sent for the record-only follow-up. Final phase pull request #3 is merged; its one completion email was delivered on 10-04-2026 at 23:19 PDT.
 
-## Remaining actions for this completion phase
+## Final landing and completion
 
-1. Verify and land the final documentation/audit pull request; attach it to this task.
-2. Record its confirmed merge, send one authorized completion receipt, and safely synchronize local main.
-3. Verify all completion evidence, pause this heartbeat, and report the measured negative result without claiming superiority.
+LANDED 57782fa48c172b1de8210a330d010418273d2778 https://github.com/brando90/unified-training/pull/3 10-04-2026 23:18:02 PDT
 
-**TLDR-end:** [unified-training: completed pilots] experiments/01_scratch_joint_objectives and experiments/02_early_checkpoint_joint_objectives have complete verified science. Final coordinator publication and local synchronization close the task; neither a new experiment nor another review is authorized automatically.
+Pull request #3 was merged at its exact verified head; the resulting main tree matched the verified publication tree byte-for-byte. The pull request is attached to this task. The existing uutils mail route delivered one completion receipt at 23:19 PDT; no second email is sent for this record-only commit.
+
+The coordinator then verified clean local main, no unpublished commits, exclusive ownership and zero untracked/ignored collisions, and fast-forwarded to the merged report with all 37 frozen hashes matching. The original 19-file draft stash/archive was preserved unchanged. This documentation-only landing record is published through the permitted direct-main path; its final pinned local synchronization and heartbeat pause are checked in the private completion receipt.
+
+No scientific work remains in this program. Do not restart its completed queue, change frozen settings, launch additional review rounds or infer superiority. A separate capability-preservation experiment is future work, not an automatic continuation.
+
+**TLDR-end:** [unified-training: completed pilots] experiments/01_scratch_joint_objectives and experiments/02_early_checkpoint_joint_objectives have complete verified science. Final report pull request #3 is merged and local main synchronized; neither a new experiment nor another review is authorized automatically.
 **Snapshot:**
 ```text
 Training cells: 48/48; failed/interrupted/missing: 0/0/0
