@@ -6,6 +6,7 @@ Last updated: 10-05-2026 18:12 UTC
 Status: READINESS PASSED; ADMISSION FREEZE IN PROGRESS
 
 LANDED 53539dc52889f58aaa5e19616d70dfec38ad2697 https://github.com/brando90/unified-training/pull/5 10-05-2026 17:55 UTC
+LANDED 94282326b8b34a66de1a4ecd7e4943a294a14739 https://github.com/brando90/unified-training/pull/7 10-05-2026 18:16 UTC
 
 - Canonical home: `experiments/03_qwen_joint_reasoning_retention`.
 - Read the [campaign plan](../03_qwen_joint_reasoning_retention/PLAN.md) and [execution runbook](../03_qwen_joint_reasoning_retention/expt_v1/cc.md).
