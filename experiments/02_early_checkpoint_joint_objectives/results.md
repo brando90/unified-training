@@ -22,7 +22,7 @@
 | validation_progress | 0 | complete | 19.958 | 0.3598 [0.3408, 0.3794] | 0.0190 [0.0129, 0.0278] | 3.3919 [3.3645, 3.4192] | 0.5977 [0.5366, 0.6559] / 0.6094 [0.5484, 0.6671] |
 | validation_progress | 1 | complete | 19.938 | 0.3325 [0.3138, 0.3517] | 0.0190 [0.0129, 0.0278] | 3.3887 [3.3604, 3.4169] | 0.5977 [0.5366, 0.6559] / 0.5195 [0.4585, 0.5800] |
 | validation_progress | 2 | complete | 19.916 | 0.3354 [0.3167, 0.3547] | 0.0220 [0.0154, 0.0314] | 3.3600 [3.3316, 3.3876] | 0.5781 [0.5169, 0.6370] / 0.5312 [0.4701, 0.5915] |
-| chord_objective | 0 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
+| chord_objective | 0 | complete | 19.979 | 0.3279 [0.3093, 0.3470] | 0.0212 [0.0147, 0.0305] | 3.2771 [3.2481, 3.3063] | 0.6133 [0.5524, 0.6708] / 0.5938 [0.5326, 0.6521] |
 | chord_objective | 1 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
 | chord_objective | 2 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
 | rpt_inspired | 0 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
@@ -33,7 +33,7 @@ NLL = negative log likelihood; preference raw ordering is the preference endpoin
 
 Intervals: 95% Wilson binary-item score, conditional on each trained model; p-val=n/a (no hypothesis test). Three seeds do not establish universal superiority. Aioli, CHORD (Controllable Harmonization of On- and Off-Policy Reinforcement Learning via Dynamic Weighting), and RPT (Reinforcement Pre-Training) are declared adaptations; exact CHERRY-RL identity remains unresolved.
 
-Complete: 18/24. See `expt_v1/PROTOCOL.md` and the program review reconciliation.
+Complete: 19/24. See `expt_v1/PROTOCOL.md` and the program review reconciliation.
 
 Seed uncertainty, two-stage seed/item intervals, initial-checkpoint changes and all paired comparisons: `expt_v1/analysis.json`. Missing trained seeds remain missing with separate accuracy sensitivity bounds. p-val=n/a throughout; no formal superiority verdict.
 
