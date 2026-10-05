@@ -1,6 +1,23 @@
 # Pilot results
 
-**Status:** All 24 training cells have full terminal evaluations; program analysis, initial diagnostics and publication are separately verified.
+**Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/02_early_checkpoint_joint_objectives/results.md>
+
+**Status:** COMPLETE — 24/24 training cells and 1/1 untouched initial evaluation; zero failed or interrupted cells.
+
+**Last updated:** 10-04-2026 23:11 PDT.
+
+In `experiments/02_early_checkpoint_joint_objectives/`, the proposed validation-progress controller achieved normalized ARC-Easy (AI2 Reasoning Challenge, Easy subset) accuracy **34.2593% [30.5290%, 37.9896%]**, versus sequential **28.4231% [23.9771%, 32.8691%]** and Aioli **34.2031% [31.1562%, 37.2501%]**. These are three-seed means with 95% Student's t intervals (two degrees of freedom); sample standard deviations are 1.5016, 1.7898, and 1.2266 percentage points, respectively; p-val=n/a (no hypothesis test). The paired proposed-minus-sequential difference is **+5.8361 [+2.6886, +8.9837] percentage points**, and proposed-minus-Aioli is **+0.0561 [−1.8210, +1.9332] percentage points** under the same seed-level interval method. The pilot does not establish an advantage over Aioli or all baselines.
+
+The untouched Pythia-160m step10000 checkpoint scored **37.2475% [35.3256%, 39.2106%]** (95% Wilson item interval; 2,376 items; p-val=n/a), above every trained cell's observed accuracy. Proposed changes from that shared initial checkpoint were **−1.2626 [−3.0724, +0.3788]**, **−3.9983 [−5.8081, −2.2727]**, and **−3.7037 [−5.5135, −1.9360] percentage points** across seeds 0–2. These 95% paired-item bootstrap intervals are conditional on the models and do not represent seed uncertainty; p-val=n/a. The early checkpoint supplies measurable accuracy, but these training conditions did not improve it over the untouched starting point.
+
+See the [final program report](../00_program/FINAL_REPORT.md) for all methods, paired contrasts, initial diagnostics and scope limits. Requested plan and implementation reviews retain their original **FAIL** verdicts; the implementer marked findings **FIXED** in the [review reconciliation](../00_program/REVIEW_RECONCILIATION.md), supported by 63 deterministic tests. No post-fix reviewer PASS is claimed.
+
+| Phase | Status | Verified denominator |
+|---|---|---|
+| Frozen training matrix | DONE | 24/24 cells; zero failed or interrupted |
+| Full terminal evaluations | DONE | 24/24 |
+| Untouched initial evaluation | DONE | 1/1 shared checkpoint |
+| Primary aggregates and paired initial comparisons | DONE | Eight three-seed aggregates; 24/24 initial comparisons |
 
 | Method | Seed | Status | Training work (million forward-equivalent tokens) | ARC-Easy accuracy | GSM8K exact match | WikiText NLL | Preference raw / implicit accuracy |
 |---|---:|---|---:|---:|---:|---:|---|
@@ -29,18 +46,20 @@
 | rpt_inspired | 1 | complete | 19.927 | 0.3253 [0.3068, 0.3444] | 0.0197 [0.0135, 0.0287] | 3.2387 [3.2081, 3.2679] | 0.5938 [0.5326, 0.6521] / 0.5156 [0.4546, 0.5762] |
 | rpt_inspired | 2 | complete | 19.938 | 0.3510 [0.3321, 0.3704] | 0.0182 [0.0123, 0.0269] | 3.2336 [3.2030, 3.2638] | 0.5898 [0.5287, 0.6483] / 0.4453 [0.3857, 0.5066] |
 
-NLL = negative log likelihood; preference raw ordering is the preference endpoint, implicit ordering is diagnostic. Scratch primary: WikiText NLL; early-checkpoint primary: ARC-Easy normalized accuracy. Unassisted GSM8K remains a sparse secondary diagnostic.
+NLL = negative log likelihood; preference raw ordering is the preference endpoint, implicit ordering is diagnostic. The primary in `experiments/02_early_checkpoint_joint_objectives/` is ARC-Easy normalized accuracy. GSM8K (Grade School Math 8K) unassisted exact match remains a sparse secondary diagnostic.
 
-Intervals: 95% Wilson binary-item score, conditional on each trained model; p-val=n/a (no hypothesis test). Three seeds do not establish universal superiority. Aioli, CHORD (Controllable Harmonization of On- and Off-Policy Reinforcement Learning via Dynamic Weighting), and RPT (Reinforcement Pre-Training) are declared adaptations; exact CHERRY-RL identity remains unresolved.
+Per-cell table intervals: 95% Wilson binary-item intervals for accuracies and corpus-block bootstrap intervals for NLL, conditional on each trained model; p-val=n/a (no hypothesis test). Three seeds do not establish universal superiority. Aioli, CHORD (Controllable Harmonization of On- and Off-Policy Reinforcement Learning via Dynamic Weighting), and RPT (Reinforcement Pre-Training) are declared adaptations; exact CHERRY-RL identity remains unresolved.
 
-Complete: 24/24. See `expt_v1/PROTOCOL.md` and the program review reconciliation.
+Complete: 24/24 training cells and 1/1 initial evaluation, with zero failed or interrupted cells. See [frozen protocol](expt_v1/PROTOCOL.md) and [final report](../00_program/FINAL_REPORT.md).
 
-Seed uncertainty, two-stage seed/item intervals, initial-checkpoint changes and all paired comparisons: `expt_v1/analysis.json`. Missing trained seeds remain missing with separate accuracy sensitivity bounds. p-val=n/a throughout; no formal superiority verdict.
+Seed uncertainty, two-stage seed/item intervals, initial-checkpoint changes and all paired comparisons: [analysis.json](expt_v1/analysis.json). All eight methods contain all three declared seeds; no missing cells are omitted from the denominator. p-val=n/a throughout; no formal superiority verdict.
 
 ![Terminal tradeoffs](expt_v1/terminal_tradeoffs.png)
 
-**Each point represents one completed seed.** Endpoints are shown against inclusive training work; missing cells remain in the table and no frontier superiority is claimed.
+**Each point represents one completed seed.** All 24 endpoints are shown against inclusive training work; no frontier superiority is claimed.
 
 ![Language learning curves](expt_v1/language_learning_curves.png)
 
 **Controller-set language loss is observed at fixed work milestones.** Curves are descriptive monitoring evidence, separate from development selection and terminal test results.
+
+**TLDR-end:** [unified-training: early-checkpoint results] `experiments/02_early_checkpoint_joint_objectives/` is complete: 24/24 training cells and 1/1 initial evaluation, zero failures. The proposed controller improves accuracy over sequential training, but its Aioli advantage is unresolved and every trained cell's observed accuracy is below the untouched checkpoint.

@@ -1,6 +1,23 @@
 # Pilot results
 
-**Status:** All 24 training cells have full terminal evaluations; program analysis, initial diagnostics and publication are separately verified.
+**Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/01_scratch_joint_objectives/results.md>
+
+**Status:** COMPLETE — 24/24 training cells and 3/3 untouched initial evaluations; zero failed or interrupted cells.
+
+**Last updated:** 10-04-2026 23:11 PDT.
+
+In `experiments/01_scratch_joint_objectives/`, the proposed validation-progress controller achieved WikiText negative log likelihood (NLL; lower is better) **6.7329 [6.5893, 6.8766]**, versus sequential **8.5329 [7.8374, 9.2284]** and Aioli **6.7130 [6.5395, 6.8866]**. These are three-seed means with 95% Student's t intervals (two degrees of freedom); sample standard deviations are 0.0578, 0.2800, and 0.0699, respectively; p-val=n/a (no hypothesis test). The paired proposed-minus-sequential difference is **−1.8000 [−2.5334, −1.0666]**, and proposed-minus-Aioli is **+0.0199 [−0.0108, +0.0507]** under the same seed-level interval method. Paired NLL differences average corpus blocks, while the reported NLL means are token-weighted. The pilot does not support beating all baselines.
+
+All 24 trained cells reduced language loss from their untouched random initializations. Proposed per-seed NLL changes were **−4.1266 [−4.1549, −4.0991]**, **−4.2486 [−4.2784, −4.2206]**, and **−4.2069 [−4.2355, −4.1798]**. Its normalized ARC-Easy (AI2 Reasoning Challenge, Easy subset) accuracy changes were **−2.3148 [−4.7990, +0.1694]**, **−0.7576 [−3.2839, +1.7677]**, and **+1.9781 [−0.3788, +4.2929] percentage points**. These 95% paired-item bootstrap intervals are conditional on the trained and initial models (564 language blocks or 2,376 accuracy items); they do not represent seed uncertainty; p-val=n/a throughout. Lower language loss alone does not establish an accuracy gain.
+
+See the [final program report](../00_program/FINAL_REPORT.md) for all methods, paired contrasts, initial diagnostics and scope limits. Requested plan and implementation reviews retain their original **FAIL** verdicts; the implementer marked findings **FIXED** in the [review reconciliation](../00_program/REVIEW_RECONCILIATION.md), supported by 63 deterministic tests. No post-fix reviewer PASS is claimed.
+
+| Phase | Status | Verified denominator |
+|---|---|---|
+| Frozen training matrix | DONE | 24/24 cells; zero failed or interrupted |
+| Full terminal evaluations | DONE | 24/24 |
+| Untouched initial evaluations | DONE | 3/3 |
+| Primary aggregates and paired initial comparisons | DONE | Eight three-seed aggregates; 24/24 initial comparisons |
 
 | Method | Seed | Status | Training work (million forward-equivalent tokens) | ARC-Easy accuracy | GSM8K exact match | WikiText NLL | Preference raw / implicit accuracy |
 |---|---:|---|---:|---:|---:|---:|---|
@@ -29,18 +46,20 @@
 | rpt_inspired | 1 | complete | 19.927 | 0.2542 [0.2371, 0.2721] | 0.0136 [0.0086, 0.0215] | 6.0119 [5.9830, 6.0437] | 0.5156 [0.4546, 0.5762] / 0.4883 [0.4277, 0.5492] |
 | rpt_inspired | 2 | complete | 19.939 | 0.2458 [0.2289, 0.2635] | 0.0000 [0.0000, 0.0029] | 6.0216 [5.9921, 6.0526] | 0.5039 [0.4431, 0.5646] / 0.5547 [0.4934, 0.6143] |
 
-NLL = negative log likelihood; preference raw ordering is the preference endpoint, implicit ordering is diagnostic. Scratch primary: WikiText NLL; early-checkpoint primary: ARC-Easy normalized accuracy. Unassisted GSM8K remains a sparse secondary diagnostic.
+Preference raw ordering is the preference endpoint; implicit ordering is diagnostic. The primary in `experiments/01_scratch_joint_objectives/` is WikiText NLL. GSM8K (Grade School Math 8K) unassisted exact match remains a sparse secondary diagnostic.
 
-Intervals: 95% Wilson binary-item score, conditional on each trained model; p-val=n/a (no hypothesis test). Three seeds do not establish universal superiority. Aioli, CHORD (Controllable Harmonization of On- and Off-Policy Reinforcement Learning via Dynamic Weighting), and RPT (Reinforcement Pre-Training) are declared adaptations; exact CHERRY-RL identity remains unresolved.
+Per-cell table intervals: 95% Wilson binary-item intervals for accuracies and corpus-block bootstrap intervals for NLL, conditional on each trained model; p-val=n/a (no hypothesis test). Three seeds do not establish universal superiority. Aioli, CHORD (Controllable Harmonization of On- and Off-Policy Reinforcement Learning via Dynamic Weighting), and RPT (Reinforcement Pre-Training) are declared adaptations; exact CHERRY-RL identity remains unresolved.
 
-Complete: 24/24. See `expt_v1/PROTOCOL.md` and the program review reconciliation.
+Complete: 24/24 training cells and 3/3 initial evaluations, with zero failed or interrupted cells. See [frozen protocol](expt_v1/PROTOCOL.md) and [final report](../00_program/FINAL_REPORT.md).
 
-Seed uncertainty, two-stage seed/item intervals, initial-checkpoint changes and all paired comparisons: `expt_v1/analysis.json`. Missing trained seeds remain missing with separate accuracy sensitivity bounds. p-val=n/a throughout; no formal superiority verdict.
+Seed uncertainty, two-stage seed/item intervals, initial-checkpoint changes and all paired comparisons: [analysis.json](expt_v1/analysis.json). All eight methods contain all three declared seeds; no missing cells are omitted from the denominator. p-val=n/a throughout; no formal superiority verdict.
 
 ![Terminal tradeoffs](expt_v1/terminal_tradeoffs.png)
 
-**Each point represents one completed seed.** Endpoints are shown against inclusive training work; missing cells remain in the table and no frontier superiority is claimed.
+**Each point represents one completed seed.** All 24 endpoints are shown against inclusive training work; no frontier superiority is claimed.
 
 ![Language learning curves](expt_v1/language_learning_curves.png)
 
 **Controller-set language loss is observed at fixed work milestones.** Curves are descriptive monitoring evidence, separate from development selection and terminal test results.
+
+**TLDR-end:** [unified-training: scratch results] `experiments/01_scratch_joint_objectives/` is complete: 24/24 training cells and 3/3 initial evaluations, zero failures. The proposed controller improves language loss over sequential training, but does not establish superiority over Aioli or an accuracy gain from random initialization.
