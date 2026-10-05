@@ -579,7 +579,49 @@
     "id": "aioli_objective-seed-0",
     "method": "aioli_objective",
     "seed": 0,
-    "status": "pending"
+    "status": "complete",
+    "training_mfet": 19.921104,
+    "arc": {
+      "estimate": 0.35353535353535354,
+      "interval95": [
+        0.33456316837031486,
+        0.3729803751626667
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 2376
+    },
+    "gsm": {
+      "estimate": 0.02350265352539803,
+      "interval95": [
+        0.01660621655875661,
+        0.03316653465165028
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 1319
+    },
+    "wiki_nll": 3.366944927203159,
+    "preference_raw": {
+      "estimate": 0.58203125,
+      "interval95": [
+        0.5208355774699231,
+        0.6408014460852074
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    },
+    "preference_implicit": {
+      "estimate": 0.56640625,
+      "interval95": [
+        0.5051606379526138,
+        0.6256883811158253
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    }
   },
   {
     "id": "aioli_objective-seed-1",

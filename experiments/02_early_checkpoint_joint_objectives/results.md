@@ -16,7 +16,7 @@
 | smooth_joint | 0 | complete | 19.922 | 0.3523 [0.3333, 0.3717] | 0.0174 [0.0116, 0.0260] | 3.3162 [3.2869, 3.3458] | 0.6094 [0.5484, 0.6671] / 0.5312 [0.4701, 0.5915] |
 | smooth_joint | 1 | complete | 19.976 | 0.3401 [0.3213, 0.3594] | 0.0250 [0.0179, 0.0349] | 3.3122 [3.2824, 3.3411] | 0.6406 [0.5802, 0.6969] / 0.5547 [0.4934, 0.6143] |
 | smooth_joint | 2 | complete | 19.930 | 0.3548 [0.3358, 0.3743] | 0.0205 [0.0141, 0.0296] | 3.3144 [3.2852, 3.3428] | 0.5703 [0.5091, 0.6295] / 0.5312 [0.4701, 0.5915] |
-| aioli_objective | 0 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
+| aioli_objective | 0 | complete | 19.921 | 0.3535 [0.3346, 0.3730] | 0.0235 [0.0166, 0.0332] | 3.3669 [3.3388, 3.3945] | 0.5820 [0.5208, 0.6408] / 0.5664 [0.5052, 0.6257] |
 | aioli_objective | 1 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
 | aioli_objective | 2 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
 | validation_progress | 0 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
@@ -33,7 +33,7 @@ NLL = negative log likelihood; preference raw ordering is the preference endpoin
 
 Intervals: 95% Wilson binary-item score, conditional on each trained model; p-val=n/a (no hypothesis test). Three seeds do not establish universal superiority. Aioli, CHORD (Controllable Harmonization of On- and Off-Policy Reinforcement Learning via Dynamic Weighting), and RPT (Reinforcement Pre-Training) are declared adaptations; exact CHERRY-RL identity remains unresolved.
 
-Complete: 12/24. See `expt_v1/PROTOCOL.md` and the program review reconciliation.
+Complete: 13/24. See `expt_v1/PROTOCOL.md` and the program review reconciliation.
 
 Seed uncertainty, two-stage seed/item intervals, initial-checkpoint changes and all paired comparisons: `expt_v1/analysis.json`. Missing trained seeds remain missing with separate accuracy sensitivity bounds. p-val=n/a throughout; no formal superiority verdict.
 
