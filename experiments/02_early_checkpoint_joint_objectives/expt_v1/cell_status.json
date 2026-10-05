@@ -291,7 +291,49 @@
     "id": "fixed_joint-seed-0",
     "method": "fixed_joint",
     "seed": 0,
-    "status": "pending"
+    "status": "complete",
+    "training_mfet": 19.93812,
+    "arc": {
+      "estimate": 0.3463804713804714,
+      "interval95": [
+        0.3275101146728925,
+        0.36574676288325203
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 2376
+    },
+    "gsm": {
+      "estimate": 0.013646702047005308,
+      "interval95": [
+        0.00864942932900514,
+        0.02146866120635846
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 1319
+    },
+    "wiki_nll": 3.2422475347708954,
+    "preference_raw": {
+      "estimate": 0.60546875,
+      "interval95": [
+        0.5444625238945793,
+        0.6633565063905884
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    },
+    "preference_implicit": {
+      "estimate": 0.50390625,
+      "interval95": [
+        0.4430558870480185,
+        0.5646411140736544
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    }
   },
   {
     "id": "fixed_joint-seed-1",
