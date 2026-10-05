@@ -2,7 +2,7 @@
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/CKPT_MASTER_tmuxnone_cxd_01a10d0e.md>
 Created: 10-05-2026 10:36 PDT
-Last updated: 10-05-2026 10:48 PDT
+Last updated: 10-05-2026 10:59 PDT
 **Status:** ACTIVE — plan published; remote implementation active and acknowledged.
 
 ## Identity and recovery
@@ -17,7 +17,7 @@ Historical pilots and frozen source remain complete and unchanged. Never restart
 
 The [campaign plan](03_qwen_joint_reasoning_retention/PLAN.md) targets `experiments/03_qwen_joint_reasoning_retention` (36 cells), `experiments/04_qwen_matched_exposure_schedules` (6) and `experiments/05_pythia_scratch_joint_learning` (9). All 51 remain prospective; development-only readiness and inclusive resource admission precede measurement. Read each live results.md for actual counts.
 
-Named remote session: `unified-training-jr1-execute`, launched 10-05-2026 10:41 PDT and acknowledged 10:44 PDT. Actual executor: Codex `gpt-5.6-terra` / high, existing ChatGPT subscription, full-access bypass flag; native thread `01a10d27-d452-7501-95dc-31f6aae286bb` confirms that exact model/effort, approval `never` and `danger-full-access`. Real tool actions verified the environment, GPU availability, input hashes and old/new project source. Initial implementation is active; no new measured training cell is complete. The in-process `gpt-6.1-sol` / high design worker completed a bounded read-only design task. No additional model workers are authorized by the saved runbook.
+Named remote session: `unified-training-jr1-execute`, launched 10-05-2026 10:41 PDT and acknowledged 10:44 PDT. Actual executor: Codex `gpt-5.6-terra` / high, existing ChatGPT subscription, full-access bypass flag; native thread `01a10d27-d452-7501-95dc-31f6aae286bb` confirms that exact model/effort, approval `never` and `danger-full-access`. Real tool actions verified the environment, GPU availability, input hashes and old/new project source. Development implementation and real GPU readiness work are active; no new measured training cell is complete. The in-process `gpt-6.1-sol` / high design worker completed a bounded read-only design task. No additional model workers are authorized by the saved runbook.
 
 ## Watches and limits
 
@@ -33,11 +33,11 @@ No decision or approval is waiting on Brando. [p 10/10] Verify the remote execut
 
 LANDED 97cec9e68441ccb542fd624f879c8c521a18b259 https://github.com/brando90/unified-training/pull/4 10-05-2026 10:34 PDT
 
-Plan branch head `aa00d3c811bbcce86efdcf2425da6809a68ddf9c`; the merged tree matches it exactly. Nineteen changed files passed Python compilation, local Markdown-link checks, staged secret scan, diff checks and the remote owner self-test. The actual scientific implementation remains pending.
+Plan branch head `aa00d3c811bbcce86efdcf2425da6809a68ddf9c`; the merged tree matches it exactly. Nineteen changed files passed Python compilation, local Markdown-link checks, staged secret scan, diff checks and the remote owner self-test. The remote owner subsequently initialized the environment and development harness, published it through pull request #5 at `53539dc`, and completed a real masked supervised-fine-tuning calibration update (236 tokens, 1.393 seconds, 15.53 GB peak allocation; one development update, not a measured comparison). Its 128-prompt × eight-sample readiness run is live; a fresh device probe observed 9,425 MiB allocated and 54% utilization on physical A100 device 0. It rechecked availability and records the physical device identity. The comparative matrix is still unadmitted; no new scientific superiority claim.
 
 ## Next commands
 
-All 19 transferred input hashes match the merged source. A slow shared SSH connection was replaced with a fresh task connection; the superseded partial bundle was not used. Monitor the acknowledged worker through readiness and calibrated admission, inspect its prospective protocol before measured claims, and reconcile Git publications. Use fresh SSH transport if the shared connection stalls. The root owns this checkpoint; after acknowledged handoff the remote worker alone edits new experiment implementation and live ledgers. Preserve every failure and pending cell through final report publication.
+All 19 transferred input hashes match the merged source. A slow shared SSH connection was replaced with a fresh task connection; the superseded partial bundle was not used. Monitor the acknowledged worker through readiness and calibrated admission, inspect its prospective protocol before measured claims, and reconcile Git publications. Use fresh SSH transport if the shared connection stalls. The readiness child is registered but currently belongs to the live native worker; the independent measured-training supervisor still must be verified before claiming unattended training. The root owns this checkpoint; after acknowledged handoff the remote worker alone edits new experiment implementation and live ledgers. Preserve every failure and pending cell through final report publication.
 
 **TLDR-end:** [unified-training: prospective campaign] The plan for `experiments/03_qwen_joint_reasoning_retention`, `experiments/04_qwen_matched_exposure_schedules` and `experiments/05_pythia_scratch_joint_learning` is published; measured results remain pending.
 **Snapshot:**
@@ -46,7 +46,7 @@ Plan pull request: #4 MERGED
 Prospective training cells: 51
 New measured cells complete: 0
 Execution-owner self-test: passed
-Remote first action: environment/source checks verified
+Remote execution: calibration update complete; readiness rollouts running
 Actual worker: gpt-5.6-terra / high / full access
 Local status schedule: enabled, 30 minutes
 ```
