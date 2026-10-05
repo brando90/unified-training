@@ -4400,6 +4400,3007 @@
       "primary_contrast": false
     }
   ],
-  "initial_changes": [],
+  "initial_changes": [
+    {
+      "method": "sequential",
+      "seed": 0,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.07491582491582492,
+        "interval95": [
+          -0.09807449494949495,
+          -0.05260942760942761
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": 5.586305096736443,
+        "interval95": [
+          5.525725186603327,
+          5.645623055464345
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "sequential",
+      "seed": 1,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.10858585858585859,
+        "interval95": [
+          -0.12920875420875422,
+          -0.08796296296296297
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": 3.490253099359427,
+        "interval95": [
+          3.450074501296473,
+          3.5292403026715644
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "sequential",
+      "seed": 2,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.08122895622895623,
+        "interval95": [
+          -0.10058922558922559,
+          -0.061447811447811446
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": 3.369191562760709,
+        "interval95": [
+          3.311070135673792,
+          3.428462763690798
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "parallel_joint",
+      "seed": 0,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.02441077441077441,
+        "interval95": [
+          -0.04292929292929293,
+          -0.006302609427609485
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.806011054436608,
+        "interval95": [
+          -0.8275308939985608,
+          -0.7858553891779034
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "parallel_joint",
+      "seed": 1,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.027356902356902357,
+        "interval95": [
+          -0.04335016835016835,
+          -0.011363636363636364
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.8114371630722321,
+        "interval95": [
+          -0.8322862190633817,
+          -0.7917112162184173
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "parallel_joint",
+      "seed": 2,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.022727272727272728,
+        "interval95": [
+          -0.03915193602693603,
+          -0.006734006734006734
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.8132390098922685,
+        "interval95": [
+          -0.8342623622295525,
+          -0.7930653333814055
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "fixed_joint",
+      "seed": 0,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.026094276094276093,
+        "interval95": [
+          -0.04292929292929293,
+          -0.010090488215488273
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.8133713379879243,
+        "interval95": [
+          -0.8357359691666352,
+          -0.7920882833913067
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "fixed_joint",
+      "seed": 1,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.03282828282828283,
+        "interval95": [
+          -0.04924242424242424,
+          -0.015993265993265993
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.8056200159483261,
+        "interval95": [
+          -0.8280862925155256,
+          -0.7848754147404479
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "fixed_joint",
+      "seed": 2,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.010942760942760943,
+        "interval95": [
+          -0.026936026936026935,
+          0.004629629629629629
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.8090424745459358,
+        "interval95": [
+          -0.8315091521840303,
+          -0.788489931151813
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "smooth_joint",
+      "seed": 0,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.020202020202020204,
+        "interval95": [
+          -0.037037037037037035,
+          -0.003787878787878788
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.7394509665352043,
+        "interval95": [
+          -0.7605454459502606,
+          -0.7190235909189471
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "smooth_joint",
+      "seed": 1,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.032407407407407406,
+        "interval95": [
+          -0.049252946127946125,
+          -0.015572390572390573
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.7434397147125665,
+        "interval95": [
+          -0.7651453977667748,
+          -0.7229635199904625
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "smooth_joint",
+      "seed": 2,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.017676767676767676,
+        "interval95": [
+          -0.03409090909090909,
+          -0.0016729797979798554
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.7412110647938325,
+        "interval95": [
+          -0.7625472502844857,
+          -0.7207473526851149
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "aioli_objective",
+      "seed": 0,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.01893939393939394,
+        "interval95": [
+          -0.037037037037037035,
+          -0.0021043771043771043
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.6886711559015877,
+        "interval95": [
+          -0.7078613893816756,
+          -0.6704432713890106
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "aioli_objective",
+      "seed": 1,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.04335016835016835,
+        "interval95": [
+          -0.05976430976430976,
+          -0.026936026936026935
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.7179440655361955,
+        "interval95": [
+          -0.7371141432223415,
+          -0.6993598930001532
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "aioli_objective",
+      "seed": 2,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.02904040404040404,
+        "interval95": [
+          -0.04671717171717172,
+          -0.011363636363636364
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.6978653699615702,
+        "interval95": [
+          -0.717558377649615,
+          -0.6790891162371938
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "validation_progress",
+      "seed": 0,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.012626262626262626,
+        "interval95": [
+          -0.030723905723905723,
+          0.003787878787878788
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.6637030038976707,
+        "interval95": [
+          -0.682673689796948,
+          -0.6454531970160307
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "validation_progress",
+      "seed": 1,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.03998316498316498,
+        "interval95": [
+          -0.05808080808080808,
+          -0.022727272727272728
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.6668978718966198,
+        "interval95": [
+          -0.6865404053590229,
+          -0.6480291428631122
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "validation_progress",
+      "seed": 2,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.037037037037037035,
+        "interval95": [
+          -0.055134680134680134,
+          -0.01936026936026936
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.6955968225444096,
+        "interval95": [
+          -0.7152529596612333,
+          -0.6766741279139716
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "chord_objective",
+      "seed": 0,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.04461279461279461,
+        "interval95": [
+          -0.06397306397306397,
+          -0.026094276094276093
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.7785582628133435,
+        "interval95": [
+          -0.7993558155324316,
+          -0.7581206143377096
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "chord_objective",
+      "seed": 1,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.0361952861952862,
+        "interval95": [
+          -0.05387205387205387,
+          -0.01850799663299669
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.7983294806728348,
+        "interval95": [
+          -0.8193881991169878,
+          -0.7785868972173076
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "chord_objective",
+      "seed": 2,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.045875420875420875,
+        "interval95": [
+          -0.06523569023569023,
+          -0.027777777777777776
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.7871341585957683,
+        "interval95": [
+          -0.8085609813871474,
+          -0.767209734957835
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "rpt_inspired",
+      "seed": 0,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.014730639730639731,
+        "interval95": [
+          -0.030723905723905723,
+          0.0012626262626262627
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.8195784693424438,
+        "interval95": [
+          -0.8421618219391853,
+          -0.7984218447096798
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "rpt_inspired",
+      "seed": 1,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.04713804713804714,
+        "interval95": [
+          -0.06440446127946128,
+          -0.029461279461279462
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.8169388553596956,
+        "interval95": [
+          -0.8394715246704109,
+          -0.7959434457255197
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method": "rpt_inspired",
+      "seed": 2,
+      "untouched_summary": {
+        "wiki": {
+          "nll": 4.0556609425177275,
+          "nll_interval95": [
+            4.030664503272754,
+            4.078994857011668
+          ],
+          "perplexity": 57.72330217554349,
+          "perplexity_interval95": [
+            56.29830923094486,
+            59.086050063264686
+          ],
+          "tokens": 288158,
+          "blocks": 564,
+          "p_value": null,
+          "resampling_unit": "disjoint corpus block; conditional on model; dependence beyond block unmodeled",
+          "wall_seconds": 3.2819528840482235
+        },
+        "preferences": {
+          "implicit_accuracy": {
+            "estimate": 0.0,
+            "interval95": [
+              0.0,
+              0.01478385642587143
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "raw_accuracy": {
+            "estimate": 0.56640625,
+            "interval95": [
+              0.5051606379526138,
+              0.6256883811158253
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 256
+          },
+          "ties_are_incorrect": true,
+          "rows": 256,
+          "wall_seconds": 3.940862162038684
+        },
+        "arc": {
+          "accuracy_primary_normalized": {
+            "estimate": 0.37247474747474746,
+            "interval95": [
+              0.3532555291963949,
+              0.3921056595693907
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "accuracy_raw": {
+            "estimate": 0.43223905723905726,
+            "interval95": [
+              0.4124451205641669,
+              0.4522517487140229
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 2376
+          },
+          "chance_floor": 0.25016133557800224,
+          "rows": 2376,
+          "wall_seconds": 19.609339544549584
+        },
+        "gsm": {
+          "exact_match": {
+            "estimate": 0.018953752843062926,
+            "interval95": [
+              0.012870788484535687,
+              0.027830580875851215
+            ],
+            "p_value": null,
+            "test": "none; Wilson conditional item score interval",
+            "n": 1319
+          },
+          "rows": 1319,
+          "truncated": 1319,
+          "zero_reward_floor": 0.0,
+          "wall_seconds": 88.90314926765859
+        },
+        "identity": {
+          "experiment": "02_early_checkpoint_joint_objectives",
+          "seed": 0,
+          "stage": "untouched_initial"
+        },
+        "complete": true,
+        "smoke": false,
+        "work": {
+          "eval_forward": 1070465,
+          "reference": 258048,
+          "eval_generation": 328116
+        },
+        "forward_equivalent_tokens": 1656629,
+        "wall_seconds": 115.73533776961267
+      },
+      "arc_change_from_initial": {
+        "estimate": -0.021464646464646464,
+        "interval95": [
+          -0.0382996632996633,
+          -0.005460858585858644
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      },
+      "wiki_change_from_initial": {
+        "estimate": -0.8219899334614688,
+        "interval95": [
+          -0.8443233335127852,
+          -0.8013399047013197
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    }
+  ],
   "hypothesis_tests": "none; exploratory pilot, no universal-win inference; missing-value identification bounds separate from complete-case uncertainty"
 }
