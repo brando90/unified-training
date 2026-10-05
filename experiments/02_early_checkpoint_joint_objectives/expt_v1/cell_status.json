@@ -195,7 +195,49 @@
     "id": "parallel_joint-seed-1",
     "method": "parallel_joint",
     "seed": 1,
-    "status": "pending"
+    "status": "complete",
+    "training_mfet": 19.917464,
+    "arc": {
+      "estimate": 0.3451178451178451,
+      "interval95": [
+        0.3262659507540833,
+        0.36446975045320745
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 2376
+    },
+    "gsm": {
+      "estimate": 0.011372251705837756,
+      "interval95": [
+        0.006903734704795245,
+        0.018678664905558365
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 1319
+    },
+    "wiki_nll": 3.244178996969341,
+    "preference_raw": {
+      "estimate": 0.6015625,
+      "interval95": [
+        0.540515032751419,
+        0.6596069964120759
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    },
+    "preference_implicit": {
+      "estimate": 0.55078125,
+      "interval95": [
+        0.4895457648520954,
+        0.6105152497296519
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    }
   },
   {
     "id": "parallel_joint-seed-2",
