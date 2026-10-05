@@ -2,14 +2,14 @@
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/03_qwen_joint_reasoning_retention/results.md>
 **Status:** RUNNING (started 10-05-2026 17:44 UTC) — development/readiness only; measured training has not started.
-**Last updated:** 10-05-2026 18:12 UTC
+**Last updated:** 10-05-2026 18:23 UTC
 
 `experiments/03_qwen_joint_reasoning_retention` has 36 prospective training cells. Completed: 0; failed: 0; interrupted: 0; unstarted: 36. Admission and exact resource targets are pending calibration. This denominator must remain visible if any condition is gated or removed prospectively.
 
 | Phase | Status | Evidence |
 |---|---|---|
 | Design | DONE | [Campaign plan](../03_qwen_joint_reasoning_retention/PLAN.md) |
-| Initialization/readiness/calibration | DONE | GSM8K readiness: 105/128 mixed groups, 268 positive / 756 negative rewards, 34/1,024 truncations (3.32%). Four one-device objective updates all produced nonzero gradients. |
+| Initialization/readiness/calibration | DONE | GSM8K readiness: 105/128 mixed groups, 268 positive / 756 negative rewards, 34/1,024 truncations (3.32%). GPU-1 four-objective smoke: 26.08 s and four nonzero updates. |
 | Protocol and input freeze | PENDING | No measured cell admitted |
 | Training/full evaluation | PENDING | 0/36 prospective cells |
 | Final verification/publication | PENDING | Results unavailable |
