@@ -1,5 +1,5 @@
 {
-  "complete": 22,
+  "complete": 23,
   "expected": 24,
   "seed_summary": {
     "sequential": {
@@ -1370,92 +1370,98 @@
     "rpt_inspired": {
       "arc": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          0.24663299663299662
+          0.24663299663299662,
+          0.2542087542087542
         ]
       },
       "gsm": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          0.006065200909780136
+          0.006065200909780136,
+          0.013646702047005308
         ]
       },
       "wiki_nll": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          5.975102522829273
+          5.975102522829273,
+          6.011913475867081
         ]
       },
       "preference_raw_accuracy": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          0.484375
+          0.484375,
+          0.515625
         ]
       },
       "preference_implicit_accuracy": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          0.453125
+          0.453125,
+          0.48828125
         ]
       },
       "missing_arc_sensitivity": {
-        "observed_seeds": 1,
+        "observed_seeds": 2,
         "expected_seeds": 3,
-        "complete_case_mean": 0.24663299663299662,
+        "complete_case_mean": 0.25042087542087543,
         "all_seed_possible_mean": [
-          0.08221099887766554,
-          0.7488776655443322
+          0.16694725028058363,
+          0.5002805836139169
         ],
         "interpretation": "identification bounds, not a confidence interval; missing accuracy in [0,1]"
       },
       "missing_gsm_sensitivity": {
-        "observed_seeds": 1,
+        "observed_seeds": 2,
         "expected_seeds": 3,
-        "complete_case_mean": 0.006065200909780136,
+        "complete_case_mean": 0.009855951478392723,
         "all_seed_possible_mean": [
-          0.0020217336365933787,
-          0.6686884003032602
+          0.006570634318928482,
+          0.3399039676522618
         ],
         "interpretation": "identification bounds, not a confidence interval; missing accuracy in [0,1]"
       },
-      "training_seconds": 314.1525332191959,
-      "evaluation_seconds": 86.43954819254577,
+      "training_seconds": 647.9119754238054,
+      "evaluation_seconds": 174.65199077874422,
       "arc_two_stage": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "gsm_two_stage": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "preference_two_stage": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "preference_implicit_two_stage": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "wiki_two_stage": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "controller_iterations": [
+        0,
         0
       ],
       "realized_work_by_seed": [
@@ -1466,6 +1472,14 @@
           "backward": 10327744,
           "reference": 971552,
           "generation": 1691904
+        },
+        {
+          "validation": 67480,
+          "validation_generation": 8800,
+          "generation": 2000960,
+          "forward": 6930112,
+          "backward": 9845760,
+          "reference": 1073888
         }
       ]
     }
@@ -3920,17 +3934,34 @@
     {
       "method_minus_baseline": "validation_progress minus rpt_inspired",
       "benchmark": "arc",
+      "seed": 1,
+      "conditional_item_difference": {
+        "estimate": -0.007575757575757576,
+        "interval95": [
+          -0.021043771043771045,
+          0.005892255892255892
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 2376,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus rpt_inspired",
+      "benchmark": "arc",
       "paired_seed_difference": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          -0.005050505050505051
+          -0.005050505050505051,
+          -0.007575757575757576
         ]
       },
       "two_stage_difference": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "primary_contrast": false
@@ -3954,17 +3985,34 @@
     {
       "method_minus_baseline": "validation_progress minus rpt_inspired",
       "benchmark": "gsm",
+      "seed": 1,
+      "conditional_item_difference": {
+        "estimate": -0.00530705079605762,
+        "interval95": [
+          -0.012907505686125852,
+          0.003032600454890068
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 1319,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus rpt_inspired",
+      "benchmark": "gsm",
       "paired_seed_difference": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          -0.0037907505686125853
+          -0.0037907505686125853,
+          -0.00530705079605762
         ]
       },
       "two_stage_difference": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "primary_contrast": false
@@ -3988,17 +4036,34 @@
     {
       "method_minus_baseline": "validation_progress minus rpt_inspired",
       "benchmark": "preference",
+      "seed": 1,
+      "conditional_item_difference": {
+        "estimate": -0.015625,
+        "interval95": [
+          -0.05859375,
+          0.02734375
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 256,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus rpt_inspired",
+      "benchmark": "preference",
       "paired_seed_difference": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          0.01953125
+          0.01953125,
+          -0.015625
         ]
       },
       "two_stage_difference": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "primary_contrast": false
@@ -4022,17 +4087,34 @@
     {
       "method_minus_baseline": "validation_progress minus rpt_inspired",
       "benchmark": "preference_implicit",
+      "seed": 1,
+      "conditional_item_difference": {
+        "estimate": -0.01953125,
+        "interval95": [
+          -0.10546875,
+          0.0625
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 256,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus rpt_inspired",
+      "benchmark": "preference_implicit",
       "paired_seed_difference": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          0.109375
+          0.109375,
+          -0.01953125
         ]
       },
       "two_stage_difference": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "primary_contrast": false
@@ -4056,17 +4138,34 @@
     {
       "method_minus_baseline": "validation_progress minus rpt_inspired",
       "benchmark": "wiki",
+      "seed": 1,
+      "conditional_item_difference": {
+        "estimate": 0.6697953778977004,
+        "interval95": [
+          0.6590526669756576,
+          0.6800330484307692
+        ],
+        "p_value": null,
+        "test": "none; paired item bootstrap, conditional on models",
+        "n": 564,
+        "degenerate_sample": false
+      }
+    },
+    {
+      "method_minus_baseline": "validation_progress minus rpt_inspired",
+      "benchmark": "wiki",
       "paired_seed_difference": {
         "status": "incomplete",
-        "n": 1,
+        "n": 2,
         "expected": 3,
         "values": [
-          0.8205125981931978
+          0.8205125981931978,
+          0.6697953778977004
         ]
       },
       "two_stage_difference": {
         "status": "incomplete",
-        "available_seeds": 1,
+        "available_seeds": 2,
         "expected_seeds": 3
       },
       "primary_contrast": false

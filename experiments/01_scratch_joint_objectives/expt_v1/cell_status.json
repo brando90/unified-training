@@ -1059,7 +1059,49 @@
     "id": "rpt_inspired-seed-1",
     "method": "rpt_inspired",
     "seed": 1,
-    "status": "pending"
+    "status": "complete",
+    "training_mfet": 19.927,
+    "arc": {
+      "estimate": 0.2542087542087542,
+      "interval95": [
+        0.23710745279869103,
+        0.27210355129114006
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 2376
+    },
+    "gsm": {
+      "estimate": 0.013646702047005308,
+      "interval95": [
+        0.00864942932900514,
+        0.02146866120635846
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 1319
+    },
+    "wiki_nll": 6.011913475867081,
+    "preference_raw": {
+      "estimate": 0.515625,
+      "interval95": [
+        0.4546288138005892,
+        0.5761591906861023
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    },
+    "preference_implicit": {
+      "estimate": 0.48828125,
+      "interval95": [
+        0.4276765099686914,
+        0.5492324866662899
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    }
   },
   {
     "id": "rpt_inspired-seed-2",
