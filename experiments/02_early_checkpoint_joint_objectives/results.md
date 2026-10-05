@@ -26,14 +26,14 @@
 | chord_objective | 1 | complete | 19.934 | 0.3363 [0.3176, 0.3555] | 0.0015 [0.0004, 0.0055] | 3.2573 [3.2277, 3.2856] | 0.6016 [0.5405, 0.6596] / 0.5234 [0.4624, 0.5838] |
 | chord_objective | 2 | complete | 19.975 | 0.3266 [0.3080, 0.3457] | 0.0205 [0.0141, 0.0296] | 3.2685 [3.2388, 3.2973] | 0.5977 [0.5366, 0.6559] / 0.6133 [0.5524, 0.6708] |
 | rpt_inspired | 0 | complete | 19.929 | 0.3577 [0.3387, 0.3772] | 0.0167 [0.0110, 0.0251] | 3.2360 [3.2053, 3.2659] | 0.6172 [0.5563, 0.6746] / 0.4102 [0.3517, 0.4713] |
-| rpt_inspired | 1 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
+| rpt_inspired | 1 | complete | 19.927 | 0.3253 [0.3068, 0.3444] | 0.0197 [0.0135, 0.0287] | 3.2387 [3.2081, 3.2679] | 0.5938 [0.5326, 0.6521] / 0.5156 [0.4546, 0.5762] |
 | rpt_inspired | 2 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
 
 NLL = negative log likelihood; preference raw ordering is the preference endpoint, implicit ordering is diagnostic. Scratch primary: WikiText NLL; early-checkpoint primary: ARC-Easy normalized accuracy. Unassisted GSM8K remains a sparse secondary diagnostic.
 
 Intervals: 95% Wilson binary-item score, conditional on each trained model; p-val=n/a (no hypothesis test). Three seeds do not establish universal superiority. Aioli, CHORD (Controllable Harmonization of On- and Off-Policy Reinforcement Learning via Dynamic Weighting), and RPT (Reinforcement Pre-Training) are declared adaptations; exact CHERRY-RL identity remains unresolved.
 
-Complete: 22/24. See `expt_v1/PROTOCOL.md` and the program review reconciliation.
+Complete: 23/24. See `expt_v1/PROTOCOL.md` and the program review reconciliation.
 
 Seed uncertainty, two-stage seed/item intervals, initial-checkpoint changes and all paired comparisons: `expt_v1/analysis.json`. Missing trained seeds remain missing with separate accuracy sensitivity bounds. p-val=n/a throughout; no formal superiority verdict.
 
