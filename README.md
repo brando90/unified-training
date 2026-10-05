@@ -2,6 +2,8 @@
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/README.md>
 
+A new [joint reasoning and capability-retention campaign](experiments/03_qwen_joint_reasoning_retention/PLAN.md) is in preparation, with live status in the [experiment index](experiments/README.md).
+
 The 48-cell joint-training pilot and all four untouched initial evaluations are complete. The proposed controller improves on sequential training in these settings but does not establish superiority over Aioli; every trained early-checkpoint cell has lower observed science-question accuracy than the untouched model. See the [final report](experiments/00_program/FINAL_REPORT.md) for full results and uncertainty.
 
 Test whether mixing pretraining, supervised fine-tuning, preference learning, and reasoning reinforcement learning throughout training improves reasoning while retaining general language capability. The proposed joint method uses validation progress and compute cost to adapt the mixture. These pilots estimate that comparison under small-model, untuned conditions; they do not establish a general advantage.
