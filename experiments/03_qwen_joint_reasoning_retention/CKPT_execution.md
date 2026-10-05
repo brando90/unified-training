@@ -15,6 +15,7 @@ LANDED 94282326b8b34a66de1a4ecd7e4943a294a14739 https://github.com/brando90/unif
 - Calibration: one masked-SFT development update completed with 236 tokens in 1.393 seconds and 15.53 GB peak allocation on one A100 80 GB device. This is not a prospective cell.
 - Readiness passed: 105/128 mixed-success groups (threshold 20), 268 positive and 756 negative rewards, 34/1,024 truncations (3.32%; threshold 10%).
 - PT, SFT, DPO and unassisted on-policy RL development updates all had nonzero gradients with the shared optimizer. The DPO smoke's synthetic negative is technical-only, never released preference training evidence.
-- Next: resolve released preference provenance, verify schedule/controller/recovery behavior, freeze resource accounting and then start the durable supervisor only for admitted cells.
+- Device mapping: the completed preparation used physical GPU 0 through `CUDA_VISIBLE_DEVICES=0`; a later fresh probe found all devices idle and establishes the dispatch-provisional physical GPU 1 (`CUDA_VISIBLE_DEVICES=1`, PyTorch logical `cuda:0`) for subsequent campaign work.
+- Next: resolve released preference provenance, verify schedule/controller/recovery behavior, freeze resource accounting and then start the durable supervisor only for admitted cells on physical GPU 1.
 - Resource limit is a shared new 96 device-hour campaign ceiling, never per experiment or per worker.
 - Actual host/process/run identity and private storage are in the dispatch receipt; update this checkpoint after acknowledgement and every meaningful phase.
