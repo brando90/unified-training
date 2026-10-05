@@ -1,6 +1,6 @@
 # Pilot results
 
-**Status:** Full-set execution is in progress; missing metrics are unavailable, not zero.
+**Status:** All 24 training cells have full terminal evaluations; program analysis, initial diagnostics and publication are separately verified.
 
 | Method | Seed | Status | Training work (million forward-equivalent tokens) | ARC-Easy accuracy | GSM8K exact match | WikiText NLL | Preference raw / implicit accuracy |
 |---|---:|---|---:|---:|---:|---:|---|
@@ -27,13 +27,13 @@
 | chord_objective | 2 | complete | 19.919 | 0.2588 [0.2416, 0.2768] | 0.0000 [0.0000, 0.0029] | 6.3972 [6.3709, 6.4250] | 0.4805 [0.4200, 0.5415] / 0.5625 [0.5013, 0.6219] |
 | rpt_inspired | 0 | complete | 19.929 | 0.2466 [0.2297, 0.2644] | 0.0061 [0.0031, 0.0119] | 5.9751 [5.9454, 6.0066] | 0.4844 [0.4238, 0.5454] / 0.4531 [0.3933, 0.5143] |
 | rpt_inspired | 1 | complete | 19.927 | 0.2542 [0.2371, 0.2721] | 0.0136 [0.0086, 0.0215] | 6.0119 [5.9830, 6.0437] | 0.5156 [0.4546, 0.5762] / 0.4883 [0.4277, 0.5492] |
-| rpt_inspired | 2 | pending | unavailable | unavailable | unavailable | unavailable | unavailable |
+| rpt_inspired | 2 | complete | 19.939 | 0.2458 [0.2289, 0.2635] | 0.0000 [0.0000, 0.0029] | 6.0216 [5.9921, 6.0526] | 0.5039 [0.4431, 0.5646] / 0.5547 [0.4934, 0.6143] |
 
 NLL = negative log likelihood; preference raw ordering is the preference endpoint, implicit ordering is diagnostic. Scratch primary: WikiText NLL; early-checkpoint primary: ARC-Easy normalized accuracy. Unassisted GSM8K remains a sparse secondary diagnostic.
 
 Intervals: 95% Wilson binary-item score, conditional on each trained model; p-val=n/a (no hypothesis test). Three seeds do not establish universal superiority. Aioli, CHORD (Controllable Harmonization of On- and Off-Policy Reinforcement Learning via Dynamic Weighting), and RPT (Reinforcement Pre-Training) are declared adaptations; exact CHERRY-RL identity remains unresolved.
 
-Complete: 23/24. See `expt_v1/PROTOCOL.md` and the program review reconciliation.
+Complete: 24/24. See `expt_v1/PROTOCOL.md` and the program review reconciliation.
 
 Seed uncertainty, two-stage seed/item intervals, initial-checkpoint changes and all paired comparisons: `expt_v1/analysis.json`. Missing trained seeds remain missing with separate accuracy sensitivity bounds. p-val=n/a throughout; no formal superiority verdict.
 
