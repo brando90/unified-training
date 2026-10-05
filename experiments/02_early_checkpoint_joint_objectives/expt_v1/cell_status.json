@@ -99,7 +99,49 @@
     "id": "sequential-seed-2",
     "method": "sequential",
     "seed": 2,
-    "status": "pending"
+    "status": "complete",
+    "training_mfet": 19.945128,
+    "arc": {
+      "estimate": 0.29124579124579125,
+      "interval95": [
+        0.27332591062070566,
+        0.3098395997021647
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 2376
+    },
+    "gsm": {
+      "estimate": 0.02350265352539803,
+      "interval95": [
+        0.01660621655875661,
+        0.03316653465165028
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 1319
+    },
+    "wiki_nll": 7.424854586035211,
+    "preference_raw": {
+      "estimate": 0.5078125,
+      "interval95": [
+        0.44690987163300716,
+        0.5684841306103388
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    },
+    "preference_implicit": {
+      "estimate": 0.44140625,
+      "interval95": [
+        0.38189072167350635,
+        0.5026542615014005
+      ],
+      "p_value": null,
+      "test": "none; Wilson conditional item score interval",
+      "n": 256
+    }
   },
   {
     "id": "parallel_joint-seed-0",
