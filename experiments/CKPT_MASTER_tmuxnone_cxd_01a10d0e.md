@@ -2,7 +2,7 @@
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/CKPT_MASTER_tmuxnone_cxd_01a10d0e.md>
 Created: 10-05-2026 10:36 PDT
-Last updated: 10-05-2026 10:59 PDT
+Last updated: 10-05-2026 11:02 PDT
 **Status:** ACTIVE — plan published; remote implementation active and acknowledged.
 
 ## Identity and recovery
@@ -36,6 +36,10 @@ LANDED 97cec9e68441ccb542fd624f879c8c521a18b259 https://github.com/brando90/unif
 Plan branch head `aa00d3c811bbcce86efdcf2425da6809a68ddf9c`; the merged tree matches it exactly. Nineteen changed files passed Python compilation, local Markdown-link checks, staged secret scan, diff checks and the remote owner self-test. The remote owner subsequently initialized the environment and development harness, published it through pull request #5 at `53539dc`, and completed a real masked supervised-fine-tuning calibration update (236 tokens, 1.393 seconds, 15.53 GB peak allocation; one development update, not a measured comparison). Its 128-prompt × eight-sample readiness run is live; a fresh device probe observed 9,425 MiB allocated and 54% utilization on physical A100 device 0. It rechecked availability and records the physical device identity. The comparative matrix is still unadmitted; no new scientific superiority claim.
 
 Coordinator publication integration: backup branch `codex/backup-jr1-coordinator-before-main`, old base `97cec9e68441ccb542fd624f879c8c521a18b259`, fetched main `53539dc52889f58aaa5e19616d70dfec38ad2697`. Preserve and compare all checkpoint content across rebase; this affects only the coordinator-owned record.
+
+LANDED e32af57711c1773013ef34e06fcd298806156de5 https://github.com/brando90/unified-training/pull/6 10-05-2026 11:02 PDT
+
+Coordinator record pull request #6 is merged; its tree matches the verified publication. Remote initialization pull request #5 remains a separate worker-owned milestone. This record-only follow-up changes no scientific artifact.
 
 ## Next commands
 
