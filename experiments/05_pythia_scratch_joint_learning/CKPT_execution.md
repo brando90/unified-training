@@ -2,7 +2,7 @@
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/05_pythia_scratch_joint_learning/CKPT_execution.md>
 Created: 10-05-2026 10:25 PDT
-Last updated: 10-05-2026 17:49 UTC
+Last updated: 10-05-2026 18:12 UTC
 Status: SHARED INITIALIZATION IN PROGRESS
 
 - Canonical home: `experiments/05_pythia_scratch_joint_learning`.

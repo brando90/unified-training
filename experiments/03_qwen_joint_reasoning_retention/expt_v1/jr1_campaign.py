@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import contextlib
+import copy
 import datetime as dt
 import hashlib
 import json
@@ -190,6 +191,14 @@ def readiness(model, tok, device: torch.device) -> dict:
                               "successes": int(sum(rewards)), "samples": 8})
             truncations += sum(len(tok.encode(x, add_special_tokens=False)) >= 1024 for x in samples)
             total += 8
+        # A partial receipt is evidence of work, but is never treated as an
+        # admissible readiness decision. It lets a recovery distinguish a
+        # stopped rollout from a process that had not begun.
+        atomic_json(RUN / "readiness_partial.json", {
+            "timestamp": stamp(), "completed_prompt_groups": len(by_prompt),
+            "expected_prompt_groups": len(rows), "samples": total,
+            "truncations": truncations, "rows": by_prompt,
+        })
     mixed = sum(0 < x["successes"] < 8 for x in by_prompt)
     positive = sum(x["successes"] for x in by_prompt)
     result = {"timestamp": stamp(), "model": "Qwen/Qwen2.5-1.5B", "split": "gsm8k train first 128",
@@ -224,6 +233,98 @@ def calibration(model, tok, device: torch.device) -> dict:
               "device": torch.cuda.get_device_name(device),
               "admission_note": "Single masked SFT update only; no measured cell has started."}
     atomic_json(RUN / "calibration.json", result)
+    return result
+
+
+def pack(tok, texts: list[str], starts: list[int], device: torch.device) -> tuple[torch.Tensor, torch.Tensor]:
+    encoded = tok(texts, return_tensors="pt", padding=True, truncation=True, max_length=512).to(device)
+    return encoded.input_ids, mask_labels(encoded.input_ids, starts, tok.pad_token_id)
+
+
+def objective_smoke(model, tok, device: torch.device) -> dict:
+    """One local update per objective, with a shared optimizer and frozen ref.
+
+    This is an engineering admission check only. The DPO negative is deliberately
+    synthetic and is recorded as such; it is never eligible training evidence or
+    a replacement for the planned released preference source.
+    """
+    gsm = gsm_rows("train")[:4]
+    wiki = load_dataset("Salesforce/wikitext", "wikitext-2-raw-v1", split="train[:2]",
+                        cache_dir=str(data_dir()))
+    optim = torch.optim.AdamW(model.parameters(), lr=1e-6)
+    ref = copy.deepcopy(model).eval()
+    for p in ref.parameters():
+        p.requires_grad_(False)
+    work, rows = Work({}), []
+
+    def step(name: str, loss: torch.Tensor, tokens: int, metadata: dict) -> None:
+        optim.zero_grad(set_to_none=True)
+        loss.backward()
+        grad = float(torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0))
+        if grad > 0:
+            optim.step()
+        rows.append({"objective": name, "loss": float(loss.detach()), "tokens": tokens,
+                     "gradient_norm_before_clip": grad, "optimizer_step": bool(grad > 0), **metadata})
+
+    # PT: shifted causal language modelling, with no answer/prompt mask.
+    pt = tok([str(x["text"]) or " " for x in wiki], return_tensors="pt", padding=True,
+             truncation=True, max_length=256).to(device)
+    with torch.autocast("cuda", dtype=torch.bfloat16):
+        out = model(**pt, use_cache=False).logits
+        pt_loss = F.cross_entropy(out[:, :-1].float().transpose(1, 2), pt.input_ids[:, 1:],
+                                  ignore_index=tok.pad_token_id)
+    step("pt", pt_loss, int(pt.input_ids.numel()), {"source": "wikitext-2-raw-v1 train[:2]"})
+
+    sft_text = [prompt(x["question"]) + " " + x["answer"] for x in gsm[:2]]
+    starts = [len(tok.encode(prompt(x["question"]), add_special_tokens=False)) for x in gsm[:2]]
+    sft_ids, sft_labels = pack(tok, sft_text, starts, device)
+    with torch.autocast("cuda", dtype=torch.bfloat16):
+        sft_logits = model(input_ids=sft_ids, use_cache=False).logits
+        sft_loss = F.cross_entropy(sft_logits[:, :-1].float().transpose(1, 2), sft_labels[:, 1:], ignore_index=-100)
+    step("sft", sft_loss, int(sft_ids.numel()), {"source": "gsm8k train[:2]", "prompt_masked": True})
+
+    chosen = [prompt(x["question"]) + " " + x["answer"] for x in gsm[:2]]
+    rejected = [prompt(x["question"]) + " I do not know." for x in gsm[:2]]
+    cids, clabels = pack(tok, chosen, starts, device)
+    rids, rlabels = pack(tok, rejected, starts, device)
+    with torch.autocast("cuda", dtype=torch.bfloat16):
+        policy_c = sequence_logps(model(input_ids=cids, use_cache=False).logits, cids, clabels)
+        policy_r = sequence_logps(model(input_ids=rids, use_cache=False).logits, rids, rlabels)
+    with torch.no_grad(), torch.autocast("cuda", dtype=torch.bfloat16):
+        ref_c = sequence_logps(ref(input_ids=cids, use_cache=False).logits, cids, clabels)
+        ref_r = sequence_logps(ref(input_ids=rids, use_cache=False).logits, rids, rlabels)
+    step("dpo", dpo_loss(policy_c, policy_r, ref_c, ref_r), int(cids.numel() + rids.numel()),
+         {"source": "synthetic-negative objective smoke only; not training preference data", "reference": "frozen initial model", "sequence_summed": True})
+
+    # The on-policy check uses a development prompt known from the readiness
+    # receipt to have mixed outcomes. A zero-advantage batch is retained and
+    # deliberately does not advance the optimizer.
+    ready = read_json(RUN / "readiness.json", {})
+    mixed_id = next((r["id"] for r in ready.get("rows", []) if 0 < r["successes"] < 8), gsm[0]["id"])
+    row = next(x for x in gsm_rows("train") if x["id"] == mixed_id)
+    enc = tok([prompt(row["question"])] * 4, return_tensors="pt", padding=True).to(device)
+    sampled = model.generate(**enc, do_sample=True, temperature=1.0, top_p=1.0, top_k=0,
+                             max_new_tokens=256, pad_token_id=tok.pad_token_id, eos_token_id=tok.eos_token_id,
+                             use_cache=True)
+    continuation = sampled[:, enc.input_ids.shape[1]:]
+    texts = tok.batch_decode(continuation, skip_special_tokens=True)
+    rewards = torch.tensor([exact_reward(x, row["answer"]) for x in texts], device=device)
+    advantages = loo_advantages(rewards, 4)
+    seq = torch.cat([enc.input_ids, continuation], dim=1)
+    labels = mask_labels(seq, [enc.input_ids.shape[1]] * len(seq), tok.pad_token_id)
+    with torch.autocast("cuda", dtype=torch.bfloat16):
+        logits = model(input_ids=seq, use_cache=False).logits
+        rl_loss = -(advantages.detach() * sequence_logps(logits, seq, labels)).mean()
+    if bool((advantages == 0).all()):
+        rows.append({"objective": "rl", "loss": float(rl_loss.detach()), "tokens": int(seq.numel()),
+                     "rewards": rewards.tolist(), "zero_advantage": True, "optimizer_step": False,
+                     "source": "unassisted on-policy GSM8K rollout"})
+    else:
+        step("rl", rl_loss, int(seq.numel()), {"rewards": rewards.tolist(), "zero_advantage": False,
+                                                 "source": "unassisted on-policy GSM8K rollout"})
+    result = {"timestamp": stamp(), "objectives": rows, "shared_optimizer": "AdamW", "complete": len(rows) == 4,
+              "all_nonzero_steps": all(x["optimizer_step"] for x in rows), "development_only": True}
+    atomic_json(RUN / "objective_smoke.json", result)
     return result
 
 
@@ -262,7 +363,7 @@ def preflight() -> None:
 
 def main() -> None:
     p = argparse.ArgumentParser()
-    p.add_argument("command", choices=["test", "preflight", "readiness", "calibrate"])
+    p.add_argument("command", choices=["test", "preflight", "readiness", "calibrate", "objective-smoke"])
     args = p.parse_args()
     if args.command == "test":
         test_math(); print("unit tests passed")
@@ -274,9 +375,13 @@ def main() -> None:
             result = readiness(model, tok, device)
             update_progress("readiness_complete", blockers=[] if result["passed"] else ["readiness criteria not met"])
             print(json.dumps({k: v for k, v in result.items() if k != "rows"}, indent=2))
-        else:
+        elif args.command == "calibrate":
             result = calibration(model, tok, device)
             update_progress("calibration_complete")
+            print(json.dumps(result, indent=2))
+        else:
+            result = objective_smoke(model, tok, device)
+            update_progress("objective_smoke_complete", blockers=[] if result["all_nonzero_steps"] else ["zero-advantage RL smoke; retained without optimizer update"])
             print(json.dumps(result, indent=2))
 
 

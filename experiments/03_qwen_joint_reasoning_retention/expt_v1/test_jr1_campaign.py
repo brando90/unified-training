@@ -30,6 +30,14 @@ class JR1ObjectiveTest(unittest.TestCase):
         worse = j.dpo_loss(torch.tensor([0.0]), torch.tensor([3.0]), torch.tensor([0.0]), torch.tensor([0.0]))
         self.assertLess(better, worse)
 
+    def test_sequence_logps_are_summed_only_over_unmasked_tokens(self):
+        logits = torch.tensor([[[0.0, 4.0], [0.0, 4.0], [0.0, 4.0], [0.0, 4.0]]])
+        ids = torch.tensor([[0, 1, 1, 1]])
+        labels = torch.tensor([[-100, -100, 1, 1]])
+        got = j.sequence_logps(logits, ids, labels)
+        expected = 2 * torch.log_softmax(torch.tensor([0.0, 4.0]), 0)[1]
+        self.assertTrue(torch.allclose(got, expected.reshape(1)))
+
 
     def test_leave_one_out_advantages_and_invalid_group(self):
         result = j.loo_advantages(torch.tensor([0.0, 1.0, 0.0, 1.0]), 2)
