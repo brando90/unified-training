@@ -404,8 +404,11 @@ class Scorer:
         lp = [0.0] * len(reqs)
         greedy = [True] * len(reqs)
         order = sorted(range(len(units)), key=lambda u: (-len(units[u][0]), u))
-        s = 0
+        s, every, nxt = 0, max(1, len(order) // 10), 0
         while s < len(order):
+            if s >= nxt and len(order) > 1:
+                log(f"scored {s}/{len(order)} sequences")
+                nxt = s + every
             width = len(units[order[s]][0])
             k = max(1, min(self.max_batch, self.max_tokens // max(width, 1)))
             idx = order[s:s + k]
@@ -677,6 +680,8 @@ def main(argv: list[str] | None = None) -> dict:
     ap.add_argument("--device", help="default cuda:0 if available, else cpu")
     ap.add_argument("--gen-batch", type=int, default=64, help="HF generate batch size (no effect on vLLM)")
     ap.add_argument("--lik-tokens", type=int, default=32768, help="padded tokens per likelihood forward batch")
+    ap.add_argument("--head-chunk", type=int, default=2048,
+                    help="scored positions per output-head call (memory only; numbers unchanged)")
     ap.add_argument("--vllm-mem", type=float, default=0.45, help="vLLM GPU memory share; HF scorer uses the rest")
     ap.add_argument("--resume", action="store_true", help="keep benchmarks already finished in <out>/summary.json")
     ap.add_argument("--only", help="comma list: run just these benchmarks of the suite now (status stays 'partial' "
@@ -750,7 +755,7 @@ def main(argv: list[str] | None = None) -> dict:
         model, tok = load_hf(a.ckpt, tokenizer, device)
     if gen_todo and a.backend == "hf":
         generator = HFGenerator(model, tok, device, a.gen_batch)
-    scorer = Scorer(model, device, a.lik_tokens) if model is not None else None
+    scorer = Scorer(model, device, a.lik_tokens, head_chunk=a.head_chunk) if model is not None else None
     if scorer is not None:
         scorer.pad = tok.pad_token_id
 
