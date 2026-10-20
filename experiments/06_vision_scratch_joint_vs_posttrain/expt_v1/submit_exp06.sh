@@ -31,7 +31,7 @@ case "${1:-}" in
   smoke)
     test -f "$EXP06_ROOT/data/manifest.json" || { echo "run prep first"; exit 1; }
     if [ "$CLUSTER" = sherlock ]; then
-      srun -p dev --gres=gpu:1 -c 4 --mem=32G -t 00:45:00 bash "$EXP06_CODE/smoke.sbatch" 2>&1 | tee "$L/smoke_dev.out"
+      srun -p dev --gres=gpu:1 -c 4 --mem=16G -t 00:45:00 bash "$EXP06_CODE/smoke.sbatch" 2>&1 | tee "$L/smoke_dev.out"   # dev QOS caps memory at 16G per user
     else
       sbatch --parsable $GPU_FLAGS $MAIL_FLAGS -o "$L/smoke_%j.out" "$EXP06_CODE/smoke.sbatch" | sed 's/^/smoke /' | tee -a "$EXP06_ROOT/jobs.txt"
     fi ;;
