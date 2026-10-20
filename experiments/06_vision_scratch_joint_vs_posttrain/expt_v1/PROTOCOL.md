@@ -165,5 +165,5 @@ post job (afterany) runs `analyze.py` over all 30 rows and writes `$EXP06_ROOT/e
 
 ## Freeze record
 
-Frozen at commit FREEZE_COMMIT (the commit that added this file and all expt_v1 code). The only later change to
+Frozen at commit `33ce4dc3a9c61f4a9a45bb9588bc0d3f8270ffb1` (the commit that added this file and all expt_v1 code). The only later change to
 this file in v1 is this line recording that hash.
