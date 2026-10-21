@@ -1,0 +1,321 @@
+{
+  "compute_override": null,
+  "data_root": "/scratch/users/brando9/ut_p05/data",
+  "margin": 1.05,
+  "precision": "fp16",
+  "recommended_work_target": 290000000,
+  "sizes": {
+    "14m": {
+      "build_s": 28.101412218995392,
+      "checkpoint_s": 0.45814782613888383,
+      "device": {
+        "capability": "7.0",
+        "cuda": true,
+        "name": "Tesla V100-PCIE-32GB",
+        "total_memory_bytes": 34072559616
+      },
+      "fp16_skipped_steps": 2,
+      "memory_fallback_needed": false,
+      "methods": {
+        "fixed_joint": {
+          "pt_epochs_at_target": 0.6640058695620702,
+          "pt_tokens_at_target": 78764482.48839189,
+          "pt_tokens_per_work": 0.2716016637530755,
+          "wall_h_at_target": 0.7203017142494125,
+          "wall_s_per_work": 8.941676452751327e-06,
+          "work_needed_for_target": 184093128.5511458,
+          "work_share": {
+            "dpo": 0.07652299716679777,
+            "pt": 0.8148049912592863,
+            "rl": 0.025715835794803955,
+            "sft": 0.08295617577913392
+          }
+        },
+        "sequential": {
+          "pt_epochs_at_target": 0.44820936564802516,
+          "pt_tokens_at_target": 53166666.666667245,
+          "pt_tokens_per_work": 0.18333333333333532,
+          "wall_h_at_target": 2.7340519292106595,
+          "wall_s_per_work": 3.3939954983304744e-05,
+          "work_needed_for_target": 272727272.72726977,
+          "work_share": {
+            "dpo": 0.10000000000000007,
+            "pt": 0.5499999999999948,
+            "rl": 0.1500000000000001,
+            "sft": 0.20000000000000015
+          }
+        },
+        "smooth_joint": {
+          "pt_epochs_at_target": 0.6088061558385398,
+          "pt_tokens_at_target": 72216683.61455253,
+          "pt_tokens_per_work": 0.24902304694673286,
+          "wall_h_at_target": 1.2132907416004608,
+          "wall_s_per_work": 1.5061540240557443e-05,
+          "work_needed_for_target": 200784628.62393305,
+          "work_share": {
+            "dpo": 0.09718892229700733,
+            "pt": 0.7470691408401963,
+            "rl": 0.05625490376297693,
+            "sft": 0.099487033099818
+          }
+        }
+      },
+      "objectives": {
+        "dpo": {
+          "charge_max": 65536,
+          "charge_mean": 50777.6,
+          "optimizer_steps": 10,
+          "peak_memory_bytes": 1555936256,
+          "pt_tokens_mean": 0.0,
+          "updates": 10,
+          "wall_s_max": 0.4365032089408487,
+          "wall_s_mean": 0.21938768913969398
+        },
+        "pt": {
+          "charge_max": 98304,
+          "charge_mean": 98304.0,
+          "optimizer_steps": 10,
+          "peak_memory_bytes": 1808201216,
+          "pt_tokens_mean": 32768.0,
+          "updates": 10,
+          "wall_s_max": 0.35440915590152144,
+          "wall_s_mean": 0.34895901679992675
+        },
+        "rl": {
+          "charge_max": 12992,
+          "charge_mean": 11376.0,
+          "groups": 40,
+          "optimizer_steps": 0,
+          "peak_memory_bytes": 332501504,
+          "pt_tokens_mean": 0.0,
+          "updates": 10,
+          "wall_s_max": 2.3682699878700078,
+          "wall_s_mean": 2.296922696568072,
+          "zero_variance_groups": 40
+        },
+        "sft": {
+          "charge_max": 31968,
+          "charge_mean": 27523.2,
+          "optimizer_steps": 10,
+          "peak_memory_bytes": 787568640,
+          "pt_tokens_mean": 0.0,
+          "updates": 10,
+          "wall_s_max": 0.1782731341663748,
+          "wall_s_mean": 0.17464625029824674
+        }
+      },
+      "parameters": 14067712,
+      "peak_memory_bytes": 1808201216,
+      "train_gpu_h_all_seeds": 14.002933155181598
+    },
+    "160m": {
+      "build_s": 13.507767060073093,
+      "checkpoint_s": 2.947763259988278,
+      "device": {
+        "capability": "7.0",
+        "cuda": true,
+        "name": "Tesla V100-PCIE-32GB",
+        "total_memory_bytes": 34072559616
+      },
+      "fp16_skipped_steps": 4,
+      "memory_fallback_needed": false,
+      "methods": {
+        "fixed_joint": {
+          "pt_epochs_at_target": 0.6606082509011193,
+          "pt_tokens_at_target": 78361456.41921091,
+          "pt_tokens_per_work": 0.27021191868693417,
+          "wall_h_at_target": 1.4536242248789,
+          "wall_s_per_work": 1.8044990377807035e-05,
+          "work_needed_for_target": 185039950.28409418,
+          "work_share": {
+            "dpo": 0.07613144044255006,
+            "pt": 0.8106357560608322,
+            "rl": 0.03070110205393612,
+            "sft": 0.0825317014426979
+          }
+        },
+        "sequential": {
+          "pt_epochs_at_target": 0.44820936564802516,
+          "pt_tokens_at_target": 53166666.666667245,
+          "pt_tokens_per_work": 0.18333333333333532,
+          "wall_h_at_target": 4.015048075729357,
+          "wall_s_per_work": 4.984197611250237e-05,
+          "work_needed_for_target": 272727272.72726977,
+          "work_share": {
+            "dpo": 0.10000000000000007,
+            "pt": 0.5499999999999948,
+            "rl": 0.1500000000000001,
+            "sft": 0.20000000000000015
+          }
+        },
+        "smooth_joint": {
+          "pt_epochs_at_target": 0.6026471196183623,
+          "pt_tokens_at_target": 71486097.75266927,
+          "pt_tokens_per_work": 0.24650378535403197,
+          "wall_h_at_target": 2.218192263929638,
+          "wall_s_per_work": 2.753617982809206e-05,
+          "work_needed_for_target": 202836641.7505084,
+          "work_share": {
+            "dpo": 0.09578634808705781,
+            "pt": 0.7395113560620966,
+            "rl": 0.0664609993099619,
+            "sft": 0.09824129654088343
+          }
+        }
+      },
+      "objectives": {
+        "dpo": {
+          "charge_max": 65536,
+          "charge_mean": 50777.6,
+          "optimizer_steps": 10,
+          "peak_memory_bytes": 9348121600,
+          "pt_tokens_mean": 0.0,
+          "updates": 10,
+          "wall_s_max": 0.6459799171425402,
+          "wall_s_mean": 0.522118272795342
+        },
+        "pt": {
+          "charge_max": 98304,
+          "charge_mean": 98304.0,
+          "optimizer_steps": 10,
+          "peak_memory_bytes": 14210993664,
+          "pt_tokens_mean": 32768.0,
+          "updates": 10,
+          "wall_s_max": 0.9798858629073948,
+          "wall_s_mean": 0.9529643541667611
+        },
+        "rl": {
+          "charge_max": 19272,
+          "charge_mean": 13651.2,
+          "groups": 40,
+          "optimizer_steps": 3,
+          "peak_memory_bytes": 3861958656,
+          "pt_tokens_mean": 0.0,
+          "updates": 10,
+          "wall_s_max": 3.830734950955957,
+          "wall_s_mean": 3.736591198970564,
+          "zero_variance_groups": 37
+        },
+        "sft": {
+          "charge_max": 31968,
+          "charge_mean": 27523.2,
+          "optimizer_steps": 10,
+          "peak_memory_bytes": 6314572800,
+          "pt_tokens_mean": 0.0,
+          "updates": 10,
+          "wall_s_max": 0.3709063089918345,
+          "wall_s_mean": 0.33360436954535544
+        }
+      },
+      "parameters": 162322944,
+      "peak_memory_bytes": 14210993664,
+      "train_gpu_h_all_seeds": 23.060593693613686
+    },
+    "70m": {
+      "build_s": 12.36409577797167,
+      "checkpoint_s": 0.8037703109439462,
+      "device": {
+        "capability": "7.0",
+        "cuda": true,
+        "name": "Tesla V100-PCIE-32GB",
+        "total_memory_bytes": 34072559616
+      },
+      "fp16_skipped_steps": 4,
+      "memory_fallback_needed": false,
+      "methods": {
+        "fixed_joint": {
+          "pt_epochs_at_target": 0.6640058695620702,
+          "pt_tokens_at_target": 78764482.48839189,
+          "pt_tokens_per_work": 0.2716016637530755,
+          "wall_h_at_target": 0.9763551869778133,
+          "wall_s_per_work": 1.2120271286621132e-05,
+          "work_needed_for_target": 184093128.5511458,
+          "work_share": {
+            "dpo": 0.07652299716679777,
+            "pt": 0.8148049912592863,
+            "rl": 0.025715835794803955,
+            "sft": 0.08295617577913392
+          }
+        },
+        "sequential": {
+          "pt_epochs_at_target": 0.44820936564802516,
+          "pt_tokens_at_target": 53166666.666667245,
+          "pt_tokens_per_work": 0.18333333333333532,
+          "wall_h_at_target": 3.4787244998913844,
+          "wall_s_per_work": 4.3184166205548224e-05,
+          "work_needed_for_target": 272727272.72726977,
+          "work_share": {
+            "dpo": 0.10000000000000007,
+            "pt": 0.5499999999999948,
+            "rl": 0.1500000000000001,
+            "sft": 0.20000000000000015
+          }
+        },
+        "smooth_joint": {
+          "pt_epochs_at_target": 0.6088061558385398,
+          "pt_tokens_at_target": 72216683.61455253,
+          "pt_tokens_per_work": 0.24902304694673286,
+          "wall_h_at_target": 1.5889994755086256,
+          "wall_s_per_work": 1.9725510730451903e-05,
+          "work_needed_for_target": 200784628.62393305,
+          "work_share": {
+            "dpo": 0.09718892229700733,
+            "pt": 0.7470691408401963,
+            "rl": 0.05625490376297693,
+            "sft": 0.099487033099818
+          }
+        }
+      },
+      "objectives": {
+        "dpo": {
+          "charge_max": 65536,
+          "charge_mean": 50777.6,
+          "optimizer_steps": 10,
+          "peak_memory_bytes": 3942153216,
+          "pt_tokens_mean": 0.0,
+          "updates": 10,
+          "wall_s_max": 0.33825084404088557,
+          "wall_s_mean": 0.2821943512419239
+        },
+        "pt": {
+          "charge_max": 98304,
+          "charge_mean": 98304.0,
+          "optimizer_steps": 10,
+          "peak_memory_bytes": 5512778240,
+          "pt_tokens_mean": 32768.0,
+          "updates": 10,
+          "wall_s_max": 0.5517438091337681,
+          "wall_s_mean": 0.5465431092539802
+        },
+        "rl": {
+          "charge_max": 12992,
+          "charge_mean": 11376.0,
+          "groups": 40,
+          "optimizer_steps": 0,
+          "peak_memory_bytes": 1462448128,
+          "pt_tokens_mean": 0.0,
+          "updates": 10,
+          "wall_s_max": 3.005880750948563,
+          "wall_s_mean": 2.8822985518025233,
+          "zero_variance_groups": 40
+        },
+        "sft": {
+          "charge_max": 31968,
+          "charge_mean": 27523.2,
+          "optimizer_steps": 10,
+          "peak_memory_bytes": 2562190848,
+          "pt_tokens_mean": 0.0,
+          "updates": 10,
+          "wall_s_max": 0.22963957698084414,
+          "wall_s_mean": 0.21544896755367518
+        }
+      },
+      "parameters": 70426624,
+      "peak_memory_bytes": 5512778240,
+      "train_gpu_h_all_seeds": 18.13223748713347
+    }
+  },
+  "trainer_tokens_per_epoch": 118620160,
+  "updates": 10,
+  "warmup": 2
+}

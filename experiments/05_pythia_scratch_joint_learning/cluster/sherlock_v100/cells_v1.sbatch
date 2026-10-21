@@ -5,7 +5,7 @@
 #SBATCH -C (GPU_SKU:V100S_PCIE|GPU_SKU:V100_PCIE|GPU_SKU:V100_SXM2)&GPU_MEM:32GB
 #SBATCH -c 8
 #SBATCH --mem=64G
-#SBATCH -t 2-00:00:00
+#SBATCH -t 12:00:00
 #SBATCH --array=0-8%4
 #SBATCH -o logs/%x_%A_%a.log
 #SBATCH --open-mode=append

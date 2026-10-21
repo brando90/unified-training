@@ -23,7 +23,7 @@
       "sft_controller": "sft/controller"
     }
   },
-  "frozen": false,
+  "frozen": true,
   "methods": {
     "fixed_joint": {
       "weights": {
@@ -108,6 +108,7 @@
     "weight_decay": 0.01
   },
   "p05": {
+    "calibration_sha256": "0aaafb7ef431fa2e55ac01623282539175204e2a2ef509a71710e39969b240c7",
     "gpu": "V100 (Sherlock GPU_SKU V100S_PCIE|V100_PCIE|V100_SXM2, 32GB)",
     "methods": [
       "sequential",
@@ -130,8 +131,8 @@
     "master": "fp32",
     "reference": "compute"
   },
-  "protocol": "p05-v2-14m-fp16-DRAFT",
+  "protocol": "p05-v2-14m-fp16-FROZEN",
   "work": {
-    "target": 300000000.0
+    "target": 290000000.0
   }
 }

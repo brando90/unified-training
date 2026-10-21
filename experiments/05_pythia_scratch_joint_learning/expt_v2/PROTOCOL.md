@@ -2,12 +2,7 @@
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/05_pythia_scratch_joint_learning/expt_v2/PROTOCOL.md>
 
-**Status: DRAFT.** Every freeze field below is filled except the calibrated charged-work target `W` (field 9).
-To freeze: run calibration on the measurement GPU, `python -m p05.freeze --precision <fp16|bf16> --calibration
-<calibration.json>`, fill `W` and the cluster's `data/manifest.json` sha256 (field 3b) here, set Status FROZEN, and commit the configs,
-`configs/FROZEN.sha256` and this file before the first measured update. `p05/train.py` refuses a DRAFT config or a
-frozen config whose sha256 differs from `FROZEN.sha256`. After the first measured update this version never changes;
-a later scientific change is a new version (expt_v3, ...), and failed evidence is kept.
+**Status: FROZEN (2026-10-21, before any measured update).** Platform: Sherlock `gpu` partition, one pinned GPU type for all cells, Tesla V100-PCIE-32GB (compute capability 7.0), fp16 autocast + dynamic GradScaler (FarmShare L40S bf16 configs stay DRAFT and are not used). Calibration: Sherlock job 48759212 (code commit 2c587c3, torch 2.6.0+cu124), `calibration/sherlock_v100_fp16/calibration.json` sha256 `0aaafb7ef431fa2e55ac01623282539175204e2a2ef509a71710e39969b240c7`. Frozen configs (also in `configs/FROZEN.sha256`): `pythia14m_fp16.json` `fb3735793df3d1b7eef36f28e31029b31cc127e00a714f78994d740df4dc2a7a`; `pythia70m_fp16.json` `5f740fa538f9325eaf98da8db56427de103d453400d9a008bf785f14ffc0a5b0`. `W` = 2.9e8 (field 9). `p05/train.py` refuses a DRAFT config or a frozen config whose sha256 differs from `FROZEN.sha256`. This version never changes after the first measured update; a later scientific change is a new version (expt_v3, ...), and failed evidence is kept.
 
 Campaign plan: [PLAN.md](../../03_qwen_joint_reasoning_retention/PLAN.md) line 24 (this experiment) and line 73
 (scratch exposure target). Companion: [expt_v1](../expt_v1/PROTOCOL.md), the primary Pythia-160m version. This
@@ -90,7 +85,7 @@ The 29,393 audited train articles (118,717,293 GPT-NeoX tokens before the audit)
 118,620,160 trainer tokens per epoch, so 50M observed PT tokens is 0.42 epoch (a method spending 75% of its work on PT stays within one epoch up to
 W ≈ 4.7e8).
 `data/manifest.json` itself names the local data root, so its sha256 differs per machine; the cluster's value is
-recorded here at freeze: `<at freeze>`.
+recorded at freeze (Sherlock, `ut_p05/data/manifest.json`, copy in `calibration/sherlock_v100_fp16/data_manifest.json`): `d78da61bc9b9973b0ca4fac610fa7dd2bf1022210b31777f4d5d21215ac5b391`.
 
 c. PT blocks: jr1's article-level PT rows are truncated to `max_len` tokens per row, which would waste most of each
 article. `p05/data.py` instead concatenates the audited train articles in release order, each followed by
@@ -158,11 +153,8 @@ of one seed start from identical weights and the three seeds differ. Data order:
 - Charged work: jr1's ledger in forward-equivalent tokens (forward 1, backward 2, reference forward 1, generation
   prefill + decode 1 per token). Every cell of v1 and v2 runs to the same target `W`; the run stops at the first action
   boundary at or past `W` (overshoot ≤ one update, reported).
-- **`W` = `<calibrated>`** (the only open field). Rule, fixed now: `p05/calibrate.py` on the measurement GPU (seed
-  9001, never a measured seed) times 10 updates of each objective for each size after 2 warmups, computes per method
-  the work needed for 50M observed PT tokens from the schedule weights, and `W` = max over methods and sizes × 1.05,
-  rounded up to two significant figures. DRAFT placeholder 3.0e8. Expected order: sequential spends 55% of work on PT
-  at 3 work units per PT token, so W ≈ 50M × 3 / 0.55 ≈ 2.7e8.
+- **`W` = 2.9e8** forward-equivalent tokens per cell, frozen from calibration job 48759212 (calibration sha256 `0aaafb7ef431fa2e55ac01623282539175204e2a2ef509a71710e39969b240c7`). Rule, fixed before the measurement: `p05/calibrate.py` on the measurement GPU (seed 9001, never a measured seed) times 10 updates of each objective for each size after 2 warmups, computes per method the work needed for 50M observed PT tokens from the schedule weights, and `W` = max over methods and sizes × 1.05, rounded up to two significant figures. Measured: max needed 2.73e8 (sequential, every size) × 1.05 = 2.87e8, so W = 2.9e8. Observed PT tokens at W: sequential 53.2M (0.45 epoch), fixed joint 78.4-78.8M (0.66), smooth joint 71.5-72.2M (0.60-0.61); all within one epoch.
+- Expected train hours per cell on the V100 (before evaluation): 14m sequential/fixed/smooth 2.73/0.72/1.21; 70m 3.48/0.98/1.59; 160m 4.02/1.45/2.22. Per-cell Slurm time limit 12:00:00 (about 3x the longest train time, room for evaluation; USR1 at 15 min before the limit requeues and resumes, field 13). Total train device hours: v1 (160m, 3 seeds) 23.1 h; v2 (14m + 70m, 3 seeds) 32.1 h; 55.2 h for 27 cells (the PLAN's 14 h for v1 is exceeded by about 9 h, reported before launch).
 - If `W` is unreachable within the time and device budget, that is reported (PLAN.md line 73), and the cells run at
   the largest `W` that fits; the shortfall in observed PT tokens is stated with the result.
 - Exposure is tracked per objective (updates, rows, tokens, generated tokens) because matched work gives different
@@ -220,6 +212,6 @@ If calibration shows any objective's peak memory above 90% of the device for any
 is halved (PT 16, SFT 16, DPO 4, RL 2 prompts × 8) for all sizes and methods, calibration is rerun, and the change is
 recorded here before freeze. No other fallback (gradient checkpointing, shorter sequences) is used in this version.
 
-**TLDR-end:** [unified-training: Exp 05 v2 protocol] DRAFT: random-init Pythia-14m and 70m, sequential vs fixed vs
-smooth joint × 3 seeds at the same matched charged-work target as v1 (to be calibrated for ≥50M observed PT tokens);
+**TLDR-end:** [unified-training: Exp 05 v2 protocol] FROZEN: random-init Pythia-14m and 70m, sequential vs fixed vs
+smooth joint × 3 seeds at the same matched charged-work target as v1 (calibrated W = 2.9e8, ≥50M observed PT tokens);
 primary endpoint WikiText-103 test NLL, read against model size.

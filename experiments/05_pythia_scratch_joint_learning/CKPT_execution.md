@@ -2,8 +2,8 @@
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/05_pythia_scratch_joint_learning/CKPT_execution.md>
 Created: 10-05-2026 10:25 PDT
-Last updated: 10-20-2026
-Status: READY FOR CALIBRATION
+Last updated: 10-21-2026
+Status: FROZEN (fp16 V100, W=2.9e8); next: submit cells_v1 then cells_v2 (SUBMIT.md step 5); calibration in calibration/sherlock_v100_fp16/
 
 - Canonical home: `experiments/05_pythia_scratch_joint_learning`. Read the [campaign plan](../03_qwen_joint_reasoning_retention/PLAN.md),
   the protocols ([v1](expt_v1/PROTOCOL.md), [v2](expt_v2/PROTOCOL.md)) and [SUBMIT.md](SUBMIT.md).

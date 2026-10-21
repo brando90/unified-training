@@ -7,9 +7,8 @@ charged-work target sized for at least 50M observed PT tokens per cell. expt_v1 
 24); expt_v2 is the 14m/70m size ladder (18 cells). The full prospective [campaign plan](../03_qwen_joint_reasoning_retention/PLAN.md)
 specifies hypotheses, admission, budgets, endpoints and success criteria. Results remain pending.
 
-**Status:** READY FOR CALIBRATION — code, DRAFT protocols, Slurm scripts (FarmShare L40S bf16; Sherlock V100 32GB
-fp16) and a passing CPU smoke test; 27 prospective training cells, none launched.
-**Last updated:** 10-20-2026
+**Status:** FROZEN (Sherlock V100-32GB, fp16, W = 2.9e8, calibration job 48759212) — both protocols frozen with config hashes; 27 prospective training cells, none launched.
+**Last updated:** 10-21-2026
 
 ## Structure
 
