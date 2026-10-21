@@ -16,7 +16,6 @@ Denominator: 30 prospective cells (2 models x 5 arms x 3 seeds). Completed: 30; 
 
 ## Findings
 
-- Both joint arms are above or near every baseline on CIFAR-100 at ViT-Tiny (fixed_joint 58.64, smooth_joint 58.96 vs sequential 57.56, target_only 56.41), but with 3 seeds only the joint-vs-target_only contrast excludes zero (+2.55 [1.62, 3.48]).
 - The stronger baseline, sequential_replay, matches joint on source retention (36.87 vs 37.87 to 38.46) and is 2.68 pp lower on CIFAR-100 (95% [0.05, 5.31], borderline).
 - The source helps the target only slightly under this budget: sequential - target_only = +1.15 pp [-0.53, 2.83] at Tiny.
 - ViT-Small is worse than ViT-Tiny on CIFAR-100 for every arm (42 to 46 vs 56 to 59) with the same recipe, so the small model is undertrained or poorly tuned for this recipe (60,000 steps, lr 1e-3, 32px). Treat the scale check as "same verdict", not as evidence about scale.
@@ -40,12 +39,23 @@ Plots (accuracy vs optimizer step, mean over seeds, one line per arm): `analysis
 | ViT-Small | fixed_joint | 43.29, 43.13, 43.25 | 25.32, 26.42, 25.43 |
 | ViT-Small | smooth_joint | 46.44, 43.80, 48.82 | 27.69, 25.75, 29.70 |
 
+## Each joint arm vs target_only (CIFAR-100 test top-1, pp)
+
+Paired by seed, 95% Student t interval, n=3 seeds. Computed outside `analyze.py` from the per-seed numbers above with the same formula (`analyze.py` reports only the best joint arm vs target_only); the smooth_joint rows match its output.
+
+| Model | Contrast | Mean [95% interval] |
+|---|---|---|
+| ViT-Tiny | fixed_joint - target_only | +2.23 [1.30, 3.16] |
+| ViT-Tiny | smooth_joint - target_only | +2.55 [1.62, 3.48] |
+| ViT-Small | fixed_joint - target_only | +1.24 [-0.42, 2.90] |
+| ViT-Small | smooth_joint - target_only | +4.37 [-1.82, 10.56] |
+
 ## Full tables (analyze.py output, `analysis/tables.md`)
 
 Final-step top-1 accuracy (%), mean [95% t interval] over complete seeds. Contrasts are paired by seed;
 H1 contrasts use 97.5% intervals (Bonferroni over the two joint arms). p-val=n/a (intervals, no test).
 
-## ViT-Tiny
+### ViT-Tiny
 
 Cells: complete 15 of 15
 
@@ -73,7 +83,7 @@ Best joint arm (higher mean CIFAR-100): **smooth_joint**
 **H1 (joint >= sequential on CIFAR-100):** inconclusive  
 **H2 (joint retains more Tiny-ImageNet):** supported
 
-## ViT-Small
+### ViT-Small
 
 Cells: complete 15 of 15
 
@@ -103,7 +113,7 @@ Best joint arm (higher mean CIFAR-100): **smooth_joint**
 
 **Scale check:** same H1 verdict at ViT-Small
 
-## Cells not complete
+### Cells not complete
 
 - none
 
@@ -114,7 +124,12 @@ Slurm mail END,FAIL to brandojazz@gmail.com and brando.science@gmail.com on ever
 
 | Job | Id | Depends on |
 |---|---|---|
-| Cells all ran on Tesla V100S-PCIE-32GB, torch 2.6.0+cu124, fp16, 60,000 steps, B=192, with 22 to 25 skipped steps per cell (about 0.04%), far below the 1% failure threshold. Raw outputs: `analysis/analysis.json`, `analysis/jobs.txt`; per-cell `final.json`/`curve.jsonl` came from `$SCRATCH/exp06/exp06_results.tgz` (not committed).
+| Dev GPU smoke | 48686478 | none |
+| V100 smoke (gates the cells) | 48686747 | afterany:48686478 |
+| Cells array 0-29%4 | 48686784 | afterok:48686747 |
+| Post (analyze + `exp06_results.tgz`) | 48686799 | afterany:48686784 |
+
+Cells all ran on Tesla V100S-PCIE-32GB, torch 2.6.0+cu124, fp16, 60,000 steps, B=192, with 22 to 25 skipped steps per cell (about 0.04%), far below the 1% failure threshold. Raw outputs: `analysis/analysis.json`, `analysis/jobs.txt`; per-cell `final.json`/`curve.jsonl` came from `$SCRATCH/exp06/exp06_results.tgz` (not committed).
 
 Deviations from the submit plan (none touch PROTOCOL):
 - FarmShare's `gpu` QOS was full (32/32 submit slots), so the run went to Sherlock, the agreed fallback.
