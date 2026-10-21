@@ -8,7 +8,7 @@
     "init_seed": null,
     "tiny": null,
     "attn_implementation": "sdpa",
-    "gradient_checkpointing": false
+    "gradient_checkpointing": true
   },
   "precision": {
     "master": "fp32",
