@@ -1,27 +1,35 @@
 # Random-initialization joint learning: live results
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/05_pythia_scratch_joint_learning/results.md>
-**Status:** RUNNING (started 10-05-2026 17:44 UTC) — shared campaign initialization; measured training has not started.
-**Last updated:** 10-05-2026 17:49 UTC
+**Status:** READY FOR CALIBRATION — measured training has not started.
+**Last updated:** 10-20-2026
 
-`experiments/05_pythia_scratch_joint_learning` has 9 prospective training cells. Completed: 0; failed: 0; interrupted: 0; unstarted: 9. Admission and exact resource targets are pending calibration. This denominator must remain visible if any condition is gated or removed prospectively.
+`experiments/05_pythia_scratch_joint_learning` has 27 prospective training cells: expt_v1 (Pythia-160m) 9 and expt_v2
+(Pythia-14m and 70m) 18. Completed: 0; failed: 0; interrupted: 0; unstarted: 27. The charged-work target is pending
+calibration. This denominator must remain visible if any condition is gated or removed prospectively.
 
 | Phase | Status | Evidence |
 |---|---|---|
-| Design | DONE | [Campaign plan](../03_qwen_joint_reasoning_retention/PLAN.md) |
-| Initialization/readiness/calibration | IN PROGRESS | Shared device/environment calibration is underway; Pythia inputs and all scratch cells remain unadmitted. |
+| Design | DONE | [Campaign plan](../03_qwen_joint_reasoning_retention/PLAN.md); [v1](expt_v1/PROTOCOL.md) and [v2](expt_v2/PROTOCOL.md) protocols (DRAFT) |
+| Code and CPU smoke | DONE | `smoke_cpu.sh`: 3 methods × 3 sizes complete, one cell through the cluster job body with evaluation, calibration |
+| Calibration | PENDING | `SUBMIT.md` step 3 |
 | Protocol and input freeze | PENDING | No measured cell admitted |
-| Training/full evaluation | PENDING | 0/9 prospective cells |
+| Training/full evaluation | PENDING | 0/27 prospective cells |
 | Final verification/publication | PENDING | Results unavailable |
 
-No reasoning, retention or efficiency claim is established by this new experiment. The completed older pilot is separate evidence and is not counted as execution of this plan.
+Pre-measurement finding: WikiText-103 train (pinned) is 118,717,293 GPT-NeoX tokens, 101,527 full 1024-token blocks,
+so the 50M observed PT token target needs under one epoch.
 
-**TLDR-end:** [unified-training: prospective execution] `experiments/05_pythia_scratch_joint_learning` is planned; 9 training cells await resource and readiness admission.
+No reasoning, retention or efficiency claim is established by this new experiment. The completed older pilot is
+separate evidence and is not counted as execution of this plan.
+
+**TLDR-end:** [unified-training: prospective execution] `experiments/05_pythia_scratch_joint_learning` is ready for
+calibration; 27 training cells (9 at 160m, 18 at 14m/70m) await the frozen work target.
 **Snapshot:**
 ```text
-Prospective cells: 9
+Prospective cells: 27 (v1 9, v2 18)
 Completed: 0
-Unstarted: 9
-Shared readiness: in progress
+Unstarted: 27
+Code + CPU smoke: done
 Measured training: not started
 ```

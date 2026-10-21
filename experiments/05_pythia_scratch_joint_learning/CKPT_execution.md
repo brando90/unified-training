@@ -2,13 +2,15 @@
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/05_pythia_scratch_joint_learning/CKPT_execution.md>
 Created: 10-05-2026 10:25 PDT
-Last updated: 10-05-2026 18:12 UTC
-Status: SHARED INITIALIZATION IN PROGRESS
+Last updated: 10-20-2026
+Status: READY FOR CALIBRATION
 
-- Canonical home: `experiments/05_pythia_scratch_joint_learning`.
-- Read the [campaign plan](../03_qwen_joint_reasoning_retention/PLAN.md) and [execution runbook](../03_qwen_joint_reasoning_retention/expt_v1/cc.md).
+- Canonical home: `experiments/05_pythia_scratch_joint_learning`. Read the [campaign plan](../03_qwen_joint_reasoning_retention/PLAN.md),
+  the protocols ([v1](expt_v1/PROTOCOL.md), [v2](expt_v2/PROTOCOL.md)) and [SUBMIT.md](SUBMIT.md).
 - Preserve all historical pilot artifacts. No new measured run has started.
-- Shared device/environment calibration is underway. Scratch model inputs and every scratch cell remain unadmitted.
-- Next: retain the prospective denominator while calculating the separately bounded scratch allocation after the Qwen readiness outcome.
-- Resource limit is a shared new 96 device-hour campaign ceiling, never per experiment or per worker.
-- Actual host/process/run identity and private storage are in the dispatch receipt; update this checkpoint after acknowledgement and every meaningful phase.
+- Done: p05 package on jr1 (imported trainer), DRAFT configs for bf16 (FarmShare L40S, main) and fp16 (Sherlock V100,
+  fallback), Slurm scripts for both clusters, CPU smoke passing.
+- Next: upload the bundle, prep, calibrate on the measurement GPU, freeze `W` and the data hashes, then cells_v1 and
+  cells_v2 (SUBMIT.md steps 1–5).
+- Open checks: the Sherlock `-C` constraint syntax (`P05_TEST_ONLY=1`), the FarmShare storage quota (~80 GB
+  estimated), and whether the calibrated hours fit the campaign budget (14 device hours were planned for v1).
