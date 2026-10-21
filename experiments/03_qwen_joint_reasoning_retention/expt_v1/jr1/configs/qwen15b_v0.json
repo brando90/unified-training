@@ -1,0 +1,169 @@
+{
+  "protocol": "jr1-qwen15b-v0-UNFROZEN: development defaults; AT-572 dev selection replaces lr, stage/mixture allocations, work target and batch sizes in PROTOCOL v1",
+  "model": {
+    "source": "pretrained",
+    "id": "Qwen/Qwen2.5-1.5B",
+    "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+    "local_path": null,
+    "init_seed": null,
+    "tiny": null,
+    "attn_implementation": "sdpa",
+    "gradient_checkpointing": true
+  },
+  "precision": {
+    "master": "fp32",
+    "compute": "bf16",
+    "reference": "compute",
+    "checkpoint": "bf16"
+  },
+  "data": {
+    "root": null,
+    "splits": {
+      "pt": "pt/train",
+      "sft": "sft/train",
+      "rl": "rl/train",
+      "dpo": "pref/train",
+      "pt_controller": "pt/controller",
+      "sft_controller": "sft/controller",
+      "rl_controller": "rl/controller",
+      "dpo_controller": "pref/controller"
+    }
+  },
+  "optimizer": {
+    "lr": 1e-06,
+    "weight_decay": 0.01,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "grad_clip": 1.0,
+    "schedule": "cosine",
+    "warmup_fraction": 0.02,
+    "warmup_start_ratio": 0.1,
+    "min_lr_ratio": 0.1
+  },
+  "objectives": {
+    "pt": {
+      "batch_size": 8,
+      "max_len": 1024
+    },
+    "sft": {
+      "batch_size": 8,
+      "max_len": 1024
+    },
+    "dpo": {
+      "batch_size": 4,
+      "max_len": 1024,
+      "beta": 0.1
+    },
+    "rl": {
+      "prompts": 4,
+      "group_size": 8,
+      "max_new_tokens": 1024,
+      "max_prompt_len": 512,
+      "temperature": 1.0,
+      "reward": "gsm8k_exact",
+      "backend": "hf"
+    }
+  },
+  "work": {
+    "target": 2000000000.0
+  },
+  "methods": {
+    "sequential": {
+      "boundaries": [
+        0.55,
+        0.75,
+        0.85
+      ]
+    },
+    "replay": {
+      "boundaries": [
+        0.55,
+        0.75,
+        0.85
+      ],
+      "pt_share": 0.2
+    },
+    "fixed_joint": {
+      "weights": {
+        "pt": 0.55,
+        "sft": 0.2,
+        "dpo": 0.1,
+        "rl": 0.15
+      }
+    },
+    "smooth_joint": {
+      "start": {
+        "pt": 0.7,
+        "sft": 0.2,
+        "dpo": 0.05,
+        "rl": 0.05
+      },
+      "end": {
+        "pt": 0.2,
+        "sft": 0.2,
+        "dpo": 0.15,
+        "rl": 0.45
+      },
+      "floors": {
+        "pt": 0.05,
+        "dpo": 0.05
+      }
+    },
+    "aioli": {
+      "alpha": 0.75,
+      "eta": 1.0,
+      "floor": 0.0,
+      "window": 200,
+      "probe_updates": 12
+    },
+    "jr1": {
+      "alpha": 0.75,
+      "eta": 1.0,
+      "floor": 0.0,
+      "window": 200,
+      "probe_updates": 12,
+      "prior_start": {
+        "pt": 0.45,
+        "sft": 0.35,
+        "dpo": 0.1,
+        "rl": 0.1
+      },
+      "prior_end": {
+        "pt": 0.15,
+        "sft": 0.15,
+        "dpo": 0.1,
+        "rl": 0.6
+      },
+      "prior_strength": 0.5,
+      "min_share": 0.02,
+      "pt_floor": 0.05,
+      "dpo_floor": 0.05,
+      "retention_threshold": 0.02,
+      "retention_min_pt": 0.55
+    }
+  },
+  "controller": {
+    "rows": {
+      "pt": 32,
+      "sft": 32,
+      "dpo": 32,
+      "rl": 32
+    },
+    "batch_size": 8,
+    "rl_max_new_tokens": 512
+  },
+  "checkpoints": {
+    "fractions": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "state_every_actions": 1000,
+    "state_every_seconds": 1800
+  }
+}
