@@ -13,6 +13,8 @@ Primary: FarmShare (L40S, bf16). Fallback: Sherlock V100 (fp16) if FarmShare's G
 Limits: FarmShare QOS gpu allows 4 running GPU jobs and 32 submitted per user (30 array tasks fit; the post job runs on
 `normal`); 2-day wall. Sherlock: `-p gpu -C GPU_GEN:VLT`, `dev` refuses sbatch so prep/smoke run via `srun -p dev`.
 
+**Run used:** the Sherlock V100 fallback (fp16), 30/30 cells; results in [../results.md](../results.md).
+
 ## Steps (from the unpacked `expt_v1/` folder)
 
 1. `bash submit_exp06.sh build` — venv; check the printed torch/torchvision versions (FarmShare: wait for the job).

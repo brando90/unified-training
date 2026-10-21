@@ -9,8 +9,9 @@ steps and batch size, with identical source exposure across the four source-usin
 Question: does joint training from step 0 match or beat pretrain-then-finetune on the target while forgetting less
 of the source? Transformers only.
 
-**Status:** PREPARATION — protocol frozen; 30 cells, none launched.
-**Last updated:** 10-20-2026 PDT
+**Status:** DONE — 30/30 cells complete on Sherlock V100 (fp16).
+**Verdict:** H1 (joint >= sequential on CIFAR-100) inconclusive at 3 seeds; H2 (joint retains more Tiny-ImageNet) supported, at ViT-Tiny and ViT-Small. See [results.md](results.md).
+**Last updated:** 10-21-2026 PDT
 
 ## Structure
 
@@ -18,6 +19,9 @@ of the source? Transformers only.
 06_vision_scratch_joint_vs_posttrain/
   README.md
   results.md
+  analysis/
+    tables.md, per_seed.md, analysis.json, jobs.txt, curves_tiny.png, curves_small.png
+    replot.py          redraws the two curve plots with a legend instead of end labels (plot only)
   expt_v1/
     PROTOCOL.md        frozen design, hypotheses H1/H2, decision rules, budget, failed-cell rules
     cc.md              execution runbook (FarmShare L40S primary, Sherlock V100 fallback)
@@ -40,6 +44,6 @@ of the source? Transformers only.
 |---|---|
 | Design and frozen protocol | Done (expt_v1/PROTOCOL.md) |
 | Local CPU smoke | Done (synthetic data) |
-| Data prep and GPU smoke | Pending |
-| 30-cell execution | Pending |
-| Analysis | Pending |
+| Data prep and GPU smoke | Done (Sherlock V100) |
+| 30-cell execution | Done (30/30, 0 failed) |
+| Analysis | Done (results.md, analysis/) |

@@ -12,7 +12,7 @@ Denominator: 30 prospective cells (2 models x 5 arms x 3 seeds). Completed: 30; 
   97.5% interval [-2.36, +5.16] (n=3 seeds). The interval is too wide for "better" and not above the -1.0 pp non-inferiority margin.
 - **H2 (joint retains more Tiny-ImageNet): supported** at ViT-Tiny. +30.10 pp, 95% interval [28.55, 31.66]. Sequential drops to 7.8% on the source task.
 - **Scale check (ViT-Small): same verdicts** (H1 inconclusive, +3.72 pp, [-3.03, +10.46]; H2 supported, +21.23 pp, [16.52, 25.95]), so both replicate as the same verdict class.
-- Against Brando's claim: nothing counts against it ("sequential better" occurs at neither size). H1 is not shown, only H2. The claim is supported for retention, not for target accuracy, in this setting (small ViTs, 32px, one source/target pair, one recipe, 3 seeds).
+- Against Brando's claim (from-scratch joint training beats pretrain-then-post-train): the retention advantage is clear; the target-accuracy advantage is not shown at 3 seeds. "Sequential better" occurs at neither size, but H1 stays inconclusive. The stronger baseline, sequential_replay, nearly closes the retention gap. Scope: small ViTs, 32px, one source/target pair, one recipe, 3 seeds.
 
 ## Findings
 
@@ -22,7 +22,7 @@ Denominator: 30 prospective cells (2 models x 5 arms x 3 seeds). Completed: 30; 
 - smooth_joint at ViT-Small has a wide spread across seeds (43.80, 46.44, 48.82) and drives that cell's wide interval. The other four arms are tight (within about 1 pp).
 - Sequential's forgetting is visible in the curves: Tiny-ImageNet falls from ~35% to ~8% right after the switch at step 30,000.
 
-Plots (accuracy vs optimizer step, mean over seeds, one line per arm): `analysis/curves_tiny.png`, `analysis/curves_small.png`.
+Plots (accuracy vs optimizer step, mean over seeds, one line per arm): `analysis/curves_tiny.png`, `analysis/curves_small.png`. Redrawn with `analysis/replot.py` (legend instead of overlapping end labels); no number changed.
 
 ## Per-seed results
 
