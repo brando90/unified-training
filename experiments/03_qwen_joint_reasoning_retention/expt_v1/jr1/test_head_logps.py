@@ -2,6 +2,7 @@
 import torch
 
 from jr1 import common as C
+from jr1 import train as T
 from jr1.tiny import tiny_model
 
 
@@ -22,7 +23,7 @@ def _both(model, dtype):
     g_old = [p.grad.clone() for p in model.parameters()]
     model.zero_grad(set_to_none=True)
     with C.autocast("cpu", "bf16" if dtype is not None else "fp32"):
-        hidden = model.get_decoder()(input_ids=ids, attention_mask=attn, use_cache=False).last_hidden_state
+        hidden = getattr(model, model.base_model_prefix)(input_ids=ids, attention_mask=attn, use_cache=False).last_hidden_state
     lp_new, v_new = C.head_token_logps(hidden, model.get_output_embeddings(), labels, dtype)
     lp_new.sum().backward()
     g_new = [p.grad.clone() for p in model.parameters()]
@@ -50,7 +51,32 @@ def test_head_logps_no_grad():
     ids, attn, labels = _batch(model, 3)
     with torch.no_grad():
         logits = model(input_ids=ids, attention_mask=attn, use_cache=False).logits
-        hidden = model.get_decoder()(input_ids=ids, attention_mask=attn, use_cache=False).last_hidden_state
+        hidden = getattr(model, model.base_model_prefix)(input_ids=ids, attention_mask=attn, use_cache=False).last_hidden_state
         a, _ = C.token_logps(logits, labels)
         b, _ = C.head_token_logps(hidden, model.get_output_embeddings(), labels)
     torch.testing.assert_close(b, a, rtol=1e-5, atol=1e-5)
+
+
+def _neox():
+    from transformers import GPTNeoXConfig, GPTNeoXForCausalLM
+    torch.manual_seed(0)
+    cfg = GPTNeoXConfig(vocab_size=64, hidden_size=16, num_hidden_layers=2, num_attention_heads=2,
+                        intermediate_size=32, max_position_embeddings=32)
+    return GPTNeoXForCausalLM(cfg).train()
+
+
+def _forward_lp(model):
+    """Trainer._forward on a stub trainer: the path that broke on GPT-NeoX (get_decoder() returns the CausalLM)."""
+    from types import SimpleNamespace
+    stub = SimpleNamespace(pad=0, device="cpu", compute="fp32", work=SimpleNamespace(add=lambda *a: None))
+    seqs = [[3, 5, 7, 9, 11, 13], [2, 4, 6, 8]]
+    return T.Trainer._forward(stub, model, seqs, [2, 1], "pt", "train"), seqs
+
+
+def test_trainer_forward_gpt_neox_and_qwen_match_full_logits():
+    for model in (_neox(), tiny_model(seed=0).train()):
+        (lp, valid, n), seqs = _forward_lp(model)
+        ids, attn, labels = C.pack(seqs, [2, 1], 0, "cpu")
+        ref, v_ref = C.token_logps(model(input_ids=ids, attention_mask=attn, use_cache=False).logits, labels)
+        assert n == ids.numel() and torch.equal(valid, v_ref)
+        torch.testing.assert_close(lp, ref, rtol=1e-5, atol=1e-5)

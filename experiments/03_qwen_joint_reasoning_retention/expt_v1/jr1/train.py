@@ -301,7 +301,10 @@ class Trainer:
     def _forward(self, model, seqs, starts, purpose, kind):
         ids, attn, labels = C.pack(seqs, starts, self.pad, self.device)
         with C.autocast(self.device, self.compute):
-            hidden = model.get_decoder()(input_ids=ids, attention_mask=attn, use_cache=False).last_hidden_state
+            # base_model_prefix, not model.get_decoder(): for GPT-NeoX (transformers 4.57) get_decoder() returns the whole
+            # CausalLM, whose output has no last_hidden_state. Same idiom as evaluate.Scorer.
+            decoder = getattr(model, model.base_model_prefix)
+            hidden = decoder(input_ids=ids, attention_mask=attn, use_cache=False).last_hidden_state
         self.work.add(purpose, kind, ids.numel())
         dtype = None if self.compute == "fp32" else {"bf16": torch.bfloat16, "fp16": torch.float16}[self.compute]
         lp, valid = C.head_token_logps(hidden, model.get_output_embeddings(), labels, dtype)
