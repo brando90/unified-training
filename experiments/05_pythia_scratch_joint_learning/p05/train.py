@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import os
 import sys
 import traceback
@@ -91,6 +92,15 @@ class P05Trainer(T.Trainer):
         dtype = None if self.compute == "fp32" else {"bf16": torch.bfloat16, "fp16": torch.float16}[self.compute]
         lp, valid = C.head_token_logps(hidden, model.get_output_embeddings(), labels, dtype)
         return lp, valid, ids.numel()
+
+    def update(self, *args, **kwargs):
+        # An fp16 step that overflows has an inf/nan grad norm; the GradScaler skips it (counted in skipped()).
+        # jr1 logs with allow_nan=False, so that record crashed the cell: log null and a flag instead.
+        rec = super().update(*args, **kwargs)
+        g = rec.get("grad_norm")
+        if isinstance(g, float) and not math.isfinite(g):
+            rec["grad_norm"], rec["grad_norm_nonfinite"] = None, True
+        return rec
 
     def skipped(self) -> int:
         return self.scaler.skipped if self.scaler is not None else 0
