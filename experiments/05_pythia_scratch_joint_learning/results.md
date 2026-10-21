@@ -17,8 +17,8 @@ calibration. This denominator must remain visible if any condition is gated or r
 | Training/full evaluation | PENDING | 0/27 prospective cells |
 | Final verification/publication | PENDING | Results unavailable |
 
-Pre-measurement finding: WikiText-103 train (pinned) is 118,717,293 GPT-NeoX tokens, 101,527 full 1024-token blocks,
-so the 50M observed PT token target needs under one epoch.
+Pre-measurement finding: the audited WikiText-103 train split packs into 115,840 GPT-NeoX blocks of 1024 tokens
+(118.6M trainer tokens per epoch), so the 50M observed PT token target is 0.42 epoch.
 
 No reasoning, retention or efficiency claim is established by this new experiment. The completed older pilot is
 separate evidence and is not counted as execution of this plan.

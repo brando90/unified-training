@@ -33,7 +33,9 @@ python3 or `~/venvs/fs_hf`, whose torch/transformers differ from the lock). Sher
 P05_TEST_ONLY=1 bash $S/submit.sh prep         # validates the script, submits nothing
 PREP=$(bash $S/submit.sh prep | tail -1)
 # after the END mail:
-cat PREP_OK && head -c 600 data/manifest.json   # pt_blocks: ~101,527 blocks, ~104M trainer tokens per epoch
+cat PREP_OK && head -c 600 data/manifest.json   # pt_blocks: 115,840 blocks, 118,620,160 trainer tokens per epoch;
+sha256sum data/pt_blocks/train.jsonl data/eval/lambada.jsonl   # must be a44c5c2e8310461d642abbcc861a17ad5d5413dab91cef613c33e605019d8761
+#                                                     and 68ad9311b9c2dc414a50d1ddbec7ca6b698195617a334876289177714c842772 (PROTOCOL field 3b)
 ```
 
 Prep downloads the jr1 sources (WikiText-103, GSM8K, UltraFeedback, MATH-500, MMLU, ARC-Easy at pinned
@@ -78,7 +80,7 @@ PYTHONPATH=.:../03_qwen_joint_reasoning_retention/expt_v1 python -m p05.freeze -
 ```
 
 This writes the frozen configs (work target = the calibrated `W`) and `expt_v1/configs/FROZEN.sha256`,
-`expt_v2/configs/FROZEN.sha256`. Fill `W` and the field-3b hashes (from `data/manifest.json`) in both PROTOCOL.md
+`expt_v2/configs/FROZEN.sha256`. Fill `W` and the `data/manifest.json` sha256 (field 3b) in both PROTOCOL.md
 files, set them FROZEN, commit, and cut a new bundle (`bash cluster/make_bundle.sh <dir>`); unpack it as in step 0.
 Measured jobs refuse a DRAFT config or a frozen config whose sha256 differs from FROZEN.sha256.
 

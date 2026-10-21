@@ -4,7 +4,7 @@
 
 **Status: DRAFT.** Every freeze field below is filled except the calibrated charged-work target `W` (field 9).
 To freeze: run calibration on the measurement GPU, `python -m p05.freeze --precision <fp16|bf16> --calibration
-<calibration.json>`, fill `W` and the measured inputs hashes (field 3b) here, set Status FROZEN, and commit the configs,
+<calibration.json>`, fill `W` and the cluster's `data/manifest.json` sha256 (field 3b) here, set Status FROZEN, and commit the configs,
 `configs/FROZEN.sha256` and this file before the first measured update. `p05/train.py` refuses a DRAFT config or a
 frozen config whose sha256 differs from `FROZEN.sha256`. After the first measured update this version never changes;
 a later scientific change is a new version (expt_v3, ...), and failed evidence is kept.
@@ -68,12 +68,22 @@ a. Pinned before measurement:
 The other jr1 controller splits (`sft/controller`, `rl/controller`, `pref/controller`) are read only by jr1's
 adaptive methods, which Exp 05 does not run.
 
-b. Recorded at prep and copied here at freeze: `data/manifest.json` (written by `p05/data.py prepare`) holds the
-sha256 of `pt_blocks/train.jsonl`, `eval/lambada.jsonl`, every copied jr1 file and the tokenizer files, the block
-count and the trainer tokens per epoch. Measured from the pinned files on 2026-10-20: WikiText-103 train is
-118,717,293 GPT-NeoX tokens, packed into 101,527 full 1024-token blocks (~104M trainer tokens per epoch), so the
-50M target needs under one epoch. Freeze record: manifest sha256 `<at freeze>`, `pt_blocks/train` sha256 `<at freeze>`,
-`eval/lambada` sha256 `<at freeze>`.
+b. Exp 05 files, made by `p05/data.py prepare` from the files above (a local prepare on 2026-10-20 reproduced
+all 26 jr1 files of `jr1/data_manifest.json` exactly; cluster prep must reproduce these hashes, and `data/manifest.json`
+records them with the tokenizer file hashes):
+
+| file | sha256 | rows |
+|---|---|---|
+| pt_blocks/train | `a44c5c2e8310461d642abbcc861a17ad5d5413dab91cef613c33e605019d8761` | 115,840 blocks |
+| eval/lambada | `68ad9311b9c2dc414a50d1ddbec7ca6b698195617a334876289177714c842772` | 5,153 |
+| LAMBADA parquet | `99d8a9e54cda761c6340ddd4fa6feda7f846ffb0e716afa52968dea75495eea7` | 5,153 |
+| tokenizer.json | `c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624` | |
+
+The 29,393 audited train articles (118,717,293 GPT-NeoX tokens before the audit) pack into 115,840 blocks =
+118,620,160 trainer tokens per epoch, so 50M observed PT tokens is 0.42 epoch (a method spending 75% of its work on PT stays within one epoch up to
+W ≈ 4.7e8).
+`data/manifest.json` itself names the local data root, so its sha256 differs per machine; the cluster's value is
+recorded here at freeze: `<at freeze>`.
 
 c. PT blocks: jr1's article-level PT rows are truncated to `max_len` tokens per row, which would waste most of each
 article. `p05/data.py` instead concatenates the audited train articles in release order, each followed by
