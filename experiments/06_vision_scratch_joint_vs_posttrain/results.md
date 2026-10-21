@@ -122,4 +122,4 @@ Deviations from the submit plan (none touch PROTOCOL):
 - Sherlock's `dev` QOS caps memory at 16G, so the dev smoke ran with `--mem=16G` instead of `submit_exp06.sh`'s 32G; it passed.
 - Because the dev GPU is a MIG slice, a V100 run of the same `smoke.sbatch` gated the array (afterok) instead of the dev PASS alone.
 
-**TLDR-end:** [unified-training: Exp 06 vision] 30 of 30 ViT cells done: joint training retains the source task (+30 pp at Tiny, p-interval excludes 0) but H1 on CIFAR-100 is inconclusive (+1.4 pp [-2.4, +5.2]); same at ViT-Small.
+**TLDR-end:** [unified-training: Exp 06 vision] 30 of 30 ViT cells done: joint training retains the source task (+30 pp at Tiny, interval excludes 0) but H1 on CIFAR-100 is inconclusive (+1.4 pp [-2.4, +5.2]); same at ViT-Small.
