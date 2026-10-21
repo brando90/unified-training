@@ -8,6 +8,7 @@
 #     checkpoints, scratch_full at 000 and 100, CELL_DONE
 #  4. p05.calibrate on all 3 sizes (2 timed updates per objective) and p05.collect over the runs
 # Usage: bash smoke_cpu.sh [python]   (from experiments/05_pythia_scratch_joint_learning)
+# Needs ~25 GB free under $P05_SMOKE (fp32 checkpoints and resume state of 12 cells, 160m ones ~5 GB each).
 set -euo pipefail
 PY=${1:-python}
 HERE=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)

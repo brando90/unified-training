@@ -122,3 +122,25 @@ def test_pack_blocks_exact_windows():
         assert abs(n - 32) <= 2, (n, b["text"])
     assert any(EOT in b["text"] for b in blocks)
     assert tok.encode(EOT, add_special_tokens=False) == [tok.eos_token_id]
+
+
+def test_forward_on_gpt_neox_matches_full_logits():
+    """P05Trainer._forward (decoder via base_model_prefix, row-wise LM head) on a tiny random GPT-NeoX equals
+    token log-probs from the full logits; jr1's model.get_decoder() path does not apply to GPT-NeoX."""
+    from types import SimpleNamespace
+    from transformers import GPTNeoXConfig, GPTNeoXForCausalLM
+    from jr1 import common as C
+    from p05.train import P05Trainer
+    torch.manual_seed(0)
+    model = GPTNeoXForCausalLM(GPTNeoXConfig(vocab_size=64, hidden_size=32, num_hidden_layers=2, num_attention_heads=4,
+                                             intermediate_size=64, max_position_embeddings=64)).eval()
+    assert not hasattr(model.get_decoder()(input_ids=torch.ones(1, 3, dtype=torch.long)), "last_hidden_state")
+    charged = []
+    fake = SimpleNamespace(pad=0, device=torch.device("cpu"), compute="fp32",
+                           work=SimpleNamespace(add=lambda *a: charged.append(a)))
+    seqs, starts = [[5, 6, 7, 8, 9], [10, 11, 12]], [2, 1]
+    lp, valid, n = P05Trainer._forward(fake, model, seqs, starts, "train", "forward")
+    ids, attn, labels = C.pack(seqs, starts, 0, torch.device("cpu"))
+    ref, ref_valid = C.token_logps(model(input_ids=ids, attention_mask=attn).logits, labels)
+    assert torch.equal(valid, ref_valid) and torch.allclose(lp, ref, atol=1e-5)
+    assert n == ids.numel() and charged == [("train", "forward", ids.numel())]

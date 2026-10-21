@@ -5,6 +5,8 @@
 
 What this adds to jr1 (and nothing else):
 - the config's data root defaults to $P05_DATA_ROOT (p05/data.py layout: packed GPT-NeoX PT blocks);
+- _forward reaches the decoder through base_model_prefix (jr1's model.get_decoder() returns the whole
+  GPTNeoXForCausalLM in transformers 4.57); everything else in it is jr1's;
 - fp16 on V100: a GradScaler that counts the steps it skipped for inf/nan gradients (jr1 counts every scaler.step
   as an optimizer step, so the receipt reports p05.fp16_skipped_steps and the effective step count); the count is
   part of the resumable state;
@@ -76,6 +78,19 @@ class P05Trainer(T.Trainer):
         if self.scaler is not None:
             self.scaler = CountingGradScaler("cuda")
         self.data_manifest, self.device_info = data_manifest, device_info or {}
+
+    def _forward(self, model, seqs, starts, purpose, kind):
+        # jr1's _forward with one change: the decoder is getattr(model, base_model_prefix) (as jr1.evaluate.Scorer
+        # does), because model.get_decoder() returns the whole GPTNeoXForCausalLM in transformers 4.57, whose output
+        # has no last_hidden_state. Same packing, charge and row-wise LM-head log-probs (C.head_token_logps).
+        ids, attn, labels = C.pack(seqs, starts, self.pad, self.device)
+        with C.autocast(self.device, self.compute):
+            decoder = getattr(model, model.base_model_prefix)
+            hidden = decoder(input_ids=ids, attention_mask=attn, use_cache=False).last_hidden_state
+        self.work.add(purpose, kind, ids.numel())
+        dtype = None if self.compute == "fp32" else {"bf16": torch.bfloat16, "fp16": torch.float16}[self.compute]
+        lp, valid = C.head_token_logps(hidden, model.get_output_embeddings(), labels, dtype)
+        return lp, valid, ids.numel()
 
     def skipped(self) -> int:
         return self.scaler.skipped if self.scaler is not None else 0
