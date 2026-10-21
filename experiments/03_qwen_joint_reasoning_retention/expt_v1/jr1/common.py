@@ -9,7 +9,9 @@ Provenance (attributed copies from repo commit 047c79d; the frozen originals are
   experiments/00_program/objectives.py (the ledger now keeps a purpose and frozen multipliers).
 - rng_state / restore_rng: experiments/00_program/training.py.
 Changes: sequence_logps uses cross entropy instead of a full log-softmax tensor (same values, less memory),
-and labels are built from explicit lengths because Qwen's pad token equals its EOS token.
+and labels are built from explicit lengths because Qwen's pad token equals its EOS token. head_token_logps
+(AT-571) applies the LM head row by row under checkpoint: the first L40S calibration ran out of memory on the
+batch's float logits.
 """
 from __future__ import annotations
 
@@ -228,6 +230,33 @@ def token_logps(logits: torch.Tensor, labels: torch.Tensor) -> tuple[torch.Tenso
     valid = shifted.ne(-100)
     safe = shifted.masked_fill(~valid, 0)
     lp = -F.cross_entropy(logits[:, :-1].float().transpose(1, 2), safe, reduction="none")
+    return lp.masked_fill(~valid, 0.0), valid
+
+
+def _head_row_logps(hidden: torch.Tensor, weight: torch.Tensor, bias, target: torch.Tensor, device_type: str,
+                    dtype) -> torch.Tensor:
+    with (torch.autocast(device_type=device_type, dtype=dtype) if dtype is not None else contextlib.nullcontext()):
+        logits = F.linear(hidden, weight, bias)
+    return -F.cross_entropy(logits.float(), target, reduction="none")
+
+
+def head_token_logps(hidden: torch.Tensor, head: torch.nn.Linear, labels: torch.Tensor,
+                     autocast_dtype=None) -> tuple[torch.Tensor, torch.Tensor]:
+    """token_logps from the decoder's last hidden states, one sequence at a time: the full (B, T, V) logits are never
+    materialized, and under autograd each row's logits are recomputed in backward (checkpoint), so peak memory holds
+    one row's float logits (T x V) instead of the batch's. Values equal token_logps(head(hidden), labels)."""
+    from torch.utils.checkpoint import checkpoint
+    shifted = labels[:, 1:]
+    valid = shifted.ne(-100)
+    safe = shifted.masked_fill(~valid, 0)
+    h = hidden[:, :-1]
+    args = (head.weight, head.bias)
+    grad = torch.is_grad_enabled() and (h.requires_grad or head.weight.requires_grad)
+    rows = []
+    for i in range(h.shape[0]):
+        a = (h[i], *args, safe[i], hidden.device.type, autocast_dtype)
+        rows.append(checkpoint(_head_row_logps, *a, use_reentrant=False) if grad else _head_row_logps(*a))
+    lp = torch.stack(rows)
     return lp.masked_fill(~valid, 0.0), valid
 
 
