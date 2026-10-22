@@ -38,7 +38,28 @@
 
 Full analyze.py output at n=5 for both sizes: [`analysis_n5/tables.md`](analysis_n5/tables.md).
 
-**Next step:** find out why smooth_joint is the only arm with a wide seed spread at ViT-Small (a quick look at its per-seed curves around the step-30,000 switch) before treating "joint better at Small" as more than exploratory.
+**Why smooth_joint alone is spread out at ViT-Small (EXPLORATORY, post hoc, no new training).**
+
+**Takeaway:** the spread is not a step-30,000 effect (smooth_joint has no switch), and it is already there by step 12-15k. It tracks a slow-seed pattern that every source-first arm shares: seed 4 trains slowly, seeds 3 and 5 train fast. The spread is larger in smooth_joint (CIFAR-100 sd 2.17 vs 0.51 for sequential). With only 5 seeds, the "joint better at Small" verdict leans on that seed pattern.
+
+- **No switch to look at.** smooth_joint ramps the per-step source share linearly from 1 to 0 (`train.py` `1 - t/(S-1)`), so the target share is 50% at step 30,000 and the cumulative target images are identical in all five seeds (1,439,976 at step 30k). The switch at step 30,000 belongs to `sequential`. For `sequential` the 30k switch moves every seed together (CIFAR-100 sd 0.16 at 30k, 1.07 at 33k, 0.51 at 60k).
+- **When the spread appears.** smooth_joint CIFAR-100 sd across seeds is 0.84 at 3k, 1.67 at 15k, 2.02 at 18k, 1.19 at 30k, 1.99 at 33k and 2.17 at 60k. The other arms are at or below 0.72 at 60k (fixed_joint 0.15, sequential_replay 0.32, sequential 0.51, target_only 0.72). Tiny-ImageNet is the same: sd 1.24 at 15k and 1.80 at 60k, against 0.35 for sequential.
+- **The ordering is set early and stays.** Seeds 3 and 5 lead and seed 4 trails from ~12-18k onward. Correlation of CIFAR-100 across seeds with the final value: r=0.87 at 15k, 0.96 at 18k, 0.98 at 21k, 0.97 at 30k. Gaps between 3/5 and 2/4 widen a little after 30k (CIFAR-100: 3 vs 4 is +2.7 pp at 30k and +4.6 pp at 60k).
+- **It is the same seed pattern as in the other source-first arms.** Source train loss at step 21k, seeds 1-5: smooth_joint 3.06, 3.21, 2.90, 3.43, 2.94; sequential 2.19, 2.10, 2.08, 2.45, 2.06; sequential_replay 2.13, 2.21, 2.23, 2.58, 2.04. Seed 4 is slowest in all three. In smooth_joint, source loss at 21k correlates r=-0.90 with the final CIFAR-100 accuracy across seeds (r=-0.88 at 15k). fixed_joint (50/50 from step 0) does not show it (source loss at 21k 3.34-3.49, final CIFAR-100 sd 0.15). Final smooth_joint ranks also match sequential's (r=0.95) and not fixed_joint's (r=-0.25), n=5 each.
+- **Not a recorded instability.** `skipped_steps` is 21-23 in every smooth_joint seed (23-24 in sequential), and lr and per-seed target exposure are identical across seeds. Cause untested; separating it needs a lower-lr run or more seeds.
+- **What it means for the H1 claim:** smooth_joint beats sequential in all five seeds, and the paired differences (+3.59, +1.90, +5.66, +1.99, +4.92) track this seed pattern (fast seeds 3 and 5 win by +5.7 and +4.9, slow seeds 2 and 4 by +1.9 and +2.0). Keep "joint better at Small" labelled exploratory; more seeds would tighten the estimate more than any further per-seed look.
+
+CIFAR-100 test top-1 per seed around the switch (the `sequential` switch is at step 30,000):
+
+| Seed | smooth_joint 30k | smooth_joint 60k | sequential 30k | sequential 33k | sequential 60k |
+|---|---|---|---|---|---|
+| 1 | 43.45 | 46.44 | 0.96 | 38.83 | 42.85 |
+| 2 | 41.71 | 43.80 | 0.84 | 39.61 | 41.90 |
+| 3 | 44.47 | 48.82 | 0.90 | 40.80 | 43.16 |
+| 4 | 41.76 | 44.18 | 0.78 | 37.88 | 42.19 |
+| 5 | 43.29 | 47.62 | 1.20 | 39.27 | 42.70 |
+
+Figures and data: `analysis_n5/seed_spread_small/` (`perseed_curves_small.png`, `src_loss_by_seed.png`, `small_perseed_curves.csv`, `analyze.py`, `plot.py`, `analysis_out.txt`). Source: per-cell `curve.jsonl` and `final.json` of the 25 ViT-Small cells on Sherlock (read only).
 
 ---
 
