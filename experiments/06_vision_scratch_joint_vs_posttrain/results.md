@@ -1,12 +1,12 @@
 # Vision joint from scratch vs pretrain-then-finetune: results
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/ut/exp06-vision/experiments/06_vision_scratch_joint_vs_posttrain/results.md>
-**Status:** DONE — 50 of 50 cells complete (30 original + 10 from Amendment A1, ViT-Tiny seeds 4-5 + 10 from its ViT-Small extension, seeds 4-5); original text: 30 of 30 cells complete on Sherlock V100 (fp16); analysis run with the frozen `expt_v1/analyze.py`.
+**Status:** DONE — 50 of 50 cells complete: 30 original, 10 from A1 (Tiny seeds 4-5), 10 from the A1 extension (Small seeds 4-5). Original 30 ran on Sherlock V100 (fp16); analysis run with the frozen `expt_v1/analyze.py`.
 **Last updated:** 10-22-2026 PDT
 
 ## Amendment A1 extension (n=5 at ViT-Small): H1 joint better at both sizes (exploratory)
 
-**Takeaway:** with seeds 4-5 added at ViT-Small, H1 reads "joint better" at ViT-Small too: smooth_joint - sequential = +3.61 pp, 97.5% interval [0.97, 6.26] (n=5; n=3 was +3.72 [-3.03, 10.46], inconclusive). The scale check now gives the same H1 verdict at both sizes (joint better, n=5), and H2 stays supported. This is exploratory: seeds were added after the n=3 result was seen (optional stopping), the n=3 numbers stay beside it, and `expt_v1/PROTOCOL.md` and cells 0-39 are unchanged. The append-only record is `expt_v1/AMENDMENT_A1_seeds45.md` (extension) and `cells.tsv` tasks 40-49.
+**Takeaway:** with seeds 4-5 added at ViT-Small, H1 reads "joint better" at ViT-Small too: smooth_joint - sequential = +3.61 pp, 97.5% interval [0.97, 6.26] (n=5; n=3 was +3.72 [-3.03, 10.46], inconclusive). The scale check now gives the same H1 verdict at both sizes (joint better, n=5; Tiny is marginal, lower bound 0.14 pp), and H2 stays supported. Every n=3 interval included 0; the n=5 H1 intervals no longer do. This is exploratory: seeds were added after the n=3 result was seen (optional stopping), the n=3 numbers stay beside it, and `expt_v1/PROTOCOL.md` and cells 0-39 are unchanged. The append-only record is `expt_v1/AMENDMENT_A1_seeds45.md` (extension) and `cells.tsv` tasks 40-49.
 
 **Denominator:** ViT-Small 25 of 25 cells complete (5 arms x 5 seeds), ViT-Tiny 25 of 25; 50 of 50 overall, none failed or interrupted. Sherlock V100 (fp16), jobs 48904130 (seed 4, tasks 40-44), 48904132 (seed 5, tasks 45-49), post 48904137; all COMPLETED exit 0, and each of the 10 per-cell `final.json` files was checked on Sherlock. Seeds 1-3 values are identical to the n=3 run. Outputs: `analysis_n5/` (now n=5 for both sizes).
 
@@ -14,12 +14,13 @@
 |---|---|---|
 | H1: smooth_joint - sequential, CIFAR-100 (97.5%) | +3.72 [-3.03, 10.46] | +3.61 [0.97, 6.26] |
 | H2: smooth_joint - sequential, Tiny-ImageNet (95%) | +21.23 [16.52, 25.95] | +20.84 [18.73, 22.95] |
-| smooth_joint - sequential_replay, CIFAR-100 (95%) | n/a at n=3 here | +3.30 [0.38, 6.23] |
-| smooth_joint - sequential_replay, Tiny-ImageNet (95%) | n/a at n=3 here | +1.54 [-1.18, 4.27] |
-| fixed_joint - sequential, CIFAR-100 (97.5%) | n/a at n=3 here | +0.72 [-0.13, 1.56] |
+| smooth_joint - sequential_replay, CIFAR-100 (95%) | +3.31 [-3.63, 10.26] | +3.30 [0.38, 6.23] |
+| smooth_joint - sequential_replay, Tiny-ImageNet (95%) | +1.93 [-3.48, 7.33] | +1.54 [-1.18, 4.27] |
+| fixed_joint - sequential, CIFAR-100 (97.5%) | +0.59 [-1.51, 2.68] | +0.72 [-0.13, 1.56] |
+| sequential - target_only, CIFAR-100 (95%) | +0.65 [-1.22, 2.52] | +0.73 [-0.30, 1.76] |
 | smooth_joint - target_only, CIFAR-100 (95%) | +4.37 [-1.82, 10.56] | +4.34 [1.33, 7.35] |
 
-- **The H1 win rests on smooth_joint alone.** fixed_joint - sequential is +0.72 [-0.13, 1.56], which includes 0. smooth_joint per seed on CIFAR-100: 46.44, 43.80, 48.82, 44.18, 47.62 (sd 2.17), against sequential 0.51; its paired difference to sequential is positive in all five seeds (+3.59, +1.90, +5.66, +1.99, +4.92).
+- **The H1 win rests on smooth_joint alone.** fixed_joint - sequential is +0.72 [-0.13, 1.56], which includes 0. smooth_joint per seed on CIFAR-100: 46.44, 43.80, 48.82, 44.18, 47.62 (sd 2.17 across seeds, versus 0.51 for sequential); its paired difference to sequential is positive in all five seeds (+3.59, +1.90, +5.66, +1.99, +4.92).
 - **Replay baseline:** smooth_joint beats sequential_replay on CIFAR-100 by +3.30 [0.38, 6.23], but the retention gap is not distinguishable (+1.54 [-1.18, 4.27]).
 - **Caveat carried over:** ViT-Small is worse than ViT-Tiny on CIFAR-100 for every arm (41-46 vs 56-59) under this recipe, so read the scale check as "same verdict", not as evidence about scale. The Tiny interval's lower bound is only 0.14 pp above 0.
 
@@ -33,15 +34,7 @@
 | ViT-Small | fixed_joint | 43.29, 43.13, 43.25, 43.52, 43.19 | 25.32, 26.42, 25.43, 26.12, 24.92 |
 | ViT-Small | smooth_joint | 46.44, 43.80, 48.82, 44.18, 47.62 | 27.69, 25.75, 29.70, 25.33, 28.17 |
 
-**analyze.py output at n=5, ViT-Small** (`analysis_n5/tables.md`):
-
-| Arm | Complete | CIFAR-100 test top-1 | Tiny-ImageNet val top-1 |
-|---|---:|---|---|
-| target_only | 5/5 | 41.83 [40.94, 42.72] (n=5) | 0.49 [0.38, 0.59] (n=5) |
-| sequential | 5/5 | 42.56 [41.93, 43.19] (n=5) | 6.49 [6.06, 6.92] (n=5) |
-| sequential_replay | 5/5 | 42.87 [42.47, 43.27] (n=5) | 25.79 [25.17, 26.40] (n=5) |
-| fixed_joint | 5/5 | 43.28 [43.09, 43.46] (n=5) | 25.64 [24.88, 26.40] (n=5) |
-| smooth_joint | 5/5 | 46.17 [43.48, 48.86] (n=5) | 27.33 [25.09, 29.56] (n=5) |
+Full analyze.py output at n=5 for both sizes: [`analysis_n5/tables.md`](analysis_n5/tables.md).
 
 **Next step:** find out why smooth_joint is the only arm with a wide seed spread at ViT-Small (a quick look at its per-seed curves around the step-30,000 switch) before treating "joint better at Small" as more than exploratory.
 
