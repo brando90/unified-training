@@ -6,6 +6,8 @@
 
 ## Amendment A1 extension (n=5 at ViT-Small): H1 joint better at both sizes (exploratory)
 
+**Status of this section: EXPLORATORY.** Seeds 4-5 were added at ViT-Small after the n=3 result was seen (optional stopping).
+
 **Takeaway:** with seeds 4-5 added at ViT-Small, H1 reads "joint better" at ViT-Small too: smooth_joint - sequential = +3.61 pp, 97.5% interval [0.97, 6.26] (n=5; n=3 was +3.72 [-3.03, 10.46], inconclusive). The scale check now gives the same H1 verdict at both sizes (joint better, n=5; Tiny is marginal, lower bound 0.14 pp), and H2 stays supported. Every n=3 interval included 0; the n=5 H1 intervals no longer do. This is exploratory: seeds were added after the n=3 result was seen (optional stopping), the n=3 numbers stay beside it, and `expt_v1/PROTOCOL.md` and cells 0-39 are unchanged. The append-only record is `expt_v1/AMENDMENT_A1_seeds45.md` (extension) and `cells.tsv` tasks 40-49.
 
 **Denominator:** ViT-Small 25 of 25 cells complete (5 arms x 5 seeds), ViT-Tiny 25 of 25; 50 of 50 overall, none failed or interrupted. Sherlock V100 (fp16), jobs 48904130 (seed 4, tasks 40-44), 48904132 (seed 5, tasks 45-49), post 48904137; all COMPLETED exit 0, and each of the 10 per-cell `final.json` files was checked on Sherlock. Seeds 1-3 values are identical to the n=3 run. Outputs: `analysis_n5/` (now n=5 for both sizes).
