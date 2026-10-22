@@ -1,0 +1,1 @@
+Amendment A1 (2026-10-21 AT-808): seeds 4 and 5 added for ViT-Tiny only (cells.tsv tasks 30-39, 5 arms). PROTOCOL.md v1 and cells 0-29 unchanged; every setting, decision rule and the 30-cell n=3 analysis (kept in analysis_n3/) stay as frozen; n=5 adds a second, labelled analysis over tiny seeds 1-5.

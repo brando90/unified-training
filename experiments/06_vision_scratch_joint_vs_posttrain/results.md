@@ -1,8 +1,65 @@
 # Vision joint from scratch vs pretrain-then-finetune: results
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/ut/exp06-vision/experiments/06_vision_scratch_joint_vs_posttrain/results.md>
-**Status:** DONE — 30 of 30 cells complete on Sherlock V100 (fp16); analysis run with the frozen `expt_v1/analyze.py`.
+**Status:** DONE — 40 of 40 cells complete (30 original + 10 from Amendment A1, ViT-Tiny seeds 4-5); original text: 30 of 30 cells complete on Sherlock V100 (fp16); analysis run with the frozen `expt_v1/analyze.py`.
 **Last updated:** 10-21-2026 PDT
+
+## Amendment A1 (n=5 at ViT-Tiny): H1 now "joint better"
+
+**Status of this section:** seeds 4 and 5 were added at ViT-Tiny only, after the n=3 result was seen to be inconclusive. That is a post-hoc extension
+(optional stopping), so read the n=5 interval as exploratory and report the n=3 verdict next to it. `expt_v1/PROTOCOL.md` and cells 0-29 are unchanged; the
+append-only record is `expt_v1/AMENDMENT_A1_seeds45.md` and `cells.tsv` tasks 30-39. The n=3 outputs stay in `analysis/` (and Sherlock `analysis_n3`); the n=5 outputs
+are in `analysis_n5/`. ViT-Small stays at n=3.
+
+- **H1 at ViT-Tiny: joint better (n=5).** smooth_joint - sequential = +1.46 pp, 97.5% interval [0.14, 2.78] (n=3 was +1.40 [-2.36, 5.16], inconclusive). The lower bound clears 0 by 0.14 pp, so the verdict is marginal.
+- **H2 unchanged: supported.** +29.92 pp [29.07, 30.77] on Tiny-ImageNet (n=3: +30.10 [28.55, 31.66]).
+- **Replay baseline:** smooth_joint beats sequential_replay by +2.66 pp on CIFAR-100 [1.73, 3.60] (n=3: [0.05, 5.31]), and by +1.09 pp [0.32, 1.86] on retention.
+- **fixed_joint - sequential:** +0.99 pp [0.04, 1.95] (97.5%), also above 0 but only just.
+- **Scale check now differs:** ViT-Small (n=3) is still inconclusive (+3.72 [-3.03, 10.46]), so "H1 verdict differs at ViT-Small". Seeds 4-5 at ViT-Small would be the next step to resolve it.
+- Seeds 1-3 values are identical to the n=3 run; the interval narrowed because the paired differences are consistent (smooth_joint - sequential per seed: +0.75, +0.84, +2.61, +2.11, +1.00).
+
+### Per-seed results, ViT-Tiny (seeds 1 to 5)
+
+| Model | Arm | CIFAR-100 test top-1 per seed | Tiny-ImageNet val top-1 per seed |
+|---|---|---|---|
+| ViT-Tiny | target_only | 56.68, 56.17, 56.39, 56.78, 55.77 | 0.34, 0.39, 0.45, 0.51, 0.68 |
+| ViT-Tiny | sequential | 58.25, 57.68, 56.76, 57.46, 57.57 | 8.34, 8.15, 6.82, 8.04, 8.76 |
+| ViT-Tiny | sequential_replay | 55.82, 57.06, 55.98, 56.80, 56.06 | 37.29, 36.64, 36.67, 37.18, 36.47 |
+| ViT-Tiny | fixed_joint | 59.21, 57.98, 58.74, 58.25, 58.51 | 38.46, 37.94, 38.99, 37.97, 38.02 |
+| ViT-Tiny | smooth_joint | 59.00, 58.52, 59.37, 59.57, 58.57 | 37.72, 38.63, 37.27, 38.34, 37.75 |
+
+### analyze.py output at n=5 (ViT-Tiny; `analysis_n5/tables.md` has ViT-Small too)
+
+
+Cells: complete 25 of 25
+
+| Arm | Complete | CIFAR-100 test top-1 | Tiny-ImageNet val top-1 | img/s | train h |
+|---|---:|---|---|---:|---:|
+| target_only | 5/5 | 56.36 [55.85, 56.86] (n=5) | 0.47 [0.31, 0.64] (n=5) | 5102 | 0.70 |
+| sequential | 5/5 | 57.54 [56.88, 58.21] (n=5) | 8.02 [7.12, 8.92] (n=5) | 5388 | 0.62 |
+| sequential_replay | 5/5 | 56.34 [55.66, 57.03] (n=5) | 36.85 [36.40, 37.30] (n=5) | 4017 | 0.90 |
+| fixed_joint | 5/5 | 58.54 [57.95, 59.12] (n=5) | 38.28 [37.72, 38.84] (n=5) | 3966 | 0.91 |
+| smooth_joint | 5/5 | 59.01 [58.42, 59.59] (n=5) | 37.94 [37.27, 38.61] (n=5) | 3881 | 0.95 |
+
+Best joint arm (higher mean CIFAR-100): **smooth_joint**
+
+| Contrast (a - b, pp) | Level | Seeds | Mean [interval] |
+|---|---|---|---|
+| H1_best_joint_minus_sequential_cifar (smooth_joint - sequential) | 97.5% (Bonferroni over 2 joint arms) | [1, 2, 3, 4, 5] | 1.46 [0.14, 2.78] (n=5) |
+| H2_best_joint_minus_sequential_tin (smooth_joint - sequential) | 95% | [1, 2, 3, 4, 5] | 29.92 [29.07, 30.77] (n=5) |
+| best_joint_minus_sequential_replay_cifar (smooth_joint - sequential_replay) | 95% | [1, 2, 3, 4, 5] | 2.66 [1.73, 3.60] (n=5) |
+| best_joint_minus_sequential_replay_tin (smooth_joint - sequential_replay) | 95% | [1, 2, 3, 4, 5] | 1.09 [0.32, 1.86] (n=5) |
+| best_joint_minus_target_only_cifar (smooth_joint - target_only) | 95% | [1, 2, 3, 4, 5] | 2.65 [2.28, 3.02] (n=5) |
+| sequential_minus_target_only_cifar (sequential - target_only) | 95% | [1, 2, 3, 4, 5] | 1.19 [0.41, 1.96] (n=5) |
+| fixed_joint_minus_sequential_cifar (fixed_joint - sequential) | 97.5% (Bonferroni over 2 joint arms) | [1, 2, 3, 4, 5] | 0.99 [0.04, 1.95] (n=5) |
+| smooth_joint_minus_sequential_cifar (smooth_joint - sequential) | 97.5% (Bonferroni over 2 joint arms) | [1, 2, 3, 4, 5] | 1.46 [0.14, 2.78] (n=5) |
+
+**H1 (joint >= sequential on CIFAR-100):** joint better  
+**H2 (joint retains more Tiny-ImageNet):** supported
+
+
+---
+**The sections below are the original n=3 report (30 cells) and are kept unchanged.**
 
 ## Verdict (per the frozen PROTOCOL)
 

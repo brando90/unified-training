@@ -29,3 +29,13 @@ task	model	arm	seed
 27	small	smooth_joint	1
 28	small	smooth_joint	2
 29	small	smooth_joint	3
+30	tiny	target_only	4
+31	tiny	sequential	4
+32	tiny	sequential_replay	4
+33	tiny	fixed_joint	4
+34	tiny	smooth_joint	4
+35	tiny	target_only	5
+36	tiny	sequential	5
+37	tiny	sequential_replay	5
+38	tiny	fixed_joint	5
+39	tiny	smooth_joint	5
