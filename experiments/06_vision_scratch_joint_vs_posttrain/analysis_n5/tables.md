@@ -33,33 +33,33 @@ Best joint arm (higher mean CIFAR-100): **smooth_joint**
 
 ## ViT-Small
 
-Cells: complete 15 of 15
+Cells: complete 25 of 25
 
 | Arm | Complete | CIFAR-100 test top-1 | Tiny-ImageNet val top-1 | img/s | train h |
 |---|---:|---|---|---:|---:|
-| target_only | 3/3 | 41.98 [40.16, 43.80] (n=3) | 0.52 [0.28, 0.76] (n=3) | 2816 | 1.15 |
-| sequential | 3/3 | 42.64 [41.01, 44.27] (n=3) | 6.48 [5.33, 7.63] (n=3) | 3047 | 1.06 |
-| sequential_replay | 3/3 | 43.04 [42.31, 43.77] (n=3) | 25.79 [25.26, 26.32] (n=3) | 3211 | 1.00 |
-| fixed_joint | 3/3 | 43.22 [43.02, 43.43] (n=3) | 25.72 [24.22, 27.23] (n=3) | 2732 | 1.18 |
-| smooth_joint | 3/3 | 46.35 [40.12, 52.59] (n=3) | 27.71 [22.81, 32.62] (n=3) | 2945 | 1.10 |
+| target_only | 5/5 | 41.83 [40.94, 42.72] (n=5) | 0.49 [0.38, 0.59] (n=5) | 2725 | 1.18 |
+| sequential | 5/5 | 42.56 [41.93, 43.19] (n=5) | 6.49 [6.06, 6.92] (n=5) | 2896 | 1.12 |
+| sequential_replay | 5/5 | 42.87 [42.47, 43.27] (n=5) | 25.79 [25.17, 26.40] (n=5) | 2953 | 1.10 |
+| fixed_joint | 5/5 | 43.28 [43.09, 43.46] (n=5) | 25.64 [24.88, 26.40] (n=5) | 2642 | 1.22 |
+| smooth_joint | 5/5 | 46.17 [43.48, 48.86] (n=5) | 27.33 [25.09, 29.56] (n=5) | 2771 | 1.17 |
 
 Best joint arm (higher mean CIFAR-100): **smooth_joint**
 
 | Contrast (a - b, pp) | Level | Seeds | Mean [interval] |
 |---|---|---|---|
-| H1_best_joint_minus_sequential_cifar (smooth_joint - sequential) | 97.5% (Bonferroni over 2 joint arms) | [1, 2, 3] | 3.72 [-3.03, 10.46] (n=3) |
-| H2_best_joint_minus_sequential_tin (smooth_joint - sequential) | 95% | [1, 2, 3] | 21.23 [16.52, 25.95] (n=3) |
-| best_joint_minus_sequential_replay_cifar (smooth_joint - sequential_replay) | 95% | [1, 2, 3] | 3.31 [-3.63, 10.26] (n=3) |
-| best_joint_minus_sequential_replay_tin (smooth_joint - sequential_replay) | 95% | [1, 2, 3] | 1.93 [-3.48, 7.33] (n=3) |
-| best_joint_minus_target_only_cifar (smooth_joint - target_only) | 95% | [1, 2, 3] | 4.37 [-1.82, 10.56] (n=3) |
-| sequential_minus_target_only_cifar (sequential - target_only) | 95% | [1, 2, 3] | 0.65 [-1.22, 2.52] (n=3) |
-| fixed_joint_minus_sequential_cifar (fixed_joint - sequential) | 97.5% (Bonferroni over 2 joint arms) | [1, 2, 3] | 0.59 [-1.51, 2.68] (n=3) |
-| smooth_joint_minus_sequential_cifar (smooth_joint - sequential) | 97.5% (Bonferroni over 2 joint arms) | [1, 2, 3] | 3.72 [-3.03, 10.46] (n=3) |
+| H1_best_joint_minus_sequential_cifar (smooth_joint - sequential) | 97.5% (Bonferroni over 2 joint arms) | [1, 2, 3, 4, 5] | 3.61 [0.97, 6.26] (n=5) |
+| H2_best_joint_minus_sequential_tin (smooth_joint - sequential) | 95% | [1, 2, 3, 4, 5] | 20.84 [18.73, 22.95] (n=5) |
+| best_joint_minus_sequential_replay_cifar (smooth_joint - sequential_replay) | 95% | [1, 2, 3, 4, 5] | 3.30 [0.38, 6.23] (n=5) |
+| best_joint_minus_sequential_replay_tin (smooth_joint - sequential_replay) | 95% | [1, 2, 3, 4, 5] | 1.54 [-1.18, 4.27] (n=5) |
+| best_joint_minus_target_only_cifar (smooth_joint - target_only) | 95% | [1, 2, 3, 4, 5] | 4.34 [1.33, 7.35] (n=5) |
+| sequential_minus_target_only_cifar (sequential - target_only) | 95% | [1, 2, 3, 4, 5] | 0.73 [-0.30, 1.76] (n=5) |
+| fixed_joint_minus_sequential_cifar (fixed_joint - sequential) | 97.5% (Bonferroni over 2 joint arms) | [1, 2, 3, 4, 5] | 0.72 [-0.13, 1.56] (n=5) |
+| smooth_joint_minus_sequential_cifar (smooth_joint - sequential) | 97.5% (Bonferroni over 2 joint arms) | [1, 2, 3, 4, 5] | 3.61 [0.97, 6.26] (n=5) |
 
-**H1 (joint >= sequential on CIFAR-100):** inconclusive  
+**H1 (joint >= sequential on CIFAR-100):** joint better  
 **H2 (joint retains more Tiny-ImageNet):** supported
 
-**Scale check:** H1 verdict differs at ViT-Small
+**Scale check:** same H1 verdict at ViT-Small
 
 ## Cells not complete
 
