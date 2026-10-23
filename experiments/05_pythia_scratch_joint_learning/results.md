@@ -219,3 +219,42 @@ Caveats:
 Files: `p05/diag.py`, `p05/diag_eval.py`, `diag_summary.json`, `analyze_diag.py`; raw runs on mercury1 `/lfs/mercury1/0/brando9/at1024/runs`.
 
 **TLDR-end (diagnosis):** [unified-training: Exp 05 diagnosis] At 14m, 3 seeds: orig is already at 10.76 NLL after its shorter SFT stage and SFT to the full budget reaches 13.37, against 4.54 at the PT checkpoint, so it is not an RL artifact. Lr x 0.1 roughly halves the damage (RL-end mean 11.85 vs 21.46) but nothing recovers it. The DPO stage may be a recipe bug (loss starts at 11-21, not 0.69) and is still open.
+
+## DPO reference check (AT-1085): 14m, seed 1 only (seeds 2 and 3 not yet run)
+
+**Answer: the DPO loss of 11-21 is a reference mismatch by construction, not an implementation bug. Setting the DPO reference to the post-SFT policy removes the DPO-stage NLL jump and most of the `lowlr` collapse, and does not rescue `orig`.**
+
+In this recipe the frozen DPO reference is `ckpt_000`, the random initialisation (protocol "frozen reference"). After SFT the policy is far from it, so the first DPO loss is large.
+Check (`p05/dpo_ref_check.py`): rerun SFT from the same PT checkpoint, then score the first 16 DPO batches (8 pairs each, 128 pairs, beta 0.1) with three references.
+
+| seed 1, branch | reference | mean DPO loss over 128 pairs (min-max) | margin | grad norm, batch 0 |
+|---|---|---|---|---|
+| orig | the policy itself (frozen copy) | 0.699 (0.685-0.717) | -0.01 | 158 |
+| orig | random init (the recipe) | 11.20 (2.00-31.64) | 6.17 | 198 |
+| orig | end-of-PT checkpoint | 21.99 (4.92-42.64) | -0.72 | 199 |
+| lowlr | the policy itself | 0.692 (0.686-0.700) | 0.00 | 62 |
+| lowlr | random init (the recipe) | 21.89 (2.17-33.43) | 9.60 | 113 |
+| lowlr | end-of-PT checkpoint | 8.61 (0.13-20.48) | 2.72 | 99 |
+
+With policy = reference the loss is ln 2 = 0.693 (0.692-0.699): the loss code is correct. The large loss and the grad norms of ~100-200 come from the random-init reference
+(the same numbers as in the 27-cell run, 95-100 for `orig`, 190-215 for `lowlr`). (Grad norm with the self reference stays 62-158 because DPO log-probs sum over about 100 tokens per sequence.)
+
+Test of the mismatch as the cause of the collapse: DPO then RL rerun from the post-SFT checkpoint with `ckpt_000` replaced by the post-SFT weights (`p05/dpo_refsft.py`), nothing else changed, same charged-work target. WikiText NLL, nats per token, seed 1 (WikiText-103 test, one number per stage):
+
+| branch, seed 1 | after PT | after SFT stage | after DPO | after RL / end |
+|---|---|---|---|---|
+| orig, ref = random init (AT-1024) | 4.54 | 10.75 | 11.04 | 17.10 |
+| orig, ref = post-SFT | 4.54 | 10.77 | 10.97 | 18.56 |
+| lowlr, ref = random init (AT-1024) | 4.54 | 6.47 | 10.49 | 8.71 |
+| lowlr, ref = post-SFT | 4.54 | 6.47 | 6.46 | 6.98 |
+
+DPO training with the post-SFT reference (500 updates, first 20 / last 20 updates): `orig` loss 1.84 / 4.63, margin 5.3 / 4.4, accuracy 0.61 / 0.57, mean grad norm 151; `lowlr` loss 0.73 / 0.89, margin 0.71 / 0.95, accuracy 0.64 / 0.59, mean grad norm 106. At this size DPO accuracy stays near 0.6 (little preference signal), so the loss starts near ln 2 only for `lowlr`.
+
+Readout (seed 1 only):
+- `lowlr`: the DPO-stage NLL jump (+4.0 nats, 6.47 to 10.49) is gone with the post-SFT reference (6.47 to 6.46), and the end NLL is 6.98 vs 8.71. So the random-init reference explains the DPO-stage part of the `lowlr` damage; the remaining +2.4 nats over the PT checkpoint come from SFT (+1.9) and RL (+0.5).
+- `orig`: no rescue (end 18.56 vs 17.10; SFT alone already gives 10.77), consistent with AT-1024: the lr x 1 SFT stage is the main damage. The RL-end value is again unstable: RL optimizer steps 261 here vs 173 before, because the work-charge accounting differs after DPO (compare cells only with this in mind).
+- Not run: seeds 2 and 3 (acceptance asks 3 seeds); one run per cell, so the differences above are single-seed. The `refsft_lowlr` RL stage ran 2,661 optimizer steps vs 571 for `lowlr`, so part of its RL-stage difference may be the different amount of RL, not the reference.
+
+Files: `p05/dpo_ref_check.py`, `p05/dpo_refsft.py`, `refsft_summary.py`; raw runs on mercury1 `/lfs/mercury1/0/brando9/at1024/runs/s1/{chk,refsft}_{orig,lowlr}`.
+
+**TLDR-end (DPO reference check):** [unified-training: Exp 05 DPO check] At 14m, seed 1: DPO loss with policy = reference is 0.69 (no bug); the 11-22 comes from the random-init reference. With the post-SFT reference, `lowlr` stops jumping at DPO (6.47 to 6.46) and ends at 6.98 vs 8.71, but `orig` still collapses (18.56). Seeds 2 and 3 are pending.
