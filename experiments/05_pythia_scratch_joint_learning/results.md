@@ -2,7 +2,7 @@
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/05_pythia_scratch_joint_learning/results.md>
 **Status:** COMPLETE: 27 of 27 prospective cells reached the frozen charged-work target (W = 2.9e8). Failed 0, interrupted 0, unstarted 0.
-**Last updated:** 10-22-2026 (collected 23:13 PDT)
+**Last updated:** 10-23-2026 (cells collected 10-22 23:13 PDT; the 14m collapse diagnosis was added 10-23, and the DPO reference check at 14m is still open)
 
 `experiments/05_pythia_scratch_joint_learning` trained 27 cells from random initialization: Pythia-160m (expt_v1, 9 cells) and
 Pythia-14m and Pythia-70m (expt_v2, 18 cells), each = 3 methods x seeds {1, 2, 3}, one matched charged-work target W = 2.9e8
@@ -20,7 +20,7 @@ forward-equivalent tokens per cell, one cluster and precision for all (Sherlock 
    at 50% of W (PT only), then rises to 13.3-24.5 at 100% after SFT, DPO and RL, which is worse than the random initialization
    (10.84, 10.93, 10.99 nats). Joint methods end at 4.08-4.86, i.e. worse than sequential's own pre-post-training checkpoint.
    So "joint avoids destroying the language model that sequential's post-training destroys" is what the primary endpoint measures here.
-   The cause of the collapse (learning rate, objective weights or fp16, versus forgetting inherent to the stage) is not diagnosed.
+   14m diagnosis (added 10-23, 3 seeds): the collapse is not an RL artifact and only partly a learning-rate effect. SFT alone already breaks it: NLL 10.76 after the SFT stage at the original lr (13.37 after SFT to the full budget) against 4.54 at the PT checkpoint, before any DPO or RL. Post-training at 0.1x lr roughly halves the damage (6.50 after SFT, 11.85 at the end) but no branch returns to 4.54. Whether the DPO stage is itself buggy is still open (its loss starts at 11-21 instead of 0.69), and this was run at 14m only, not 70m or 160m (section "Collapse diagnosis" below).
 4. **Secondary endpoints are at floor or flat.** GSM8K is 0-3% in every cell (joint 2.1-2.6% mean vs sequential 1.0-1.2%; fixed 269 and smooth 289 vs sequential 132
    correct of 9 x 1,319 = 11,871 per arm); this is language learning at floor, not a reasoning result. LAMBADA accuracy
    is 0 in 21 of 27 cells and 0.0002 (1 of 5,153) in 6, so LAMBADA is uninformative; ARC-Easy is 0.252-0.275 (chance 0.25 for 4 choices; paired
@@ -173,9 +173,9 @@ zero-variance; fixed_joint 2,222 vs 21,158; smooth_joint 5,127 vs 45,721. RL get
 - Establishes: at matched charged work and at least 50M observed PT tokens, from random init, with these schedules and fp16 on V100s,
   fixed_joint and smooth_joint end with far better WikiText NLL than the sequential pipeline at 14m, 70m and 160m, 3/3 seeds each.
 - Does not establish: that joint training yields better reasoning (GSM8K at floor), a size trend (non-monotone, overlapping ranges),
-  that the sequential collapse is intrinsic to staged training rather than to this recipe (not diagnosed; sequential's pre-post-training
+  that the sequential collapse is intrinsic to staged training rather than to this recipe (at 14m it is not an RL artifact and only partly a learning-rate effect, SFT alone breaks it, and the DPO stage is still unchecked; sequential's pre-post-training
   checkpoint is better than any joint endpoint), or anything about LAMBADA (floor).
-- Not run: bf16 or any other cluster; more seeds. The lower-post-training-lr and SFT-only diagnostic is now run for 14m (section "Collapse diagnosis (AT-1024)" below).
+- Not run: bf16 or any other cluster; more seeds. The lower-post-training-lr and SFT-only diagnostic is now run for 14m (section "Collapse diagnosis" below).
 
 Run artifacts: Sherlock `$SCRATCH/ut_p05` (`collect/collect.{json,md}`, `runs/*/*/*/{receipt,slurm}.json`, `eval/*/summary.json`), results tarball
 `p05_results.tgz` sha256 `32e9aa2cb1951843543aa27709183eb3afa76bca5d3b1b0847d6fd8f3cd379dd` (153,035 bytes; summaries only, no checkpoints).
