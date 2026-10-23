@@ -180,48 +180,42 @@ zero-variance; fixed_joint 2,222 vs 21,158; smooth_joint 5,127 vs 45,721. RL get
 Run artifacts: Sherlock `$SCRATCH/ut_p05` (`collect/collect.{json,md}`, `runs/*/*/*/{receipt,slurm}.json`, `eval/*/summary.json`), results tarball
 `p05_results.tgz` sha256 `32e9aa2cb1951843543aa27709183eb3afa76bca5d3b1b0847d6fd8f3cd379dd` (153,035 bytes; summaries only, no checkpoints).
 
-## Collapse diagnosis (AT-1024): stage-by-stage WikiText NLL, 14m, seeds 1, 2, 3 (denominator 3 seeds x 4 branches = 12 branch runs, all complete)
+## Collapse diagnosis: stage-by-stage WikiText NLL, 14m, seeds 1, 2, 3 (12 branch runs, all complete)
+
+**Answer: the collapse is not an RL artifact and only partly a learning-rate effect. Whether the DPO stage is itself a recipe or implementation bug is still open (its loss starts at 11-21 instead of 0.69).**
 
 Setup: per seed, the sequential pre-training stage is trained once (progress < 0.55, same frozen 14m fp16 config as the 27-cell run) and four
-branches start from that same checkpoint, so after-PT NLL is identical across branches. One A4000 (mercury1 GPU 9), fp16. WikiText NLL (nats per
-token) read after every stage. Branches: `orig` (SFT, DPO, RL as before), `lowlr` (same, post-training lr x 0.1: SFT peak 4.86e-5 vs 4.86e-4),
-`sftonly` (SFT alone, to the full charged-work target), `ptonly` (control: keep pre-training to the target).
+branches start from that same checkpoint, so after-PT NLL is identical across branches. One A4000 (mercury1 GPU 9). WikiText NLL (nats per
+token) is read after every stage. Branches: `orig` (SFT, DPO, RL as before), `lowlr` (same, post-training lr x 0.1: SFT peak 4.86e-5 vs 4.86e-4),
+`sftonly` (SFT continued to the full 6,522-update charged-work target, no DPO or RL), `ptonly` (control: keep pre-training to the target).
 
-| branch | after PT | after SFT | after DPO | after RL / end | seeds 1 / 2 / 3 at the end |
+| branch | after PT | after SFT stage | after DPO | after RL / end | end, seeds 1 / 2 / 3 |
 |---|---|---|---|---|---|
 | ptonly (control) | 4.54 | - | - | 4.35 | 4.35 / 4.35 / 4.34 |
-| sftonly | 4.54 | 13.37 (end) | - | 13.37 | 13.42 / 13.25 / 13.44 |
-| orig (lr x 1) | 4.54 | 10.76 | 10.65 | 21.46 | 17.10 / 16.39 / 30.91 |
-| lowlr (lr x 0.1) | 4.54 | 6.50 | 10.37 | 11.85 | 8.71 / 12.17 / 14.69 |
+| sftonly (SFT to full budget) | 4.54 | 13.37 (end of full-budget SFT) | - | 13.37 | 13.42 / 13.25 / 13.44 |
+| orig (lr x 1) | 4.54 | 10.76 (shorter SFT stage) | 10.65 | 21.46 | 17.10 / 16.39 / 30.91 |
+| lowlr (lr x 0.1) | 4.54 | 6.50 (shorter SFT stage) | 10.37 | 11.85 | 8.71 / 12.17 / 14.69 |
 
-(means of 3 seeds; per-seed values and per-stage training statistics in `diag_summary.json`; random-init NLL is about 10.8-11.0.)
+Means of 3 seeds; per-seed values and per-stage training statistics are in `diag_summary.json`. Random-init NLL is about 10.8-11.0. The
+`sftonly` row is not the same stage as the `orig` and `lowlr` after-SFT cells: it is SFT run to the full budget, the others stop after the shorter SFT stage.
 
 Readout:
-- The damage is not an RL artifact. SFT alone takes NLL from 4.54 to 13.37 (3/3 seeds, 13.25-13.44), above random init, while continuing
-  pre-training on the same budget improves it to 4.35 (3/3 seeds). `orig` is already at 10.76 after SFT, before DPO or RL.
-- Lower post-training lr reduces the damage but does not remove it. After SFT: 6.50 vs 10.76 (3/3 seeds lower, 6.45-6.58 vs 10.67-10.85), still
-  +2.0 nats over the PT checkpoint. After DPO both are about 10.4-10.7 (random-init level), so the lr cut does not protect against DPO. After
-  RL, `lowlr` ends at 8.7 / 12.2 / 14.7 vs `orig` 17.1 / 16.4 / 30.9: lower on 3/3 seeds, mean 11.85 vs 21.46, but with a large seed spread
-  (seed 3 `lowlr` RL loss was unstable, first-20 mean 12.17 and last-20 mean -5.50) and still 2-3x the PT NLL.
-- No branch gets back to the PT-checkpoint NLL of 4.54 on WikiText: 0 of 9 post-training branch endpoints (3 branches x 3 seeds) is below it.
+- Not an RL artifact: `orig` is already at 10.76 after its shorter SFT stage, before DPO or RL (3/3 seeds, 10.67-10.85), and SFT to the full budget reaches 13.37
+  (3/3 seeds), above random init. Continuing pre-training on the same budget improves NLL to 4.35 (3/3 seeds).
+- Only partly an lr effect (compared only between `orig` and `lowlr`): after the SFT stage 6.50 vs 10.76 (3/3 seeds lower), still +2.0 nats over the
+  PT checkpoint; after DPO both are about 10.4-10.7 (random-init level); after RL `lowlr` is 11.85 vs 21.46 (lower on 3/3 seeds).
+- No branch gets back to the PT-checkpoint NLL of 4.54: 0 of 9 post-training branch endpoints (3 branches x 3 seeds) is below it.
 
-Verdict: the collapse is not an RL artifact and not only a learning-rate artifact. Forgetting of the pre-training distribution under SFT,
-DPO and RL post-training with no pre-training replay is present at 14m under every post-training variant tried, and its size depends on the
-recipe (lr x 0.1 cuts the SFT jump from +6.2 to +2.0 nats and the RL-end mean from 21.5 to 11.9). It stays a 14m, 3-seed, one-lr-factor result.
+Verdict: forgetting of the pre-training distribution under SFT, DPO and RL post-training with no pre-training replay appears under every post-training
+variant tried, and its size depends on the recipe (lr x 0.1 cuts the SFT jump from +6.2 to +2.0 nats and the RL-end mean from 21.46 to 11.85).
+The DPO verdict is open: the stage starts at a loss of 11-21 (mean of the first 20 updates), not the ln 2 = 0.69 expected when policy equals
+reference, and its gradient norms are about 95-100 (`orig`) and 190-215 (`lowlr`) against about 2 in SFT. A reference-mismatch check on the DPO loss is the next diagnostic.
 
-Caveats, not resolved:
-- The DPO stage starts at a loss of 11-21 (first-20-update mean), not the ln 2 = 0.69 expected when policy equals reference, and DPO gradient
-  norms are about 95-100 (`orig`) and 190-215 (`lowlr`) against about 2 in SFT. The DPO stage may be mis-specified or unstable, so the DPO step of the
-  collapse could be a recipe artifact; this was not checked here. A reference-mismatch check on the DPO loss is the next diagnostic.
-- `sftonly` runs SFT to the full charged-work target (6,522 updates), `orig` SFT is a shorter stage, so their after-SFT NLLs (13.37 vs 10.76)
-  differ in length and are not a like-for-like lr comparison; the lr comparison is `orig` vs `lowlr`.
-- fp16 skipped 0 steps in `sftonly` and 6-7 steps in each `orig` and `lowlr` run (receipts); only 14m was run (70m and 160m not).
-- 3 seeds, one run each; seed spread after RL is large (`orig` 16.4-30.9), so the RL-end means are not tight.
+Caveats:
+- 14m only (no 70m or 160m), 3 seeds, one run each.
+- Seed spread after RL is large (`orig` 16.4-30.9; `lowlr` seed 3 RL loss unstable, first-20 mean 12.17, last-20 mean -5.50), so the RL-end means are not tight.
+- fp16 skipped 6-7 optimizer steps in each `orig` and `lowlr` run and none in `sftonly` (receipts).
 
 Files: `p05/diag.py`, `p05/diag_eval.py`, `diag_summary.json`, `analyze_diag.py`; raw runs on mercury1 `/lfs/mercury1/0/brando9/at1024/runs`.
 
-**TLDR-end:** [unified-training: Exp 05 final] All 27 random-init Pythia cells completed (denominator 27). Joint beats sequential on WikiText NLL at 14m, 70m and 160m,
-3/3 seeds each (gap -14.2, -17.4, -12.6 nats, no size trend), but the gap is sequential's post-training collapse (NLL 13 to 25, above random init), not joint
-being good; GSM8K and LAMBADA are at floor.
-
-**TLDR-end (AT-1024):** [unified-training: Exp 05 diagnosis] At 14m, 3 seeds, SFT alone lifts WikiText NLL from 4.54 to 13.37 (above random init) while continued PT gives 4.35; post-training lr x 0.1 roughly halves the damage (RL-end mean 11.85 vs 21.46) but no branch returns to 4.54. Verdict: not an RL artifact, only partly a recipe (lr) effect; the DPO stage starts at loss 11-21 instead of 0.69 and needs a check.
+**TLDR-end (diagnosis):** [unified-training: Exp 05 diagnosis] At 14m, 3 seeds: orig is already at 10.76 NLL after its shorter SFT stage and SFT to the full budget reaches 13.37, against 4.54 at the PT checkpoint, so it is not an RL artifact. Lr x 0.1 roughly halves the damage (RL-end mean 11.85 vs 21.46) but nothing recovers it. The DPO stage may be a recipe bug (loss starts at 11-21, not 0.69) and is still open.
