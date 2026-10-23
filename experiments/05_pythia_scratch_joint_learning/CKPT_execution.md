@@ -3,7 +3,7 @@
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/05_pythia_scratch_joint_learning/CKPT_execution.md>
 Created: 10-05-2026 10:25 PDT
 Last updated: 10-21-2026
-Status: RUNNING: cells_v1 job 48765768 (0-8%4) and cells_v2 job 48765798 (0-17%4, afterany v1) submitted 10-21-2026 00:18 PDT on Sherlock V100 fp16, code e0f9839, W=2.9e8; next: collect (SUBMIT.md step 6) when cells finish; reruns of failed indices use P05_ARRAY
+Status: COMPLETE: all 27 cells finished 10-22-2026 (Sherlock V100 fp16); final readout in results.md; collect output in results_final/
 
 - Canonical home: `experiments/05_pythia_scratch_joint_learning`. Read the [campaign plan](../03_qwen_joint_reasoning_retention/PLAN.md),
   the protocols ([v1](expt_v1/PROTOCOL.md), [v2](expt_v2/PROTOCOL.md)) and [SUBMIT.md](SUBMIT.md).
