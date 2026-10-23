@@ -252,7 +252,7 @@ DPO training with the post-SFT reference (500 updates, first 20 / last 20 update
 
 Readout (seed 1 only):
 - `lowlr`: the DPO-stage NLL jump (+4.0 nats, 6.47 to 10.49) is gone with the post-SFT reference (6.47 to 6.46), and the end NLL is 6.98 vs 8.71. So the random-init reference explains the DPO-stage part of the `lowlr` damage; the remaining +2.4 nats over the PT checkpoint come from SFT (+1.9) and RL (+0.5).
-- `orig`: no rescue (end 18.56 vs 17.10; SFT alone already gives 10.77), consistent with AT-1024: the lr x 1 SFT stage is the main damage. The RL-end value is again unstable: RL optimizer steps 261 here vs 173 before, because the work-charge accounting differs after DPO (compare cells only with this in mind).
+- `orig`: no rescue (end 18.56 vs 17.10; SFT alone already gives 10.77), consistent with AT-1024: the lr x 1 SFT stage is the main damage. The RL-end value is again unstable: RL optimizer steps 261 here vs 173 before, probably because the charged-work accounting after DPO differs (not checked); compare RL-stage values with this in mind.
 - Not run: seeds 2 and 3 (acceptance asks 3 seeds); one run per cell, so the differences above are single-seed. The `refsft_lowlr` RL stage ran 2,661 optimizer steps vs 571 for `lowlr`, so part of its RL-stage difference may be the different amount of RL, not the reference.
 
 Files: `p05/dpo_ref_check.py`, `p05/dpo_refsft.py`, `refsft_summary.py`; raw runs on mercury1 `/lfs/mercury1/0/brando9/at1024/runs/s1/{chk,refsft}_{orig,lowlr}`.
