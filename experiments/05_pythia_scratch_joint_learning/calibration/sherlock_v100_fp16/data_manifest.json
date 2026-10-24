@@ -1,0 +1,111 @@
+{
+  "block_len": 1024,
+  "created_by": "p05/data.py prepare",
+  "epochs_for_target": 0.42151351001381215,
+  "files": {
+    "eval/arc_easy_test.jsonl": {
+      "bytes": 783492,
+      "rows": 2376,
+      "sha256": "d6174a49ec02b4d571c1352d3c2e6d2c942618c6842ae92222a479c4013c3b40"
+    },
+    "eval/gsm8k_test.jsonl": {
+      "bytes": 780798,
+      "rows": 1319,
+      "sha256": "153639f96ac7036a5b2f3e89da8b0ba097147774a6ec27f8ed3f2509b779f8c8"
+    },
+    "eval/lambada.jsonl": {
+      "bytes": 1962230,
+      "rows": 5153,
+      "sha256": "68ad9311b9c2dc414a50d1ddbec7ca6b698195617a334876289177714c842772"
+    },
+    "eval/lc_gsm8k.jsonl": {
+      "bytes": 148589,
+      "rows": 256,
+      "sha256": "30e079611f5ca39b023848a43bc28691648f5d818aec58c2f775ca0f9f7b0f6e"
+    },
+    "pref/test.jsonl": {
+      "bytes": 6579687,
+      "rows": 1985,
+      "sha256": "41d81503cbb169467ded793c03cfaa044d38f54db57277d0b88fa3b29ba0f983"
+    },
+    "pref/train.jsonl": {
+      "bytes": 196996764,
+      "rows": 59553,
+      "sha256": "da748c8c70f17120bfd4ded6f9fe188723e9a43747c055fbb097147cbb7f684f"
+    },
+    "pt/controller.jsonl": {
+      "bytes": 677674,
+      "rows": 30,
+      "sha256": "4b6658c8ad4db4675a1db46fadafbd671f935a2916c619e94fc343b615f35a37"
+    },
+    "pt/test.jsonl": {
+      "bytes": 1295748,
+      "rows": 62,
+      "sha256": "f34194ce4f8f06d42bdc866802d22eeb7d1c0f7886fcf61575f331163f7a3218"
+    },
+    "pt/tune.jsonl": {
+      "bytes": 474723,
+      "rows": 30,
+      "sha256": "3fc486ede7b2efe644ca1b43156c01f58f4d5879b8244f7fdf45d55cbe55b58e"
+    },
+    "pt/validation.jsonl": {
+      "bytes": 1152397,
+      "rows": 60,
+      "sha256": "8bcf3fc9a8d3b1b1ded89c8177785c6128178d676e8bc6eef8e8f3500cf8e04f"
+    },
+    "pt_blocks/train.jsonl": {
+      "bytes": 551476779,
+      "rows": 115840,
+      "sha256": "a44c5c2e8310461d642abbcc861a17ad5d5413dab91cef613c33e605019d8761"
+    },
+    "rl/train.jsonl": {
+      "bytes": 1253001,
+      "rows": 3160,
+      "sha256": "80276d1a1412acf6d6c753122f75adb4b36dcf590aec90c138c5c211b479c41c"
+    },
+    "sft/train.jsonl": {
+      "bytes": 2054239,
+      "rows": 3161,
+      "sha256": "c3186b484a1507ea9123166e63c770f1179f483506a418e54839cb457172e5df"
+    }
+  },
+  "jr1_data": {
+    "manifest_sha256": "caa58f37b32a2bf0ef0568295e535d5792710c464f64943fc5e4c6aca6a7010b",
+    "pt_train_sha256": "8aaf0ccf067ab60dc8a15206e486bc35d1273cbe6ffa2c6501c5863d728993ca",
+    "root": "/scratch/users/brando9/ut_jr1/data"
+  },
+  "lambada": {
+    "file": "default/test/default.parquet",
+    "parquet_sha256": "99d8a9e54cda761c6340ddd4fa6feda7f846ffb0e716afa52968dea75495eea7",
+    "pt_overlap_50char_hits": 0,
+    "pt_overlap_examples": [],
+    "repo": "EleutherAI/lambada_openai",
+    "revision": "900124bf3b8235c6daf21033af9948b3f07346c4",
+    "rows": 5153
+  },
+  "observed_pt_target": 50000000,
+  "pt_blocks": {
+    "articles_in": 29393,
+    "block_len": 1024,
+    "blocks": 115840,
+    "note": "the trainer keeps the first block_len tokens of each row (jr1 loss_pt), so the observed tokens per epoch are trainer_tokens_per_epoch",
+    "packed_tokens": 118620160,
+    "reencoded_exact": 115713,
+    "reencoded_max": 1026,
+    "reencoded_min": 1024,
+    "reencoded_over_block_len": 127,
+    "reencoded_tokens_sum": 118620297,
+    "trainer_tokens_per_epoch": 118620160
+  },
+  "tokenizer": {
+    "eos_token_id": 0,
+    "eot_string": "<|endoftext|>",
+    "files_sha256": {
+      "special_tokens_map.json": "6f50ab5a5a509a1c309d6171f339b196a900dc9c99ad0408ff23bb615fdae7ad",
+      "tokenizer.json": "c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624",
+      "tokenizer_config.json": "70e38394e494931c6f773ba41e19460dd4436526b852207367f04341b4066d3f"
+    },
+    "repo": "EleutherAI/pythia-160m",
+    "revision": "50f5173d932e8e61f858120bcb800b97af589f46"
+  }
+}

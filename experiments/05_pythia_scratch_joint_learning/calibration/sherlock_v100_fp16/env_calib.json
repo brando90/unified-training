@@ -1,0 +1,16 @@
+{
+  "bf16_supported": true,
+  "capability": "7.0",
+  "cluster": "sherlock",
+  "code_commit": "2c587c3ecd5097fc63ecaf810de7799c2738d0ce",
+  "cuda": true,
+  "cuda_build": "12.4",
+  "gpu": "Tesla V100-PCIE-32GB",
+  "gpu_memory_gib": 31.73,
+  "host": "sh02-16n05.int",
+  "precision": "fp16",
+  "python": "3.12.1",
+  "slurm_job_id": "48759212",
+  "torch": "2.6.0+cu124",
+  "transformers": "4.57.6"
+}

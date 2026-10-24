@@ -1,0 +1,137 @@
+{
+  "checkpoints": {
+    "fractions": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "state_every_actions": 1000,
+    "state_every_seconds": 1800
+  },
+  "data": {
+    "root": null,
+    "splits": {
+      "dpo": "pref/train",
+      "dpo_controller": "pref/controller",
+      "pt": "pt_blocks/train",
+      "pt_controller": "pt/controller",
+      "rl": "rl/train",
+      "rl_controller": "rl/controller",
+      "sft": "sft/train",
+      "sft_controller": "sft/controller"
+    }
+  },
+  "frozen": false,
+  "methods": {
+    "fixed_joint": {
+      "weights": {
+        "dpo": 0.1,
+        "pt": 0.55,
+        "rl": 0.15,
+        "sft": 0.2
+      }
+    },
+    "sequential": {
+      "boundaries": [
+        0.55,
+        0.75,
+        0.85
+      ]
+    },
+    "smooth_joint": {
+      "end": {
+        "dpo": 0.15,
+        "pt": 0.2,
+        "rl": 0.45,
+        "sft": 0.2
+      },
+      "floors": {
+        "dpo": 0.05,
+        "pt": 0.05
+      },
+      "start": {
+        "dpo": 0.05,
+        "pt": 0.7,
+        "rl": 0.05,
+        "sft": 0.2
+      }
+    }
+  },
+  "model": {
+    "attn_implementation": "sdpa",
+    "gradient_checkpointing": false,
+    "id": "EleutherAI/pythia-160m",
+    "init_seed": null,
+    "local_path": null,
+    "revision": "50f5173d932e8e61f858120bcb800b97af589f46",
+    "source": "random",
+    "tiny": null
+  },
+  "objectives": {
+    "dpo": {
+      "batch_size": 8,
+      "beta": 0.1,
+      "max_len": 1024
+    },
+    "pt": {
+      "batch_size": 32,
+      "max_len": 1024
+    },
+    "rl": {
+      "backend": "hf",
+      "group_size": 8,
+      "max_new_tokens": 256,
+      "max_prompt_len": 256,
+      "prompts": 4,
+      "reward": "gsm8k_exact",
+      "temperature": 1.0
+    },
+    "sft": {
+      "batch_size": 32,
+      "max_len": 512
+    }
+  },
+  "optimizer": {
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "grad_clip": 1.0,
+    "lr": 0.0006,
+    "min_lr_ratio": 0.1,
+    "schedule": "cosine",
+    "warmup_fraction": 0.01,
+    "warmup_start_ratio": 0.0,
+    "weight_decay": 0.01
+  },
+  "p05": {
+    "gpu": "L40S 46GB (FarmShare gpu partition) or another sm80+ GPU",
+    "methods": [
+      "sequential",
+      "fixed_joint",
+      "smooth_joint"
+    ],
+    "observed_pt_target": 50000000,
+    "precision": "bf16",
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "size": "160m",
+    "version": "v1"
+  },
+  "precision": {
+    "checkpoint": "fp32",
+    "compute": "bf16",
+    "master": "fp32",
+    "reference": "compute"
+  },
+  "protocol": "p05-v1-160m-bf16-DRAFT",
+  "work": {
+    "target": 300000000.0
+  }
+}
