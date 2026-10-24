@@ -173,7 +173,7 @@ zero-variance; fixed_joint 2,222 vs 21,158; smooth_joint 5,127 vs 45,721. RL get
 - Establishes: at matched charged work and at least 50M observed PT tokens, from random init, with these schedules and fp16 on V100s,
   fixed_joint and smooth_joint end with far better WikiText NLL than the sequential pipeline at 14m, 70m and 160m, 3/3 seeds each.
 - Does not establish: that joint training yields better reasoning (GSM8K at floor), a size trend (non-monotone, overlapping ranges),
-  that the sequential collapse is intrinsic to staged training rather than to this recipe (at 14m it is not an RL artifact and only partly a learning-rate effect, SFT alone breaks it, and the DPO stage is not buggy: its loss starts at 11-21 only because the reference is the random init, see section "DPO reference check"; sequential's pre-post-training
+  that the sequential collapse is intrinsic to staged training rather than to this recipe (at 14m it is not an RL artifact and only partly a learning-rate effect, SFT alone breaks it, and the DPO stage is not buggy: its first-batch loss is 9.7-11.2 for `orig` and about 21.8 for `lowlr` only because the reference is the random init, see section "DPO reference check"; sequential's pre-post-training
   checkpoint is better than any joint endpoint), or anything about LAMBADA (floor).
 - Not run: bf16 or any other cluster; more seeds. The lower-post-training-lr and SFT-only diagnostic is now run for 14m (section "Collapse diagnosis" below).
 
@@ -182,7 +182,7 @@ Run artifacts: Sherlock `$SCRATCH/ut_p05` (`collect/collect.{json,md}`, `runs/*/
 
 ## Collapse diagnosis: stage-by-stage WikiText NLL, 14m, seeds 1, 2, 3 (12 branch runs, all complete)
 
-**Answer: the collapse is not an RL artifact and only partly a learning-rate effect. The DPO stage is not an implementation bug: its loss is 0.69 with policy = reference, and 11-21 only because the reference is the random init (section "DPO reference check" below).**
+**Answer: the collapse is not an RL artifact and only partly a learning-rate effect. The DPO stage is not an implementation bug: its loss is 0.69 with policy = reference, and 9.7-11.2 for `orig` and about 21.8 for `lowlr` only because the reference is the random init (section "DPO reference check" below).**
 
 Setup: per seed, the sequential pre-training stage is trained once (progress < 0.55, same frozen 14m fp16 config as the 27-cell run) and four
 branches start from that same checkpoint, so after-PT NLL is identical across branches. One A4000 (mercury1 GPU 9). WikiText NLL (nats per
@@ -208,7 +208,7 @@ Readout:
 
 Verdict: forgetting of the pre-training distribution under SFT, DPO and RL post-training with no pre-training replay appears under every post-training
 variant tried, and its size depends on the recipe (lr x 0.1 cuts the SFT jump from +6.2 to +2.0 nats and the RL-end mean from 21.46 to 11.85).
-DPO verdict (checked, section "DPO reference check" below): the stage starts at a loss of 11-21 (mean of the first 20 updates) because its frozen reference is the random initialisation; with the policy itself as reference the loss is 0.69 (6 of 6 cells), so it is not an implementation bug. Gradient norms of about 95-100 (`orig`) and 190-215 (`lowlr`) against about 2 in SFT are also not diagnostic: they stay 60-171 with the self reference.
+DPO verdict (checked, section "DPO reference check" below): the stage starts at a loss of 9.7-11.2 for `orig` and about 21.8 for `lowlr` (mean over the first 16 batches, 128 pairs) because its frozen reference is the random initialisation; with the policy itself as reference the loss is 0.69 (6 of 6 cells), so it is not an implementation bug. The DPO gradient norms quoted earlier (about 95-100 for `orig` and 190-215 for `lowlr`, averaged over all DPO updates of the training runs, against about 2 in SFT) are a different quantity from the batch-0 norms in the check table below, and are also not diagnostic of the mismatch alone: batch-0 norms with the self reference are 158-171 (`orig`) and 60-66 (`lowlr`). In the reruns with the post-SFT reference the training-mean norm falls for `lowlr` (106-110, about half of 190-215) and rises for `orig` (151-164).
 
 Caveats:
 - 14m only (no 70m or 160m), 3 seeds, one run each.
@@ -217,11 +217,11 @@ Caveats:
 
 Files: `p05/diag.py`, `p05/diag_eval.py`, `diag_summary.json`, `analyze_diag.py`; raw runs on mercury1 `/lfs/mercury1/0/brando9/at1024/runs`.
 
-**TLDR-end (diagnosis):** [unified-training: Exp 05 diagnosis] At 14m, 3 seeds: orig is already at 10.76 NLL after its shorter SFT stage and SFT to the full budget reaches 13.37, against 4.54 at the PT checkpoint, so it is not an RL artifact. Lr x 0.1 roughly halves the damage (RL-end mean 11.85 vs 21.46) but nothing recovers it. The DPO loss of 11-21 is a reference mismatch, not a code bug (see DPO reference check).
+**TLDR-end (diagnosis):** [unified-training: Exp 05 diagnosis] At 14m, 3 seeds: orig is already at 10.76 NLL after its shorter SFT stage and SFT to the full budget reaches 13.37, against 4.54 at the PT checkpoint, so it is not an RL artifact. Lr x 0.1 roughly halves the damage (RL-end mean 11.85 vs 21.46) but nothing recovers it. The DPO loss of 9.7-11.2 for `orig` and about 21.8 for `lowlr` is a reference mismatch, not a code bug (see DPO reference check).
 
 ## DPO reference check: 14m, seeds 1-3
 
-**Answer: the DPO loss of 11-22 is a reference mismatch by construction, not an implementation bug (loss 0.69 with policy = reference, 6 of 6 cells). Only the DPO-stage result is clean: with the post-SFT policy as reference, the `lowlr` DPO-stage NLL jump (+3.6 to +4.0 nats) disappears in all 3 seeds, `orig` is not rescued (SFT already ends near 10.7). The RL-end NLL (`lowlr` 7.0-8.0 vs 8.7-14.7) is confounded by different amounts of RL (up to ~15x more RL optimizer steps in the post-SFT-reference `lowlr` runs, table below), so it is not a like-for-like gain from the reference alone.**
+**Answer: the DPO loss of 9.7-11.2 for `orig` and about 21.8 for `lowlr` is a reference mismatch by construction, not an implementation bug (loss 0.69 with policy = reference, 6 of 6 cells). Only the DPO-stage result is clean: with the post-SFT policy as reference, the `lowlr` DPO-stage NLL jump (+3.6 to +4.0 nats) disappears in all 3 seeds, `orig` is not rescued (SFT already ends near 10.7). The RL-end NLL (`lowlr` 7.0-8.0 vs 8.7-14.7) is confounded by different amounts of RL (about 5-16x more RL optimizer steps in the post-SFT-reference `lowlr` runs, table below), so it is not a like-for-like gain from the reference alone.**
 
 In this recipe the frozen DPO reference is `ckpt_000`, the random initialisation (protocol "frozen reference"). After SFT the policy is far from it, so the first DPO loss is large.
 Check (`p05/dpo_ref_check.py`): rerun SFT from the same PT checkpoint, then score the first 16 DPO batches (8 pairs each, 128 pairs per cell, beta 0.1) with three references. Mean DPO loss over the 128 pairs, per seed (1 / 2 / 3):
@@ -235,7 +235,7 @@ Check (`p05/dpo_ref_check.py`): rerun SFT from the same PT checkpoint, then scor
 | lowlr | random init (the recipe) | 21.89 / 21.71 / 21.66 | 113 / 117 / 112 |
 | lowlr | end-of-PT checkpoint | 8.61 / 8.47 / 9.59 | 99 / 129 / 99 |
 
-With policy = reference the loss is ln 2 = 0.693 (0.692-0.699, 6 of 6 cells, margin within 0.01 of 0): the loss code is correct. The large loss comes from the random-init reference. The grad norms of ~100-215 do not identify the mismatch: with the self reference they stay 60-171, because DPO log-probs sum over about 100 tokens per sequence, so the norm is large at loss ln 2 too (clipping is on).
+With policy = reference the loss is ln 2 = 0.693 (0.692-0.699, 6 of 6 cells, margin within 0.01 of 0): the loss code is correct. The large loss comes from the random-init reference. The grad norms of ~100-215 quoted in the task are training-mean norms over all DPO updates (`orig` 96-101, `lowlr` 191-215 with the random-init reference); the table's column is the unclipped norm of batch 0 only, so the two are not comparable (the training mean for `lowlr` is above any batch-0 value, which says the norm grows during DPO). They do not identify the mismatch by themselves: batch-0 norms with the self reference are still 158-171 (`orig`) and 60-66 (`lowlr`), because DPO log-probs sum over about 100 tokens per sequence, so the norm is large at loss ln 2 too (clipping is on). Replacing the reference halves the `lowlr` training-mean norm (to 106-110) and raises the `orig` one (to 151-164), so the mismatch explains about half of the `lowlr` norm and none of the `orig` norm.
 
 Test of the mismatch as the cause of the collapse: DPO then RL rerun from the post-SFT checkpoint with `ckpt_000` replaced by the post-SFT weights (`p05/dpo_refsft.py`), nothing else changed, same charged-work target. WikiText NLL, nats per token (WikiText-103 test, one number per stage; 3 seeds x 2 branches x 2 references = 12 runs, all complete):
 
@@ -262,9 +262,9 @@ Readout (3 seeds, one run per cell, so these are n = 3 comparisons, not tests):
 | lowlr, random init | 3361 / 3687 / 3670 | 107,552 / 117,984 / 117,440 | 571 / 157 / 176 | 615 / 160 / 181 |
 | lowlr, post-SFT | 7114 / 4883 / 7458 | 227,648 / 156,256 / 238,656 | 2661 / 1904 / 2797 | 3221 / 2265 / 3330 |
 
-  The cause is not a bookkeeping difference. Charged work follows generated tokens: the post-SFT-reference `lowlr` policy generates 14-43 tokens per rollout (seeds 3 / 1 / 2: 13.7 / 17.2 / 43.1) against 198-255 for the random-init `lowlr` policy (damaged at DPO, it generates up to the length cap), so the same budget buys 1.3-2x the rollouts. It also gets a reward signal in 11-12% of groups against 1-5% (informative / all groups), hence 12-18x the RL optimizer steps. So the RL-end gain is partly a consequence of the policy being healthy after DPO and partly more RL; one cannot separate the two from these runs. A matched-RL-steps rerun would, and was not done. The DPO-stage result is not affected.
+  The cause is not a bookkeeping difference. Charged work follows generated tokens: the post-SFT-reference `lowlr` policy generates 14-43 tokens per rollout (seeds 3 / 1 / 2: 13.7 / 17.2 / 43.1) against 198-255 for the random-init `lowlr` policy (damaged at DPO, it generates up to the length cap), so the same budget buys 1.3-2.1x the rollouts. It also gets a reward signal in 11-12% of groups against 1-5% (informative / all groups), hence about 5-16x the RL optimizer steps (4.7x / 12.1x / 15.9x for seeds 1 / 2 / 3). So the RL-end gain is partly a consequence of the policy being healthy after DPO and partly more RL; one cannot separate the two from these runs. A matched-RL-steps rerun would, and was not done. The DPO-stage result is not affected.
 - Not done: 70m and 160m (a later step); no fix to the code was needed, so the original 27-cell numbers stand; the post-SFT-reference runs are a diagnostic, not a replacement recipe.
 
 Files: `p05/dpo_ref_check.py`, `p05/dpo_refsft.py`, `refsft_summary.py`; raw runs on mercury1 `/lfs/mercury1/0/brando9/at1024/runs/s{1,2,3}/{chk,refsft}_{orig,lowlr}` (summary `refsft_all.json` next to them).
 
-**TLDR-end (DPO reference check):** [unified-training: Exp 05 DPO check] At 14m, 3 seeds: DPO loss with policy = reference is 0.69 in 6 of 6 cells (no bug); the 11-22 comes from the random-init reference. With the post-SFT reference, `lowlr` stops jumping at DPO (6.5 to 6.5, 3 of 3 seeds) and ends at 7.0-8.0 vs 8.7-14.7; `orig` is not rescued (SFT alone is 10.7; RL end overlaps).
+**TLDR-end (DPO reference check):** [unified-training: Exp 05 DPO check] At 14m, 3 seeds: DPO loss with policy = reference is 0.69 in 6 of 6 cells (no bug); the first-batch loss (9.7-11.2 for `orig` and about 21.8 for `lowlr`) comes from the random-init reference. With the post-SFT reference, `lowlr` stops jumping at DPO (6.5 to 6.5, 3 of 3 seeds) and ends at 7.0-8.0 vs 8.7-14.7; `orig` is not rescued (SFT alone is 10.7; RL end overlaps).
