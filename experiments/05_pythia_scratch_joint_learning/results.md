@@ -20,7 +20,7 @@ forward-equivalent tokens per cell, one cluster and precision for all (Sherlock 
    at 50% of W (PT only), then rises to 13.3-24.5 at 100% after SFT, DPO and RL, which is worse than the random initialization
    (10.84, 10.93, 10.99 nats). Joint methods end at 4.08-4.86, i.e. worse than sequential's own pre-post-training checkpoint.
    So "joint avoids destroying the language model that sequential's post-training destroys" is what the primary endpoint measures here.
-   14m diagnosis (added 10-23, 3 seeds): the collapse is not an RL artifact and only partly a learning-rate effect. SFT alone already breaks it: NLL 10.76 after the SFT stage at the original lr (13.37 after SFT to the full budget) against 4.54 at the PT checkpoint, before any DPO or RL. Post-training at 0.1x lr roughly halves the damage (6.50 after SFT, 11.85 at the end) but no branch returns to 4.54. Whether the DPO stage is itself buggy is still open (its loss starts at 11-21 instead of 0.69), and this was run at 14m only, not 70m or 160m (section "Collapse diagnosis" below).
+   14m diagnosis (added 10-23, 3 seeds): the collapse is not an RL artifact and only partly a learning-rate effect. SFT alone already breaks it: NLL 10.76 after the SFT stage at the original lr (13.37 after SFT to the full budget) against 4.54 at the PT checkpoint, before any DPO or RL. Post-training at 0.1x lr roughly halves the damage (6.50 after SFT, 11.85 at the end) but no branch returns to 4.54. The DPO stage is not buggy: its loss starts at 11-21 only because the reference is the random init (section "DPO reference check" below), and this was run at 14m only, not 70m or 160m (section "Collapse diagnosis" below).
 4. **Secondary endpoints are at floor or flat.** GSM8K is 0-3% in every cell (joint 2.1-2.6% mean vs sequential 1.0-1.2%; fixed 269 and smooth 289 vs sequential 132
    correct of 9 x 1,319 = 11,871 per arm); this is language learning at floor, not a reasoning result. LAMBADA accuracy
    is 0 in 21 of 27 cells and 0.0002 (1 of 5,153) in 6, so LAMBADA is uninformative; ARC-Easy is 0.252-0.275 (chance 0.25 for 4 choices; paired
@@ -182,7 +182,7 @@ Run artifacts: Sherlock `$SCRATCH/ut_p05` (`collect/collect.{json,md}`, `runs/*/
 
 ## Collapse diagnosis: stage-by-stage WikiText NLL, 14m, seeds 1, 2, 3 (12 branch runs, all complete)
 
-**Answer: the collapse is not an RL artifact and only partly a learning-rate effect. Whether the DPO stage is itself a recipe or implementation bug is still open (its loss starts at 11-21 instead of 0.69).**
+**Answer: the collapse is not an RL artifact and only partly a learning-rate effect. The DPO stage is not an implementation bug: its loss is 0.69 with policy = reference, and 11-21 only because the reference is the random init (section "DPO reference check" below).**
 
 Setup: per seed, the sequential pre-training stage is trained once (progress < 0.55, same frozen 14m fp16 config as the 27-cell run) and four
 branches start from that same checkpoint, so after-PT NLL is identical across branches. One A4000 (mercury1 GPU 9). WikiText NLL (nats per
@@ -218,7 +218,7 @@ Caveats:
 
 Files: `p05/diag.py`, `p05/diag_eval.py`, `diag_summary.json`, `analyze_diag.py`; raw runs on mercury1 `/lfs/mercury1/0/brando9/at1024/runs`.
 
-**TLDR-end (diagnosis):** [unified-training: Exp 05 diagnosis] At 14m, 3 seeds: orig is already at 10.76 NLL after its shorter SFT stage and SFT to the full budget reaches 13.37, against 4.54 at the PT checkpoint, so it is not an RL artifact. Lr x 0.1 roughly halves the damage (RL-end mean 11.85 vs 21.46) but nothing recovers it. The DPO stage may be a recipe bug (loss starts at 11-21, not 0.69) and is still open.
+**TLDR-end (diagnosis):** [unified-training: Exp 05 diagnosis] At 14m, 3 seeds: orig is already at 10.76 NLL after its shorter SFT stage and SFT to the full budget reaches 13.37, against 4.54 at the PT checkpoint, so it is not an RL artifact. Lr x 0.1 roughly halves the damage (RL-end mean 11.85 vs 21.46) but nothing recovers it. The DPO loss of 11-21 is a reference mismatch, not a code bug (see DPO reference check).
 
 ## DPO reference check (AT-1085): 14m, seeds 1-3
 
