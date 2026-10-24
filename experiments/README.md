@@ -27,3 +27,4 @@ The [prospective plan](03_qwen_joint_reasoning_retention/PLAN.md) defines a new 
 | [experiments/03_qwen_joint_reasoning_retention](03_qwen_joint_reasoning_retention/README.md) | 36 | Preparation; no measured runs launched |
 | [experiments/04_qwen_matched_exposure_schedules](04_qwen_matched_exposure_schedules/README.md) | 6 | Preparation; no measured runs launched |
 | [experiments/05_pythia_scratch_joint_learning](05_pythia_scratch_joint_learning/README.md) | 9 | Preparation; no measured runs launched |
+| [experiments/06_vision_scratch_joint_vs_posttrain](06_vision_scratch_joint_vs_posttrain/README.md) | 30 | Protocol frozen (ViT-Tiny/Small, Tiny-ImageNet -> CIFAR-100); no measured runs launched |
