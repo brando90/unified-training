@@ -5,10 +5,10 @@
 **Summary:** Random-init Pythia; sequential, fixed joint and smooth joint, three paired seeds, all at one matched
 charged-work target sized for at least 50M observed PT tokens per cell. expt_v1 is Pythia-160m (9 cells, PLAN.md line
 24); expt_v2 is the 14m/70m size ladder (18 cells). The full prospective [campaign plan](../03_qwen_joint_reasoning_retention/PLAN.md)
-specifies hypotheses, admission, budgets, endpoints and success criteria. Results remain pending.
+specifies hypotheses, admission, budgets, endpoints and success criteria. Final results are in [results.md](results.md).
 
-**Status:** FROZEN (Sherlock V100-32GB, fp16, W = 2.9e8, calibration job 48759212) — both protocols frozen with config hashes; 27 prospective training cells, none launched.
-**Last updated:** 10-21-2026
+**Status:** COMPLETE — 27 of 27 cells finished on Sherlock V100-32GB fp16 at the frozen W = 2.9e8 (calibration job 48759212); joint beats sequential on WikiText-103 test NLL at 14m, 70m and 160m, 3/3 paired seeds each, driven by sequential's post-training collapse (14m diagnosis and DPO reference check in results.md).
+**Last updated:** 10-26-2026
 
 ## Structure
 
@@ -47,7 +47,7 @@ The completed pilot under `experiments/00_program` provides frozen utilities and
 |---|---|
 | Prospective design | Written |
 | Code, DRAFT protocols, CPU smoke | Done (10-20-2026) |
-| Readiness and resource calibration | Pending |
-| Frozen measured protocol | Pending |
-| Full execution and evaluation | Pending |
-| Verified report and publication | Pending |
+| Readiness and resource calibration | Done (10-21-2026, job 48759212) |
+| Frozen measured protocol | Done (10-21-2026, expt_v1 + expt_v2, FROZEN.sha256) |
+| Full execution and evaluation | Done (10-22-2026, 27/27 cells; 14m diagnosis and DPO reference check 10-23/10-24) |
+| Verified report and publication | results.md, results_final/ (collect output, paired-difference script) |

@@ -18,7 +18,7 @@ forward-equivalent tokens per cell, one cluster and precision for all (Sherlock 
    largest at 70m, smallest at 160m, ranges overlap across sizes. The size ladder reads as "no monotone trend with 3 sizes and 3 seeds".
 3. **The gap is mostly the sequential arm collapsing, not the joint arm being good.** Sequential reaches NLL 3.69 (160m), 3.78 (70m), 4.59 (14m)
    at 50% of W (PT only), then rises to 13.3-24.5 at 100% after SFT, DPO and RL, which is worse than the random initialization
-   (10.84, 10.93, 10.99 nats). Joint methods end at 4.08-4.86, i.e. worse than sequential's own pre-post-training checkpoint.
+   (10.84, 10.93, 10.99 nats). Joint methods end at 4.07-4.86, i.e. worse than sequential's own pre-post-training checkpoint.
    So "joint avoids destroying the language model that sequential's post-training destroys" is what the primary endpoint measures here.
    14m diagnosis (added 10-23, 3 seeds): the collapse is not an RL artifact and only partly a learning-rate effect. SFT alone already breaks it: NLL 10.76 after the SFT stage at the original lr (13.37 after SFT to the full budget) against 4.54 at the PT checkpoint, before any DPO or RL. Post-training at 0.1x lr roughly halves the damage (6.50 after SFT, 11.85 at the end) but no branch returns to 4.54. The DPO stage is not buggy: its first-batch loss is 9.7-11.2 for `orig` and about 21.8 for `lowlr` only because the reference is the random init (section "DPO reference check" below), and this was run at 14m only, not 70m or 160m (section "Collapse diagnosis" below).
 4. **Secondary endpoints are at floor or flat.** GSM8K is 0-3% in every cell (joint 2.1-2.6% mean vs sequential 1.0-1.2%; fixed 269 and smooth 289 vs sequential 132
@@ -215,7 +215,7 @@ Caveats:
 - Seed spread after RL is large (`orig` 16.4-30.9; `lowlr` seed 3 RL loss unstable, first-20 mean 12.17, last-20 mean -5.50), so the RL-end means are not tight.
 - fp16 skipped 6-7 optimizer steps in each `orig` and `lowlr` run and none in `sftonly` (receipts).
 
-Files: `p05/diag.py`, `p05/diag_eval.py`, `diag_summary.json`, `analyze_diag.py`; raw runs on mercury1 `/lfs/mercury1/0/brando9/at1024/runs`.
+Files: `p05/diag.py`, `p05/diag_eval.py`, `diag_summary.json`, `analyze_diag.py`; raw runs on mercury1 local scratch (`at1024/runs`, not committed).
 
 **TLDR-end (diagnosis):** [unified-training: Exp 05 diagnosis] At 14m, 3 seeds: orig is already at 10.76 NLL after its shorter SFT stage and SFT to the full budget reaches 13.37, against 4.54 at the PT checkpoint, so it is not an RL artifact. Lr x 0.1 roughly halves the damage (RL-end mean 11.85 vs 21.46) but nothing recovers it. The DPO loss of 9.7-11.2 for `orig` and about 21.8 for `lowlr` is a reference mismatch, not a code bug (see DPO reference check).
 
@@ -274,6 +274,6 @@ Readout (3 seeds, one run per cell, so these are n = 3 comparisons, not tests):
   With equal RL optimizer steps the post-SFT reference still ends lower than the random-init reference in 3 of 3 seeds (6.50-6.93 vs 8.71-14.69), so the RL-end gain is not an artifact of more RL. The extra RL of the unmatched runs did not help: it ends higher than the matched run in 3 of 3 seeds (+0.33 / +0.54 / +1.11). The matched RL stage moves NLL by +0.19 / +0.02 / +0.29 over the DPO-stage value, while the random-init-reference RL stage moves it by -1.78 / +2.07 / +4.18. Still n = 3, one run per cell, so a comparison, not a test; 14m only; the matched runs end 2.0-2.4 nats above the PT checkpoint (4.54) because of SFT (+1.9) and RL (+0.0 to +0.3). Matched runs stop at progress 0.865 / 0.868 / 0.890 (charged work 250.9M / 251.8M / 258.2M, below the 290.0M of the other runs, since the RL stage is cut short).
 - Not done: 70m and 160m (a later step); no fix to the code was needed, so the original 27-cell numbers stand; the post-SFT-reference runs are a diagnostic, not a replacement recipe.
 
-Files: `p05/dpo_ref_check.py`, `p05/dpo_refsft.py`, `refsft_summary.py`; raw runs on mercury1 `/lfs/mercury1/0/brando9/at1024/runs/s{1,2,3}/{chk,refsft}_{orig,lowlr}` (summary `refsft_all.json` next to them).
+Files: `p05/dpo_ref_check.py`, `p05/dpo_refsft.py`, `refsft_summary.py`; raw runs on mercury1 local scratch (`at1024/runs/s{1,2,3}/{chk,refsft}_{orig,lowlr}`, not committed; summary `refsft_all.json` next to them).
 
 **TLDR-end (DPO reference check):** [unified-training: Exp 05 DPO check] At 14m, 3 seeds: DPO loss with policy = reference is 0.69 in 6 of 6 cells (no bug); the first-batch loss (9.7-11.2 for `orig` and about 21.8 for `lowlr`) comes from the random-init reference. With the post-SFT reference, `lowlr` stops jumping at DPO (6.5 to 6.5, 3 of 3 seeds) and ends at 7.0-8.0 vs 8.7-14.7; `orig` is not rescued (SFT alone is 10.7; RL end overlaps).
