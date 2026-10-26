@@ -1,0 +1,15 @@
+{
+  "protocol": "jr1-tiny-cpu-test (not a measured protocol)",
+  "model": {"source": "tiny", "id": "jr1-tiny-qwen2", "attn_implementation": "eager"},
+  "precision": {"master": "fp32", "compute": "fp32", "reference": "master", "checkpoint": "fp32"},
+  "optimizer": {"lr": 0.001, "warmup_fraction": 0.0},
+  "objectives": {"pt": {"batch_size": 2, "max_len": 48},
+                 "sft": {"batch_size": 2, "max_len": 64},
+                 "dpo": {"batch_size": 2, "max_len": 64, "beta": 0.1},
+                 "rl": {"prompts": 2, "group_size": 4, "max_new_tokens": 8, "max_prompt_len": 48}},
+  "work": {"target": 30000},
+  "methods": {"aioli": {"alpha": 0.5, "probe_updates": 6, "window": 4},
+              "jr1": {"alpha": 0.5, "probe_updates": 6, "window": 4}},
+  "controller": {"rows": {"pt": 4, "sft": 4, "dpo": 4, "rl": 4}, "batch_size": 4, "rl_max_new_tokens": 8},
+  "checkpoints": {"state_every_actions": 5}
+}
