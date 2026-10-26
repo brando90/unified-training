@@ -11,7 +11,8 @@ of the source? Transformers only.
 
 **Status:** DONE — 50/50 cells complete on Sherlock V100 (fp16): 30 original, 10 from A1 (Tiny seeds 4-5), 10 from the A1 extension (Small seeds 4-5).
 **Verdict:** H1 (joint >= sequential on CIFAR-100) inconclusive at 3 seeds, joint better at 5 seeds at both ViT-Tiny (+1.46 pp [0.14, 2.78], marginal) and ViT-Small (+3.61 pp [0.97, 6.26]); the n=5 verdict is exploratory (seeds added after seeing n=3). H2 (joint retains more Tiny-ImageNet) supported, at ViT-Tiny and ViT-Small. See [results.md](results.md).
-**Last updated:** 10-21-2026 PDT
+**Amendment A2 (exploratory, n=1 pair):** one ViT-Tiny seed-1 pair at lr 5e-4 (v1: 1e-3), smooth_joint 61.06 / 38.54 vs sequential 59.46 / 5.95 (CIFAR-100 / Tiny-ImageNet), different hardware from v1; a look, not a test (`expt_v1/AMENDMENT_A2_lowlr.md`, results.md).
+**Last updated:** 10-26-2026 PDT
 
 ## Structure
 

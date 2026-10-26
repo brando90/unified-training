@@ -1,6 +1,6 @@
 # Vision joint from scratch vs pretrain-then-finetune: results
 
-**Doc link:** <https://github.com/brando90/unified-training/blob/ut/exp06-vision/experiments/06_vision_scratch_joint_vs_posttrain/results.md>
+**Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/06_vision_scratch_joint_vs_posttrain/results.md>
 **Status:** DONE — 50 of 50 cells complete: 30 original, 10 from A1 (Tiny seeds 4-5), 10 from the A1 extension (Small seeds 4-5). Original 30 ran on Sherlock V100 (fp16); analysis run with the frozen `expt_v1/analyze.py`.
 **Last updated:** 10-25-2026 PDT (Amendment A2 results added)
 
@@ -15,7 +15,7 @@
 | sequential | 1 | 5e-4 | 59.46 | 5.95 | 5.76M / 5.76M | 0 | 6583 | 1750 |
 | smooth_joint | 1 | 5e-4 | 61.06 | 38.54 | 5.76M / 5.76M | 0 | 7635 | 1509 |
 
-Settings (from the launch record in expt_v1/AMENDMENT_A2_lowlr.md): mercury1 GPU 9 (RTX A4000), bf16, torch 2.8.0+cu128, code ff52e38, 60,000 steps, batch 192, wd 0.05, label smoothing 0.1, drop-path 0.1, clip 1.0. Hardware differs from v1 (V100 fp16 / L40S bf16): compare only within this pair. Raw per-3000-step curves: mercury1 /lfs/mercury1/0/brando9/at1211/exp06/runs/lr5e-4/<arm>/seed1/ (final.json and curve.jsonl, copied to expt_v1/results_A2/). Caveat: v1 numbers at lr 1e-3 are not comparable (different GPU and precision), and one seed cannot say whether the Tiny H1 margin (lower bound 0.14 pp at n=5) moves with lr.
+Settings (from the launch record in expt_v1/AMENDMENT_A2_lowlr.md): mercury1 GPU 9 (RTX A4000), bf16, torch 2.8.0+cu128, code ff52e38, 60,000 steps, batch 192, wd 0.05, label smoothing 0.1, drop-path 0.1, clip 1.0. Hardware differs from v1 (V100 fp16 / L40S bf16): compare only within this pair. Raw per-3000-step curves: mercury1 local scratch, `at1211/exp06/runs/lr5e-4/<arm>/seed1/` (final.json and curve.jsonl, copied to expt_v1/results_A2/). Caveat: v1 numbers at lr 1e-3 are not comparable (different GPU and precision), and one seed cannot say whether the Tiny H1 margin (lower bound 0.14 pp at n=5) moves with lr.
 
 ## Amendment A1 extension (n=5 at ViT-Small): H1 joint better at both sizes (exploratory)
 
