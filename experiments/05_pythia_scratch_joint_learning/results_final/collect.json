@@ -1,0 +1,2626 @@
+{
+  "cells": [
+    {
+      "arc_easy_acc@000": 0.255050505050505,
+      "arc_easy_acc@100": 0.26557239057239057,
+      "cell": "v1/160m/sequential_s1",
+      "cell_done": true,
+      "device": "Tesla V100-PCIE-32GB",
+      "fp16_skipped_steps": 6,
+      "gsm8k_acc@000": 0.0,
+      "gsm8k_acc@100": 0.01288855193328279,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 1,
+      "gsm8k_parse_fail@100": 0,
+      "gsm8k_wilson95@000": [
+        0.0,
+        0.002904051399653594
+      ],
+      "gsm8k_wilson95@100": [
+        0.008062339756186396,
+        0.020543957475470057
+      ],
+      "index": 0,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 3364231.2569459956,
+      "lambada_ppl@100": 164149242344.23737,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "sequential",
+      "observed_pt_tokens": 53182464,
+      "optimizer_steps": 4428,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 8.704859733581543,
+      "pref_acc@000": 0.4342569269521411,
+      "pref_acc@100": 0.43224181360201513,
+      "reached_pt_target": true,
+      "rl_informative_groups": 141,
+      "rl_zero_variance_groups": 14655,
+      "seed": 1,
+      "size": "160m",
+      "slurm_job_ids": [
+        "48765768_0",
+        "48796648_0"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 7257280,
+        "pt": 53182464,
+        "rl": 379504,
+        "sft": 19326240
+      },
+      "updates": 7993,
+      "updates_by_objective": {
+        "dpo": 500,
+        "pt": 1623,
+        "rl": 3699,
+        "sft": 2171
+      },
+      "version": "v1",
+      "wall_h": 5.035007432181155,
+      "wikitext_nll@000": 10.965645950612302,
+      "wikitext_nll@100": 17.327658613513034,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290006224,
+        "validation": 0
+      },
+      "work_overshoot": 6224.0,
+      "work_target": 290000000.0,
+      "work_total": 290006224
+    },
+    {
+      "arc_easy_acc@000": 0.255050505050505,
+      "arc_easy_acc@100": 0.2588383838383838,
+      "cell": "v1/160m/fixed_joint_s1",
+      "cell_done": true,
+      "device": "Tesla V100S-PCIE-32GB",
+      "fp16_skipped_steps": 5,
+      "gsm8k_acc@000": 0.0,
+      "gsm8k_acc@100": 0.02122820318423048,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 1,
+      "gsm8k_parse_fail@100": 2,
+      "gsm8k_wilson95@000": [
+        0.0,
+        0.002904051399653594
+      ],
+      "gsm8k_wilson95@100": [
+        0.01472730286658493,
+        0.030509859315191026
+      ],
+      "index": 1,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.00019406171162429653,
+      "lambada_ppl@000": 3364231.2569459956,
+      "lambada_ppl@100": 1607129.5380066657,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "fixed_joint",
+      "observed_pt_tokens": 78086144,
+      "optimizer_steps": 3893,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 13.549856185913086,
+      "pref_acc@000": 0.4342569269521411,
+      "pref_acc@100": 0.43375314861460956,
+      "reached_pt_target": true,
+      "rl_informative_groups": 248,
+      "rl_zero_variance_groups": 2352,
+      "seed": 1,
+      "size": "160m",
+      "slurm_job_ids": [
+        "48765768_1",
+        "48796648_1"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 6274688,
+        "pt": 78086144,
+        "rl": 464792,
+        "sft": 7684960
+      },
+      "updates": 4332,
+      "updates_by_objective": {
+        "dpo": 433,
+        "pt": 2383,
+        "rl": 650,
+        "sft": 866
+      },
+      "version": "v1",
+      "wall_h": 1.1800405723160494,
+      "wikitext_nll@000": 10.965645950612302,
+      "wikitext_nll@100": 4.071584160778703,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290083560,
+        "validation": 0
+      },
+      "work_overshoot": 83560.0,
+      "work_target": 290000000.0,
+      "work_total": 290083560
+    },
+    {
+      "arc_easy_acc@000": 0.255050505050505,
+      "arc_easy_acc@100": 0.2588383838383838,
+      "cell": "v1/160m/smooth_joint_s1",
+      "cell_done": true,
+      "device": "Tesla V100-PCIE-32GB",
+      "fp16_skipped_steps": 6,
+      "gsm8k_acc@000": 0.0,
+      "gsm8k_acc@100": 0.024260803639120546,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 1,
+      "gsm8k_parse_fail@100": 3,
+      "gsm8k_wilson95@000": [
+        0.0,
+        0.002904051399653594
+      ],
+      "gsm8k_wilson95@100": [
+        0.017236776958857808,
+        0.03404797247750706
+      ],
+      "index": 2,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 3364231.2569459956,
+      "lambada_ppl@100": 3078337.165463765,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "smooth_joint",
+      "observed_pt_tokens": 71532544,
+      "optimizer_steps": 4249,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 13.549856185913086,
+      "pref_acc@000": 0.4342569269521411,
+      "pref_acc@100": 0.4397984886649874,
+      "reached_pt_target": true,
+      "rl_informative_groups": 558,
+      "rl_zero_variance_groups": 5098,
+      "seed": 1,
+      "size": "160m",
+      "slurm_job_ids": [
+        "48765768_2",
+        "48796648_2"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 7954976,
+        "pt": 71532544,
+        "rl": 964784,
+        "sft": 9208960
+      },
+      "updates": 5181,
+      "updates_by_objective": {
+        "dpo": 548,
+        "pt": 2183,
+        "rl": 1414,
+        "sft": 1036
+      },
+      "version": "v1",
+      "wall_h": 1.9455606306095918,
+      "wikitext_nll@000": 10.965645950612302,
+      "wikitext_nll@100": 4.083736170487546,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290011664,
+        "validation": 0
+      },
+      "work_overshoot": 11664.0,
+      "work_target": 290000000.0,
+      "work_total": 290011664
+    },
+    {
+      "arc_easy_acc@000": 0.25252525252525254,
+      "arc_easy_acc@100": 0.2647306397306397,
+      "cell": "v1/160m/sequential_s2",
+      "cell_done": true,
+      "device": "Tesla V100-SXM2-32GB",
+      "fp16_skipped_steps": 7,
+      "gsm8k_acc@000": 0.000758150113722517,
+      "gsm8k_acc@100": 0.0,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 31,
+      "gsm8k_parse_fail@100": 1319,
+      "gsm8k_wilson95@000": [
+        0.00013384120709045237,
+        0.004282107006210368
+      ],
+      "gsm8k_wilson95@100": [
+        0.0,
+        0.002904051399653594
+      ],
+      "index": 3,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 3315595.7085592365,
+      "lambada_ppl@100": 3279215192981.7144,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "sequential",
+      "observed_pt_tokens": 53182464,
+      "optimizer_steps": 4374,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 8.692118644714355,
+      "pref_acc@000": 0.43123425692695216,
+      "pref_acc@100": 0.43073047858942065,
+      "reached_pt_target": true,
+      "rl_informative_groups": 86,
+      "rl_zero_variance_groups": 14866,
+      "seed": 2,
+      "size": "160m",
+      "slurm_job_ids": [
+        "48765768_3",
+        "48796648_3"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 7260032,
+        "pt": 53182464,
+        "rl": 232160,
+        "sft": 19318912
+      },
+      "updates": 8034,
+      "updates_by_objective": {
+        "dpo": 495,
+        "pt": 1623,
+        "rl": 3738,
+        "sft": 2178
+      },
+      "version": "v1",
+      "wall_h": 4.625535574879161,
+      "wikitext_nll@000": 11.014868098589082,
+      "wikitext_nll@100": 18.75619899679032,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290006688,
+        "validation": 0
+      },
+      "work_overshoot": 6688.0,
+      "work_target": 290000000.0,
+      "work_total": 290006688
+    },
+    {
+      "arc_easy_acc@000": 0.25252525252525254,
+      "arc_easy_acc@100": 0.26641414141414144,
+      "cell": "v1/160m/fixed_joint_s2",
+      "cell_done": true,
+      "device": "Tesla V100S-PCIE-32GB",
+      "fp16_skipped_steps": 6,
+      "gsm8k_acc@000": 0.000758150113722517,
+      "gsm8k_acc@100": 0.026535253980288095,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 31,
+      "gsm8k_parse_fail@100": 1,
+      "gsm8k_wilson95@000": [
+        0.00013384120709045237,
+        0.004282107006210368
+      ],
+      "gsm8k_wilson95@100": [
+        0.019140643378924578,
+        0.03667979649838196
+      ],
+      "index": 4,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 3315595.7085592365,
+      "lambada_ppl@100": 2782541.5101514794,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "fixed_joint",
+      "observed_pt_tokens": 77922304,
+      "optimizer_steps": 3896,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 13.549628257751465,
+      "pref_acc@000": 0.43123425692695216,
+      "pref_acc@100": 0.43224181360201513,
+      "reached_pt_target": true,
+      "rl_informative_groups": 258,
+      "rl_zero_variance_groups": 2334,
+      "seed": 2,
+      "size": "160m",
+      "slurm_job_ids": [
+        "48765768_4",
+        "48796648_4"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 6333280,
+        "pt": 77922304,
+        "rl": 483448,
+        "sft": 7698304
+      },
+      "updates": 4323,
+      "updates_by_objective": {
+        "dpo": 432,
+        "pt": 2378,
+        "rl": 648,
+        "sft": 865
+      },
+      "version": "v1",
+      "wall_h": 1.1730601959152975,
+      "wikitext_nll@000": 11.014868098589082,
+      "wikitext_nll@100": 4.087386992644094,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290049256,
+        "validation": 0
+      },
+      "work_overshoot": 49256.0,
+      "work_target": 290000000.0,
+      "work_total": 290049256
+    },
+    {
+      "arc_easy_acc@000": 0.25252525252525254,
+      "arc_easy_acc@100": 0.2748316498316498,
+      "cell": "v1/160m/smooth_joint_s2",
+      "cell_done": true,
+      "device": "Tesla V100-PCIE-32GB",
+      "fp16_skipped_steps": 5,
+      "gsm8k_acc@000": 0.000758150113722517,
+      "gsm8k_acc@100": 0.021986353297952996,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 31,
+      "gsm8k_parse_fail@100": 2,
+      "gsm8k_wilson95@000": [
+        0.00013384120709045237,
+        0.004282107006210368
+      ],
+      "gsm8k_wilson95@100": [
+        0.015351268591859289,
+        0.03139779040356389
+      ],
+      "index": 5,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 3315595.7085592365,
+      "lambada_ppl@100": 1561828.2718611697,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "smooth_joint",
+      "observed_pt_tokens": 71368704,
+      "optimizer_steps": 4262,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 13.549628257751465,
+      "pref_acc@000": 0.43123425692695216,
+      "pref_acc@100": 0.43778337531486144,
+      "reached_pt_target": true,
+      "rl_informative_groups": 613,
+      "rl_zero_variance_groups": 5027,
+      "seed": 2,
+      "size": "160m",
+      "slurm_job_ids": [
+        "48765768_5",
+        "48796648_5"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 7981536,
+        "pt": 71368704,
+        "rl": 1079464,
+        "sft": 9197728
+      },
+      "updates": 5168,
+      "updates_by_objective": {
+        "dpo": 546,
+        "pt": 2178,
+        "rl": 1410,
+        "sft": 1034
+      },
+      "version": "v1",
+      "wall_h": 1.9227081889925628,
+      "wikitext_nll@000": 11.014868098589082,
+      "wikitext_nll@100": 4.21646498181674,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290003192,
+        "validation": 0
+      },
+      "work_overshoot": 3192.0,
+      "work_target": 290000000.0,
+      "work_total": 290003192
+    },
+    {
+      "arc_easy_acc@000": 0.24621212121212122,
+      "arc_easy_acc@100": 0.2622053872053872,
+      "cell": "v1/160m/sequential_s3",
+      "cell_done": true,
+      "device": "Tesla V100S-PCIE-32GB",
+      "fp16_skipped_steps": 7,
+      "gsm8k_acc@000": 0.000758150113722517,
+      "gsm8k_acc@100": 0.02122820318423048,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 59,
+      "gsm8k_parse_fail@100": 0,
+      "gsm8k_wilson95@000": [
+        0.00013384120709045237,
+        0.004282107006210368
+      ],
+      "gsm8k_wilson95@100": [
+        0.01472730286658493,
+        0.030509859315191026
+      ],
+      "index": 6,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 3326535.846719823,
+      "lambada_ppl@100": 1479405085.7468374,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "sequential",
+      "observed_pt_tokens": 53182464,
+      "optimizer_steps": 4412,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 8.698893547058105,
+      "pref_acc@000": 0.43073047858942065,
+      "pref_acc@100": 0.4342569269521411,
+      "reached_pt_target": true,
+      "rl_informative_groups": 106,
+      "rl_zero_variance_groups": 14790,
+      "seed": 3,
+      "size": "160m",
+      "slurm_job_ids": [
+        "48765768_6",
+        "48796648_6"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 7256128,
+        "pt": 53182464,
+        "rl": 281912,
+        "sft": 19324864
+      },
+      "updates": 8032,
+      "updates_by_objective": {
+        "dpo": 502,
+        "pt": 1623,
+        "rl": 3724,
+        "sft": 2183
+      },
+      "version": "v1",
+      "wall_h": 3.997948297919033,
+      "wikitext_nll@000": 10.981166724377017,
+      "wikitext_nll@100": 13.813140742515554,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290010408,
+        "validation": 0
+      },
+      "work_overshoot": 10408.0,
+      "work_target": 290000000.0,
+      "work_total": 290010408
+    },
+    {
+      "arc_easy_acc@000": 0.24621212121212122,
+      "arc_easy_acc@100": 0.27314814814814814,
+      "cell": "v1/160m/fixed_joint_s3",
+      "cell_done": true,
+      "device": "Tesla V100-PCIE-32GB",
+      "fp16_skipped_steps": 5,
+      "gsm8k_acc@000": 0.000758150113722517,
+      "gsm8k_acc@100": 0.025018953752843062,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 59,
+      "gsm8k_parse_fail@100": 7,
+      "gsm8k_wilson95@000": [
+        0.00013384120709045237,
+        0.004282107006210368
+      ],
+      "gsm8k_wilson95@100": [
+        0.01786947782056996,
+        0.03492716842944213
+      ],
+      "index": 7,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.00019406171162429653,
+      "lambada_ppl@000": 3326535.846719823,
+      "lambada_ppl@100": 3897780.6308172704,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "fixed_joint",
+      "observed_pt_tokens": 78118912,
+      "optimizer_steps": 3914,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 13.546784400939941,
+      "pref_acc@000": 0.43073047858942065,
+      "pref_acc@100": 0.43727959697733,
+      "reached_pt_target": true,
+      "rl_informative_groups": 265,
+      "rl_zero_variance_groups": 2335,
+      "seed": 3,
+      "size": "160m",
+      "slurm_job_ids": [
+        "48765768_7",
+        "48796648_7"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 6280080,
+        "pt": 78118912,
+        "rl": 474304,
+        "sft": 7683872
+      },
+      "updates": 4334,
+      "updates_by_objective": {
+        "dpo": 433,
+        "pt": 2384,
+        "rl": 650,
+        "sft": 867
+      },
+      "version": "v1",
+      "wall_h": 1.3820226228892958,
+      "wikitext_nll@000": 10.981166724377017,
+      "wikitext_nll@100": 4.07878502596216,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290094368,
+        "validation": 0
+      },
+      "work_overshoot": 94368.0,
+      "work_target": 290000000.0,
+      "work_total": 290094368
+    },
+    {
+      "arc_easy_acc@000": 0.24621212121212122,
+      "arc_easy_acc@100": 0.2647306397306397,
+      "cell": "v1/160m/smooth_joint_s3",
+      "cell_done": true,
+      "device": "Tesla V100-SXM2-32GB",
+      "fp16_skipped_steps": 6,
+      "gsm8k_acc@000": 0.000758150113722517,
+      "gsm8k_acc@100": 0.030326004548900682,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 59,
+      "gsm8k_parse_fail@100": 2,
+      "gsm8k_wilson95@000": [
+        0.00013384120709045237,
+        0.004282107006210368
+      ],
+      "gsm8k_wilson95@100": [
+        0.02234876842628016,
+        0.04103115551926253
+      ],
+      "index": 8,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.00019406171162429653,
+      "lambada_ppl@000": 3326535.8787334915,
+      "lambada_ppl@100": 3300588.845645627,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "smooth_joint",
+      "observed_pt_tokens": 71401472,
+      "optimizer_steps": 4266,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 13.546784400939941,
+      "pref_acc@000": 0.43073047858942065,
+      "pref_acc@100": 0.43828715365239296,
+      "reached_pt_target": true,
+      "rl_informative_groups": 583,
+      "rl_zero_variance_groups": 5061,
+      "seed": 3,
+      "size": "160m",
+      "slurm_job_ids": [
+        "48765768_8",
+        "48796648_8"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 7922736,
+        "pt": 71401472,
+        "rl": 1035424,
+        "sft": 9157312
+      },
+      "updates": 5171,
+      "updates_by_objective": {
+        "dpo": 547,
+        "pt": 2179,
+        "rl": 1411,
+        "sft": 1034
+      },
+      "version": "v1",
+      "wall_h": 1.9609401513623177,
+      "wikitext_nll@000": 10.981166724350325,
+      "wikitext_nll@100": 4.233328840367668,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290004544,
+        "validation": 0
+      },
+      "work_overshoot": 4544.0,
+      "work_target": 290000000.0,
+      "work_total": 290004544
+    },
+    {
+      "arc_easy_acc@000": 0.24957912457912457,
+      "arc_easy_acc@100": 0.25462962962962965,
+      "cell": "v2/14m/sequential_s1",
+      "cell_done": true,
+      "device": "Tesla V100-PCIE-32GB",
+      "fp16_skipped_steps": 6,
+      "gsm8k_acc@000": 0.001516300227445034,
+      "gsm8k_acc@100": 0.0,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 47,
+      "gsm8k_parse_fail@100": 1319,
+      "gsm8k_wilson95@000": [
+        0.0004159140394944996,
+        0.005511930987453548
+      ],
+      "gsm8k_wilson95@100": [
+        0.0,
+        0.002904051399653594
+      ],
+      "index": 0,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 2825044.6776207304,
+      "lambada_ppl@100": 25848627415761.285,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "sequential",
+      "observed_pt_tokens": 53182464,
+      "optimizer_steps": 4499,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 1.4505186080932617,
+      "pref_acc@000": 0.43375314861460956,
+      "pref_acc@100": 0.44130982367758187,
+      "reached_pt_target": true,
+      "rl_informative_groups": 208,
+      "rl_zero_variance_groups": 14400,
+      "seed": 1,
+      "size": "14m",
+      "slurm_job_ids": [
+        "48765798_0",
+        "48796841_0"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 7257280,
+        "pt": 53182464,
+        "rl": 559896,
+        "sft": 19326240
+      },
+      "updates": 7946,
+      "updates_by_objective": {
+        "dpo": 500,
+        "pt": 1623,
+        "rl": 3652,
+        "sft": 2171
+      },
+      "version": "v2",
+      "wall_h": 2.801868239135171,
+      "wikitext_nll@000": 10.830660524180141,
+      "wikitext_nll@100": 23.56744334937042,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290018728,
+        "validation": 0
+      },
+      "work_overshoot": 18728.0,
+      "work_target": 290000000.0,
+      "work_total": 290018728
+    },
+    {
+      "arc_easy_acc@000": 0.24957912457912457,
+      "arc_easy_acc@100": 0.26262626262626265,
+      "cell": "v2/14m/fixed_joint_s1",
+      "cell_done": true,
+      "device": "Tesla V100-SXM2-32GB",
+      "fp16_skipped_steps": 5,
+      "gsm8k_acc@000": 0.001516300227445034,
+      "gsm8k_acc@100": 0.021986353297952996,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 47,
+      "gsm8k_parse_fail@100": 12,
+      "gsm8k_wilson95@000": [
+        0.0004159140394944996,
+        0.005511930987453548
+      ],
+      "gsm8k_wilson95@100": [
+        0.015351268591859289,
+        0.03139779040356389
+      ],
+      "index": 1,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 2825044.6776207304,
+      "lambada_ppl@100": 2179225.2962853936,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "fixed_joint",
+      "observed_pt_tokens": 78118912,
+      "optimizer_steps": 3885,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 1.7102327346801758,
+      "pref_acc@000": 0.43375314861460956,
+      "pref_acc@100": 0.43224181360201513,
+      "reached_pt_target": true,
+      "rl_informative_groups": 236,
+      "rl_zero_variance_groups": 2364,
+      "seed": 1,
+      "size": "14m",
+      "slurm_job_ids": [
+        "48765798_1",
+        "48796841_1"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 6274688,
+        "pt": 78118912,
+        "rl": 432432,
+        "sft": 7692992
+      },
+      "updates": 4334,
+      "updates_by_objective": {
+        "dpo": 433,
+        "pt": 2384,
+        "rl": 650,
+        "sft": 867
+      },
+      "version": "v2",
+      "wall_h": 0.6678246073774062,
+      "wikitext_nll@000": 10.830660524180141,
+      "wikitext_nll@100": 4.828981661766046,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290067472,
+        "validation": 0
+      },
+      "work_overshoot": 67472.0,
+      "work_target": 290000000.0,
+      "work_total": 290067472
+    },
+    {
+      "arc_easy_acc@000": 0.24957912457912457,
+      "arc_easy_acc@100": 0.25715488215488214,
+      "cell": "v2/14m/smooth_joint_s1",
+      "cell_done": true,
+      "device": "Tesla V100-PCIE-32GB",
+      "fp16_skipped_steps": 6,
+      "gsm8k_acc@000": 0.001516300227445034,
+      "gsm8k_acc@100": 0.025018953752843062,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 47,
+      "gsm8k_parse_fail@100": 36,
+      "gsm8k_wilson95@000": [
+        0.0004159140394944996,
+        0.005511930987453548
+      ],
+      "gsm8k_wilson95@100": [
+        0.01786947782056996,
+        0.03492716842944213
+      ],
+      "index": 2,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.00019406171162429653,
+      "lambada_ppl@000": 2825044.6776207304,
+      "lambada_ppl@100": 1107356.5873714425,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "smooth_joint",
+      "observed_pt_tokens": 71532544,
+      "optimizer_steps": 4221,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 1.7102327346801758,
+      "pref_acc@000": 0.43375314861460956,
+      "pref_acc@100": 0.436272040302267,
+      "reached_pt_target": true,
+      "rl_informative_groups": 520,
+      "rl_zero_variance_groups": 5140,
+      "seed": 1,
+      "size": "14m",
+      "slurm_job_ids": [
+        "48765798_2",
+        "49014697_2"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 7954976,
+        "pt": 71532544,
+        "rl": 931816,
+        "sft": 9208960
+      },
+      "updates": 5182,
+      "updates_by_objective": {
+        "dpo": 548,
+        "pt": 2183,
+        "rl": 1415,
+        "sft": 1036
+      },
+      "version": "v2",
+      "wall_h": 1.0459038809571777,
+      "wikitext_nll@000": 10.830660524180141,
+      "wikitext_nll@100": 4.856634358033279,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290000504,
+        "validation": 0
+      },
+      "work_overshoot": 504.0,
+      "work_target": 290000000.0,
+      "work_total": 290000504
+    },
+    {
+      "arc_easy_acc@000": 0.25084175084175087,
+      "arc_easy_acc@100": 0.2609427609427609,
+      "cell": "v2/70m/sequential_s1",
+      "cell_done": true,
+      "device": "Tesla V100S-PCIE-32GB",
+      "fp16_skipped_steps": 6,
+      "gsm8k_acc@000": 0.00530705079605762,
+      "gsm8k_acc@100": 0.0,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 5,
+      "gsm8k_parse_fail@100": 1319,
+      "gsm8k_wilson95@000": [
+        0.0025730512388606025,
+        0.010914277856323581
+      ],
+      "gsm8k_wilson95@100": [
+        0.0,
+        0.002904051399653594
+      ],
+      "index": 3,
+      "lambada_acc@000": 0.00019406171162429653,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 3082022.7430174546,
+      "lambada_ppl@100": 9284440383753.361,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "sequential",
+      "observed_pt_tokens": 53182464,
+      "optimizer_steps": 4626,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 3.6743879318237305,
+      "pref_acc@000": 0.4302267002518892,
+      "pref_acc@100": 0.43727959697733,
+      "reached_pt_target": true,
+      "rl_informative_groups": 344,
+      "rl_zero_variance_groups": 13872,
+      "seed": 1,
+      "size": "70m",
+      "slurm_job_ids": [
+        "48765798_3",
+        "49014697_3"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 7257280,
+        "pt": 53182464,
+        "rl": 928048,
+        "sft": 19326240
+      },
+      "updates": 7848,
+      "updates_by_objective": {
+        "dpo": 500,
+        "pt": 1623,
+        "rl": 3554,
+        "sft": 2171
+      },
+      "version": "v2",
+      "wall_h": 2.375455680036167,
+      "wikitext_nll@000": 10.930682835427993,
+      "wikitext_nll@100": 22.29910221670261,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290005040,
+        "validation": 0
+      },
+      "work_overshoot": 5040.0,
+      "work_target": 290000000.0,
+      "work_total": 290005040
+    },
+    {
+      "arc_easy_acc@000": 0.25084175084175087,
+      "arc_easy_acc@100": 0.26052188552188554,
+      "cell": "v2/70m/fixed_joint_s1",
+      "cell_done": true,
+      "device": "Tesla V100S-PCIE-32GB",
+      "fp16_skipped_steps": 5,
+      "gsm8k_acc@000": 0.00530705079605762,
+      "gsm8k_acc@100": 0.016679302501895376,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 5,
+      "gsm8k_parse_fail@100": 1,
+      "gsm8k_wilson95@000": [
+        0.0025730512388606025,
+        0.010914277856323581
+      ],
+      "gsm8k_wilson95@100": [
+        0.011040184714959168,
+        0.025125596584933425
+      ],
+      "index": 4,
+      "lambada_acc@000": 0.00019406171162429653,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 3082022.7430174546,
+      "lambada_ppl@100": 3787892.5863019247,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "fixed_joint",
+      "observed_pt_tokens": 78053376,
+      "optimizer_steps": 3897,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 5.269627571105957,
+      "pref_acc@000": 0.4302267002518892,
+      "pref_acc@100": 0.4387909319899244,
+      "reached_pt_target": true,
+      "rl_informative_groups": 253,
+      "rl_zero_variance_groups": 2343,
+      "seed": 1,
+      "size": "70m",
+      "slurm_job_ids": [
+        "48765798_4",
+        "49014697_4"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 6274688,
+        "pt": 78053376,
+        "rl": 482736,
+        "sft": 7684960
+      },
+      "updates": 4330,
+      "updates_by_objective": {
+        "dpo": 433,
+        "pt": 2382,
+        "rl": 649,
+        "sft": 866
+      },
+      "version": "v2",
+      "wall_h": 0.6871715888431451,
+      "wikitext_nll@000": 10.930682835427993,
+      "wikitext_nll@100": 4.245798563094143,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290050320,
+        "validation": 0
+      },
+      "work_overshoot": 50320.0,
+      "work_target": 290000000.0,
+      "work_total": 290050320
+    },
+    {
+      "arc_easy_acc@000": 0.25084175084175087,
+      "arc_easy_acc@100": 0.25336700336700335,
+      "cell": "v2/70m/smooth_joint_s1",
+      "cell_done": true,
+      "device": "Tesla V100-PCIE-32GB",
+      "fp16_skipped_steps": 5,
+      "gsm8k_acc@000": 0.00530705079605762,
+      "gsm8k_acc@100": 0.025018953752843062,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 5,
+      "gsm8k_parse_fail@100": 1,
+      "gsm8k_wilson95@000": [
+        0.0025730512388606025,
+        0.010914277856323581
+      ],
+      "gsm8k_wilson95@100": [
+        0.01786947782056996,
+        0.03492716842944213
+      ],
+      "index": 5,
+      "lambada_acc@000": 0.00019406171162429653,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 3082022.7430174546,
+      "lambada_ppl@100": 3048683.8296964183,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "smooth_joint",
+      "observed_pt_tokens": 71434240,
+      "optimizer_steps": 4250,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 5.269627571105957,
+      "pref_acc@000": 0.4302267002518892,
+      "pref_acc@100": 0.4403022670025189,
+      "reached_pt_target": true,
+      "rl_informative_groups": 571,
+      "rl_zero_variance_groups": 5073,
+      "seed": 1,
+      "size": "70m",
+      "slurm_job_ids": [
+        "48765798_5",
+        "49014697_5"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 7938592,
+        "pt": 71434240,
+        "rl": 1043816,
+        "sft": 9200192
+      },
+      "updates": 5173,
+      "updates_by_objective": {
+        "dpo": 547,
+        "pt": 2180,
+        "rl": 1411,
+        "sft": 1035
+      },
+      "version": "v2",
+      "wall_h": 1.189782599952434,
+      "wikitext_nll@000": 10.930682835427993,
+      "wikitext_nll@100": 4.309423047782269,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290025432,
+        "validation": 0
+      },
+      "work_overshoot": 25432.0,
+      "work_target": 290000000.0,
+      "work_total": 290025432
+    },
+    {
+      "arc_easy_acc@000": 0.25,
+      "arc_easy_acc@100": 0.25547138047138046,
+      "cell": "v2/14m/sequential_s2",
+      "cell_done": true,
+      "device": "Tesla V100S-PCIE-32GB",
+      "fp16_skipped_steps": 7,
+      "gsm8k_acc@000": 0.000758150113722517,
+      "gsm8k_acc@100": 0.026535253980288095,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 51,
+      "gsm8k_parse_fail@100": 0,
+      "gsm8k_wilson95@000": [
+        0.00013384120709045237,
+        0.004282107006210368
+      ],
+      "gsm8k_wilson95@100": [
+        0.019140643378924578,
+        0.03667979649838196
+      ],
+      "index": 6,
+      "lambada_acc@000": 0.00019406171162429653,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 2817309.5457465313,
+      "lambada_ppl@100": 18798645836936.04,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "sequential",
+      "observed_pt_tokens": 53182464,
+      "optimizer_steps": 4598,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 1.4492864608764648,
+      "pref_acc@000": 0.43123425692695216,
+      "pref_acc@100": 0.4297229219143577,
+      "reached_pt_target": true,
+      "rl_informative_groups": 318,
+      "rl_zero_variance_groups": 13974,
+      "seed": 2,
+      "size": "14m",
+      "slurm_job_ids": [
+        "48765798_6",
+        "49014697_6"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 7260032,
+        "pt": 53182464,
+        "rl": 859464,
+        "sft": 19318912
+      },
+      "updates": 7869,
+      "updates_by_objective": {
+        "dpo": 495,
+        "pt": 1623,
+        "rl": 3573,
+        "sft": 2178
+      },
+      "version": "v2",
+      "wall_h": 2.290104474816342,
+      "wikitext_nll@000": 10.839574925672148,
+      "wikitext_nll@100": 20.042228586270497,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290001432,
+        "validation": 0
+      },
+      "work_overshoot": 1432.0,
+      "work_target": 290000000.0,
+      "work_total": 290001432
+    },
+    {
+      "arc_easy_acc@000": 0.25,
+      "arc_easy_acc@100": 0.2668350168350168,
+      "cell": "v2/14m/fixed_joint_s2",
+      "cell_done": true,
+      "device": "Tesla V100S-PCIE-32GB",
+      "fp16_skipped_steps": 5,
+      "gsm8k_acc@000": 0.000758150113722517,
+      "gsm8k_acc@100": 0.027293404094010616,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 51,
+      "gsm8k_parse_fail@100": 25,
+      "gsm8k_wilson95@000": [
+        0.00013384120709045237,
+        0.004282107006210368
+      ],
+      "gsm8k_wilson95@100": [
+        0.01977895194710748,
+        0.0375533847438463
+      ],
+      "index": 7,
+      "lambada_acc@000": 0.00019406171162429653,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 2817309.5457465313,
+      "lambada_ppl@100": 1524109.4688779025,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "fixed_joint",
+      "observed_pt_tokens": 78086144,
+      "optimizer_steps": 3889,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 1.7102327346801758,
+      "pref_acc@000": 0.43123425692695216,
+      "pref_acc@100": 0.43375314861460956,
+      "reached_pt_target": true,
+      "rl_informative_groups": 244,
+      "rl_zero_variance_groups": 2356,
+      "seed": 2,
+      "size": "14m",
+      "slurm_job_ids": [
+        "48765798_7",
+        "49014697_7"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 6347632,
+        "pt": 78086144,
+        "rl": 441336,
+        "sft": 7706368
+      },
+      "updates": 4332,
+      "updates_by_objective": {
+        "dpo": 433,
+        "pt": 2383,
+        "rl": 650,
+        "sft": 866
+      },
+      "version": "v2",
+      "wall_h": 0.5168509902097543,
+      "wikitext_nll@000": 10.839574925672148,
+      "wikitext_nll@100": 4.811903889738607,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290029096,
+        "validation": 0
+      },
+      "work_overshoot": 29096.0,
+      "work_target": 290000000.0,
+      "work_total": 290029096
+    },
+    {
+      "arc_easy_acc@000": 0.25,
+      "arc_easy_acc@100": 0.2727272727272727,
+      "cell": "v2/14m/smooth_joint_s2",
+      "cell_done": true,
+      "device": "Tesla V100S-PCIE-32GB",
+      "fp16_skipped_steps": 5,
+      "gsm8k_acc@000": 0.000758150113722517,
+      "gsm8k_acc@100": 0.026535253980288095,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 51,
+      "gsm8k_parse_fail@100": 65,
+      "gsm8k_wilson95@000": [
+        0.00013384120709045237,
+        0.004282107006210368
+      ],
+      "gsm8k_wilson95@100": [
+        0.019140643378924578,
+        0.03667979649838196
+      ],
+      "index": 8,
+      "lambada_acc@000": 0.00019406171162429653,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 2817309.5457465313,
+      "lambada_ppl@100": 1616973.442968239,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "smooth_joint",
+      "observed_pt_tokens": 71401472,
+      "optimizer_steps": 4225,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 1.7102327346801758,
+      "pref_acc@000": 0.43123425692695216,
+      "pref_acc@100": 0.4332493702770781,
+      "reached_pt_target": true,
+      "rl_informative_groups": 544,
+      "rl_zero_variance_groups": 5104,
+      "seed": 2,
+      "size": "14m",
+      "slurm_job_ids": [
+        "48765798_8",
+        "49014697_8"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 7997920,
+        "pt": 71401472,
+        "rl": 978048,
+        "sft": 9197728
+      },
+      "updates": 5172,
+      "updates_by_objective": {
+        "dpo": 547,
+        "pt": 2179,
+        "rl": 1412,
+        "sft": 1034
+      },
+      "version": "v2",
+      "wall_h": 0.8445284011746601,
+      "wikitext_nll@000": 10.839574925672148,
+      "wikitext_nll@100": 4.847973718324194,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290006848,
+        "validation": 0
+      },
+      "work_overshoot": 6848.0,
+      "work_target": 290000000.0,
+      "work_total": 290006848
+    },
+    {
+      "arc_easy_acc@000": 0.24873737373737373,
+      "arc_easy_acc@100": 0.2718855218855219,
+      "cell": "v2/70m/sequential_s2",
+      "cell_done": true,
+      "device": "Tesla V100-PCIE-32GB",
+      "fp16_skipped_steps": 7,
+      "gsm8k_acc@000": 0.001516300227445034,
+      "gsm8k_acc@100": 0.030326004548900682,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 3,
+      "gsm8k_parse_fail@100": 0,
+      "gsm8k_wilson95@000": [
+        0.0004159140394944996,
+        0.005511930987453548
+      ],
+      "gsm8k_wilson95@100": [
+        0.02234876842628016,
+        0.04103115551926253
+      ],
+      "index": 9,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.00019406171162429653,
+      "lambada_ppl@000": 3189613.8048704052,
+      "lambada_ppl@100": 1125791144555.579,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "sequential",
+      "observed_pt_tokens": 53182464,
+      "optimizer_steps": 4507,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 3.672785758972168,
+      "pref_acc@000": 0.4282115869017632,
+      "pref_acc@100": 0.4317380352644836,
+      "reached_pt_target": true,
+      "rl_informative_groups": 226,
+      "rl_zero_variance_groups": 14334,
+      "seed": 2,
+      "size": "70m",
+      "slurm_job_ids": [
+        "48765798_9",
+        "49014697_9"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 7260032,
+        "pt": 53182464,
+        "rl": 606200,
+        "sft": 19318912
+      },
+      "updates": 7936,
+      "updates_by_objective": {
+        "dpo": 495,
+        "pt": 1623,
+        "rl": 3640,
+        "sft": 2178
+      },
+      "version": "v2",
+      "wall_h": 3.0000193292562227,
+      "wikitext_nll@000": 10.931671631404985,
+      "wikitext_nll@100": 17.917921920356477,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290010952,
+        "validation": 0
+      },
+      "work_overshoot": 10952.0,
+      "work_target": 290000000.0,
+      "work_total": 290010952
+    },
+    {
+      "arc_easy_acc@000": 0.24873737373737373,
+      "arc_easy_acc@100": 0.27146464646464646,
+      "cell": "v2/70m/fixed_joint_s2",
+      "cell_done": true,
+      "device": "Tesla V100-PCIE-32GB",
+      "fp16_skipped_steps": 5,
+      "gsm8k_acc@000": 0.001516300227445034,
+      "gsm8k_acc@100": 0.024260803639120546,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 3,
+      "gsm8k_parse_fail@100": 6,
+      "gsm8k_wilson95@000": [
+        0.0004159140394944996,
+        0.005511930987453548
+      ],
+      "gsm8k_wilson95@100": [
+        0.017236776958857808,
+        0.03404797247750706
+      ],
+      "index": 10,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 3189613.8048704052,
+      "lambada_ppl@100": 3193442.97142224,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "fixed_joint",
+      "observed_pt_tokens": 77987840,
+      "optimizer_steps": 3876,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 5.2685394287109375,
+      "pref_acc@000": 0.4282115869017632,
+      "pref_acc@100": 0.43526448362720405,
+      "reached_pt_target": true,
+      "rl_informative_groups": 238,
+      "rl_zero_variance_groups": 2358,
+      "seed": 2,
+      "size": "70m",
+      "slurm_job_ids": [
+        "48765798_10",
+        "49014697_10"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 6347632,
+        "pt": 77987840,
+        "rl": 457192,
+        "sft": 7698304
+      },
+      "updates": 4327,
+      "updates_by_objective": {
+        "dpo": 433,
+        "pt": 2380,
+        "rl": 649,
+        "sft": 865
+      },
+      "version": "v2",
+      "wall_h": 0.8702851930163645,
+      "wikitext_nll@000": 10.931671631404985,
+      "wikitext_nll@100": 4.218653916762117,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290055352,
+        "validation": 0
+      },
+      "work_overshoot": 55352.0,
+      "work_target": 290000000.0,
+      "work_total": 290055352
+    },
+    {
+      "arc_easy_acc@000": 0.24873737373737373,
+      "arc_easy_acc@100": 0.2668350168350168,
+      "cell": "v2/70m/smooth_joint_s2",
+      "cell_done": true,
+      "device": "Tesla V100S-PCIE-32GB",
+      "fp16_skipped_steps": 5,
+      "gsm8k_acc@000": 0.001516300227445034,
+      "gsm8k_acc@100": 0.021986353297952996,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 3,
+      "gsm8k_parse_fail@100": 4,
+      "gsm8k_wilson95@000": [
+        0.0004159140394944996,
+        0.005511930987453548
+      ],
+      "gsm8k_wilson95@100": [
+        0.015351268591859289,
+        0.03139779040356389
+      ],
+      "index": 11,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 3189613.8048704052,
+      "lambada_ppl@100": 1711746.9583001805,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "smooth_joint",
+      "observed_pt_tokens": 71335936,
+      "optimizer_steps": 4228,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 5.2685394287109375,
+      "pref_acc@000": 0.4282115869017632,
+      "pref_acc@100": 0.436272040302267,
+      "reached_pt_target": true,
+      "rl_informative_groups": 553,
+      "rl_zero_variance_groups": 5087,
+      "seed": 2,
+      "size": "70m",
+      "slurm_job_ids": [
+        "48765798_11",
+        "49014697_11"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 7981536,
+        "pt": 71335936,
+        "rl": 1008624,
+        "sft": 9186400
+      },
+      "updates": 5166,
+      "updates_by_objective": {
+        "dpo": 546,
+        "pt": 2177,
+        "rl": 1410,
+        "sft": 1033
+      },
+      "version": "v2",
+      "wall_h": 1.0046971181221307,
+      "wikitext_nll@000": 10.931671631404985,
+      "wikitext_nll@100": 4.308534347119791,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290064016,
+        "validation": 0
+      },
+      "work_overshoot": 64016.0,
+      "work_target": 290000000.0,
+      "work_total": 290064016
+    },
+    {
+      "arc_easy_acc@000": 0.2474747474747475,
+      "arc_easy_acc@100": 0.2617845117845118,
+      "cell": "v2/14m/sequential_s3",
+      "cell_done": true,
+      "device": "Tesla V100S-PCIE-32GB",
+      "fp16_skipped_steps": 6,
+      "gsm8k_acc@000": 0.004548900682335102,
+      "gsm8k_acc@100": 0.009097801364670205,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 11,
+      "gsm8k_parse_fail@100": 0,
+      "gsm8k_wilson95@000": [
+        0.0020863908222697827,
+        0.009889041459267174
+      ],
+      "gsm8k_wilson95@100": [
+        0.0052118658713946435,
+        0.015834947292025676
+      ],
+      "index": 12,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 2829393.9755480182,
+      "lambada_ppl@100": 50835597.17745837,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "sequential",
+      "observed_pt_tokens": 53182464,
+      "optimizer_steps": 4694,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 1.4493818283081055,
+      "pref_acc@000": 0.4292191435768262,
+      "pref_acc@100": 0.43123425692695216,
+      "reached_pt_target": true,
+      "rl_informative_groups": 406,
+      "rl_zero_variance_groups": 13634,
+      "seed": 3,
+      "size": "14m",
+      "slurm_job_ids": [
+        "48765798_12",
+        "49014697_12"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 7256128,
+        "pt": 53182464,
+        "rl": 1094496,
+        "sft": 19324864
+      },
+      "updates": 7818,
+      "updates_by_objective": {
+        "dpo": 502,
+        "pt": 1623,
+        "rl": 3510,
+        "sft": 2183
+      },
+      "version": "v2",
+      "wall_h": 2.249913188673996,
+      "wikitext_nll@000": 10.855787272640669,
+      "wikitext_nll@100": 13.34388400732358,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290005664,
+        "validation": 0
+      },
+      "work_overshoot": 5664.0,
+      "work_target": 290000000.0,
+      "work_total": 290005664
+    },
+    {
+      "arc_easy_acc@000": 0.2474747474747475,
+      "arc_easy_acc@100": 0.26557239057239057,
+      "cell": "v2/14m/fixed_joint_s3",
+      "cell_done": true,
+      "device": "Tesla V100S-PCIE-32GB",
+      "fp16_skipped_steps": 6,
+      "gsm8k_acc@000": 0.004548900682335102,
+      "gsm8k_acc@100": 0.019711902956785442,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 11,
+      "gsm8k_parse_fail@100": 80,
+      "gsm8k_wilson95@000": [
+        0.0020863908222697827,
+        0.009889041459267174
+      ],
+      "gsm8k_wilson95@100": [
+        0.013486881218605477,
+        0.02872648733587602
+      ],
+      "index": 13,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 2829393.9755480182,
+      "lambada_ppl@100": 1745630.0550680256,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "fixed_joint",
+      "observed_pt_tokens": 78086144,
+      "optimizer_steps": 3901,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 1.7102327346801758,
+      "pref_acc@000": 0.4292191435768262,
+      "pref_acc@100": 0.4367758186397985,
+      "reached_pt_target": true,
+      "rl_informative_groups": 257,
+      "rl_zero_variance_groups": 2343,
+      "seed": 3,
+      "size": "14m",
+      "slurm_job_ids": [
+        "48765798_13",
+        "49014697_13"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 6280080,
+        "pt": 78086144,
+        "rl": 481712,
+        "sft": 7675936
+      },
+      "updates": 4332,
+      "updates_by_objective": {
+        "dpo": 433,
+        "pt": 2383,
+        "rl": 650,
+        "sft": 866
+      },
+      "version": "v2",
+      "wall_h": 0.5314335912881264,
+      "wikitext_nll@000": 10.85578727288757,
+      "wikitext_nll@100": 4.8627085967470824,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290094000,
+        "validation": 0
+      },
+      "work_overshoot": 94000.0,
+      "work_target": 290000000.0,
+      "work_total": 290094000
+    },
+    {
+      "arc_easy_acc@000": 0.2474747474747475,
+      "arc_easy_acc@100": 0.2702020202020202,
+      "cell": "v2/14m/smooth_joint_s3",
+      "cell_done": true,
+      "device": "Tesla V100-PCIE-32GB",
+      "fp16_skipped_steps": 6,
+      "gsm8k_acc@000": 0.004548900682335102,
+      "gsm8k_acc@100": 0.022744503411675512,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 11,
+      "gsm8k_parse_fail@100": 34,
+      "gsm8k_wilson95@000": [
+        0.0020863908222697827,
+        0.009889041459267174
+      ],
+      "gsm8k_wilson95@100": [
+        0.015977574718568175,
+        0.03228338109050224
+      ],
+      "index": 14,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.00019406171162429653,
+      "lambada_ppl@000": 2829393.9755480182,
+      "lambada_ppl@100": 1806568.6644637135,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "smooth_joint",
+      "observed_pt_tokens": 71565312,
+      "optimizer_steps": 4264,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 1.7102327346801758,
+      "pref_acc@000": 0.4292191435768262,
+      "pref_acc@100": 0.43526448362720405,
+      "reached_pt_target": true,
+      "rl_informative_groups": 577,
+      "rl_zero_variance_groups": 5087,
+      "seed": 3,
+      "size": "14m",
+      "slurm_job_ids": [
+        "48765798_14",
+        "49014697_14"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 7938048,
+        "pt": 71565312,
+        "rl": 1044048,
+        "sft": 9183712
+      },
+      "updates": 5185,
+      "updates_by_objective": {
+        "dpo": 548,
+        "pt": 2184,
+        "rl": 1416,
+        "sft": 1037
+      },
+      "version": "v2",
+      "wall_h": 1.0344628404617673,
+      "wikitext_nll@000": 10.855787272640669,
+      "wikitext_nll@100": 4.860761938512796,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290016464,
+        "validation": 0
+      },
+      "work_overshoot": 16464.0,
+      "work_target": 290000000.0,
+      "work_total": 290016464
+    },
+    {
+      "arc_easy_acc@000": 0.2529461279461279,
+      "arc_easy_acc@100": 0.2521043771043771,
+      "cell": "v2/70m/sequential_s3",
+      "cell_done": true,
+      "device": "Tesla V100S-PCIE-32GB",
+      "fp16_skipped_steps": 6,
+      "gsm8k_acc@000": 0.000758150113722517,
+      "gsm8k_acc@100": 0.0,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 0,
+      "gsm8k_parse_fail@100": 1319,
+      "gsm8k_wilson95@000": [
+        0.00013384120709045237,
+        0.004282107006210368
+      ],
+      "gsm8k_wilson95@100": [
+        0.0,
+        0.002904051399653594
+      ],
+      "index": 15,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 3120396.5311684823,
+      "lambada_ppl@100": 155226123061925.9,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "sequential",
+      "observed_pt_tokens": 53182464,
+      "optimizer_steps": 4402,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 3.674832344055176,
+      "pref_acc@000": 0.4342569269521411,
+      "pref_acc@100": 0.4357682619647355,
+      "reached_pt_target": true,
+      "rl_informative_groups": 95,
+      "rl_zero_variance_groups": 14829,
+      "seed": 3,
+      "size": "70m",
+      "slurm_job_ids": [
+        "48765798_15",
+        "49014697_15"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 7256128,
+        "pt": 53182464,
+        "rl": 251752,
+        "sft": 19324864
+      },
+      "updates": 8039,
+      "updates_by_objective": {
+        "dpo": 502,
+        "pt": 1623,
+        "rl": 3731,
+        "sft": 2183
+      },
+      "version": "v2",
+      "wall_h": 2.445495478049981,
+      "wikitext_nll@000": 10.919523211185906,
+      "wikitext_nll@100": 24.543168175621183,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290000280,
+        "validation": 0
+      },
+      "work_overshoot": 280.0,
+      "work_target": 290000000.0,
+      "work_total": 290000280
+    },
+    {
+      "arc_easy_acc@000": 0.2529461279461279,
+      "arc_easy_acc@100": 0.265993265993266,
+      "cell": "v2/70m/fixed_joint_s3",
+      "cell_done": true,
+      "device": "Tesla V100-PCIE-32GB",
+      "fp16_skipped_steps": 6,
+      "gsm8k_acc@000": 0.000758150113722517,
+      "gsm8k_acc@100": 0.02122820318423048,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 0,
+      "gsm8k_parse_fail@100": 13,
+      "gsm8k_wilson95@000": [
+        0.00013384120709045237,
+        0.004282107006210368
+      ],
+      "gsm8k_wilson95@100": [
+        0.01472730286658493,
+        0.030509859315191026
+      ],
+      "index": 16,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 3120396.5311684823,
+      "lambada_ppl@100": 2139675.2316092094,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "fixed_joint",
+      "observed_pt_tokens": 78053376,
+      "optimizer_steps": 3873,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 5.268365383148193,
+      "pref_acc@000": 0.4342569269521411,
+      "pref_acc@100": 0.43828715365239296,
+      "reached_pt_target": true,
+      "rl_informative_groups": 223,
+      "rl_zero_variance_groups": 2373,
+      "seed": 3,
+      "size": "70m",
+      "slurm_job_ids": [
+        "48765798_16",
+        "49014697_16"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 6280080,
+        "pt": 78053376,
+        "rl": 430032,
+        "sft": 7675936
+      },
+      "updates": 4330,
+      "updates_by_objective": {
+        "dpo": 433,
+        "pt": 2382,
+        "rl": 649,
+        "sft": 866
+      },
+      "version": "v2",
+      "wall_h": 0.8610044157713289,
+      "wikitext_nll@000": 10.919523211185906,
+      "wikitext_nll@100": 4.242465303999167,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290010992,
+        "validation": 0
+      },
+      "work_overshoot": 10992.0,
+      "work_target": 290000000.0,
+      "work_total": 290010992
+    },
+    {
+      "arc_easy_acc@000": 0.2529461279461279,
+      "arc_easy_acc@100": 0.2647306397306397,
+      "cell": "v2/70m/smooth_joint_s3",
+      "cell_done": true,
+      "device": "Tesla V100S-PCIE-32GB",
+      "fp16_skipped_steps": 7,
+      "gsm8k_acc@000": 0.000758150113722517,
+      "gsm8k_acc@100": 0.02122820318423048,
+      "gsm8k_n@000": 1319,
+      "gsm8k_n@100": 1319,
+      "gsm8k_parse_fail@000": 0,
+      "gsm8k_parse_fail@100": 6,
+      "gsm8k_wilson95@000": [
+        0.00013384120709045237,
+        0.004282107006210368
+      ],
+      "gsm8k_wilson95@100": [
+        0.01472730286658493,
+        0.030509859315191026
+      ],
+      "index": 17,
+      "lambada_acc@000": 0.0,
+      "lambada_acc@100": 0.0,
+      "lambada_ppl@000": 3120396.5311684823,
+      "lambada_ppl@100": 2180868.5396747133,
+      "lc": {
+        "000": true,
+        "025": true,
+        "050": true,
+        "075": true,
+        "100": true
+      },
+      "method": "smooth_joint",
+      "observed_pt_tokens": 71434240,
+      "optimizer_steps": 4277,
+      "overshoot_bounded": true,
+      "peak_memory_gb": 5.268365383148193,
+      "pref_acc@000": 0.4342569269521411,
+      "pref_acc@100": 0.4367758186397985,
+      "reached_pt_target": true,
+      "rl_informative_groups": 608,
+      "rl_zero_variance_groups": 5044,
+      "seed": 3,
+      "size": "70m",
+      "slurm_job_ids": [
+        "48765798_17",
+        "49014697_17"
+      ],
+      "status": "complete",
+      "tokens_by_objective": {
+        "dpo": 7922736,
+        "pt": 71434240,
+        "rl": 1108112,
+        "sft": 9166560
+      },
+      "updates": 5175,
+      "updates_by_objective": {
+        "dpo": 547,
+        "pt": 2180,
+        "rl": 1413,
+        "sft": 1035
+      },
+      "version": "v2",
+      "wall_h": 1.0199497715352723,
+      "wikitext_nll@000": 10.919523211185906,
+      "wikitext_nll@100": 4.297184068088221,
+      "work_by_purpose": {
+        "probe": 0,
+        "train": 290090064,
+        "validation": 0
+      },
+      "work_overshoot": 90064.0,
+      "work_target": 290000000.0,
+      "work_total": 290090064
+    }
+  ],
+  "gaps": {
+    "14m": {
+      "fixed_joint-sequential": {
+        "arc_easy_acc": {
+          "all_same_sign": true,
+          "by_seed": [
+            0.007996632996633002,
+            0.011363636363636354,
+            0.0037878787878787845
+          ],
+          "mean": 0.007716049382716046,
+          "n_pairs": 3
+        },
+        "gsm8k_acc": {
+          "all_same_sign": true,
+          "by_seed": [
+            0.021986353297952996,
+            0.0007581501137225201,
+            0.010614101592115238
+          ],
+          "mean": 0.011119535001263585,
+          "n_pairs": 3
+        },
+        "lambada_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "n_pairs": 3
+        },
+        "lambada_ppl": {
+          "all_same_sign": true,
+          "by_seed": [
+            -25848625236535.99,
+            -18798644312826.57,
+            -49089967.122390345
+          ],
+          "mean": -14882439546443.227,
+          "n_pairs": 3
+        },
+        "pref_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            -0.009068010075566735,
+            0.004030226700251882,
+            0.00554156171284631
+          ],
+          "mean": 0.00016792611251048584,
+          "n_pairs": 3
+        },
+        "wikitext_nll": {
+          "all_same_sign": true,
+          "by_seed": [
+            -18.738461687604374,
+            -15.23032469653189,
+            -8.481175410576498
+          ],
+          "mean": -14.149987264904254,
+          "n_pairs": 3
+        }
+      },
+      "fixed_joint-smooth_joint": {
+        "arc_easy_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            0.005471380471380516,
+            -0.005892255892255893,
+            -0.00462962962962965
+          ],
+          "mean": -0.0016835016835016758,
+          "n_pairs": 3
+        },
+        "gsm8k_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            -0.0030326004548900665,
+            0.0007581501137225201,
+            -0.00303260045489007
+          ],
+          "mean": -0.0017690169320192055,
+          "n_pairs": 3
+        },
+        "lambada_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            -0.00019406171162429653,
+            0.0,
+            -0.00019406171162429653
+          ],
+          "mean": -0.00012937447441619768,
+          "n_pairs": 3
+        },
+        "lambada_ppl": {
+          "all_same_sign": false,
+          "by_seed": [
+            1071868.7089139512,
+            -92863.97409033659,
+            -60938.609395687934
+          ],
+          "mean": 306022.04180930887,
+          "n_pairs": 3
+        },
+        "pref_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            -0.004030226700251882,
+            0.0005037783375314575,
+            0.001511335012594428
+          ],
+          "mean": -0.0006717044500419989,
+          "n_pairs": 3
+        },
+        "wikitext_nll": {
+          "all_same_sign": false,
+          "by_seed": [
+            -0.02765269626723299,
+            -0.03606982858558716,
+            0.0019466582342868577
+          ],
+          "mean": -0.020591955539511098,
+          "n_pairs": 3
+        }
+      },
+      "smooth_joint-sequential": {
+        "arc_easy_acc": {
+          "all_same_sign": true,
+          "by_seed": [
+            0.002525252525252486,
+            0.017255892255892247,
+            0.008417508417508435
+          ],
+          "mean": 0.009399551066217723,
+          "n_pairs": 3
+        },
+        "gsm8k_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            0.025018953752843062,
+            0.0,
+            0.013646702047005308
+          ],
+          "mean": 0.01288855193328279,
+          "n_pairs": 3
+        },
+        "lambada_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            0.00019406171162429653,
+            0.0,
+            0.00019406171162429653
+          ],
+          "mean": 0.00012937447441619768,
+          "n_pairs": 3
+        },
+        "lambada_ppl": {
+          "all_same_sign": true,
+          "by_seed": [
+            -25848626308404.7,
+            -18798644219962.598,
+            -49029028.512994654
+          ],
+          "mean": -14882439852465.271,
+          "n_pairs": 3
+        },
+        "pref_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            -0.005037783375314853,
+            0.0035264483627204246,
+            0.004030226700251882
+          ],
+          "mean": 0.0008396305625524847,
+          "n_pairs": 3
+        },
+        "wikitext_nll": {
+          "all_same_sign": true,
+          "by_seed": [
+            -18.710808991337142,
+            -15.194254867946302,
+            -8.483122068810783
+          ],
+          "mean": -14.129395309364744,
+          "n_pairs": 3
+        }
+      }
+    },
+    "160m": {
+      "fixed_joint-sequential": {
+        "arc_easy_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            -0.006734006734006759,
+            0.0016835016835017313,
+            0.01094276094276092
+          ],
+          "mean": 0.001964085297418631,
+          "n_pairs": 3
+        },
+        "gsm8k_acc": {
+          "all_same_sign": true,
+          "by_seed": [
+            0.00833965125094769,
+            0.026535253980288095,
+            0.003790750568612583
+          ],
+          "mean": 0.01288855193328279,
+          "n_pairs": 3
+        },
+        "lambada_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            0.00019406171162429653,
+            0.0,
+            0.00019406171162429653
+          ],
+          "mean": 0.00012937447441619768,
+          "n_pairs": 3
+        },
+        "lambada_ppl": {
+          "all_same_sign": true,
+          "by_seed": [
+            -164147635214.69937,
+            -3279212410440.204,
+            -1475507305.1160202
+          ],
+          "mean": -1148278517653.3398,
+          "n_pairs": 3
+        },
+        "pref_acc": {
+          "all_same_sign": true,
+          "by_seed": [
+            0.001511335012594428,
+            0.0015113350125944836,
+            0.0030226700251889116
+          ],
+          "mean": 0.002015113350125941,
+          "n_pairs": 3
+        },
+        "wikitext_nll": {
+          "all_same_sign": true,
+          "by_seed": [
+            -13.256074452734332,
+            -14.668812004146226,
+            -9.734355716553393
+          ],
+          "mean": -12.553080724477985,
+          "n_pairs": 3
+        }
+      },
+      "fixed_joint-smooth_joint": {
+        "arc_easy_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            0.0,
+            -0.00841750841750838,
+            0.008417508417508435
+          ],
+          "mean": 1.850371707708594e-17,
+          "n_pairs": 3
+        },
+        "gsm8k_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            -0.0030326004548900665,
+            0.0045489006823351,
+            -0.00530705079605762
+          ],
+          "mean": -0.0012635835228708623,
+          "n_pairs": 3
+        },
+        "lambada_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            0.00019406171162429653,
+            0.0,
+            0.0
+          ],
+          "mean": 6.468723720809884e-05,
+          "n_pairs": 3
+        },
+        "lambada_ppl": {
+          "all_same_sign": false,
+          "by_seed": [
+            -1471207.6274570995,
+            1220713.2382903097,
+            597191.7851716434
+          ],
+          "mean": 115565.79866828451,
+          "n_pairs": 3
+        },
+        "pref_acc": {
+          "all_same_sign": true,
+          "by_seed": [
+            -0.006045340050377823,
+            -0.00554156171284631,
+            -0.0010075566750629705
+          ],
+          "mean": -0.004198152812762368,
+          "n_pairs": 3
+        },
+        "wikitext_nll": {
+          "all_same_sign": true,
+          "by_seed": [
+            -0.012152009708843003,
+            -0.12907798917264568,
+            -0.1545438144055078
+          ],
+          "mean": -0.0985912710956655,
+          "n_pairs": 3
+        }
+      },
+      "smooth_joint-sequential": {
+        "arc_easy_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            -0.006734006734006759,
+            0.01010101010101011,
+            0.002525252525252486
+          ],
+          "mean": 0.0019640852974186127,
+          "n_pairs": 3
+        },
+        "gsm8k_acc": {
+          "all_same_sign": true,
+          "by_seed": [
+            0.011372251705837756,
+            0.021986353297952996,
+            0.009097801364670203
+          ],
+          "mean": 0.014152135456153653,
+          "n_pairs": 3
+        },
+        "lambada_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            0.0,
+            0.0,
+            0.00019406171162429653
+          ],
+          "mean": 6.468723720809884e-05,
+          "n_pairs": 3
+        },
+        "lambada_ppl": {
+          "all_same_sign": true,
+          "by_seed": [
+            -164146164007.0719,
+            -3279213631153.4424,
+            -1476104496.9011917
+          ],
+          "mean": -1148278633219.1384,
+          "n_pairs": 3
+        },
+        "pref_acc": {
+          "all_same_sign": true,
+          "by_seed": [
+            0.007556675062972251,
+            0.007052896725440794,
+            0.004030226700251882
+          ],
+          "mean": 0.006213266162888309,
+          "n_pairs": 3
+        },
+        "wikitext_nll": {
+          "all_same_sign": true,
+          "by_seed": [
+            -13.243922443025488,
+            -14.53973401497358,
+            -9.579811902147885
+          ],
+          "mean": -12.454489453382317,
+          "n_pairs": 3
+        }
+      }
+    },
+    "70m": {
+      "fixed_joint-sequential": {
+        "arc_easy_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            -0.0004208754208753773,
+            -0.00042087542087543284,
+            0.013888888888888895
+          ],
+          "mean": 0.004349046015712695,
+          "n_pairs": 3
+        },
+        "gsm8k_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            0.016679302501895376,
+            -0.006065200909780136,
+            0.02122820318423048
+          ],
+          "mean": 0.01061410159211524,
+          "n_pairs": 3
+        },
+        "lambada_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            0.0,
+            -0.00019406171162429653,
+            0.0
+          ],
+          "mean": -6.468723720809884e-05,
+          "n_pairs": 3
+        },
+        "lambada_ppl": {
+          "all_same_sign": true,
+          "by_seed": [
+            -9284436595860.775,
+            -1125787951112.6077,
+            -155226120922250.7
+          ],
+          "mean": -55212115156408.02,
+          "n_pairs": 3
+        },
+        "pref_acc": {
+          "all_same_sign": true,
+          "by_seed": [
+            0.001511335012594428,
+            0.0035264483627204246,
+            0.002518891687657454
+          ],
+          "mean": 0.0025188916876574354,
+          "n_pairs": 3
+        },
+        "wikitext_nll": {
+          "all_same_sign": true,
+          "by_seed": [
+            -18.053303653608467,
+            -13.69926800359436,
+            -20.300702871622015
+          ],
+          "mean": -17.35109150960828,
+          "n_pairs": 3
+        }
+      },
+      "fixed_joint-smooth_joint": {
+        "arc_easy_acc": {
+          "all_same_sign": true,
+          "by_seed": [
+            0.007154882154882192,
+            0.00462962962962965,
+            0.0012626262626262985
+          ],
+          "mean": 0.004349046015712714,
+          "n_pairs": 3
+        },
+        "gsm8k_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            -0.008339651250947686,
+            0.00227445034116755,
+            0.0
+          ],
+          "mean": -0.0020217336365933787,
+          "n_pairs": 3
+        },
+        "lambada_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "n_pairs": 3
+        },
+        "lambada_ppl": {
+          "all_same_sign": false,
+          "by_seed": [
+            739208.7566055064,
+            1481696.0131220596,
+            -41193.308065503836
+          ],
+          "mean": 726570.4872206874,
+          "n_pairs": 3
+        },
+        "pref_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            -0.0015113350125944836,
+            -0.0010075566750629705,
+            0.0015113350125944836
+          ],
+          "mean": -0.00033585222502099016,
+          "n_pairs": 3
+        },
+        "wikitext_nll": {
+          "all_same_sign": true,
+          "by_seed": [
+            -0.06362448468812598,
+            -0.08988043035767479,
+            -0.05471876408905363
+          ],
+          "mean": -0.06940789304495147,
+          "n_pairs": 3
+        }
+      },
+      "smooth_joint-sequential": {
+        "arc_easy_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            -0.007575757575757569,
+            -0.005050505050505083,
+            0.012626262626262597
+          ],
+          "mean": -1.850371707708594e-17,
+          "n_pairs": 3
+        },
+        "gsm8k_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            0.025018953752843062,
+            -0.008339651250947686,
+            0.02122820318423048
+          ],
+          "mean": 0.01263583522870862,
+          "n_pairs": 3
+        },
+        "lambada_acc": {
+          "all_same_sign": false,
+          "by_seed": [
+            0.0,
+            -0.00019406171162429653,
+            0.0
+          ],
+          "mean": -6.468723720809884e-05,
+          "n_pairs": 3
+        },
+        "lambada_ppl": {
+          "all_same_sign": true,
+          "by_seed": [
+            -9284437335069.531,
+            -1125789432808.6208,
+            -155226120881057.38
+          ],
+          "mean": -55212115882978.51,
+          "n_pairs": 3
+        },
+        "pref_acc": {
+          "all_same_sign": true,
+          "by_seed": [
+            0.0030226700251889116,
+            0.004534005037783395,
+            0.0010075566750629705
+          ],
+          "mean": 0.0028547439126784258,
+          "n_pairs": 3
+        },
+        "wikitext_nll": {
+          "all_same_sign": true,
+          "by_seed": [
+            -17.989679168920343,
+            -13.609387573236685,
+            -20.245984107532962
+          ],
+          "mean": -17.28168361656333,
+          "n_pairs": 3
+        }
+      }
+    }
+  },
+  "prospective_cells": 27,
+  "status_counts": {
+    "complete": 27
+  }
+}
