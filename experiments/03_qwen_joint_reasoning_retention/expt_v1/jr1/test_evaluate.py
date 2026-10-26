@@ -294,4 +294,7 @@ def test_end_to_end_hf(tmp_path, monkeypatch):
 def test_real_protocol_caps():
     assert E.PROTOCOL["gsm8k"]["max_new_tokens"] == 1024 and E.PROTOCOL["math500"]["max_new_tokens"] == 2048
     assert E.EXPECTED == {"gsm8k": 1319, "math500": 500, "mmlu": 14042, "arc_easy": 2376, "lc_gsm8k": 256,
-                          "lc_mmlu": 512, "mmlu_dev": 285}
+                          "lc_mmlu": 512, "mmlu_dev": 285, "dev_gsm8k": 512, "dev_wikitext": 30, "dev_pref": 512}
+    # the dev suite (AT-572 selection) reads tune splits only and shares the test protocols
+    assert all(not E.FILES[b].startswith("eval/") and E.FILES[b] != E.FILES[b[4:]] for b in E.SUITES["dev"])
+    assert E.PROTOCOL["dev_gsm8k"] == E.PROTOCOL["gsm8k"] and E.PROTOCOL["dev_wikitext"] == E.PROTOCOL["wikitext"]

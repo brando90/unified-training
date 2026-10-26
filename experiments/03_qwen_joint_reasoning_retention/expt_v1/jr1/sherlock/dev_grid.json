@@ -1,0 +1,59 @@
+{
+  "version": "dev-grid-v1",
+  "status": "candidate grid FROZEN at commit (AT-570, 2026-10-20); work_target is filled once by AT-571 calibration, the same value for every method, before the dev array runs",
+  "dev_seed": 9001,
+  "base_config": "configs/qwen15b_v0.json",
+  "work_target": null,
+  "tiny_work_target": 30000,
+  "allowance": {
+    "rule": "equal development device-time allowance per method: the same number of candidates (4), the same charged forward-equivalent work target per candidate (controller probes and validation are charged inside it), the same wall-clock cap per candidate training run (JR1_DEV_CAND_SECONDS, set by calibration so that 4 candidates fit 1 device-hour per method = 6 device-hours in total, PLAN.md). A candidate that exceeds the cap is stopped and is not selectable; no method gets extra candidates, reruns or probes.",
+    "candidates_per_method": 4,
+    "device_hours_per_method": 1.0
+  },
+  "data": "training pools: pt/sft/rl/pref train (and the controller split for aioli/jr1 feedback). Selection signals: the tune split only (evaluate.py --suite dev: gsm8k_dev/tune 512, pt/tune 30 articles, pref/tune 512). No test or learning-curve file is opened.",
+  "selection": {
+    "score": "dev_gsm8k acc (512 GSM8K tune prompts, greedy, the frozen jr1 parser)",
+    "max_nll_rise": 0.02,
+    "retention": "dev_wikitext nll_per_token <= (1 + max_nll_rise) x the untouched base model's (PLAN.md's 2% corpus-NLL tolerance)",
+    "tie_break": ["higher dev_pref acc", "lower dev_wikitext nll", "lower slot (listed first)"],
+    "fallback": "no retention-passing candidate: the one with the smallest NLL rise, and the method is flagged retention_failed; no valid candidate at all: slot 0, flagged no_valid_candidate"
+  },
+  "candidates": {
+    "sequential": [
+      {"id": "sequential_lr1e-6_b55", "optimizer": {"lr": 1e-6}, "methods": {"sequential": {"boundaries": [0.55, 0.75, 0.85]}}},
+      {"id": "sequential_lr1e-6_b40", "optimizer": {"lr": 1e-6}, "methods": {"sequential": {"boundaries": [0.40, 0.60, 0.75]}}},
+      {"id": "sequential_lr5e-6_b55", "optimizer": {"lr": 5e-6}, "methods": {"sequential": {"boundaries": [0.55, 0.75, 0.85]}}},
+      {"id": "sequential_lr5e-6_b40", "optimizer": {"lr": 5e-6}, "methods": {"sequential": {"boundaries": [0.40, 0.60, 0.75]}}}
+    ],
+    "replay": [
+      {"id": "replay_lr1e-6_pt20", "optimizer": {"lr": 1e-6}, "methods": {"replay": {"boundaries": [0.55, 0.75, 0.85], "pt_share": 0.2}}},
+      {"id": "replay_lr1e-6_pt10", "optimizer": {"lr": 1e-6}, "methods": {"replay": {"boundaries": [0.55, 0.75, 0.85], "pt_share": 0.1}}},
+      {"id": "replay_lr5e-6_pt20", "optimizer": {"lr": 5e-6}, "methods": {"replay": {"boundaries": [0.55, 0.75, 0.85], "pt_share": 0.2}}},
+      {"id": "replay_lr5e-6_pt10", "optimizer": {"lr": 5e-6}, "methods": {"replay": {"boundaries": [0.55, 0.75, 0.85], "pt_share": 0.1}}}
+    ],
+    "fixed_joint": [
+      {"id": "fixed_joint_lr1e-6_pt55", "optimizer": {"lr": 1e-6}, "methods": {"fixed_joint": {"weights": {"pt": 0.55, "sft": 0.20, "dpo": 0.10, "rl": 0.15}}}},
+      {"id": "fixed_joint_lr1e-6_rl30", "optimizer": {"lr": 1e-6}, "methods": {"fixed_joint": {"weights": {"pt": 0.35, "sft": 0.25, "dpo": 0.10, "rl": 0.30}}}},
+      {"id": "fixed_joint_lr5e-6_pt55", "optimizer": {"lr": 5e-6}, "methods": {"fixed_joint": {"weights": {"pt": 0.55, "sft": 0.20, "dpo": 0.10, "rl": 0.15}}}},
+      {"id": "fixed_joint_lr5e-6_rl30", "optimizer": {"lr": 5e-6}, "methods": {"fixed_joint": {"weights": {"pt": 0.35, "sft": 0.25, "dpo": 0.10, "rl": 0.30}}}}
+    ],
+    "smooth_joint": [
+      {"id": "smooth_joint_lr1e-6_rl45", "optimizer": {"lr": 1e-6}, "methods": {"smooth_joint": {"end": {"pt": 0.20, "sft": 0.20, "dpo": 0.15, "rl": 0.45}}}},
+      {"id": "smooth_joint_lr1e-6_rl60", "optimizer": {"lr": 1e-6}, "methods": {"smooth_joint": {"end": {"pt": 0.15, "sft": 0.15, "dpo": 0.10, "rl": 0.60}}}},
+      {"id": "smooth_joint_lr5e-6_rl45", "optimizer": {"lr": 5e-6}, "methods": {"smooth_joint": {"end": {"pt": 0.20, "sft": 0.20, "dpo": 0.15, "rl": 0.45}}}},
+      {"id": "smooth_joint_lr5e-6_rl60", "optimizer": {"lr": 5e-6}, "methods": {"smooth_joint": {"end": {"pt": 0.15, "sft": 0.15, "dpo": 0.10, "rl": 0.60}}}}
+    ],
+    "aioli": [
+      {"id": "aioli_lr1e-6_eta1", "optimizer": {"lr": 1e-6}, "methods": {"aioli": {"eta": 1.0}}},
+      {"id": "aioli_lr1e-6_eta0.3", "optimizer": {"lr": 1e-6}, "methods": {"aioli": {"eta": 0.3}}},
+      {"id": "aioli_lr5e-6_eta1", "optimizer": {"lr": 5e-6}, "methods": {"aioli": {"eta": 1.0}}},
+      {"id": "aioli_lr5e-6_eta0.3", "optimizer": {"lr": 5e-6}, "methods": {"aioli": {"eta": 0.3}}}
+    ],
+    "jr1": [
+      {"id": "jr1_lr1e-6_prior0.5", "optimizer": {"lr": 1e-6}, "methods": {"jr1": {"prior_strength": 0.5}}},
+      {"id": "jr1_lr1e-6_prior0.75", "optimizer": {"lr": 1e-6}, "methods": {"jr1": {"prior_strength": 0.75}}},
+      {"id": "jr1_lr5e-6_prior0.5", "optimizer": {"lr": 5e-6}, "methods": {"jr1": {"prior_strength": 0.5}}},
+      {"id": "jr1_lr5e-6_prior0.75", "optimizer": {"lr": 5e-6}, "methods": {"jr1": {"prior_strength": 0.75}}}
+    ]
+  }
+}
