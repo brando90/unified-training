@@ -1,0 +1,12 @@
+# Top-level pins for the JR1 Sherlock venv; requirements-sherlock.lock is the full resolved, hashed set (glibc 2.17).
+torch==2.6.0
+transformers==4.57.6
+tokenizers==0.22.2
+safetensors
+huggingface_hub==0.36.2
+numpy==2.2.6
+pyarrow
+pyahocorasick
+math-verify[antlr4_13_2]==0.9.0
+latex2sympy2_extended==1.11.0
+pytest

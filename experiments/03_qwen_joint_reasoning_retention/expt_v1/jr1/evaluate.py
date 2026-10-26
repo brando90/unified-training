@@ -73,14 +73,21 @@ PROTOCOL = {
 for _b in ("lc_gsm8k",):
     PROTOCOL[_b] = PROTOCOL["gsm8k"]
 PROTOCOL["lc_mmlu"] = PROTOCOL["mmlu"]
+# Development-selection suite (AT-572): the same protocols on the tune splits only, so dev selection never opens a
+# test set. dev_gsm8k = GSM8K train rows held out as the tune split; dev_wikitext = WikiText validation tune half.
+PROTOCOL["dev_gsm8k"] = PROTOCOL["gsm8k"]
+PROTOCOL["dev_wikitext"] = PROTOCOL["wikitext"]
+PROTOCOL["dev_pref"] = PROTOCOL["pref"]
 
 FILES = {"gsm8k": "eval/gsm8k_test", "math500": "eval/math500", "mmlu": "eval/mmlu_test", "arc_easy": "eval/arc_easy_test",
          "wikitext": "pt/test", "pref": "pref/test", "lc_gsm8k": "eval/lc_gsm8k", "lc_mmlu": "eval/lc_mmlu",
-         "mmlu_dev": "eval/mmlu_dev"}
+         "mmlu_dev": "eval/mmlu_dev", "dev_gsm8k": "gsm8k_dev/tune", "dev_wikitext": "pt/tune",
+         "dev_pref": "pref/tune"}
 EXPECTED = {"gsm8k": 1319, "math500": 500, "mmlu": 14042, "arc_easy": 2376, "lc_gsm8k": 256, "lc_mmlu": 512,
-            "mmlu_dev": 285}
-SUITES = {"full": ["gsm8k", "math500", "mmlu", "arc_easy", "wikitext", "pref"], "lc": ["lc_gsm8k", "lc_mmlu"]}
-GENERATIVE = {"gsm8k", "lc_gsm8k", "math500"}
+            "mmlu_dev": 285, "dev_gsm8k": 512, "dev_wikitext": 30, "dev_pref": 512}
+SUITES = {"full": ["gsm8k", "math500", "mmlu", "arc_easy", "wikitext", "pref"], "lc": ["lc_gsm8k", "lc_mmlu"],
+          "dev": ["dev_gsm8k", "dev_wikitext", "dev_pref"]}
+GENERATIVE = {"gsm8k", "lc_gsm8k", "math500", "dev_gsm8k"}
 MMLU_DEV = {"repo": "cais/mmlu", "file": "all/dev-00000-of-00001.parquet",
             "revision": "c30699e8356da336a370243923dbaf21066bb9fe"}  # same pinned revision as jr1/data.py SOURCES
 
@@ -572,7 +579,7 @@ def summarize(bench: str, items: list[dict], wall: float) -> dict:
     s = {"n": n, "expected_n": EXPECTED.get(bench), "complete": EXPECTED.get(bench) in (None, n),
          "parse_fail": sum(bool(x.get("parse_fail")) for x in items),
          "truncated": sum(bool(x.get("truncated")) for x in items), "wall_s": round(wall, 3)}
-    if bench == "wikitext":
+    if bench in ("wikitext", "dev_wikitext"):
         tokens, nll, nbytes = sum(x["tokens"] for x in items), sum(x["nll_sum"] for x in items), sum(x["bytes"] for x in items)
         s.update(correct=None, acc=None, tokens=tokens, bytes=nbytes, nll_per_token=nll / max(tokens, 1),
                  ppl=math.exp(nll / max(tokens, 1)), bits_per_byte=nll / math.log(2) / max(nbytes, 1))
@@ -594,7 +601,7 @@ def summarize(bench: str, items: list[dict], wall: float) -> dict:
         s["subject_acc"] = {k: sum(v) / len(v) for k, v in sorted(by.items())}
     if bench == "arc_easy":
         s["acc_raw"] = sum(x["correct_raw"] for x in items) / n if n else None
-    if bench == "pref":
+    if bench in ("pref", "dev_pref"):
         s["acc_norm"] = sum(x["correct_norm"] for x in items) / n if n else None
     return s
 
@@ -763,7 +770,7 @@ def main(argv: list[str] | None = None) -> dict:
         tb = time.monotonic()
         rows = data[b]
         log(f"{b}: {len(rows)} items")
-        if b in ("gsm8k", "lc_gsm8k"):
+        if b in ("gsm8k", "lc_gsm8k", "dev_gsm8k"):
             prompts = [tok.encode(gsm8k_prompt(r["question"]), add_special_tokens=False) for r in rows]
             gens = generator.generate(prompts, PROTOCOL["gsm8k"]["max_new_tokens"])
             items = [score_gsm8k(r, g) | {"prompt_tokens": len(p)} for r, g, p in zip(rows, gens, prompts)]
@@ -775,9 +782,9 @@ def main(argv: list[str] | None = None) -> dict:
             items = eval_mmlu(rows, data["mmlu_dev"], tok, scorer)
         elif b == "arc_easy":
             items = eval_arc(rows, tok, scorer)
-        elif b == "wikitext":
+        elif b in ("wikitext", "dev_wikitext"):
             items = eval_wikitext(rows, tok, scorer)
-        elif b == "pref":
+        elif b in ("pref", "dev_pref"):
             items = eval_pref(rows, tok, scorer)
         else:
             raise ValueError(b)
