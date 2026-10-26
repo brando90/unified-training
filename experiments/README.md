@@ -4,9 +4,9 @@
 
 Both bounded pilots are complete: 48/48 training cells and 4/4 untouched initial evaluations, with zero failed or interrupted cells. The proposed controller improved over sequential training on the primary endpoints, but did not establish an advantage over Aioli or all baselines; early-checkpoint accuracy declined relative to the untouched checkpoint.
 
-**Status:** New campaign in preparation; historical pilots complete.
+**Status:** Exp 05 (Pythia from scratch) and Exp 06 (vision) complete; Exp 03/04 code and Sherlock packaging merged, measured cells not launched; historical pilots complete.
 
-**Last updated:** 10-05-2026 10:25 PDT.
+**Last updated:** 10-26-2026.
 
 | Canonical folder | Question/setup | Current status |
 |---|---|---|
@@ -26,4 +26,5 @@ The [prospective plan](03_qwen_joint_reasoning_retention/PLAN.md) defines a new 
 |---|---:|---|
 | [experiments/03_qwen_joint_reasoning_retention](03_qwen_joint_reasoning_retention/README.md) | 36 | Preparation; no measured runs launched |
 | [experiments/04_qwen_matched_exposure_schedules](04_qwen_matched_exposure_schedules/README.md) | 6 | Preparation; no measured runs launched |
-| [experiments/05_pythia_scratch_joint_learning](05_pythia_scratch_joint_learning/README.md) | 9 | Preparation; no measured runs launched |
+| [experiments/05_pythia_scratch_joint_learning](05_pythia_scratch_joint_learning/README.md) | 27 | Complete: 27/27 cells (Pythia 14m/70m/160m, 3 methods x 3 seeds, Sherlock V100 fp16); joint beats sequential on WikiText NLL 3/3 seeds at every size, driven by sequential's post-training collapse; see [results.md](05_pythia_scratch_joint_learning/results.md) |
+| [experiments/06_vision_scratch_joint_vs_posttrain](06_vision_scratch_joint_vs_posttrain/README.md) | 30 (+20 exploratory) | Complete: 30/30 frozen cells (ViT-Tiny/Small, Tiny-ImageNet -> CIFAR-100): H1 inconclusive at n=3, H2 supported; post-hoc n=5 extension and a lr 5e-4 n=1 pair are labelled exploratory; see [results.md](06_vision_scratch_joint_vs_posttrain/results.md) |
