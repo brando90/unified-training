@@ -69,3 +69,17 @@ Rates are from short runs and move with the RL share of each method.
 | calib H100_SXM5, first try | 48736021 | cancelled while pending (old code) |
 | calib L40S, fixed code | 48742783 | COMPLETED, exit 0 (END mail Oct 21 01:36) |
 | calib H100_SXM5, fixed code | 48742805 | COMPLETED, exit 0 (END mail Oct 27 08:17; node sh04-01n01) |
+
+## Development selection settings (AT-572, 2026-10-27 10:22 PDT)
+
+- Dev work target `Wdev` = 3.5e6 charged forward-equivalent tokens per candidate, the same for all 24 candidates (dev_grid.json sha256
+  `f6676b3c5b7311270057c5ae6b21f9fdb44d5248806e1604ac0853668685b84a`). At the calibration rates the slowest methods (aioli 6,034, fixed_joint 6,191,
+  jr1 6,218 work/s on H100) need about 560 to 580 s, so the cap leaves about 55% headroom for rates that early updates may understate.
+- Per-candidate wall-clock allowance `JR1_DEV_CAND_SECONDS` = 900 s, so four candidates are 1.0 device-hour of training per method, 6.0 in total (PLAN.md).
+  A candidate over 900 s is recorded and not selectable. The dev evaluation on the tune split (512 GSM8K, 30 WikiText articles, 512 preference pairs)
+  is charged separately and recorded in each candidate's `eval_dev/summary.json`.
+- GPU SKU for dev: H100_SXM5, the same as every measured cell. `sbatch --test-only` on Oct 27 10:20 estimated a start of Oct 28 01:46 on H100 and
+  Oct 28 02:58 on L40S, so L40S was no quicker.
+- Code on Sherlock: calibration commit d3763c5 plus the train.py/test_head_logps.py change of 22119a1 (GPT-NeoX base-model access, no effect on Qwen),
+  applied as patch sha256 `1fb37453a5350ce249c10e3b4b72cd87051f51d5ffa43b2406542df7fe385c18`; code/CODE_COMMIT now reads 22e2a426a4bd40fa83e825f0b0d498af9a300ba0.
+- Dev array: job 49814693 (tasks 0-24; 24 = untouched base), submitted 2026-10-27T10:22:09-07:00 from $SCRATCH/ut_jr1, id in jobs.txt.
