@@ -1,0 +1,223 @@
+{
+  "calib_dir": "calib/L40S",
+  "checkpoint": {
+    "bytes": 3087468627,
+    "ckpt": "calib/L40S/train/fixed_joint/ckpt_000",
+    "device": "cuda:0",
+    "load_to_device_s": 2.237,
+    "save_pretrained_s": 7.014
+  },
+  "env": {
+    "code_commit": "d3763c559dfd13c7223e5c60b79798ceee97cc42",
+    "cudnn": 90100,
+    "gpu": {
+      "bf16_matmul_ok": true,
+      "bf16_supported": true,
+      "capability": "8.9",
+      "name": "NVIDIA L40S",
+      "total_memory_gb": 44.52
+    },
+    "gpu_sku_match": true,
+    "gpu_sku_requested": "L40S",
+    "host": "sh04-11n09.int",
+    "nvidia_smi": "NVIDIA L40S, 550.163.01, 46068 MiB",
+    "pip_freeze": [
+      "antlr4-python3-runtime==4.13.2",
+      "certifi==2026.10.19",
+      "charset-normalizer==3.5.2",
+      "filelock==4.2.4",
+      "fsspec==2026.9.0",
+      "hf-xet==1.7.0",
+      "huggingface_hub==0.36.2",
+      "idna==3.20",
+      "iniconfig==2.3.1",
+      "Jinja2==3.1.6",
+      "latex2sympy2_extended==1.11.0",
+      "MarkupSafe==3.0.4",
+      "math-verify==0.9.0",
+      "mpmath==1.3.0",
+      "networkx==3.7",
+      "numpy==2.2.6",
+      "nvidia-cublas-cu12==12.4.5.8",
+      "nvidia-cuda-cupti-cu12==12.4.127",
+      "nvidia-cuda-nvrtc-cu12==12.4.127",
+      "nvidia-cuda-runtime-cu12==12.4.127",
+      "nvidia-cudnn-cu12==9.1.0.70",
+      "nvidia-cufft-cu12==11.2.1.3",
+      "nvidia-curand-cu12==10.3.5.147",
+      "nvidia-cusolver-cu12==11.6.1.9",
+      "nvidia-cusparse-cu12==12.3.1.170",
+      "nvidia-cusparselt-cu12==0.6.2",
+      "nvidia-nccl-cu12==2.21.5",
+      "nvidia-nvjitlink-cu12==12.4.127",
+      "nvidia-nvtx-cu12==12.4.127",
+      "packaging==26.3",
+      "pluggy==1.7.0",
+      "pyahocorasick==2.3.1",
+      "pyarrow==20.0.0",
+      "Pygments==2.21.0",
+      "pytest==9.1.1",
+      "PyYAML==6.0.3",
+      "regex==2026.9.29",
+      "requests==2.34.2",
+      "safetensors==0.8.0",
+      "setuptools==84.2.1",
+      "sympy==1.13.1",
+      "tokenizers==0.22.2",
+      "torch==2.6.0",
+      "tqdm==4.70.1",
+      "transformers==4.57.6",
+      "triton==3.2.0",
+      "typing_extensions==4.16.0",
+      "urllib3==2.8.0"
+    ],
+    "python": "3.12.1",
+    "slurm": {
+      "SLURM_ARRAY_JOB_ID": null,
+      "SLURM_ARRAY_TASK_ID": null,
+      "SLURM_JOB_ID": "48742783",
+      "SLURM_JOB_NODELIST": "sh04-11n09",
+      "SLURM_JOB_PARTITION": "gpu",
+      "SLURM_RESTART_COUNT": null
+    },
+    "timestamp": "2026-10-21T07:03:34.883592+00:00",
+    "torch": "2.6.0+cu124",
+    "torch_cuda": "12.4"
+  },
+  "eval": {
+    "full": {
+      "backend": "hf",
+      "bench_wall_s": {
+        "arc_easy": 8.085,
+        "gsm8k": 949.222,
+        "math500": 1332.461,
+        "mmlu": 411.691,
+        "pref": 52.974,
+        "wikitext": 12.995
+      },
+      "device": "NVIDIA L40S (cuda:0)",
+      "peak_mem_gb": 8.89,
+      "status": "complete",
+      "wall_s": 2775.855
+    },
+    "lc": {
+      "backend": "hf",
+      "bench_wall_s": {
+        "lc_gsm8k": 132.628,
+        "lc_mmlu": 14.942
+      },
+      "device": "NVIDIA L40S (cuda:0)",
+      "peak_mem_gb": 5.405,
+      "status": "complete",
+      "wall_s": 155.229
+    }
+  },
+  "methods": {
+    "aioli": {
+      "actions": 61,
+      "est_train_hours_at_target": 160.9450262906594,
+      "peak_memory_gb": 32.447,
+      "status": "debug_stopped",
+      "updates": 60,
+      "wall_s": 948.9744194168597,
+      "work_per_s": 3451.834258936635
+    },
+    "fixed_joint": {
+      "actions": 8,
+      "est_train_hours_at_target": 161.10661359598825,
+      "peak_memory_gb": 31.645,
+      "status": "debug_stopped",
+      "updates": 8,
+      "wall_s": 144.95460052136332,
+      "work_per_s": 3448.3721254841744
+    },
+    "jr1": {
+      "actions": 61,
+      "est_train_hours_at_target": 161.08222470944372,
+      "peak_memory_gb": 32.346,
+      "status": "debug_stopped",
+      "updates": 60,
+      "wall_s": 900.5012486316264,
+      "work_per_s": 3448.894231239067
+    },
+    "replay": {
+      "actions": 8,
+      "est_train_hours_at_target": 31.68984064980159,
+      "peak_memory_gb": 28.77,
+      "status": "debug_stopped",
+      "updates": 8,
+      "wall_s": 63.76209974009544,
+      "work_per_s": 17531.030265973706
+    },
+    "sequential": {
+      "actions": 8,
+      "est_train_hours_at_target": 31.05688347387565,
+      "peak_memory_gb": 28.77,
+      "status": "debug_stopped",
+      "updates": 8,
+      "wall_s": 77.01771651115268,
+      "work_per_s": 17888.322761776028
+    },
+    "smooth_joint": {
+      "actions": 8,
+      "est_train_hours_at_target": 129.1929952826083,
+      "peak_memory_gb": 29.37,
+      "status": "debug_stopped",
+      "updates": 8,
+      "wall_s": 145.50225214473903,
+      "work_per_s": 4300.198740189308
+    }
+  },
+  "objectives": {
+    "dpo": {
+      "mean_work_per_update": 29913.866666666665,
+      "median_s_per_update": 1.2549999999999955,
+      "updates_timed": 30,
+      "work_per_s": 8181.234729971194
+    },
+    "pt": {
+      "mean_work_per_update": 28700.76923076923,
+      "median_s_per_update": 1.3985000000000003,
+      "updates_timed": 52,
+      "work_per_s": 10155.692860448027
+    },
+    "rl": {
+      "mean_work_per_update": 126618.06451612903,
+      "median_s_per_update": 49.797,
+      "updates_timed": 31,
+      "work_per_s": 2581.122864331191
+    },
+    "sft": {
+      "mean_work_per_update": 6225.6,
+      "median_s_per_update": 0.5769999999999982,
+      "updates_timed": 35,
+      "work_per_s": 10306.30971525859
+    }
+  },
+  "per_cell_hours": {
+    "aioli": 161.93169295732608,
+    "fixed_joint": 162.09328026265493,
+    "jr1": 162.0688913761104,
+    "replay": 32.67650731646825,
+    "sequential": 32.043550140542315,
+    "smooth_joint": 130.179661949275
+  },
+  "restart": {
+    "actions": 4,
+    "log_rows": 4,
+    "note": "process wall of the resumed run: interpreter + model load + state load + remaining actions",
+    "resume_process_s": 107.333,
+    "resumes": 1,
+    "status": "debug_stopped"
+  },
+  "timestamp": "2026-10-21T08:36:28.972642+00:00",
+  "totals_gpu_hours": {
+    "all": 4929.8381693927495,
+    "exp03_36_cells": 4085.961504014262,
+    "exp03_base_eval": 0.81419,
+    "exp04_6_cells": 680.9935840023769,
+    "exp04_schedule_run": 162.0688913761104,
+    "note": "train estimate from calibrated work/s at work_target_used + 5 lc evals + 1 full eval per cell; replay cells use the six-method mean"
+  },
+  "work_target_used": 2000000000.0
+}
