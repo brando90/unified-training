@@ -3,7 +3,7 @@
   "status": "candidate grid FROZEN at commit (AT-570, 2026-10-20); work_target is filled once by AT-571 calibration, the same value for every method, before the dev array runs",
   "dev_seed": 9001,
   "base_config": "configs/qwen15b_v0.json",
-  "work_target": null,
+  "work_target": 3.5e+06,
   "tiny_work_target": 30000,
   "allowance": {
     "rule": "equal development device-time allowance per method: the same number of candidates (4), the same charged forward-equivalent work target per candidate (controller probes and validation are charged inside it), the same wall-clock cap per candidate training run (JR1_DEV_CAND_SECONDS, set by calibration so that 4 candidates fit 1 device-hour per method = 6 device-hours in total, PLAN.md). A candidate that exceeds the cap is stopped and is not selectable; no method gets extra candidates, reruns or probes.",
