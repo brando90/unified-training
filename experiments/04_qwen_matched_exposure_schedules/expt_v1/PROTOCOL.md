@@ -4,7 +4,7 @@
 
 **Summary:** Follow the [campaign plan](../../03_qwen_joint_reasoning_retention/PLAN.md). Frozen measured protocol v1 for Exp 04: replay one development-frozen J-R1 action schedule in interleaved and stage-sorted order, three seeds each.
 
-Status: **FROZEN** 2026-10-31T18:41:16Z. Frozen before any measured update and before any test output was opened. Never change this version after its first measured update.
+Status: **FROZEN**. Configs frozen 2026-10-31T18:41:16Z; the source schedule was recorded 2026-11-02 by job 50524408 (finished 05:59 PST), before any Exp 04 cell; this file first committed 2026-11-02 in commit cca9104 (the Status line corrected in the commit after it). Frozen before any measured update and before any test output was opened. Never change this version after its first measured update.
 
 Planned cells: **6 training cells (2 orders x 3 seeds)**; denominator never reduced. Exp 04 imports the Exp 03 package (`experiments/03_qwen_joint_reasoning_retention/expt_v1/jr1/`) with no copy, so every input hash, split, prompt, parser, objective equation, accounting rule, evaluation protocol and recovery rule of the Exp 03 PROTOCOL v1 (same commit, same freeze) applies here unchanged and is repeated in short below.
 
@@ -43,6 +43,6 @@ Identical to the Exp 03 PROTOCOL v1 sections "Splits, contamination audit, promp
 
 ## Development selection, work target and resources
 
-Selected J-R1 settings are those in the Exp 03 table (lr 5e-06, prior strength 0.75); both replay orders use that config's optimizer and lr clock. Work per cell is the schedule's recorded work (about W = 3.2e+07 forward-equivalent tokens, plus the regenerated RL rollouts, which are charged). Estimated about 1.7 h per cell (the AT-571 six-method mean of W/rate plus 0.738 h of evaluations) on H100_SXM5, so six cells are about 10 h, the plan's Exp 04 allocation; the source schedule run adds about 2 h (J-R1 at 2.15 h per cell).
+Selected J-R1 settings are those in the Exp 03 table (lr 5e-06, prior strength 0.75); both replay orders use that config's optimizer and lr clock. Work per cell is the schedule's recorded work (about W = 3.2e+07 forward-equivalent tokens, plus the regenerated RL rollouts, which are charged). Estimated about 1.7 h per cell (the AT-571 six-method mean of W/rate plus 0.738 h of evaluations) on H100_SXM5, so six cells are about 10 h, the plan's Exp 04 allocation; the source schedule run (job 50524408) took 0.99 h (00:59:09), less than the 2 h estimated from J-R1 at 2.15 h per cell.
 
 **TLDR-end:** [unified-training Exp 04: protocol v1] FROZEN 2026-10-31T18:41:16Z: 6 cells, schedule sha256 db3c4c6e448d6738, J-R1 seed 9001, H100_SXM5; no test output opened before the freeze.

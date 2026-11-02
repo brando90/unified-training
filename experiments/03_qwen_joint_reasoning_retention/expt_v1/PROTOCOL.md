@@ -4,7 +4,7 @@
 
 **Summary:** Follow the [campaign plan](../PLAN.md). This is the frozen measured protocol v1 for Exp 03: six methods x six paired seeds on the untouched Qwen2.5-1.5B plus one untouched base evaluation.
 
-Status: **FROZEN** 2026-10-31T18:41:16Z. Frozen before any measured update and before any test output was opened; the development selection used only the tune split. Never change this version after its first measured update; later scientific changes need a separate prospective version and do not erase failed evidence.
+Status: **FROZEN**. Configs frozen 2026-10-31T18:41:16Z; this file first committed 2026-11-02 in commit cca9104 (the Status line corrected in the commit after it), before any measured cell. Frozen before any measured update and before any test output was opened; the development selection used only the tune split. Never change this version after its first measured update; later scientific changes need a separate prospective version and do not erase failed evidence.
 
 Planned cells: **36 training cells + 1 untouched base evaluation = 37 array tasks** (denominator never reduced; every failed, interrupted or unstarted cell stays counted). Exp 04 (6 cells) has its own protocol and shares this code and configs.
 
@@ -107,7 +107,7 @@ Per-cell target **W = 3.2e+07 forward-equivalent tokens** for every method and s
 | aioli | 6,034 | 2.21 | 13.3 |
 | jr1 | 6,218 | 2.17 | 13.0 |
 
-Exp 03 estimate: about 60.9 H100 hours including the base evaluation, plus Exp 04 about 10 h, the schedule source run, the dev array (6 h cap) and readiness (4 h): inside the 96-hour plan. Per-cell time limit 2 days with up to 3 self-requeues.
+Exp 03 estimate: about 60.9 H100 hours including the base evaluation, plus Exp 04 about 10 h, the schedule source run (took 0.99 h), the dev array (6 h cap) and readiness (4 h): inside the 96-hour plan. Per-cell time limit 2 days with up to 3 self-requeues.
 
 ## Estimands, thresholds and denominators
 
