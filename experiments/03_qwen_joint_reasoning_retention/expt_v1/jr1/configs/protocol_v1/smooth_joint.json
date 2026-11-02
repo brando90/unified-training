@@ -1,0 +1,169 @@
+{
+  "checkpoints": {
+    "fractions": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "state_every_actions": 1000,
+    "state_every_seconds": 1800
+  },
+  "controller": {
+    "batch_size": 8,
+    "rl_max_new_tokens": 512,
+    "rows": {
+      "dpo": 32,
+      "pt": 32,
+      "rl": 32,
+      "sft": 32
+    }
+  },
+  "data": {
+    "root": null,
+    "splits": {
+      "dpo": "pref/train",
+      "dpo_controller": "pref/controller",
+      "pt": "pt/train",
+      "pt_controller": "pt/controller",
+      "rl": "rl/train",
+      "rl_controller": "rl/controller",
+      "sft": "sft/train",
+      "sft_controller": "sft/controller"
+    }
+  },
+  "methods": {
+    "aioli": {
+      "alpha": 0.75,
+      "eta": 1.0,
+      "floor": 0.0,
+      "probe_updates": 12,
+      "window": 200
+    },
+    "fixed_joint": {
+      "weights": {
+        "dpo": 0.1,
+        "pt": 0.55,
+        "rl": 0.15,
+        "sft": 0.2
+      }
+    },
+    "jr1": {
+      "alpha": 0.75,
+      "dpo_floor": 0.05,
+      "eta": 1.0,
+      "floor": 0.0,
+      "min_share": 0.02,
+      "prior_end": {
+        "dpo": 0.1,
+        "pt": 0.15,
+        "rl": 0.6,
+        "sft": 0.15
+      },
+      "prior_start": {
+        "dpo": 0.1,
+        "pt": 0.45,
+        "rl": 0.1,
+        "sft": 0.35
+      },
+      "prior_strength": 0.5,
+      "probe_updates": 12,
+      "pt_floor": 0.05,
+      "retention_min_pt": 0.55,
+      "retention_threshold": 0.02,
+      "window": 200
+    },
+    "replay": {
+      "boundaries": [
+        0.55,
+        0.75,
+        0.85
+      ],
+      "pt_share": 0.2
+    },
+    "sequential": {
+      "boundaries": [
+        0.55,
+        0.75,
+        0.85
+      ]
+    },
+    "smooth_joint": {
+      "end": {
+        "dpo": 0.1,
+        "pt": 0.15,
+        "rl": 0.6,
+        "sft": 0.15
+      },
+      "floors": {
+        "dpo": 0.05,
+        "pt": 0.05
+      },
+      "start": {
+        "dpo": 0.05,
+        "pt": 0.7,
+        "rl": 0.05,
+        "sft": 0.2
+      }
+    }
+  },
+  "model": {
+    "attn_implementation": "sdpa",
+    "gradient_checkpointing": true,
+    "id": "Qwen/Qwen2.5-1.5B",
+    "init_seed": null,
+    "local_path": null,
+    "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+    "source": "pretrained",
+    "tiny": null
+  },
+  "objectives": {
+    "dpo": {
+      "batch_size": 4,
+      "beta": 0.1,
+      "max_len": 1024
+    },
+    "pt": {
+      "batch_size": 8,
+      "max_len": 1024
+    },
+    "rl": {
+      "backend": "hf",
+      "group_size": 8,
+      "max_new_tokens": 1024,
+      "max_prompt_len": 512,
+      "prompts": 4,
+      "reward": "gsm8k_exact",
+      "temperature": 1.0
+    },
+    "sft": {
+      "batch_size": 8,
+      "max_len": 1024
+    }
+  },
+  "optimizer": {
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "grad_clip": 1.0,
+    "lr": 5e-06,
+    "min_lr_ratio": 0.1,
+    "schedule": "cosine",
+    "warmup_fraction": 0.02,
+    "warmup_start_ratio": 0.1,
+    "weight_decay": 0.01
+  },
+  "precision": {
+    "checkpoint": "bf16",
+    "compute": "bf16",
+    "master": "fp32",
+    "reference": "compute"
+  },
+  "protocol": "jr1-protocol-v1-FROZEN 2026-10-31T18:41:16.511229+00:00 method=smooth_joint candidate=smooth_joint_lr5e-6_rl60",
+  "work": {
+    "target": 32000000.0
+  }
+}

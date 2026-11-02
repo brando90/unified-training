@@ -1,0 +1,409 @@
+{
+  "base": {
+    "dev_gsm8k_acc": 0.69921875,
+    "dev_pref_acc": 0.482421875,
+    "dev_wikitext_nll": 2.230781811298185
+  },
+  "candidates": {
+    "aioli": [
+      {
+        "candidate": "aioli_lr1e-6_eta1",
+        "dev_gsm8k_acc": 0.75390625,
+        "dev_pref_acc": 0.484375,
+        "dev_wikitext_nll": 2.206007055625525,
+        "eval_status": "complete",
+        "nll_ratio": 0.9888941376753281,
+        "retention_ok": true,
+        "slot": 0,
+        "train_status": "complete",
+        "train_wall_s": 785.4601040408015,
+        "valid": true,
+        "within_allowance": true
+      },
+      {
+        "candidate": "aioli_lr1e-6_eta0.3",
+        "dev_gsm8k_acc": 0.7578125,
+        "dev_pref_acc": 0.484375,
+        "dev_wikitext_nll": 2.206329558556303,
+        "eval_status": "complete",
+        "nll_ratio": 0.9890387071393361,
+        "retention_ok": true,
+        "slot": 1,
+        "train_status": "complete",
+        "train_wall_s": 755.2594664520584,
+        "valid": true,
+        "within_allowance": true
+      },
+      {
+        "candidate": "aioli_lr5e-6_eta1",
+        "dev_gsm8k_acc": 0.732421875,
+        "dev_pref_acc": 0.484375,
+        "dev_wikitext_nll": 2.1450367061430105,
+        "eval_status": "complete",
+        "nll_ratio": 0.9615627558370328,
+        "retention_ok": true,
+        "slot": 2,
+        "train_status": "complete",
+        "train_wall_s": 574.846981423907,
+        "valid": true,
+        "within_allowance": true
+      },
+      {
+        "candidate": "aioli_lr5e-6_eta0.3",
+        "dev_gsm8k_acc": 0.75,
+        "dev_pref_acc": 0.48046875,
+        "dev_wikitext_nll": 2.146957518225041,
+        "eval_status": "complete",
+        "nll_ratio": 0.9624238046730518,
+        "retention_ok": true,
+        "slot": 3,
+        "train_status": "complete",
+        "train_wall_s": 588.7419880898669,
+        "valid": true,
+        "within_allowance": true
+      }
+    ],
+    "fixed_joint": [
+      {
+        "candidate": "fixed_joint_lr1e-6_pt55",
+        "dev_gsm8k_acc": 0.775390625,
+        "dev_pref_acc": 0.482421875,
+        "dev_wikitext_nll": 2.181833088107551,
+        "eval_status": "complete",
+        "nll_ratio": 0.9780575926597911,
+        "retention_ok": true,
+        "slot": 0,
+        "train_status": "complete",
+        "train_wall_s": 500.5333367837593,
+        "valid": true,
+        "within_allowance": true
+      },
+      {
+        "candidate": "fixed_joint_lr1e-6_rl30",
+        "dev_gsm8k_acc": 0.75390625,
+        "dev_pref_acc": 0.484375,
+        "dev_wikitext_nll": 2.2042238771715827,
+        "eval_status": "complete",
+        "nll_ratio": 0.9880947863246442,
+        "retention_ok": true,
+        "slot": 1,
+        "train_status": "complete",
+        "train_wall_s": 670.9136881460436,
+        "valid": true,
+        "within_allowance": true
+      },
+      {
+        "candidate": "fixed_joint_lr5e-6_pt55",
+        "dev_gsm8k_acc": 0.74609375,
+        "dev_pref_acc": 0.484375,
+        "dev_wikitext_nll": 2.125230094398899,
+        "eval_status": "complete",
+        "nll_ratio": 0.9526839799550539,
+        "retention_ok": true,
+        "slot": 2,
+        "train_status": "complete",
+        "train_wall_s": 402.86114749638364,
+        "valid": true,
+        "within_allowance": true
+      },
+      {
+        "candidate": "fixed_joint_lr5e-6_rl30",
+        "dev_gsm8k_acc": 0.7578125,
+        "dev_pref_acc": 0.486328125,
+        "dev_wikitext_nll": 2.138863949385441,
+        "eval_status": "complete",
+        "nll_ratio": 0.9587956735852831,
+        "retention_ok": true,
+        "slot": 3,
+        "train_status": "complete",
+        "train_wall_s": 593.5502127846703,
+        "valid": true,
+        "within_allowance": true
+      }
+    ],
+    "jr1": [
+      {
+        "candidate": "jr1_lr1e-6_prior0.5",
+        "dev_gsm8k_acc": 0.76953125,
+        "dev_pref_acc": 0.484375,
+        "dev_wikitext_nll": 2.2061058653925105,
+        "eval_status": "complete",
+        "nll_ratio": 0.9889384314590074,
+        "retention_ok": true,
+        "slot": 0,
+        "train_status": "complete",
+        "train_wall_s": 759.5437670289539,
+        "valid": true,
+        "within_allowance": true
+      },
+      {
+        "candidate": "jr1_lr1e-6_prior0.75",
+        "dev_gsm8k_acc": 0.765625,
+        "dev_pref_acc": 0.48046875,
+        "dev_wikitext_nll": 2.2065070644034233,
+        "eval_status": "complete",
+        "nll_ratio": 0.9891182782772309,
+        "retention_ok": true,
+        "slot": 1,
+        "train_status": "complete",
+        "train_wall_s": 798.4678231077269,
+        "valid": true,
+        "within_allowance": true
+      },
+      {
+        "candidate": "jr1_lr5e-6_prior0.5",
+        "dev_gsm8k_acc": 0.74609375,
+        "dev_pref_acc": 0.48046875,
+        "dev_wikitext_nll": 2.1458197341471794,
+        "eval_status": "complete",
+        "nll_ratio": 0.9619137664110851,
+        "retention_ok": true,
+        "slot": 2,
+        "train_status": "complete",
+        "train_wall_s": 601.5628034709953,
+        "valid": true,
+        "within_allowance": true
+      },
+      {
+        "candidate": "jr1_lr5e-6_prior0.75",
+        "dev_gsm8k_acc": 0.775390625,
+        "dev_pref_acc": 0.482421875,
+        "dev_wikitext_nll": 2.1476472449661195,
+        "eval_status": "complete",
+        "nll_ratio": 0.962732990778831,
+        "retention_ok": true,
+        "slot": 3,
+        "train_status": "complete",
+        "train_wall_s": 629.6211908068508,
+        "valid": true,
+        "within_allowance": true
+      }
+    ],
+    "replay": [
+      {
+        "candidate": "replay_lr1e-6_pt20",
+        "dev_gsm8k_acc": 0.751953125,
+        "dev_pref_acc": 0.48046875,
+        "dev_wikitext_nll": 2.157380917695406,
+        "eval_status": "complete",
+        "nll_ratio": 0.9670963367053528,
+        "retention_ok": true,
+        "slot": 0,
+        "train_status": "complete",
+        "train_wall_s": 402.4404522469267,
+        "valid": true,
+        "within_allowance": true
+      },
+      {
+        "candidate": "replay_lr1e-6_pt10",
+        "dev_gsm8k_acc": 0.74609375,
+        "dev_pref_acc": 0.484375,
+        "dev_wikitext_nll": 2.158315722809659,
+        "eval_status": "complete",
+        "nll_ratio": 0.9675153849105688,
+        "retention_ok": true,
+        "slot": 1,
+        "train_status": "complete",
+        "train_wall_s": 386.41576832393184,
+        "valid": true,
+        "within_allowance": true
+      },
+      {
+        "candidate": "replay_lr5e-6_pt20",
+        "dev_gsm8k_acc": 0.7578125,
+        "dev_pref_acc": 0.48046875,
+        "dev_wikitext_nll": 2.117049876146861,
+        "eval_status": "complete",
+        "nll_ratio": 0.9490170062462816,
+        "retention_ok": true,
+        "slot": 2,
+        "train_status": "complete",
+        "train_wall_s": 418.2588951922953,
+        "valid": true,
+        "within_allowance": true
+      },
+      {
+        "candidate": "replay_lr5e-6_pt10",
+        "dev_gsm8k_acc": 0.75,
+        "dev_pref_acc": 0.482421875,
+        "dev_wikitext_nll": 2.1177798645040338,
+        "eval_status": "complete",
+        "nll_ratio": 0.9493442405609401,
+        "retention_ok": true,
+        "slot": 3,
+        "train_status": "complete",
+        "train_wall_s": 389.6417177207768,
+        "valid": true,
+        "within_allowance": true
+      }
+    ],
+    "sequential": [
+      {
+        "candidate": "sequential_lr1e-6_b55",
+        "dev_gsm8k_acc": 0.759765625,
+        "dev_pref_acc": 0.48046875,
+        "dev_wikitext_nll": 2.159766518410981,
+        "eval_status": "complete",
+        "nll_ratio": 0.9681657378917407,
+        "retention_ok": true,
+        "slot": 0,
+        "train_status": "complete",
+        "train_wall_s": 386.98125775624067,
+        "valid": true,
+        "within_allowance": true
+      },
+      {
+        "candidate": "sequential_lr1e-6_b40",
+        "dev_gsm8k_acc": 0.748046875,
+        "dev_pref_acc": 0.48046875,
+        "dev_wikitext_nll": 2.1658168420814494,
+        "eval_status": "complete",
+        "nll_ratio": 0.9708779366553425,
+        "retention_ok": true,
+        "slot": 1,
+        "train_status": "complete",
+        "train_wall_s": 465.68477137433365,
+        "valid": true,
+        "within_allowance": true
+      },
+      {
+        "candidate": "sequential_lr5e-6_b55",
+        "dev_gsm8k_acc": 0.734375,
+        "dev_pref_acc": 0.48046875,
+        "dev_wikitext_nll": 2.1191281926576426,
+        "eval_status": "complete",
+        "nll_ratio": 0.9499486601176982,
+        "retention_ok": true,
+        "slot": 2,
+        "train_status": "complete",
+        "train_wall_s": 378.28556544473395,
+        "valid": true,
+        "within_allowance": true
+      },
+      {
+        "candidate": "sequential_lr5e-6_b40",
+        "dev_gsm8k_acc": 0.71875,
+        "dev_pref_acc": 0.48046875,
+        "dev_wikitext_nll": 2.1256314727920436,
+        "eval_status": "complete",
+        "nll_ratio": 0.9528639071855485,
+        "retention_ok": true,
+        "slot": 3,
+        "train_status": "complete",
+        "train_wall_s": 430.7668572110124,
+        "valid": true,
+        "within_allowance": true
+      }
+    ],
+    "smooth_joint": [
+      {
+        "candidate": "smooth_joint_lr1e-6_rl45",
+        "dev_gsm8k_acc": 0.763671875,
+        "dev_pref_acc": 0.48046875,
+        "dev_wikitext_nll": 2.186941482779218,
+        "eval_status": "complete",
+        "nll_ratio": 0.9803475497706993,
+        "retention_ok": true,
+        "slot": 0,
+        "train_status": "complete",
+        "train_wall_s": 659.9547031433322,
+        "valid": true,
+        "within_allowance": true
+      },
+      {
+        "candidate": "smooth_joint_lr1e-6_rl60",
+        "dev_gsm8k_acc": 0.734375,
+        "dev_pref_acc": 0.48046875,
+        "dev_wikitext_nll": 2.1878134021598536,
+        "eval_status": "complete",
+        "nll_ratio": 0.9807384079784449,
+        "retention_ok": true,
+        "slot": 1,
+        "train_status": "complete",
+        "train_wall_s": 675.6024786727503,
+        "valid": true,
+        "within_allowance": true
+      },
+      {
+        "candidate": "smooth_joint_lr5e-6_rl45",
+        "dev_gsm8k_acc": 0.755859375,
+        "dev_pref_acc": 0.482421875,
+        "dev_wikitext_nll": 2.1270336449565517,
+        "eval_status": "complete",
+        "nll_ratio": 0.9534924635765889,
+        "retention_ok": true,
+        "slot": 2,
+        "train_status": "complete",
+        "train_wall_s": 449.8635725271888,
+        "valid": true,
+        "within_allowance": true
+      },
+      {
+        "candidate": "smooth_joint_lr5e-6_rl60",
+        "dev_gsm8k_acc": 0.7734375,
+        "dev_pref_acc": 0.482421875,
+        "dev_wikitext_nll": 2.127238102399906,
+        "eval_status": "complete",
+        "nll_ratio": 0.9535841163963846,
+        "retention_ok": true,
+        "slot": 3,
+        "train_status": "complete",
+        "train_wall_s": 520.4504722426645,
+        "valid": true,
+        "within_allowance": true
+      }
+    ]
+  },
+  "grid_sha256": "f6676b3c5b7311270057c5ae6b21f9fdb44d5248806e1604ac0853668685b84a",
+  "grid_version": "dev-grid-v1",
+  "rule": {
+    "fallback": "no retention-passing candidate: the one with the smallest NLL rise, and the method is flagged retention_failed; no valid candidate at all: slot 0, flagged no_valid_candidate",
+    "max_nll_rise": 0.02,
+    "retention": "dev_wikitext nll_per_token <= (1 + max_nll_rise) x the untouched base model's (PLAN.md's 2% corpus-NLL tolerance)",
+    "score": "dev_gsm8k acc (512 GSM8K tune prompts, greedy, the frozen jr1 parser)",
+    "tie_break": [
+      "higher dev_pref acc",
+      "lower dev_wikitext nll",
+      "lower slot (listed first)"
+    ]
+  },
+  "selected": {
+    "aioli": {
+      "candidate": "aioli_lr1e-6_eta0.3",
+      "how": "max dev_gsm8k_acc among retention-passing candidates",
+      "no_valid_candidate": false,
+      "retention_failed": false
+    },
+    "fixed_joint": {
+      "candidate": "fixed_joint_lr1e-6_pt55",
+      "how": "max dev_gsm8k_acc among retention-passing candidates",
+      "no_valid_candidate": false,
+      "retention_failed": false
+    },
+    "jr1": {
+      "candidate": "jr1_lr5e-6_prior0.75",
+      "how": "max dev_gsm8k_acc among retention-passing candidates",
+      "no_valid_candidate": false,
+      "retention_failed": false
+    },
+    "replay": {
+      "candidate": "replay_lr5e-6_pt20",
+      "how": "max dev_gsm8k_acc among retention-passing candidates",
+      "no_valid_candidate": false,
+      "retention_failed": false
+    },
+    "sequential": {
+      "candidate": "sequential_lr1e-6_b55",
+      "how": "max dev_gsm8k_acc among retention-passing candidates",
+      "no_valid_candidate": false,
+      "retention_failed": false
+    },
+    "smooth_joint": {
+      "candidate": "smooth_joint_lr5e-6_rl60",
+      "how": "max dev_gsm8k_acc among retention-passing candidates",
+      "no_valid_candidate": false,
+      "retention_failed": false
+    }
+  },
+  "timestamp": "2026-10-31T18:40:19.505031+00:00"
+}
