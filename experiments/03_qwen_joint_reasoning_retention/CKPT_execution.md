@@ -2,8 +2,8 @@
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/03_qwen_joint_reasoning_retention/CKPT_execution.md>
 Created: 10-05-2026 10:25 PDT
-Last updated: 10-05-2026 18:23 UTC
-Status: READINESS PASSED; ADMISSION FREEZE IN PROGRESS
+Last updated: 11-02-2026 06:53 PST
+Status: MEASURED CELLS SUBMITTED, QUEUED ON SHERLOCK
 
 LANDED 53539dc52889f58aaa5e19616d70dfec38ad2697 https://github.com/brando90/unified-training/pull/5 10-05-2026 17:55 UTC
 LANDED 94282326b8b34a66de1a4ecd7e4943a294a14739 https://github.com/brando90/unified-training/pull/7 10-05-2026 18:16 UTC
@@ -20,3 +20,9 @@ LANDED 94282326b8b34a66de1a4ecd7e4943a294a14739 https://github.com/brando90/unif
 - Next: freeze released-data splits, schedule/controller/recovery behavior and resource accounting; then start the durable supervisor only for admitted cells on physical GPU 1.
 - Resource limit is a shared new 96 device-hour campaign ceiling, never per experiment or per worker.
 - Actual host/process/run identity and private storage are in the dispatch receipt; update this checkpoint after acknowledgement and every meaningful phase.
+
+## Measured cells submitted (11-02-2026 06:53 PST)
+
+- Protocol v1 frozen (commit 7b391ce). cells03 array 0-36 submitted as Slurm job 50782976 on H100_SXM5 (36 cells + untouched base at task 36), code 22e2a426a4bd. All 37 tasks PENDING; first start estimate 11-02-2026 18:39 PST.
+- Per-cell job ids are `50782976_<i>` (table in [results.md](results.md)); ids also in `/scratch/users/brando9/ut_jr1/jobs.txt`. Squeue snapshot saved.
+- Next: collect (AT-574) when tasks end; rerun a failed or timed-out task once with `JR1_ARRAY=<i>`; never delete a cell directory.
