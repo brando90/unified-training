@@ -1,17 +1,17 @@
 # Pretrained joint reasoning and retention: live results
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/03_qwen_joint_reasoning_retention/results.md>
-**Status:** RUNNING: all 37 array tasks submitted on Sherlock 11-02-2026 06:53 PST (job 50782976, H100_SXM5, frozen protocol v1, code 22e2a426a4bd); every task is still PENDING, none has started. First task start estimated 11-02-2026 18:39 PST. Real start times are filled in as tasks start.
-**Last updated:** 11-02-2026 06:53 PST
+**Status:** RUNNING: 2 of 36 training cells done (sequential and replay, seed 1101); 35 array tasks of job 50782976 (indexes 2-36, including the base) are still PENDING (Priority) as of 11-11-2026 08:44 PST. Frozen protocol v1, H100_SXM5, code 22e2a426a4bd.
+**Last updated:** 11-11-2026 08:55 PST
 
-`experiments/03_qwen_joint_reasoning_retention` has 36 prospective training cells plus 1 untouched base evaluation (37 array tasks). Completed: 0; failed: 0; interrupted: 0; running: 0; queued: 37. The denominator 36 + 1 stays visible whatever happens to a cell: a failed, interrupted or unstarted cell stays counted.
+`experiments/03_qwen_joint_reasoning_retention` has 36 prospective training cells plus 1 untouched base evaluation (37 array tasks). Completed: 2; failed: 0; interrupted: 0; running: 0; unstarted (queued): 35 (of 36 training + 1 base). The denominator 36 + 1 stays visible whatever happens to a cell: a failed, interrupted or unstarted cell stays counted.
 
 | Phase | Status | Evidence |
 |---|---|---|
 | Design | DONE | [Campaign plan](PLAN.md) |
 | Initialization/readiness/calibration | DONE | Calibration: `expt_v1/jr1/sherlock/CALIBRATION.md` (H100_SXM5 chosen, W = 3.2e7 per cell) |
 | Protocol and input freeze | DONE | [PROTOCOL.md](expt_v1/PROTOCOL.md) v1, configs frozen 2026-10-31T18:41:16Z, commit 7b391ce |
-| Training/full evaluation | QUEUED | 0/36 cells done, 37 array tasks pending (job 50782976, submitted 11-02-2026 06:53 PST) |
+| Training/full evaluation | RUNNING | 2/36 cells done (seed 1101 sequential, replay), 35 array tasks pending (job 50782976) |
 | Final verification/publication | PENDING | Results unavailable |
 
 Submit command: `JR1_SCHEDULE04_SHA256=db3c4c6e448d673851dcd1aef0ec6b34d5480b34edb7b6e9be27210d05357192 GPU_SKU=H100_SXM5 bash jr1/sherlock/submit.sh cells03` from `/scratch/users/brando9/ut_jr1` (ids in `jobs.txt`). Index map: seed 1101 + i // 6, method (sequential, replay, fixed_joint, smooth_joint, aioli, jr1)[i % 6]; task 36 is the untouched base. A failed or timed-out task is rerun once, resuming (`JR1_ARRAY=<i>`). Squeue snapshot: `squeue_1102_0653.txt` on Sherlock, copied to `expt_v1/jr1/sherlock/squeue_cells_11-02-2026_0653.txt`.
@@ -22,8 +22,8 @@ Expected finish: if the queue starts all tasks together at the 18:39 PST estimat
 
 | Array task | Seed | Method | Slurm job id | State |
 |---|---|---|---|---|
-| 0 | 1101 | sequential | 50782976_0 | PENDING |
-| 1 | 1101 | replay | 50782976_1 | PENDING |
+| 0 | 1101 | sequential | 50782976_0 (Slurm 51000694, 11-04-2026 15:08 to 16:09 PST) | COMPLETED (verified from artifacts: train and 6 evals complete) |
+| 1 | 1101 | replay | 50782976_1 (Slurm 51556666, 11-10-2026 11:38 to 12:36 PST) | COMPLETED (verified from artifacts: train and 6 evals complete) |
 | 2 | 1101 | fixed_joint | 50782976_2 | PENDING |
 | 3 | 1101 | smooth_joint | 50782976_3 | PENDING |
 | 4 | 1101 | aioli | 50782976_4 | PENDING |
@@ -60,13 +60,25 @@ Expected finish: if the queue starts all tasks together at the 18:39 PST estimat
 | 35 | 1106 | jr1 | 50782976_35 | PENDING |
 | 36 | none | untouched base evaluation (no training) | 50782976_36 | PENDING |
 
-**TLDR-end:** [unified-training: Exp 03] 36 cells + base submitted on Sherlock (job 50782976), all queued, 0/36 done.
+## Results so far (2 of 36 cells, seed 1101 only)
+
+| Cell | GSM8K acc (n=1319) | MATH500 acc (n=500) | MMLU acc (n=14042) | ARC-E acc (n=2376) | WikiText NLL/token | WikiText bits/byte | Pref acc (n=1985) | GSM8K learning-curve AUC (trapezoid, 5 milestones, 256-item subset) |
+|---|---|---|---|---|---|---|---|---|
+| sequential s1101 | 0.6133 | 0.3760 | 0.6090 | 0.7340 | 2.1096 | 0.7066 | 0.4771 | 0.5151 |
+| replay s1101 | 0.6528 | 0.3740 | 0.6069 | 0.7252 | 2.0885 | 0.6995 | 0.4791 | 0.5825 |
+
+Source: Sherlock collect archive `jr1_results_20261111_084827.tgz` (sha256 fb2ecb823dbf5307cbe399c409e9271c974013800f5a6bc45471c5e3ed081485), fetched 11-11-2026 08:50 PST; per-cell `eval/full_100/summary.json` and `eval/lc_*/summary.json`. Single seed (1101) per cell so far: no paired comparison, interval or p-value is possible yet. Model/harness: Qwen2.5-1.5B, custom jr1 trainer and HF-backend evaluator, H100_SXM5, frozen protocol v1, code 22e2a426a4bd.
+Reading (descriptive, one seed): replay is ahead of sequential on GSM8K (0.6528 vs 0.6133, +3.9 pts) and learning-curve AUC (0.5825 vs 0.5151), and about level on MATH500 and MMLU (-0.2 pts); ARC-E is 0.9 pts lower and WikiText NLL 0.02 lower. Sequential's GSM8K learning curve dips mid-training (256-item subset: 0.62 at start, 0.38 at 50%, 0.60 at end) and recovers.
+
+**TLDR-end:** [unified-training: Exp 03] 2/36 cells done (seed 1101 sequential, replay), 35 queued; no paired analysis until more seeds finish.
 **Snapshot:**
 ```text
 Prospective cells: 36 (+1 untouched base)
 Submitted: 37 (job 50782976, H100_SXM5)
 Running: 0
-Completed: 0
-Queued: 37
+Completed: 2
+Failed: 0
+Interrupted: 0
+Unstarted/queued: 35
 First start estimate: 11-02-2026 18:39 PST
 ```
