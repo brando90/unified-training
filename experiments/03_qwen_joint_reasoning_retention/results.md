@@ -1,8 +1,8 @@
 # Pretrained joint reasoning and retention: live results
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/03_qwen_joint_reasoning_retention/results.md>
-**Status:** RUNNING: 2 of 36 training cells done (sequential and replay, seed 1101); 35 array tasks of job 50782976 (indexes 2-36, including the base) are still PENDING (Priority) as of 11-11-2026 08:44 PST. Frozen protocol v1, H100_SXM5, code 22e2a426a4bd.
-**Last updated:** 11-11-2026 08:55 PST
+**Status:** RUNNING: 2 of 36 training cells done (sequential and replay, seed 1101); 35 array tasks of job 50782976 (indexes 2-36, including the base) are still PENDING (Priority) as of 11-17-2026 10:03 PST (no new Exp 03 cell since 11-11). Frozen protocol v1, H100_SXM5, code 22e2a426a4bd.
+**Last updated:** 11-17-2026 10:05 PST
 
 `experiments/03_qwen_joint_reasoning_retention` has 36 prospective training cells plus 1 untouched base evaluation (37 array tasks). Completed: 2; failed: 0; interrupted: 0; running: 0; unstarted (queued): 35 (of 36 training + 1 base). The denominator 36 + 1 stays visible whatever happens to a cell: a failed, interrupted or unstarted cell stays counted.
 
