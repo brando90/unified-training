@@ -1,8 +1,8 @@
 # Matched exposure and objective ordering: live results
 
 **Doc link:** <https://github.com/brando90/unified-training/blob/main/experiments/04_qwen_matched_exposure_schedules/results.md>
-**Status:** RUNNING: 2 of 6 cells done (interleaved and stage_sorted, seed 1101); 4 array tasks of job 50782977 (indexes 2-5) are still PENDING (Priority) as of 11-17-2026 10:03 PST. Schedule sha256 db3c4c6e448d673851dcd1aef0ec6b34d5480b34edb7b6e9be27210d05357192, frozen protocol v1, H100_SXM5.
-**Last updated:** 11-17-2026 10:05 PST
+**Status:** RUNNING: 2 of 6 cells done (interleaved and stage_sorted, seed 1101); 4 array tasks of job 50782977 (indexes 2-5) are still PENDING (Priority) as of 11-25-2026 12:47 PST (no new Exp 04 cell since 11-16). Schedule sha256 db3c4c6e448d673851dcd1aef0ec6b34d5480b34edb7b6e9be27210d05357192, frozen protocol v1, H100_SXM5.
+**Last updated:** 11-25-2026 13:00 PST
 
 `experiments/04_qwen_matched_exposure_schedules` has 6 prospective training cells (2 orders x 3 seeds). Completed: 2; failed: 0; interrupted: 0; running: 0; unstarted (queued): 4 (of 6). The denominator 6 stays visible whatever happens to a cell.
 

@@ -1,0 +1,688 @@
+{
+  "cells": [
+    {
+      "cell": "sequential_s1101",
+      "evals": {
+        "full_100": "complete",
+        "lc_000": "complete",
+        "lc_025": "complete",
+        "lc_050": "complete",
+        "lc_075": "complete",
+        "lc_100": "complete"
+      },
+      "exp": "03",
+      "index": 0,
+      "method": "sequential",
+      "seed": 1101,
+      "slurm": {
+        "starts": [
+          {
+            "gpu_sku": "H100_SXM5",
+            "jr1_code_commit": "22e2a426a4bd40fa83e825f0b0d498af9a300ba0",
+            "jr1_eval_backend": "hf",
+            "slurm_array_job_id": "50782976",
+            "slurm_array_task_id": "0",
+            "slurm_job_id": "51000694",
+            "slurm_job_nodelist": "sh04-01n01",
+            "slurm_restart_count": null,
+            "time": "2026-11-04T15:09:01-08:00"
+          }
+        ]
+      },
+      "status": "complete",
+      "train_status": "complete",
+      "wall_s": 1572.857403719332,
+      "work_total": 32011928
+    },
+    {
+      "cell": "replay_s1101",
+      "evals": {
+        "full_100": "complete",
+        "lc_000": "complete",
+        "lc_025": "complete",
+        "lc_050": "complete",
+        "lc_075": "complete",
+        "lc_100": "complete"
+      },
+      "exp": "03",
+      "index": 1,
+      "method": "replay",
+      "seed": 1101,
+      "slurm": {
+        "starts": [
+          {
+            "gpu_sku": "H100_SXM5",
+            "jr1_code_commit": "22e2a426a4bd40fa83e825f0b0d498af9a300ba0",
+            "jr1_eval_backend": "hf",
+            "slurm_array_job_id": "50782976",
+            "slurm_array_task_id": "1",
+            "slurm_job_id": "51556666",
+            "slurm_job_nodelist": "sh04-01n07",
+            "slurm_restart_count": null,
+            "time": "2026-11-10T11:39:00-08:00"
+          }
+        ]
+      },
+      "status": "complete",
+      "train_status": "complete",
+      "wall_s": 1341.5643736738712,
+      "work_total": 32004424
+    },
+    {
+      "cell": "fixed_joint_s1101",
+      "evals": {
+        "full_100": "complete",
+        "lc_000": "complete",
+        "lc_025": "complete",
+        "lc_050": "complete",
+        "lc_075": "complete",
+        "lc_100": "complete"
+      },
+      "exp": "03",
+      "index": 2,
+      "method": "fixed_joint",
+      "seed": 1101,
+      "slurm": {
+        "starts": [
+          {
+            "gpu_sku": "H100_SXM5",
+            "jr1_code_commit": "22e2a426a4bd40fa83e825f0b0d498af9a300ba0",
+            "jr1_eval_backend": "hf",
+            "slurm_array_job_id": "50782976",
+            "slurm_array_task_id": "2",
+            "slurm_job_id": "52516556",
+            "slurm_job_nodelist": "sh04-01n01",
+            "slurm_restart_count": null,
+            "time": "2026-11-24T13:25:09-08:00"
+          }
+        ]
+      },
+      "status": "complete",
+      "train_status": "complete",
+      "wall_s": 2064.4302192650503,
+      "work_total": 32016440
+    },
+    {
+      "cell": "smooth_joint_s1101",
+      "evals": {},
+      "exp": "03",
+      "index": 3,
+      "method": "smooth_joint",
+      "seed": 1101,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "aioli_s1101",
+      "evals": {},
+      "exp": "03",
+      "index": 4,
+      "method": "aioli",
+      "seed": 1101,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "jr1_s1101",
+      "evals": {},
+      "exp": "03",
+      "index": 5,
+      "method": "jr1",
+      "seed": 1101,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "sequential_s1102",
+      "evals": {},
+      "exp": "03",
+      "index": 6,
+      "method": "sequential",
+      "seed": 1102,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "replay_s1102",
+      "evals": {},
+      "exp": "03",
+      "index": 7,
+      "method": "replay",
+      "seed": 1102,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "fixed_joint_s1102",
+      "evals": {},
+      "exp": "03",
+      "index": 8,
+      "method": "fixed_joint",
+      "seed": 1102,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "smooth_joint_s1102",
+      "evals": {},
+      "exp": "03",
+      "index": 9,
+      "method": "smooth_joint",
+      "seed": 1102,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "aioli_s1102",
+      "evals": {},
+      "exp": "03",
+      "index": 10,
+      "method": "aioli",
+      "seed": 1102,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "jr1_s1102",
+      "evals": {},
+      "exp": "03",
+      "index": 11,
+      "method": "jr1",
+      "seed": 1102,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "sequential_s1103",
+      "evals": {},
+      "exp": "03",
+      "index": 12,
+      "method": "sequential",
+      "seed": 1103,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "replay_s1103",
+      "evals": {},
+      "exp": "03",
+      "index": 13,
+      "method": "replay",
+      "seed": 1103,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "fixed_joint_s1103",
+      "evals": {},
+      "exp": "03",
+      "index": 14,
+      "method": "fixed_joint",
+      "seed": 1103,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "smooth_joint_s1103",
+      "evals": {},
+      "exp": "03",
+      "index": 15,
+      "method": "smooth_joint",
+      "seed": 1103,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "aioli_s1103",
+      "evals": {},
+      "exp": "03",
+      "index": 16,
+      "method": "aioli",
+      "seed": 1103,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "jr1_s1103",
+      "evals": {},
+      "exp": "03",
+      "index": 17,
+      "method": "jr1",
+      "seed": 1103,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "sequential_s1104",
+      "evals": {},
+      "exp": "03",
+      "index": 18,
+      "method": "sequential",
+      "seed": 1104,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "replay_s1104",
+      "evals": {},
+      "exp": "03",
+      "index": 19,
+      "method": "replay",
+      "seed": 1104,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "fixed_joint_s1104",
+      "evals": {},
+      "exp": "03",
+      "index": 20,
+      "method": "fixed_joint",
+      "seed": 1104,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "smooth_joint_s1104",
+      "evals": {},
+      "exp": "03",
+      "index": 21,
+      "method": "smooth_joint",
+      "seed": 1104,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "aioli_s1104",
+      "evals": {},
+      "exp": "03",
+      "index": 22,
+      "method": "aioli",
+      "seed": 1104,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "jr1_s1104",
+      "evals": {},
+      "exp": "03",
+      "index": 23,
+      "method": "jr1",
+      "seed": 1104,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "sequential_s1105",
+      "evals": {},
+      "exp": "03",
+      "index": 24,
+      "method": "sequential",
+      "seed": 1105,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "replay_s1105",
+      "evals": {},
+      "exp": "03",
+      "index": 25,
+      "method": "replay",
+      "seed": 1105,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "fixed_joint_s1105",
+      "evals": {},
+      "exp": "03",
+      "index": 26,
+      "method": "fixed_joint",
+      "seed": 1105,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "smooth_joint_s1105",
+      "evals": {},
+      "exp": "03",
+      "index": 27,
+      "method": "smooth_joint",
+      "seed": 1105,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "aioli_s1105",
+      "evals": {},
+      "exp": "03",
+      "index": 28,
+      "method": "aioli",
+      "seed": 1105,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "jr1_s1105",
+      "evals": {},
+      "exp": "03",
+      "index": 29,
+      "method": "jr1",
+      "seed": 1105,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "sequential_s1106",
+      "evals": {},
+      "exp": "03",
+      "index": 30,
+      "method": "sequential",
+      "seed": 1106,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "replay_s1106",
+      "evals": {},
+      "exp": "03",
+      "index": 31,
+      "method": "replay",
+      "seed": 1106,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "fixed_joint_s1106",
+      "evals": {},
+      "exp": "03",
+      "index": 32,
+      "method": "fixed_joint",
+      "seed": 1106,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "smooth_joint_s1106",
+      "evals": {},
+      "exp": "03",
+      "index": 33,
+      "method": "smooth_joint",
+      "seed": 1106,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "aioli_s1106",
+      "evals": {},
+      "exp": "03",
+      "index": 34,
+      "method": "aioli",
+      "seed": 1106,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "jr1_s1106",
+      "evals": {},
+      "exp": "03",
+      "index": 35,
+      "method": "jr1",
+      "seed": 1106,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "base",
+      "evals": {},
+      "exp": "03",
+      "index": 36,
+      "method": "base",
+      "seed": null,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "interleaved_s1101",
+      "evals": {
+        "full_100": "complete",
+        "lc_000": "complete",
+        "lc_025": "complete",
+        "lc_050": "complete",
+        "lc_075": "complete",
+        "lc_100": "complete"
+      },
+      "exp": "04",
+      "index": 0,
+      "method": "replay_interleaved",
+      "order": "interleaved",
+      "seed": 1101,
+      "slurm": {
+        "starts": [
+          {
+            "gpu_sku": "H100_SXM5",
+            "jr1_code_commit": "22e2a426a4bd40fa83e825f0b0d498af9a300ba0",
+            "jr1_eval_backend": "hf",
+            "slurm_array_job_id": "50782977",
+            "slurm_array_task_id": "0",
+            "slurm_job_id": "51023930",
+            "slurm_job_nodelist": "sh04-01n07",
+            "slurm_restart_count": null,
+            "time": "2026-11-04T17:36:26-08:00"
+          }
+        ]
+      },
+      "status": "complete",
+      "train_status": "complete",
+      "wall_s": 2765.9545194902457,
+      "work_total": 29855392
+    },
+    {
+      "cell": "stage_sorted_s1101",
+      "evals": {
+        "full_100": "complete",
+        "lc_000": "complete",
+        "lc_025": "complete",
+        "lc_050": "complete",
+        "lc_075": "complete",
+        "lc_100": "complete"
+      },
+      "exp": "04",
+      "index": 1,
+      "method": "replay_stage_sorted",
+      "order": "stage_sorted",
+      "seed": 1101,
+      "slurm": {
+        "starts": [
+          {
+            "gpu_sku": "H100_SXM5",
+            "jr1_code_commit": "22e2a426a4bd40fa83e825f0b0d498af9a300ba0",
+            "jr1_eval_backend": "hf",
+            "slurm_array_job_id": "50782977",
+            "slurm_array_task_id": "1",
+            "slurm_job_id": "51724544",
+            "slurm_job_nodelist": "sh04-01n01",
+            "slurm_restart_count": null,
+            "time": "2026-11-16T04:32:05-08:00"
+          }
+        ]
+      },
+      "status": "complete",
+      "train_status": "complete",
+      "wall_s": 3139.245979951229,
+      "work_total": 28061192
+    },
+    {
+      "cell": "interleaved_s1102",
+      "evals": {},
+      "exp": "04",
+      "index": 2,
+      "method": "replay_interleaved",
+      "order": "interleaved",
+      "seed": 1102,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "stage_sorted_s1102",
+      "evals": {},
+      "exp": "04",
+      "index": 3,
+      "method": "replay_stage_sorted",
+      "order": "stage_sorted",
+      "seed": 1102,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "interleaved_s1103",
+      "evals": {},
+      "exp": "04",
+      "index": 4,
+      "method": "replay_interleaved",
+      "order": "interleaved",
+      "seed": 1103,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    },
+    {
+      "cell": "stage_sorted_s1103",
+      "evals": {},
+      "exp": "04",
+      "index": 5,
+      "method": "replay_stage_sorted",
+      "order": "stage_sorted",
+      "seed": 1103,
+      "slurm": null,
+      "status": "unstarted",
+      "train_status": null,
+      "wall_s": null,
+      "work_total": null
+    }
+  ],
+  "counts": {
+    "03": {
+      "complete": 3,
+      "planned": 37,
+      "unstarted": 34
+    },
+    "04": {
+      "complete": 2,
+      "planned": 6,
+      "unstarted": 4
+    }
+  },
+  "root": ".",
+  "timestamp": "2026-11-25T20:54:19.023010+00:00"
+}
